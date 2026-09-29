@@ -4,14 +4,13 @@ This replaces upstream `local_ineq` / `pent_local_min` (PAPER.md §7.2 step 5). 
 E − E(P) ≥ c|y − P|², which is false for the log kernel. The replacement is a centre-manifold
 ("complete the square") inequality with a quartic term in the soft pucker directions.
 
-Scripts are in this folder. `core.py` holds the exact pairwise expansion, `analyze.py` computes the
-Taylor data and the constants, `remainder.py` bounds the remainder and computes the radius, and
-`sanity.py` runs the numerical checks. The outputs are `constants_{log,riesz2}.json` and
-`sanity_{log,riesz2}.txt`. Those scripts use mpmath at 40–50 digits (exploratory).
+"Upstream" and "PAPER.md" refer to the Coulomb proof, https://github.com/huwngtran/thomson-n7-lean, `paper/PAPER.md`.
+The constants were first computed with exploratory mpmath scripts (40–50 digits) that are not included here; some
+sentences below still refer to them (marked "exploratory").
 
-**Rigorous status (2026-09-29, after the referee report `audit_local/AUDIT_CLAUDE.md`).** Every constant in the
-log proof chain is now re-derived with enclosures by `check_local_rigorous.py` (output `check_local_rigorous.txt`,
-**45/45 PASS**, 80 s, one core). It uses no floating-point constant and no project imports:
+**Rigorous status.** Every constant in the log proof chain is re-derived with enclosures by
+`check_local_rigorous.py` (output `../verification/check_local_rigorous.txt`, **45/45 PASS**, about 1.5 min on one
+core). It uses no floating-point constant and no project imports:
 - exact arithmetic in K = Q(α), α = √(10+2√5) = 4 sin 72° (sympy), for P, the frames, μ_i, the Taylor polynomial
   of the minorant to degree 6, H, its kernel, the projectors, the coupling, Q, Q_eff, κ² and the Bombieri norms;
 - arb balls (python-flint, 320 bits) for anything that needs a square root: the orthonormal bases (ball
@@ -43,11 +42,11 @@ log proof chain is now re-derived with enclosures by `check_local_rigorous.py` (
 
 - Log: 3/4, 13/40, 23/480, 1/10 and 67/120 are now **proved exactly** (polynomial identities over Q(α), steps 2–3 of
   `check_local_rigorous.py`). The Riesz-2 values 19/20, 35/96 and 18/65 still only match to more than 38 digits.
-- The optimisation that relaxes w reproduces the 0.10 from the journal. On spheres |t| = r in T the
+- (Exploratory, float.) The optimisation that relaxes w reproduces the coefficient 0.10. On spheres |t| = r in T the
   minimum of E − E(P)/r⁴ is 0.1023 at r = 0.01, 0.0971 at r = 0.1 and 0.048 at r = 0.45, and it
   stays positive throughout. The true basin is therefore far larger than the certified radius.
 
-**Verdict: the lemma closes, with about 100× margin over upstream's radius.**
+At the stated radius the scalar argument of §3 closes. The resulting sup-norm radius 1/300 is 100 times upstream's 1/30000.
 
 The cost moves to the cap certificate (§6). The soft mode moves the pole–ring inner products at
 first order. So H_B must osculate φ to third order at t = 0, and B-class coercivity scales as
@@ -180,7 +179,7 @@ Then, in exact rational arithmetic (step 8 of `check_local_rigorous.py`):
 With the same A and η the lemma still closes, with 0.143406|v|² + 0.037372|s|⁴ (step 8.4).
 
 Every step is a scalar inequality between monomials in (a, b, x, ρ), which suits nlinarith.
-`remainder.py` searches over A and η and bisects on ρ. The same argument certifies ρ up to about 0.01795
+An exploratory search over A and η with bisection on ρ indicates that the same argument works up to ρ ≈ 0.01795
 (this maximal radius comes from the float constants and has not been re-certified). At that radius Kρ ≈ 0.06 and the
 b²-terms ≈ 0.032 exhaust the budget of 1/10.
 
@@ -266,17 +265,17 @@ So K = B₅ + B₆ρ + K₇ρ² ≤ **3.22942** at ρ = 1/100.
 This remainder bound avoids any reference to the 5th derivatives of −log(distance): everything is
 finite polynomial algebra plus √(1−r²).
 
-## 5. Numerical sanity checks (`sanity.py`, 50 digits)
+## 5. Numerical sanity checks (exploratory, 50 digits; script not included)
 
 Test points are random gauge-fixed t ∈ T with |t| = r for r ∈ {ρ/10, ρ/2, ρ, 2ρ, 5ρ}. Half have
 uniform directions. The other half are soft-biased: t = s + w*(s) + ε·v̂ with ε ∈ {0, 0.01, 0.1, 1}·a².
 
 - No violations: E > E(P) everywhere, and E − E(P) ≥ the certified bound 0.2015x² + 0.0454a⁴ inside ρ.
-- **Corrected (referee):** the minimum ratio of E − E(P) to the bound is **≈ 1.861**, not 2.20.
+- The minimum ratio of E − E(P) to the bound is **≈ 1.861** (an earlier version of this note said 2.20).
   - It is approached along the λ_W = 3/4 eigenspace of W, with s = 0 (so v = w). There E − E(P) = (3/8)|v|² + O(|v|³),
     so the ratio tends to (3/8)/0.2015 = 1.8610 as |t| → 0. `check_local_rigorous.py` step 11 finds 1.86104 at |t| = 10⁻³.
-  - The referee's adversarial Nelder–Mead search over the closed ball found 1.8608.
-  - `sanity.py` never probed pure-W directions adversarially. Its 2.20 is the value **on the centre manifold**
+  - An independent adversarial Nelder–Mead search over the closed ball found 1.8608.
+  - The exploratory sampling did not probe pure-W directions adversarially. Its 2.20 is the value **on the centre manifold**
     (v = 0), where E − E(P) = 0.1000a⁴ and the ratio is 0.1/0.0454 = 2.2026.
 - For Riesz-2 the minimum ratio is 2.45, with E − E(P) = 0.27692a⁴.
 - A float64 BFGS minimisation on spheres in T (§0) confirms positivity up to r = 0.45.
@@ -297,7 +296,7 @@ uniform directions. The other half are soft-biased: t = s + w*(s) + ε·v̂ with
 **Warning: the coercivity is quartic in class B.** Along the soft mode the pole–ring inner products
 move at first order: t_B = ±z_k, with Σ_B t_B⁴ = 0.6a⁴. Meanwhile E − e ≈ 0.1a⁴ + (E(P) − e).
 A sharp typed bound therefore forces φ − H_B = O(t⁴) at 0, so H_B matches φ through the third
-derivative. The journal's observation that the cap is sharp only at degree 12 matches this. It also forces
+derivative. This matches the numerical observation that the typed cap bound is sharp at degree 12 but not at degree 10. It also forces
 κ₄ := inf(φ − H_B)/t⁴ ≤ 0.1/0.6 = **1/6**.
 
 Coercivity φ − H_B ≤ δ ⇒ |t| ≤ τ then requires **δ ≤ κ₄τ⁴**:
@@ -329,14 +328,14 @@ The results:
 - **Lemma L₂:** at ℓ² radius 1/200, E − E(P) ≥ 0.4722|v|² + 0.1130|s|⁴. The certified maximum is 0.00837.
 - Sup radius 1/530, so τ ≤ 1/2915. B-class coercivity has κ₄ ≤ (18/65)/0.6 ≈ 0.46.
 
-## 8. Notes for the Lean port
+## 8. Notes for a Lean port (not carried out)
 
 1. **(1) and ψ ≥ ψ₅.** Generalise `sum_W_tau` and `energy_ge_cubic`. The inequality
    −log(1−u) ≥ u + … + u⁵/5 follows by monotonicity of the difference, or from Mathlib's `Real.log` series bounds.
 2. **The chart without √.** Take t_i := h_i − ⟨P_i,h_i⟩P_i and ν_i = −½‖h_i‖². The √ appears only in
    the majorant N(R). For Lean, replace N(R) by an explicit tail bound: its coefficients are
    ≤ 1/2, so N − R²/2 − R⁴/8 ≤ R⁶/(2(1−R²)).
-3. **The Taylor data and the quadratic step (reworked after the referee report).** H, the cubic and quartic
+3. **The Taylor data and the quadratic step.** H, the cubic and quartic
    parts, Π_S = (2/5)(s₁s₁ᵀ + s₂s₂ᵀ), Π_ker and Π_W = I − Π_ker all have entries in Q(α), i.e. they are polynomials
    in the atoms √5 and α = 4 sin 72°. Handle them as upstream does, with `Fq` and `atoms_inBox`.
    - **Do not** try to certify the exact square of §2: it is an identity over Q(α) and gives the |v|²-form.
@@ -361,13 +360,13 @@ The results:
    pieces: 21 small polynomials with 56 and 84 coefficients. The constants get slightly worse
    (log: 3.58 and 10.07 instead of 3.12 and 9.96).
 5. **The final step** is the scalar argument of §3′ in (a, b, ρ). Every inequality is between monomials, with
-   rational coefficients listed in `check_local_rigorous.txt`, which suits nlinarith. The |v|-form Lemma L (§3) stays the
+   rational coefficients listed in `../verification/check_local_rigorous.txt`, which suits nlinarith. The |v|-form Lemma L (§3) stays the
    paper statement. Its only extra inputs are the exact identities of step 3 (Q_eff = 1/10, κ² = 67/120, λ_W = 3/4).
 
 ## 9. Rigorous checker `check_local_rigorous.py` (log): what each step certifies
 
-Run it with `OMP_NUM_THREADS=1 python3 check_local_rigorous.py`. The output is in `check_local_rigorous.txt`:
-**45/45 PASS, ALL_PASS**, 80 s.
+Run it with `OMP_NUM_THREADS=1 python3 local/check_local_rigorous.py`. The output is in
+`../verification/check_local_rigorous.txt`: **45/45 PASS, ALL_PASS**.
 
 | step | content | method |
 |---|---|---|
@@ -384,7 +383,7 @@ Run it with `OMP_NUM_THREADS=1 python3 check_local_rigorous.py`. The output is i
 | 10 | 7(1/300)² ≤ (1/100)²; (11/2)·(1/1650) = 1/300 and 1/1650 ≤ 1/10; ρ² < 2; min\|P_i−P_j\| > 2ρ | exact / arb |
 | 11 | sanity (not proof): E(P) = −log(1600√5); ratio 1.86104 along λ_W-eigendirections; centre manifold (E−E(P))/a⁴ = 0.09999 | mpmath 50 digits |
 
-Not machine-checked (paper-level, as audited):
+Not machine-checked (paper-level):
 - ψ ≥ ψ₅ for u < 1;
 - the coefficientwise-majorant lemma for f_ij, and the summation Σ K_ij R_ij⁷ ≤ K₇|t|⁷;
 - the Bombieri inequality;

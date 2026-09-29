@@ -1,0 +1,21 @@
+Verification run: 2026-09-29 20:39 CEST
+Repository commit checked: ac5038753e0d52efff2673391cb9c477d3f7de85 (fresh clone in a temporary directory; checkers and certificates unchanged since)
+Machine: Apple M5, Darwin arm64, macOS 27.0
+Load average during the run: ~28 (10 cores); two checker streams in parallel, OMP_NUM_THREADS=1
+Python 3.9.6
+python-flint 0.6.0
+mpmath 1.3.0
+sympy 1.14.0
+numpy 1.26.4
+(generators only) cvxpy 1.7.5 / clarabel 0.11.1 / scipy 1.13.1
+
+Results (wall-clock seconds, from /usr/bin/time):
+  check_cert                           exit 0  real  24.74s  "ALL_OK": true 
+  check_minorant                       exit 0  real   0.35s  "MINORANT_OK": true 
+  check_cell                           exit 0  real 115.86s  "ALL_OK": true CHECK_CELL ALL_OK 
+  check_minorant_cell                  exit 0  real   0.96s  "MINORANT_OK": true MINORANT ALL_OK 
+  check_cell_coulomb_calib             exit 0  real   3.05s  "ALL_OK": true CHECK_CELL ALL_OK 
+  check_minorant_cell_coulomb_calib    exit 0  real   0.13s  "MINORANT_OK": true MINORANT ALL_OK 
+  make_coverage                        exit 0  real 153.26s  COVERAGE ALL CELLS OK 
+  check_local_rigorous                 exit 0  real  91.57s  ALL_PASS SUMMARY: 45/45 checks PASS 
+  verify_soft_mode                     exit 0  real   0.14s  

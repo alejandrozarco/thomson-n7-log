@@ -1,0 +1,174 @@
+$ python3 checkers/check_cell.py certificates/cells/cert_case1_log_D10.json certificates/cells/cert_slab_99_98_log_D10.json certificates/cells/cert_slab_98_96_log_D10.json certificates/cells/cert_slab_96_94_log_D12.json certificates/cells/cert_slab_94_93_log_D12.json certificates/cells/cert_slab_93_90_log_D12.json
+  cert_case1_log_D10.json: identity S EXACT (1s)
+{
+ "cert": "cert_case1_log_D10.json",
+ "kind": "case1",
+ "kernel": "log",
+ "cell": {
+  "a": "-9/10"
+ },
+ "D": 10,
+ "identity_S": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "-4606044057683475/562949953421312",
+ "e_minus_EP": "0.000500000000000205055486624002110761676794230895325829505699214",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "9.18e-40",
+  "identity_ok": true,
+  "min_Sigma_all": "1.2723",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 2.6
+}
+  cert_slab_99_98_log_D10.json: identity A EXACT (2s)
+  cert_slab_99_98_log_D10.json: identity B EXACT (3s)
+  cert_slab_99_98_log_D10.json: identity G EXACT (4s)
+{
+ "cert": "cert_slab_99_98_log_D10.json",
+ "kind": "slab",
+ "kernel": "log",
+ "cell": {
+  "lo": "-99/100",
+  "hi": "-49/50"
+ },
+ "D": 10,
+ "constraint_6": true,
+ "identity_A": "EXACT",
+ "identity_B": "EXACT",
+ "identity_G": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "-1151553235667375/140737488355328",
+ "e_minus_EP": "0.000200000000002680586378012191158336673742473082825829505699214",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "1.38e-40",
+  "identity_ok": true,
+  "min_Sigma_all": "0.84317",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 4.4
+}
+  cert_slab_98_96_log_D10.json: identity A EXACT (2s)
+  cert_slab_98_96_log_D10.json: identity B EXACT (3s)
+  cert_slab_98_96_log_D10.json: identity G EXACT (4s)
+{
+ "cert": "cert_slab_98_96_log_D10.json",
+ "kind": "slab",
+ "kernel": "log",
+ "cell": {
+  "lo": "-49/50",
+  "hi": "-24/25"
+ },
+ "D": 10,
+ "constraint_6": true,
+ "identity_A": "EXACT",
+ "identity_B": "EXACT",
+ "identity_G": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "-4606297385162515/562949953421312",
+ "e_minus_EP": "0.0000499999999994774597252056595204296455442308953258295056992144",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "1.84e-40",
+  "identity_ok": true,
+  "min_Sigma_all": "0.80509",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 4.3
+}
+  cert_slab_96_94_log_D12.json: identity A EXACT (14s)
+  cert_slab_96_94_log_D12.json: identity B EXACT (25s)
+  cert_slab_96_94_log_D12.json: identity G EXACT (35s)
+{
+ "cert": "cert_slab_96_94_log_D12.json",
+ "kind": "slab",
+ "kernel": "log",
+ "cell": {
+  "lo": "-24/25",
+  "hi": "-47/50"
+ },
+ "D": 12,
+ "constraint_6": true,
+ "identity_A": "EXACT",
+ "identity_B": "EXACT",
+ "identity_G": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "-4606297385162515/562949953421312",
+ "e_minus_EP": "0.0000499999999994774597252056595204296455442308953258295056992144",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "9.18e-41",
+  "identity_ok": true,
+  "min_Sigma_all": "0.7895",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 35.1
+}
+  cert_slab_94_93_log_D12.json: identity A EXACT (15s)
+  cert_slab_94_93_log_D12.json: identity B EXACT (26s)
+  cert_slab_94_93_log_D12.json: identity G EXACT (36s)
+{
+ "cert": "cert_slab_94_93_log_D12.json",
+ "kind": "slab",
+ "kernel": "log",
+ "cell": {
+  "lo": "-47/50",
+  "hi": "-93/100"
+ },
+ "D": 12,
+ "constraint_6": true,
+ "identity_A": "EXACT",
+ "identity_B": "EXACT",
+ "identity_G": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "-1151578568415279/140737488355328",
+ "e_minus_EP": "0.0000200000000023895480734448541222038612424730828258295056992144",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "1.84e-40",
+  "identity_ok": true,
+  "min_Sigma_all": "0.77722",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 36.0
+}
+  cert_slab_93_90_log_D12.json: identity A EXACT (13s)
+  cert_slab_93_90_log_D12.json: identity B EXACT (23s)
+  cert_slab_93_90_log_D12.json: identity G EXACT (33s)
+{
+ "cert": "cert_slab_93_90_log_D12.json",
+ "kind": "slab",
+ "kernel": "log",
+ "cell": {
+  "lo": "-93/100",
+  "hi": "-9/10"
+ },
+ "D": 12,
+ "constraint_6": true,
+ "identity_A": "EXACT",
+ "identity_B": "EXACT",
+ "identity_G": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "-2303154322080787/281474976710656",
+ "e_minus_EP": "0.0000300000000162218256190338764605942115842699578258295056992144",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "1.84e-40",
+  "identity_ok": true,
+  "min_Sigma_all": "0.80256",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 33.5
+}
+CHECK_CELL ALL_OK
+real 115.86
+user 103.15
+sys 0.74
+exit status: 0

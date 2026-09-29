@@ -1,0 +1,82 @@
+$ python3 local/check_local_rigorous.py
+== Step 0: exact configuration P, tangent frames, kernel data in K = Q(alpha)
+[PASS] 0.1 P on S^2, (E1_i,E2_i,P_i) orthonormal frames, exactly
+[PASS] 0.2 criticality  sum_j W_ij P_j = mu_i P_i as vectors; mu_ring = 0, mu_pole = -1/4 (exact)
+== Step 1: exact expansion of the minorant  sum mu_i nu_i + sum_{i<j} [W<h_i,h_j> + 1/2 psi5(u_ij)]  to degree 6
+[PASS] 1.1 identity (1): sum_{i<j} W_ij l_ij = sum_i mu_i nu_i as polynomials (deg<=6)
+[PASS] 1.2 no constant or linear terms (P critical in the chart)  --  2188 monomials, 2.3s
+== Step 2: Hessian H (14x14 over K), kernel, spectrum on W
+[PASS] 2.1 H r = 0 (3 rotation fields) and H s1 = H s2 = 0, as vectors in R^14
+[PASS] 2.2 s1, s2 orthogonal to rotations and to each other; |s1|^2 = |s2|^2 = 5/2
+[PASS] 2.3 kernel vectors independent (Gram det != 0)
+[PASS] 2.4 charpoly(H) = lam^5 (lam-3)^5 (4lam-9)^2 (4lam-3)^2 / 256  =>  spec(H|_W) = {3/4 x2, 9/4 x2, 3 x5}, lam_W = 3/4  --  2.4s
+[PASS] 2.5 Pi_ker is an exact orthogonal projector (Pi^2 = Pi, Pi k = k)
+== Step 3: cubic/quartic on S, coupling, exact square
+[PASS] 3.1 C(s,s,s) = 0 identically on S
+[PASS] 3.2 D(s,s,s,s) = (13/40)|s|^4 identically (Q = 13/40)
+[PASS] 3.3 3C(s,s,.) is a quadratic form in sigma (no other monomials)
+[PASS] 3.4 W-projection check: H_W^{-1}G_W in W and H (H_W^{-1}G_W) = G_W exactly
+[PASS] 3.5 |c(s)|^2 = |G_W|^2/9 = (23/480)|s|^4 identically
+[PASS] 3.6 exact square: Q|s|^4 - 1/2 <G_W, H_W^{-1} G_W> = (1/10)|s|^4 identically (Q_eff = 1/10)
+[PASS] 3.7 |w*(s)|^2 = |H_W^{-1} G_W|^2 = (67/120)|s|^4 identically (kappa^2 = 67/120)
+[PASS] 3.8 kappa <= 0.747218 (rational upper bound: 0.747218^2 >= 67/120)
+       (2.6s)
+== Step 4: orthonormal bases of S and W (ball Gram-Schmidt of exact data), tensor block norms
+[PASS] 4.1 ball Gram-Schmidt accepted rot1-3, s1, s2 first and 9 unit vectors after (=> exact ONB of W enclosed)
+       (H in the W-ONB is not diagonal -- basis is not an eigenbasis; max offdiag 0.791; not needed)
+[PASS] 4.2 C(s,s,s) block encloses 0 (consistent with exact 3.1)  --  max |ball| 4.6e-96
+[PASS] 4.3 gamma2 = |C_www|_F <= 1.319021  (certified upper bound; old doc value 1.319020)
+[PASS] 4.3 delta1 = |D_sssw|_F <= 0.147314  (certified upper bound; old doc value 0.147314)
+[PASS] 4.3 delta2 = |D_ssww|_F <= 0.625011  (certified upper bound; old doc value 0.625011)
+[PASS] 4.3 delta3 = |D_swww|_F <= 0.517258  (certified upper bound; old doc value 0.517257)
+[PASS] 4.3 delta4 = |D_wwww|_F <= 1.840589  (certified upper bound; old doc value 1.840589)
+       |C_sww|_F <= 0.775792  (Frobenius fallback for gamma1)
+[PASS] 4.4 c_q = 4.203074 >= lambda_max[[6d2,2d3],[2d3,d4]] (exact 2x2 PSD test with the rational bounds)
+       exact squared Frobenius norms (rational): g1F^2 = 65/108, g2^2 = 1879/1080, d1^2 = 25/1152, d2^2 = 455641/1166400, d3^2 = 208051/777600, d4^2 = 47417897/13996800
+[PASS] 4.5 exact Frobenius^2 (over K, via exact projectors) are <= the squares of the bounds used  --  89.2s
+== Step 5: gamma1 = sqrt(sum_alpha ||C(e_alpha,.,.)|_W||_op^2), op norms certified by exact LDL^T over Q
+[PASS] 5.1 ||C(e_1,.,.)|_W||_op <= 0.27428359:  c I -/+ C_alpha > 0 (exact LDL^T, rounding err 1.1e-19)  --  float spectrum [-0.274284, 0.274284]
+[PASS] 5.2 ||C(e_2,.,.)|_W||_op <= 0.27428359:  c I -/+ C_alpha > 0 (exact LDL^T, rounding err 1.1e-19)  --  float spectrum [-0.274284, 0.274284]
+[PASS] 5.3 gamma1 <= 0.387896 (= doc value), since 0.387896^2 >= c_1^2 + c_2^2  --  sqrt(c1^2+c2^2) = 0.38789557
+== Step 6: Bombieri norms of the degree-5 and -6 parts (exact in K, then enclosed)
+       B5^2 = 7801/800  (exact element of K)
+       B6^2 = 2857757/28800  (exact element of K)
+[PASS] 6.1 B5 <= 3.122700, B6 <= 9.961309  (doc 3.12270, 9.96131)
+== Step 7: per-pair majorant tail K7 at rho = 1/100 (arb; sqrt(1-g^2), N(rho) = 1 - sqrt(1-rho^2) enclosed)
+[PASS] 7.1 K7 = max_i sum_j K_ij <= 70.9738 at rho = 1/100 (doc 70.97)
+       route (a): K = max_i sum_j K_ij(deg>=5) <= 28.175 at rho = 1/100 (not used)
+[PASS] 7.2 K = B5 + B6 rho + K7 rho^2 <= 3.22942 (doc 3.2294)
+[PASS] 7.3 pole point terms: mu_pole < 0 and all Taylor coeffs of sqrt(1-x)-1 are < 0 => dropped tail >= 0; ring mu = 0
+       (89.3s)
+== Step 8: Lemma L (section 3): scalar argument in exact rationals with the certified constants
+       constants used: rho=1/100, lam_W=3/4, Q_eff=1/10, kappa<=373609/500000, kappa^2=67/120, gamma1<=48487/125000, gamma2<=1319021/1000000,
+                       delta1<=73657/500000, c_q<=2101537/500000, K<=161471/50000 (B5<=31227/10000, B6<=9961309/1000000, K7<=354869/5000)
+[PASS] 8.1 b^2-coefficient beta_b = (3g1+g2)rho + c_q rho^2 + 2K rho^3  --  beta_b = 0.0252539
+[PASS] 8.2 Lemma L:  x^2-coefficient  3/8 - 5 beta_b - 32 delta1 rho >= 0.2015  --  = 0.201590
+[PASS] 8.3 Lemma L:  a^4-coefficient  1/10 - (K rho + 4 d1 kappa rho + d1 rho/8 + (5/4) kappa^2 beta_b) >= 0.0454  --  = 0.045494
+[PASS] 8.4 robustness: Frobenius fallback gamma1 <= |C_sww|_F still closes (x^2 >= 0.1434, a^4 >= 0.0373)  --  x^2 0.143406, a^4 0.037372
+== Step 9: Lemma L' (Lean form, |w|^2 and |s|^4): exact-rational PSD certificate + scalar argument in (a, b)
+[PASS] 9.1 PSD certificate (17x17, exact LDL^T over Q of a 2^-64 rounding, err 1.8e-19):  for all w in W, sigma:
+         1/2<w,Hw> + 3C(s,s,w) + (13/40)|s|^4 >= 1/16|w|^2 + 29/500|s|^4   (Gram theta = -4999/5000)  --  float lambda_min 2.66e-04, min pivot 5.99e-04
+       (exact optimum for eps = 1/16: q' < 0.058261, from the eigen-weights 49/1440 (lam 3/4), 1/72 (lam 3))
+[PASS] 9.2 Lemma L': b^2-coefficient  eps - beta_b - 2 d1 rho/A >= 0.0342  (A = 1)  --  = 0.034300
+[PASS] 9.3 Lemma L': a^4-coefficient  q' - K rho - 2 d1 rho A >= 0.0227  --  = 0.022760
+[PASS] 9.4 Lemma L' with the Frobenius fallback gamma1 <= |C_sww|_F (no op-norm certificate): b^2 >= 0.0226, a^4 >= 0.0227  --  b^2 0.022663
+== Step 10: handoff constants (exact)
+[PASS] 10.1 localMinAt_of_sq: 7 (1/300)^2 <= (1/100)^2  (sup radius 1/300 => l2 radius <= rho)
+[PASS] 10.2 localGram_of_localMinAt: (11/2) tau = 1/300 at tau = 1/1650, and tau <= 1/10
+[PASS] 10.3 chart valid: rho^2 < 2 (<y_i,P_i> > 0)
+[PASS] 10.4 u_ij < 1 on the ball: min |P_i-P_j| - 2 rho > 0  --  min |P_i-P_j|^2 = 2-2cos72 = 1.381966
+== Step 11: sanity, direct 50-digit energy (information only; not part of the proof)
+       E(P) + log(1600 sqrt5) = 2.14e-50
+       (eigenvalues of H_W used: 0.750000, 0.750000)
+       lam_W-eigendirection of W (s = 0, v = w): min (E-E(P))/(0.2015|v|^2) = 1.86104 at |t| = 0.001  (limit (3/8)/0.2015 = 1.8610)
+       centre manifold, a = 0.01: (E-E(P))/a^4 = 0.0999936  (Q_eff = 0.1; ratio to 0.0454: 2.2025)
+       centre manifold, a = 0.00333: (E-E(P))/a^4 = 0.0999993  (Q_eff = 0.1; ratio to 0.0454: 2.2026)
+
+== SUMMARY: 45/45 checks PASS, 0 FAIL  (90.9s)
+ALL_PASS
+real 91.57
+user 81.13
+sys 0.65
+exit status: 0

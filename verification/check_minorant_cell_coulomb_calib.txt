@@ -1,0 +1,7 @@
+$ python3 checkers/check_minorant_cell.py certificates/cells/calib_case1_coulomb_D10.json
+{"cert": "calib_case1_coulomb_D10.json", "kernel": "coulomb", "certified_phi_minus_H_gt": 1e-07, "H": {"range": ["-9/10", "1)"], "min_phi_minus_H": 1.0376087591570573e-07, "pieces": 731, "near1_lower": 721.1105960393934}, "MINORANT_OK": true, "time_s": 0.0}
+MINORANT ALL_OK
+real 0.13
+user 0.10
+sys 0.02
+exit status: 0

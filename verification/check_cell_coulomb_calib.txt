@@ -1,0 +1,29 @@
+$ python3 checkers/check_cell.py certificates/cells/calib_case1_coulomb_D10.json
+  calib_case1_coulomb_D10.json: identity S EXACT (1s)
+{
+ "cert": "calib_case1_coulomb_D10.json",
+ "kind": "case1",
+ "kernel": "coulomb",
+ "cell": {
+  "a": "-9/10"
+ },
+ "D": 10,
+ "identity_S": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "1017108239011075/70368744177664",
+ "e_minus_EP": "0.000999999999998811225408355498555508228198630574466317288223295",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "4.41e-39",
+  "identity_ok": true,
+  "min_Sigma_all": "1.1972",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 3.0
+}
+CHECK_CELL ALL_OK
+real 3.05
+user 2.27
+sys 0.04
+exit status: 0

@@ -1,0 +1,10 @@
+$ cd generate && python3 face.py && shasum -a 256 face_D12.json
+G_B7: n=35 kept=29 max|N|=1
+time 7.322969198226929
+real 7.46
+user 5.17
+sys 0.08
+004b4f9d826c5d1db913337db94934b79529c1a5f94a95b3992a929815a59516  face_D12.json
+expected (source project face_D12.json): 004b4f9d826c5d1db913337db94934b79529c1a5f94a95b3992a929815a59516
+$ python3 -c "import polyk, spec, sdp_cell, round_cell, round_exact"
+imports OK

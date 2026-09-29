@@ -1,0 +1,11 @@
+$ python3 soft_mode/verify_soft_mode.py
+s=0: d2E along k=2 pucker = 4.06249995411e-16
+s=0.5: d2E along k=2 pucker = 0.00864472639681
+s=1: d2E along k=2 pucker = 0.0229948688539
+s=1.5: d2E along k=2 pucker = 0.0251236871067
+s=2: d2E along k=2 pucker = 1.18749999054e-15
+s=2.5: d2E along k=2 pucker = -0.0624404796319
+real 0.14
+user 0.10
+sys 0.02
+exit status: 0
