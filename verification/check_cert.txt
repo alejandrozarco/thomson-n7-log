@@ -1,7 +1,7 @@
 $ python3 checkers/check_cert.py certificates/cert_cap_log_D12.json
 identity A: EXACT  (9s)
 identity B: EXACT  (16s)
-identity G: EXACT  (25s)
+identity G: EXACT  (24s)
 {
  "constraint_6": true,
  "identity_A": true,
@@ -38,9 +38,6 @@ identity G: EXACT  (25s)
  },
  "sum_gaps_minus_(EP-e)": "-2.1392e-61",
  "ALL_OK": true,
- "time_s": 24.7
+ "time_s": 23.8
 }
-real 24.74
-user 22.20
-sys 0.19
-exit status: 0
+[exit 0]

@@ -20,7 +20,7 @@ $ python3 checkers/check_cell.py certificates/cells/cert_case1_log_D10.json cert
   "Sigma_all_nonneg": true
  },
  "ALL_OK": true,
- "time_s": 2.6
+ "time_s": 2.5
 }
   cert_slab_99_98_log_D10.json: identity A EXACT (2s)
   cert_slab_99_98_log_D10.json: identity B EXACT (3s)
@@ -78,11 +78,11 @@ $ python3 checkers/check_cell.py certificates/cells/cert_case1_log_D10.json cert
   "Sigma_all_nonneg": true
  },
  "ALL_OK": true,
- "time_s": 4.3
+ "time_s": 4.2
 }
-  cert_slab_96_94_log_D12.json: identity A EXACT (14s)
-  cert_slab_96_94_log_D12.json: identity B EXACT (25s)
-  cert_slab_96_94_log_D12.json: identity G EXACT (35s)
+  cert_slab_96_94_log_D12.json: identity A EXACT (12s)
+  cert_slab_96_94_log_D12.json: identity B EXACT (21s)
+  cert_slab_96_94_log_D12.json: identity G EXACT (30s)
 {
  "cert": "cert_slab_96_94_log_D12.json",
  "kind": "slab",
@@ -107,11 +107,11 @@ $ python3 checkers/check_cell.py certificates/cells/cert_case1_log_D10.json cert
   "Sigma_all_nonneg": true
  },
  "ALL_OK": true,
- "time_s": 35.1
+ "time_s": 30.5
 }
-  cert_slab_94_93_log_D12.json: identity A EXACT (15s)
-  cert_slab_94_93_log_D12.json: identity B EXACT (26s)
-  cert_slab_94_93_log_D12.json: identity G EXACT (36s)
+  cert_slab_94_93_log_D12.json: identity A EXACT (12s)
+  cert_slab_94_93_log_D12.json: identity B EXACT (21s)
+  cert_slab_94_93_log_D12.json: identity G EXACT (29s)
 {
  "cert": "cert_slab_94_93_log_D12.json",
  "kind": "slab",
@@ -136,11 +136,11 @@ $ python3 checkers/check_cell.py certificates/cells/cert_case1_log_D10.json cert
   "Sigma_all_nonneg": true
  },
  "ALL_OK": true,
- "time_s": 36.0
+ "time_s": 29.5
 }
-  cert_slab_93_90_log_D12.json: identity A EXACT (13s)
-  cert_slab_93_90_log_D12.json: identity B EXACT (23s)
-  cert_slab_93_90_log_D12.json: identity G EXACT (33s)
+  cert_slab_93_90_log_D12.json: identity A EXACT (11s)
+  cert_slab_93_90_log_D12.json: identity B EXACT (19s)
+  cert_slab_93_90_log_D12.json: identity G EXACT (26s)
 {
  "cert": "cert_slab_93_90_log_D12.json",
  "kind": "slab",
@@ -165,10 +165,7 @@ $ python3 checkers/check_cell.py certificates/cells/cert_case1_log_D10.json cert
   "Sigma_all_nonneg": true
  },
  "ALL_OK": true,
- "time_s": 33.5
+ "time_s": 26.7
 }
 CHECK_CELL ALL_OK
-real 115.86
-user 103.15
-sys 0.74
-exit status: 0
+[exit 0]

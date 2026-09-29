@@ -1,13 +1,10 @@
 $ python3 checkers/make_coverage.py
-[   30.8s] cap: ALL_OK=True MINORANT_OK=True
-[   33.8s] Case 1: ALL_OK=True MINORANT_OK=True
-[   39.3s] slab 1: ALL_OK=True MINORANT_OK=True
-[   45.2s] slab 2: ALL_OK=True MINORANT_OK=True
-[   83.6s] slab 3: ALL_OK=True MINORANT_OK=True
-[  118.8s] slab 4: ALL_OK=True MINORANT_OK=True
-[  153.1s] slab 5: ALL_OK=True MINORANT_OK=True
-[  153.1s] COVERAGE ALL CELLS OK
-real 153.26
-user 124.83
-sys 1.09
-exit status: 0
+[   18.6s] cap: ALL_OK=True MINORANT_OK=True
+[   20.3s] Case 1: ALL_OK=True MINORANT_OK=True
+[   23.5s] slab 1: ALL_OK=True MINORANT_OK=True
+[   26.6s] slab 2: ALL_OK=True MINORANT_OK=True
+[   53.0s] slab 3: ALL_OK=True MINORANT_OK=True
+[   79.8s] slab 4: ALL_OK=True MINORANT_OK=True
+[  104.2s] slab 5: ALL_OK=True MINORANT_OK=True
+[  104.2s] COVERAGE ALL CELLS OK
+[exit 0]

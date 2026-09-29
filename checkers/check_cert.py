@@ -240,9 +240,12 @@ def check(path, verbose=True):
     rep["constraint_6"] = six; ok &= six
     # ---- SOS identities
     req = required_multipliers(lo, hi, dA)
+    sos = J.get("SOS", {})
+    if set(req) != {"A", "B", "G"} or set(sos) != set(req):
+        ok = False; rep["sos_tags"] = f"expected ['A', 'B', 'G'], found {sorted(sos)}"
     for tag in ("A", "B", "G"):
         rhs = {}
-        blocks = J["SOS"][tag]
+        blocks = sos.get(tag, [])
         if len(blocks) != len(req[tag]):
             ok = False; rep[f"id_{tag}"] = "wrong number of blocks"; continue
         for r, blk in enumerate(blocks):

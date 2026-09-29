@@ -10,7 +10,9 @@ sentences below still refer to them (marked "exploratory").
 
 **Rigorous status.** Every constant in the log proof chain is re-derived with enclosures by
 `check_local_rigorous.py` (output `../verification/check_local_rigorous.txt`, **45/45 PASS**, about 1.5 min on one
-core). It uses no floating-point constant and no project imports:
+core). It has no project imports, and no constant of the proof chain is taken from floating point. Floating-point
+eigensolvers only propose certificate parameters (the shift c of the γ₁ bound, the roundings of the PSD matrices);
+each proposal is then certified as follows:
 - exact arithmetic in K = Q(α), α = √(10+2√5) = 4 sin 72° (sympy), for P, the frames, μ_i, the Taylor polynomial
   of the minorant to degree 6, H, its kernel, the projectors, the coupling, Q, Q_eff, κ² and the Bombieri norms;
 - arb balls (python-flint, 320 bits) for anything that needs a square root: the orthonormal bases (ball
@@ -33,7 +35,7 @@ core). It uses no floating-point constant and no project imports:
 | **Q_eff = Q − (9/2)⟨c,H_W⁻¹c⟩** | **(1/10)\|s\|⁴** (exact, isotropic) | **(18/65)\|s\|⁴** |
 | naive Q − 9γ²/(2λ_W) | 3/80 = 0.0375 > 0 | 0.1666 > 0 |
 | κ = \|w*(s)\|/\|s\|², with w* = −3H_W⁻¹c(s) | √(67/120) = 0.74722 | √(805/1352) = 0.77163 |
-| certified radius, ℓ² tangent norm (Bombieri route, §4b) | max ≈ 0.01795; **stated at 1/100** | max ≈ 0.00837; stated at 1/200 |
+| certified radius, ℓ² tangent norm (Bombieri route, §4b) | max ≈ 0.01795 (float, not certified); **stated at 1/100** | max ≈ 0.00837; stated at 1/200 |
 | certified radius (pure-majorant route, §4a) | max ≈ 0.00336; stated at 1/400 | max ≈ 0.00190; stated at 1/600 |
 | lower bound at the stated radius (Lemma L, §3) | E − E(P) ≥ **0.2015\|v\|² + 0.0454\|s\|⁴** (certified with enclosures) | ≥ 0.4722\|v\|² + 0.1130\|s\|⁴ (floats only) |
 | Lean form (Lemma L′, §3′), same radius | E − E(P) ≥ **0.0342\|w\|² + 0.0227\|s\|⁴** (certified) | — |
@@ -44,7 +46,8 @@ core). It uses no floating-point constant and no project imports:
   `check_local_rigorous.py`). The Riesz-2 values 19/20, 35/96 and 18/65 still only match to more than 38 digits.
 - (Exploratory, float.) The optimisation that relaxes w reproduces the coefficient 0.10. On spheres |t| = r in T the
   minimum of E − E(P)/r⁴ is 0.1023 at r = 0.01, 0.0971 at r = 0.1 and 0.048 at r = 0.45, and it
-  stays positive throughout. The true basin is therefore far larger than the certified radius.
+  stays positive throughout (float64 minimisation, not certified). Numerically, the basin is therefore much larger
+than the certified radius; only the radius 1/100 is certified.
 
 At the stated radius the scalar argument of §3 closes. The resulting sup-norm radius 1/300 is 100 times upstream's 1/30000.
 
@@ -73,6 +76,9 @@ T is the resulting 11-dimensional space (14 tangent dimensions minus 3 rotations
 |t|² = Σ|t_i|² ≤ Σ‖h_i‖². Split T = S ⊕ W orthogonally:
 - S = span(s₁,s₂). Here s₁ is the ring-vertical field √(2/5)·cos(4πk/5)·e_z at ring point k, and s₂ is the same with sin.
 - W is the 9-dimensional orthogonal complement of S in T.
+- The certificates (§2 step 3, §3′, §8.3) and `check_local_rigorous.py` use the **unnormalised** fields
+  ŝ_α = √(5/2)·s_α, i.e. ŝ₁ = cos(4πk/5)·e_z and ŝ₂ = sin(4πk/5)·e_z at ring point k, with |ŝ_α|² = 5/2. In these
+  coordinates s = σ₁ŝ₁ + σ₂ŝ₂, so |s|² = (5/2)|σ|² and |s|⁴ = (25/4)|σ|⁴.
 
 H·s = 0 holds as vectors in R¹⁴ (numerically < 1e-40), so S is exactly the kernel of the Hessian on T.
 
@@ -115,7 +121,7 @@ Write a = s₁ + i s₂. The monomials a³, a²ā, a⁴ and a³ā are not invari
 The naive operator-norm version, ½λ_W b² − 3γa²b + Q ≥ (13/40 − 9γ²/(2λ_W))a⁴ = (3/80)a⁴, also
 stays positive but loses a factor of 2.7. Lemma L (§3) uses the exact square. It is an identity over Q(α), with
 w*(s) = −H_W⁻¹G_W(s), G_W = Π_W∇F₃(s) = 3c(s); `check_local_rigorous.py` step 3 verifies it as a polynomial
-identity in σ (s = σ₁s₁ + σ₂s₂), together with H·(H_W⁻¹G_W) = G_W, |c|² = (23/480)|s|⁴ and |w*|² = (67/120)|s|⁴.
+identity in σ (s = σ₁ŝ₁ + σ₂ŝ₂, unnormalised fields of §1), together with H·(H_W⁻¹G_W) = G_W, |c|² = (23/480)|s|⁴ and |w*|² = (67/120)|s|⁴.
 A PSD certificate with rational margins does **not** prove this identity; it proves the weaker |w|²-form that
 Lemma L′ (§3′) uses. That is the form planned for Lean (§8.3).
 
@@ -173,7 +179,11 @@ Take A = 1/16 and η = 4. The constants are the certified rational upper bounds 
 Then, in exact rational arithmetic (step 8 of `check_local_rigorous.py`):
 - The b² coefficient is β_b = (3γ₁+γ₂)ρ + c_qρ² + 2Kρ³ ≤ 0.0252539.
 - The x² error is 5β_b + 32δ₁ρ < 3/8, which leaves **0.201590 ≥ 0.2015**.
-- The a⁴ error is Kρ + 4δ₁κρ + δ₁ρ/8 + (5/4)κ²β_b < 1/10, which leaves **0.045494 ≥ 0.0454**. ∎
+- The a⁴ error is Kρ + 4δ₁κρ + δ₁ρ/8 + (5/4)κ²β_b < 1/10, which leaves **0.0454935… ≥ 0.0454**. ∎
+
+The printed coefficients in this section and in §3′ are decimal roundings (6 digits, the checker's output format)
+of exact rationals; what is checked is the exact inequality against the stated constant. Exact values:
+0.2015902388… and 0.0454935434…
 
 **Fallback.** Replace γ₁ by the Frobenius bound ‖C_sww‖_F ≤ 0.775792, which needs no operator-norm certificate.
 With the same A and η the lemma still closes, with 0.143406|v|² + 0.037372|s|⁴ (step 8.4).
@@ -193,15 +203,16 @@ therefore has to be redone in (a, b), with no x = |v|.
 
   ½⟨w,Hw⟩ + 3C(s,s,w) + (13/40)|s|⁴ ≥ ε|w|² + q′|s|⁴,  with ε = 1/16 and q′ = 29/500 = 0.058.
 
-Take m = (σ₁², σ₁σ₂, σ₂²), where s = σ₁s₁ + σ₂s₂. Then:
+Take m = (σ₁², σ₁σ₂, σ₂²), where s = σ₁ŝ₁ + σ₂ŝ₂ with the unnormalised fields ŝ_α of §1 (|ŝ_α|² = 5/2). Then:
 - |s|⁴ = (25/4) mᵀG_θm, with G_θ = [[1,0,θ],[0,2−2θ,0],[θ,0,1]]; this holds for every θ, because m₂² = m₁m₃;
 - 3C(s,s,w) = ⟨Γ_W m, w⟩, where Γ_W = Π_W∇F₃ (a 14×3 matrix over Q(α)).
 
-(C′) is equivalent to the positive definiteness of the 17×17 matrix
+(C′) is implied by (not equivalent to) the positive definiteness of the 17×17 matrix
 
   M = [[½H − εΠ_W + Π_ker, ½Γ_W], [½Γ_Wᵀ, (13/40 − q′)(25/4)G_θ]]   (θ = −4999/5000).
 
-The Π_ker term makes the w-block definite on the kernel directions, which are harmless since only z = w ∈ W matters.
+The implication is one-way because M ≻ 0 is a statement for all (z, m) ∈ R¹⁴ × R³, whereas the m arising from s
+satisfies m₂² = m₁m₃. The Π_ker term makes the w-block definite on the kernel directions, which are harmless since only z = w ∈ W matters.
 Step 9.1 of the checker certifies M ≻ 0 by exact LDLᵀ over Q of the 2⁻⁶⁴ dyadic rounding, shifted by the rounding
 error (≤ 1.8e−19). The float λ_min is 2.7e−4 and the minimum pivot is 6.0e−4.
 
@@ -267,7 +278,9 @@ finite polynomial algebra plus √(1−r²).
 
 ## 5. Numerical sanity checks (exploratory, 50 digits; script not included)
 
-Test points are random gauge-fixed t ∈ T with |t| = r for r ∈ {ρ/10, ρ/2, ρ, 2ρ, 5ρ}. Half have
+Test points are random gauge-fixed t ∈ T with |t| = r for r ∈ {ρ/10, ρ/2, ρ, 2ρ, 5ρ}. The radius is the tangent
+norm |t|, not the chordal norm (Σ‖y_i − P_i‖²)^{1/2} of Lemma L; since |t| ≤ ‖y − P‖, a point with |t| = ρ can lie
+slightly outside the lemma's ball. Half have
 uniform directions. The other half are soft-biased: t = s + w*(s) + ε·v̂ with ε ∈ {0, 0.01, 0.1, 1}·a².
 
 - No violations: E > E(P) everywhere, and E − E(P) ≥ the certified bound 0.2015x² + 0.0454a⁴ inside ρ.
@@ -278,7 +291,7 @@ uniform directions. The other half are soft-biased: t = s + w*(s) + ε·v̂ with
   - The exploratory sampling did not probe pure-W directions adversarially. Its 2.20 is the value **on the centre manifold**
     (v = 0), where E − E(P) = 0.1000a⁴ and the ratio is 0.1/0.0454 = 2.2026.
 - For Riesz-2 the minimum ratio is 2.45, with E − E(P) = 0.27692a⁴.
-- A float64 BFGS minimisation on spheres in T (§0) confirms positivity up to r = 0.45.
+- A float64 BFGS minimisation on spheres in T (§0) finds positivity up to r = 0.45 (numerical, not certified).
 
 ## 6. How it plugs into the cap (PAPER.md §7.2) and what the cap must now deliver
 
@@ -290,7 +303,7 @@ uniform directions. The other half are soft-biased: t = s + w*(s) + ε·v̂ with
     checked exactly in step 10.
   - `pent_local_min` needs the equality clause only from Lemma L's strict positivity.
 - Therefore the Gram window must be **τ ≤ (1/300)/5.5 = 1/1650** (upstream: 1/165000), with ring rigidity needing τ ≤ 1/10. Other routes give different windows:
-  - maximal (b) radius (ℓ² 0.01795, sup 0.00678): τ ≈ 1/810;
+  - maximal (b) radius (ℓ² 0.01795, sup 0.00678; float, not certified): τ ≈ 1/810;
   - pure-majorant route (a) at ρ = 1/400 (sup radius 1/1100): τ = 1/6050.
 
 **Warning: the coercivity is quartic in class B.** Along the soft mode the pole–ring inner products
@@ -307,7 +320,7 @@ Coercivity φ − H_B ≤ δ ⇒ |t| ≤ τ then requires **δ ≤ κ₄τ⁴**:
 Classes A and C have generic quadratic contact, τ ≈ √(δ/κ₂). They are harmless.
 
 Every factor gained in the local radius buys its 4th power in δ. A larger certified basin is
-therefore the cheapest lever. The true basin reaches |t| ≳ 0.45, and an interval branch-and-bound
+therefore the cheapest lever. Numerically (float, not certified) the basin reaches |t| ≳ 0.45, and an interval branch-and-bound
 local lemma at ρ = 0.1 would give τ ≈ 1/145 and allow δ ≈ 4·10⁻¹⁰·(6κ₄).
 
 The certificate itself must still be exact: e ≤ E(P) = −log(1600√5), with E(P) − e ≤ δ.
@@ -336,7 +349,7 @@ The results:
    the majorant N(R). For Lean, replace N(R) by an explicit tail bound: its coefficients are
    ≤ 1/2, so N − R²/2 − R⁴/8 ≤ R⁶/(2(1−R²)).
 3. **The Taylor data and the quadratic step.** H, the cubic and quartic
-   parts, Π_S = (2/5)(s₁s₁ᵀ + s₂s₂ᵀ), Π_ker and Π_W = I − Π_ker all have entries in Q(α), i.e. they are polynomials
+   parts, Π_S = s₁s₁ᵀ + s₂s₂ᵀ = (2/5)(ŝ₁ŝ₁ᵀ + ŝ₂ŝ₂ᵀ), Π_ker and Π_W = I − Π_ker all have entries in Q(α), i.e. they are polynomials
    in the atoms √5 and α = 4 sin 72°. Handle them as upstream does, with `Fq` and `atoms_inBox`.
    - **Do not** try to certify the exact square of §2: it is an identity over Q(α) and gives the |v|²-form.
      Formalise **Lemma L′ (§3′)** instead, whose variables are |w| and |s|, the same variables the certificate controls.
@@ -378,7 +391,7 @@ Run it with `OMP_NUM_THREADS=1 python3 local/check_local_rigorous.py`. The outpu
 | 5 | ‖C(e_α,·,·)\|_W‖_op ≤ 0.27428359 (α = 1, 2) ⇒ γ₁ ≤ 0.387896 | exact LDLᵀ over Q with rounding shift |
 | 6 | B₅² = 7801/800, B₆² = 2857757/28800 | exact |
 | 7 | K₇ ≤ 70.9738 (ρ = 1/100), K ≤ 3.22942; pole tails ≥ 0 | arb |
-| 8 | Lemma L: 0.201590 ≥ 0.2015 and 0.045494 ≥ 0.0454; Frobenius fallback 0.143406 / 0.037372 | exact rationals |
+| 8 | Lemma L: 0.2015902… ≥ 0.2015 and 0.0454935… ≥ 0.0454; Frobenius fallback 0.143406 / 0.037372 | exact rationals |
 | 9 | (C′) 17×17 PD; Lemma L′: 0.034300 ≥ 0.0342 and 0.022760 ≥ 0.0227; fallback 0.022663 | exact LDLᵀ + rationals |
 | 10 | 7(1/300)² ≤ (1/100)²; (11/2)·(1/1650) = 1/300 and 1/1650 ≤ 1/10; ρ² < 2; min\|P_i−P_j\| > 2ρ | exact / arb |
 | 11 | sanity (not proof): E(P) = −log(1600√5); ratio 1.86104 along λ_W-eigendirections; centre manifold (E−E(P))/a⁴ = 0.09999 | mpmath 50 digits |

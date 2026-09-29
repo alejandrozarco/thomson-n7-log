@@ -239,8 +239,12 @@ def check(path, verbose=True, do_sanity=True):
         rep["constraint_6"] = six; ok &= six
     # ---- identities
     req = required(J)
-    for tag, blocks in J["SOS"].items():
-        if tag not in req or len(blocks) != len(req[tag]):
+    sos = J.get("SOS", {})
+    if set(sos) != set(req) or not set(req) <= set(L):
+        ok = False; rep["sos_tags"] = f"expected {sorted(req)}, found {sorted(sos)}"
+    for tag in req:
+        blocks = sos.get(tag, [])
+        if len(blocks) != len(req[tag]):
             ok = False; rep[f"blocks_{tag}"] = "wrong blocks"; continue
         rhs = {}
         for r, blk in enumerate(blocks):
