@@ -4,7 +4,9 @@ Status: **computational certificates, not peer reviewed.** Prepared 2026-09-29.
 
 For seven points $x_1,\dots,x_7$ on the unit sphere $S^2$ the logarithmic energy is
 
-$$E(x) = \sum_{i<j} -\log \lVert x_i - x_j \rVert .$$
+```math
+E(x) = \sum_{i<j} -\log \lVert x_i - x_j \rVert .
+```
 
 The regular pentagonal bipyramid $P$ has $E(P) = -\log\left(1600\sqrt{5}\right)$. This repository contains exact
 certificates and checkers for the computational steps of an argument, modelled on the Lean proof of the Coulomb case
@@ -41,7 +43,9 @@ removes SOS data from certificates in memory and confirms that the exact checker
 local lemma checker gives 45/45 PASS. Its main result (given the paper-level steps listed in `local/LOCAL_LEMMA.md`
 §9) is
 
-$$E(y) - E(P) \ge 0.0342\,\lVert w \rVert^2 + 0.0227\,\lVert s \rVert^4$$
+```math
+E(y) - E(P) \ge 0.0342\,\lVert w \rVert^2 + 0.0227\,\lVert s \rVert^4
+```
 
 on the gauge-fixed $\ell^2$ ball of radius $1/100$ around $P$, where $s$ and $w$ are the components of the tangent
 displacement in the two-dimensional flat ring mode and in its orthogonal complement.
@@ -66,7 +70,7 @@ $e - E(P)$ per cell (symmetric-log axis), from the field `e` of each certificate
   <img alt="Second derivative of the Riesz s-energy along the k = 2 ring mode for s from −1 to 3, and energy increase along the mode for s = 0 and s = 1" src="figures/soft_mode_light.svg">
 </picture>
 
-(a) Second derivative at $a = 0$ of $E_s(P_a) = \sum_{i<j} \left(\lVert x_i - x_j \rVert^{-s} - 1\right)/s$ (with $E_0 = E$), where $P_a$ is the $k = 2$ ring mode of `soft_mode/verify_soft_mode.py`, by central differences in mpmath; (b) $E_s(P_a) - E_s(P)$ for $s = 0$ and $s = 1$, with least-squares slopes of the log–log data for $a \le 0.01$.
+(a) Second derivative at $a = 0$ of $E_s(P_a) = \sum_{i \lt j} \left(\lVert x_i - x_j \rVert^{-s} - 1\right)/s$ (with $E_0 = E$), where $P_a$ is the $k = 2$ ring mode of `soft_mode/verify_soft_mode.py`, by central differences in mpmath; (b) $E_s(P_a) - E_s(P)$ for $s = 0$ and $s = 1$, with least-squares slopes of the log–log data for $a \le 0.01$.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/minorant_cap_dark.svg">
