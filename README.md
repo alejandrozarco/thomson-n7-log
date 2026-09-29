@@ -5,7 +5,7 @@ Status: **computational certificates, not peer reviewed.** Prepared 2026-09-29.
 For seven points $x_1,\dots,x_7$ on the unit sphere $S^2$ the logarithmic energy is
 
 ```math
-E(x) = \sum_{i<j} -\log \lVert x_i - x_j \rVert .
+E(x) = \sum_{i \lt j} -\log \lVert x_i - x_j \rVert .
 ```
 
 The regular pentagonal bipyramid $P$ has $E(P) = -\log\left(1600\sqrt{5}\right)$. This repository contains exact
