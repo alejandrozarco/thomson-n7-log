@@ -84,7 +84,7 @@ $\varphi(t) - H_X(t)$ for the minorants $H_A, H_B, H_C$ of `certificates/cert_ca
   <img alt="The pentagonal bipyramid P with arrows for the k = 2 ring mode, and the ring heights in the two flat directions" src="figures/configuration_light.svg">
 </picture>
 
-(a) $P$ on $S^2$ (poles N, S; ring point $k$ at azimuth $2\pi k/5$; dashed: hidden edges) with the $k = 2$ ring mode $P_a$: ring point $k$ is moved by $a\cos(4\pi k/5)$ along the polar axis and renormalised; the poles do not move. Drawn with $a = 0.32$. (b) Vertical displacement of ring point $k$, divided by $a$, for the two directions $s_1$ ($\cos 2\theta$) and $s_2$ ($\sin 2\theta$) in which the second derivative of $E$ at $P$ vanishes.
+(a) $P$ on $S^2$ (poles N, S; ring point $k$ at azimuth $2\pi k/5$; dashed: hidden edges) with the $k = 2$ ring mode $P_a$: ring point $k$ is moved by $a \cdot \cos(4\pi k/5)$ along the polar axis and renormalised; the poles do not move. Drawn with $a = 0.32$. (b) Vertical displacement of ring point $k$, divided by $a$, for the two directions $s_1$ ($\cos 2\theta$) and $s_2$ ($\sin 2\theta$) in which the second derivative of $E$ at $P$ vanishes.
 
 ## Contents
 
