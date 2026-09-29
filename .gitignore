@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.DS_Store
+# outputs of the optional generators
+generate/sol/
+generate/*.npz
+generate/results*.jsonl
+generate/face_D12.json
+generate/cert_cap_log_D12.json
