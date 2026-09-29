@@ -68,7 +68,8 @@ split at the breakpoints used for the Coulomb case, −1 ≤ −99/100 < −49/5
 derivative of the Riesz s-energy at P vanishes at s = 0 and at s = 2. Consequently the quadratic local inequality used in
 the Coulomb proof (`local_ineq`: E − E(P) ≥ c‖y − P‖²) is false for the logarithmic energy. The local lemma instead
 completes the square in the complementary directions and uses the quartic term on the flat directions, whose effective
-coefficient is Q_eff = 1/10 (exact). For the same reason H_B must have third-order contact with φ at 0, and the cap
+coefficient is Q_eff = 1/10 (exact). The two-dimensional null space of the Hessian at P transversal to the rotations
+is also noted in [CGGL, Remark 6.3], where the log energy is the Hamiltonian of N = 7 point vortices of equal strength. For the same reason H_B must have third-order contact with φ at 0, and the cap
 needed degree 12 (at degree 10 the float optimum was 1.4·10⁻⁴ below E(P)).
 
 ## What the scripts check
@@ -121,6 +122,10 @@ of the full statement.
   configurations revisited, Can. J. Chem. 55 (1977), doi:10.1139/v77-246.
 * [A+] Armentano, Bentancur, Carrasco, Fiori, Valdés, Velasco, Characterization of logarithmic Fekete critical
   configurations of at most six points in all dimensions, arXiv:2502.10152.
+* [B] C. Beltrán, Sobre el problema número 7 de Smale, La Gaceta de la RSME 23 (2020), http://hdl.handle.net/10902/20954.
+  Conjecture 11.1.
+* [CGGL] K. Constantineau, C. García-Azpeitia, L. C. García-Naranjo, J.-P. Lessard, Determination of stable branches of
+  relative equilibria of the N-vortex problem on the sphere, Commun. Math. Phys. 406 (2025) 47, arXiv:2309.04320.
 * [KLT] Kryvonos, Liehr, Taylor, Energy minimization for eight points on the sphere, arXiv:2609.22077.
 * [C] Lean 4 proof of the Coulomb case N = 7, https://github.com/huwngtran/thomson-n7-lean (snapshot of 2026-09-27,
   commit 25f2fa5), with `paper/PAPER.md`.
