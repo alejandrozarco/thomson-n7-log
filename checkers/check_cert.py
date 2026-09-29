@@ -294,7 +294,10 @@ def check(path, verbose=True):
                              matches_phi_to_3rd=(hB[1], hB[2], hB[3]) == (Fr(1, 2), Fr(1, 4), Fr(1, 6)))
     # phi'(c1) = 1/(2(1-c1)), c1 = (-1+sqrt5)/4 ;  1/(2(1-c1)) = 2/(5-sqrt5) = (5+sqrt5)/10
     dC = ev(deriv(c["hC"]), Fr(-1, 4), Fr(1, 4))
-    rep["HC_contact"] = dict(dHC_c1=[str(dC[0]), str(dC[1])], matches_phi_prime=(dC == (Fr(1, 2), Fr(1, 10))))
+    # phi'(c2) = 1/(2(1-c2)), c2 = (-1-sqrt5)/4 ;  2/(5+sqrt5) = (5-sqrt5)/10  (checked directly, not by conjugation)
+    dC2 = ev(deriv(c["hC"]), Fr(-1, 4), Fr(-1, 4))
+    rep["HC_contact"] = dict(dHC_c1=[str(dC[0]), str(dC[1])], dHC_c2=[str(dC2[0]), str(dC2[1])],
+                             matches_phi_prime=(dC == (Fr(1, 2), Fr(1, 10)) and dC2 == (Fr(1, 2), Fr(-1, 10))))
     dA_m1 = sum(j * c["hA"][j] * (-1) ** (j - 1) for j in range(1, len(c["hA"])))
     rep["HA_contact"] = dict(dHA_at_m1=str(dA_m1), phi_prime_at_m1="1/4", slope_ok=(dA_m1 <= Fr(1, 4)))
     ok &= rep["HA_contact"]["slope_ok"]
@@ -306,7 +309,11 @@ def check(path, verbose=True):
     e = c["e"]
     diff = mp.mpf(e.numerator) / e.denominator - EP
     rep["e"] = str(e); rep["e_minus_EP"] = mp.nstr(diff, 15)
-    rep["e_le_EP"] = bool(diff < 0)
+    # decision in ball arithmetic (arb, 256 bits): e < E(P) = -log(1600 sqrt5)
+    from flint import arb, ctx
+    ctx.prec = 256
+    d_arb = arb(e.numerator) / arb(e.denominator) + (arb(1600) * arb(5).sqrt()).log()
+    rep["e_le_EP"] = bool(d_arb < 0)
     # the value gaps at P's inner products (these add up to E(P) - e)
     hC_c1 = ev(c["hC"], Fr(-1, 4), Fr(1, 4))
     s5 = mp.sqrt(5)

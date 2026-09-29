@@ -276,7 +276,16 @@ def check(path, verbose=True, do_sanity=True):
     margin = mp.mpf(e.numerator) / e.denominator - EP(J["kernel"], mp)
     rep["e"] = str(e)
     rep["e_minus_EP"] = mp.nstr(margin, 60)
-    rep["e_gt_EP"] = bool(margin > 0)
+    # decision in ball arithmetic (arb, 256 bits); the mpmath value above is for the report only
+    from flint import arb, ctx
+    ctx.prec = 256
+    s5 = arb(5).sqrt()
+    if J["kernel"] == "log":
+        EPa = -(arb(1600) * s5).log()
+    else:
+        fa = lambda t: 1 / (2 - 2 * t).sqrt()
+        EPa = fa(arb(-1)) + 10 * fa(arb(0)) + 5 * fa((s5 - 1) / 4) + 5 * fa((-s5 - 1) / 4)
+    rep["e_gt_EP"] = bool(arb(e.numerator) / arb(e.denominator) - EPa > 0)
     ok &= rep["e_gt_EP"]
     if do_sanity:
         rep["sanity"] = sanity(J, c, L)

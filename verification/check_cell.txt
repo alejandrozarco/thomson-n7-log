@@ -20,9 +20,9 @@ $ python3 checkers/check_cell.py certificates/cells/cert_case1_log_D10.json cert
   "Sigma_all_nonneg": true
  },
  "ALL_OK": true,
- "time_s": 2.5
+ "time_s": 2.1
 }
-  cert_slab_99_98_log_D10.json: identity A EXACT (2s)
+  cert_slab_99_98_log_D10.json: identity A EXACT (1s)
   cert_slab_99_98_log_D10.json: identity B EXACT (3s)
   cert_slab_99_98_log_D10.json: identity G EXACT (4s)
 {
@@ -49,9 +49,9 @@ $ python3 checkers/check_cell.py certificates/cells/cert_case1_log_D10.json cert
   "Sigma_all_nonneg": true
  },
  "ALL_OK": true,
- "time_s": 4.4
+ "time_s": 3.7
 }
-  cert_slab_98_96_log_D10.json: identity A EXACT (2s)
+  cert_slab_98_96_log_D10.json: identity A EXACT (1s)
   cert_slab_98_96_log_D10.json: identity B EXACT (3s)
   cert_slab_98_96_log_D10.json: identity G EXACT (4s)
 {
@@ -78,11 +78,11 @@ $ python3 checkers/check_cell.py certificates/cells/cert_case1_log_D10.json cert
   "Sigma_all_nonneg": true
  },
  "ALL_OK": true,
- "time_s": 4.2
+ "time_s": 3.8
 }
-  cert_slab_96_94_log_D12.json: identity A EXACT (12s)
-  cert_slab_96_94_log_D12.json: identity B EXACT (21s)
-  cert_slab_96_94_log_D12.json: identity G EXACT (30s)
+  cert_slab_96_94_log_D12.json: identity A EXACT (11s)
+  cert_slab_96_94_log_D12.json: identity B EXACT (20s)
+  cert_slab_96_94_log_D12.json: identity G EXACT (28s)
 {
  "cert": "cert_slab_96_94_log_D12.json",
  "kind": "slab",
@@ -107,7 +107,7 @@ $ python3 checkers/check_cell.py certificates/cells/cert_case1_log_D10.json cert
   "Sigma_all_nonneg": true
  },
  "ALL_OK": true,
- "time_s": 30.5
+ "time_s": 28.0
 }
   cert_slab_94_93_log_D12.json: identity A EXACT (12s)
   cert_slab_94_93_log_D12.json: identity B EXACT (21s)
@@ -136,11 +136,11 @@ $ python3 checkers/check_cell.py certificates/cells/cert_case1_log_D10.json cert
   "Sigma_all_nonneg": true
  },
  "ALL_OK": true,
- "time_s": 29.5
+ "time_s": 29.7
 }
   cert_slab_93_90_log_D12.json: identity A EXACT (11s)
   cert_slab_93_90_log_D12.json: identity B EXACT (19s)
-  cert_slab_93_90_log_D12.json: identity G EXACT (26s)
+  cert_slab_93_90_log_D12.json: identity G EXACT (27s)
 {
  "cert": "cert_slab_93_90_log_D12.json",
  "kind": "slab",
@@ -165,7 +165,7 @@ $ python3 checkers/check_cell.py certificates/cells/cert_case1_log_D10.json cert
   "Sigma_all_nonneg": true
  },
  "ALL_OK": true,
- "time_s": 26.7
+ "time_s": 27.6
 }
 CHECK_CELL ALL_OK
 [exit 0]

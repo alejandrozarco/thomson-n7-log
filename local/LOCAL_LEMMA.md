@@ -99,8 +99,9 @@ order 5 in t.
 Truncating at degree 3, as upstream does for Coulomb, would lose the u⁴/4 terms and give the wrong
 quartic. Degree 5 is the minimal valid odd truncation.
 
-The point terms: ring points have μ = 0. For the poles, μν = −¼(√(1−r²)−1) has a degree-≥5 remainder
-that is ≥ 0, so it can be dropped.
+The point terms: ring points have μ = 0. For the poles, μν = −¼(√(1−r²)−1) = ¼(r²/2 + r⁴/8 + r⁶/16 + …) has only
+nonnegative Taylor coefficients. The minorant 𝒫 keeps these terms through degree 6 (r²/8 + r⁴/32 + r⁶/64); the
+dropped tail of degree ≥ 8 is ≥ 0. The Bombieri norms B₅, B₆ of §4b and `check_local_rigorous.py` refer to this 𝒫.
 
 ## 2. Taylor data on S ⊕ W (log)
 

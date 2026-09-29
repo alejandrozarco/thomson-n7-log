@@ -20,7 +20,7 @@ $ python3 checkers/check_cell.py certificates/cells/calib_case1_coulomb_D10.json
   "Sigma_all_nonneg": true
  },
  "ALL_OK": true,
- "time_s": 1.9
+ "time_s": 2.1
 }
 CHECK_CELL ALL_OK
 [exit 0]

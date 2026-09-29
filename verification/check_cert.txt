@@ -1,5 +1,5 @@
 $ python3 checkers/check_cert.py certificates/cert_cap_log_D12.json
-identity A: EXACT  (9s)
+identity A: EXACT  (8s)
 identity B: EXACT  (16s)
 identity G: EXACT  (24s)
 {
@@ -20,6 +20,10 @@ identity G: EXACT  (24s)
    "1/2",
    "1/10"
   ],
+  "dHC_c2": [
+   "1/2",
+   "-1/10"
+  ],
   "matches_phi_prime": true
  },
  "HA_contact": {
@@ -38,6 +42,6 @@ identity G: EXACT  (24s)
  },
  "sum_gaps_minus_(EP-e)": "-2.1392e-61",
  "ALL_OK": true,
- "time_s": 23.8
+ "time_s": 23.9
 }
 [exit 0]

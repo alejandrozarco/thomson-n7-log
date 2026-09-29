@@ -99,6 +99,13 @@ re-proved or formalised for the logarithmic kernel:
   `localGram_of_localMinAt`) and the gauge fixing `exists_gauge`;
 * in the local lemma: ψ(u) ≥ ψ₅(u) for u < 1, the coefficientwise majorant lemma for the degree ≥ 7 tail, the Bombieri
   inequality, and the chart/gauge facts (listed in `local/LOCAL_LEMMA.md` §9).
+* the closed form E(P) = −log(1600√5) (product of the 21 chord lengths; the checkers use this value);
+* nonnegativity of each SOS multiplier g_r on the domain of its cell (the checkers verify that the multipliers are
+  the ones required for the cell, not their sign).
+
+Also checked by machine: the tiling of [−1, −9/10] by the cap and the five slabs, read from the
+certificates' own `cell` fields (`checkers/make_coverage.py`); the contact H_C′ = φ′ at both c₁ and c₂ in exact
+arithmetic (`checkers/check_cert.py`); and the comparisons of e with E(P) in ball arithmetic.
 
 The Riesz s = 2 constants in `local/LOCAL_LEMMA.md` §7 are floating-point values only, and no s = 2 certificates are
 included. `verify_soft_mode.py` is a numerical computation.
