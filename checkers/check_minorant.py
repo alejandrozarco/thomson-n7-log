@@ -153,7 +153,7 @@ def main(path, delta=None):
     for nm, H in (("B", HB), ("C", HC)):
         Hmax = poly_eval(H, iv(1 - eps1, 1)).upper()
         top[nm] = float((phi_der(A(1 - eps1), 0) - Hmax).lower())
-        assert top[nm] > 0
+        assert top[nm] > delta, f"near-1 margin {top[nm]} not > delta"
     rep["cover_min_lower_bounds"] = dict(A=lbA, B=lbB, C=lbC, near1=top, pieces=sum(stats))
     # --- coercivity windows: tau such that f <= delta => |t - touch| <= tau
     tauB = (delta / (m4 / 24)) ** 0.25
@@ -162,9 +162,15 @@ def main(path, delta=None):
     rep["contact"] = dict(kappa4_B_local=float(Fr(1, 8) - HBq[4]), kappa4_B_certified=m4 / 24,
                           kappa2_C_certified=min(m2) / 2, slopeA_certified=m1A,
                           min_f_outside_windows=dict(A=lbA, B=lbB, C=lbC))
-    ok_outside = min(lbA, lbB, lbC) > delta
+    ok_outside = min(lbA, lbB, lbC, *top.values()) > delta
+    # exact rational decision (no floating-point tau): lower bounds shrunk by 2^-50 relative, then
+    # f <= delta  =>  |t - touch| <= tau  with  tau <= 1/1650  checked as rational inequalities.
+    _s = 1 - Fr(1, 2 ** 50); _T = Fr(1, 1650); _d = Fr(delta)
+    tau_ok_exact = dict(B=_d / (Fr(m4) * _s / 24) <= _T ** 4, C=2 * _d / (Fr(min(m2)) * _s) <= _T ** 2,
+                        A=_d / (Fr(m1A) * _s) <= _T)
     rep["coercivity"] = dict(tauB=tauB, tauC=tauC, tauA=tauA, outside_windows_f_gt_delta=ok_outside,
-                             tau_needed=1 / 1650, OK=bool(ok_outside and max(tauB, tauC, tauA) <= 1 / 1650))
+                             tau_needed=1 / 1650, tau_ok_exact=tau_ok_exact,
+                             OK=bool(ok_outside and all(tau_ok_exact.values())))
     rep["MINORANT_OK"] = True
     rep["time_s"] = round(time.time() - t0, 1)
     return rep

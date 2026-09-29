@@ -23,7 +23,7 @@ the three-point certificate.
 
 | cell | range | degree | e − E(P) | checks |
 |---|---|---|---|---|
-| cap | t₀₁ ∈ [−1, −99/100] | 12 | −7.294·10⁻¹⁷ (sharp at P by design; closed by coercivity, ring rigidity and the local lemma) | ALL_OK, MINORANT_OK, coercivity OK (τ_B = 4.3·10⁻⁴ ≤ 1/1650) |
+| cap | t₀₁ ∈ [−1, −99/100] | 12 | −7.294·10⁻¹⁷ (sharp at P by design; closed by coercivity, ring rigidity and the local lemma) | ALL_OK, MINORANT_OK, coercivity OK (τ_B = 4.3·10⁻⁴ ≤ 1/1650, decided in exact rational arithmetic) |
 | Case 1 | all t_ij ≥ −9/10 | 10 | +5.000·10⁻⁴ | ALL_OK, MINORANT_OK |
 | slab 1 | t₀₁ ∈ [−99/100, −49/50] | 10 | +2.000·10⁻⁴ | ALL_OK, MINORANT_OK |
 | slab 2 | t₀₁ ∈ [−49/50, −24/25] | 10 | +5.000·10⁻⁵ | ALL_OK, MINORANT_OK |
@@ -32,7 +32,7 @@ the three-point certificate.
 | slab 5 | t₀₁ ∈ [−93/100, −9/10] | 12 | +3.000·10⁻⁵ | ALL_OK, MINORANT_OK |
 
 The exact values of e (60 digits) and the certificate hashes are in `COVERAGE.md`. The local lemma checker gives
-45/45 PASS. Its main output is E − E(P) ≥ 0.0342|w|² + 0.0227|s|⁴ on the gauge-fixed ℓ² ball of radius 1/100 around P.
+45/45 PASS. Its main result (given the paper-level steps listed in `local/LOCAL_LEMMA.md` §9) is E − E(P) ≥ 0.0342|w|² + 0.0227|s|⁴ on the gauge-fixed ℓ² ball of radius 1/100 around P.
 
 `certificates/cells/calib_case1_coulomb_D10.json` is a Case-1 certificate for the Coulomb kernel from the same
 pipeline (e − E(P) = +1.0·10⁻³). It serves as a calibration against the Coulomb proof and is not part of the

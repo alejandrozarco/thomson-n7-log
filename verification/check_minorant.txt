@@ -57,12 +57,13 @@ $ python3 checkers/check_minorant.py certificates/cert_cap_log_D12.json 1e-16
   "tauA": 6.556410522045565e-14,
   "outside_windows_f_gt_delta": true,
   "tau_needed": 0.0006060606060606061,
+  "tau_ok_exact": {
+   "B": true,
+   "C": true,
+   "A": true
+  },
   "OK": true
  },
  "MINORANT_OK": true,
- "time_s": 0.2
+ "time_s": 0.1
 }
-real 0.35
-user 0.24
-sys 0.03
-exit status: 0
