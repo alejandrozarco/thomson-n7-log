@@ -229,29 +229,74 @@ def fig_minorant(t, name, data):
 
 # ---------------------------------------------------------------- configuration
 def fig_configuration(t, name):
-    X = np.array([[float(c) for c in v] for v in pbp()])
-    D = np.array([[0, 0, 0]] * 2 + [[0, 0, np.cos(4 * np.pi * k / 5)] for k in range(5)])
-    fig = plt.figure(figsize=(5, 5))
+    """(a) orthographic view of P with the k = 2 ring mode; (b) vertical displacement of the ring points."""
+    from matplotlib.patches import Circle, FancyArrowPatch
+    X = np.array([[float(c) for c in v] for v in pbp()])               # 0 = N, 1 = S, 2..6 = ring k = 0..4
+    th = 2 * np.pi * np.arange(5) / 5
+    zk = np.cos(2 * th)                                                 # = cos(4 pi k / 5)
+    A = 0.32                                                            # drawing amplitude (exaggerated)
+    Y = np.array([[float(c) for c in v] for v in pucker(A)])            # displaced configuration P_a
+    el, az = np.radians(15), np.radians(-80)
+    w = np.array([np.cos(el) * np.cos(az), np.cos(el) * np.sin(az), np.sin(el)])   # towards the viewer
+    r = np.cross([0, 0, 1], w); r /= np.linalg.norm(r); u = np.cross(w, r)
+    pr = lambda P: np.stack([P @ r, P @ u], -1)
+    dp = lambda P: P @ w
+
+    fig = plt.figure(figsize=(9.2, 4.3))
     fig.patch.set_facecolor(t["surface"])
-    ax = fig.add_subplot(projection="3d")
-    ax.set_facecolor(t["surface"])
-    u = np.linspace(0, 2 * np.pi, 60)
-    for z in np.linspace(-0.8, 0.8, 5):
-        r = np.sqrt(1 - z * z)
-        ax.plot(r * np.cos(u), r * np.sin(u), z + 0 * u, color=t["grid"], linewidth=0.6)
-    for p in np.linspace(0, np.pi, 6, endpoint=False):
-        ax.plot(np.cos(p) * np.sin(u), np.sin(p) * np.sin(u), np.cos(u), color=t["grid"], linewidth=0.6)
-    d2 = np.linalg.norm(X[:, None] - X[None], axis=2)
-    edge = sorted(set(np.round(d2[np.triu_indices(7, 1)], 9)))[:2]      # pole-ring and ring-neighbour distances
-    for i, j in itertools.combinations(range(7), 2):
-        if round(d2[i, j], 9) in edge:
-            ax.plot(*X[[i, j]].T, color=t["ink2"], linewidth=1.0)
-    ax.scatter(*X.T, color=t["mark"], s=40, depthshade=False)
-    ax.quiver(*X[2:].T, *(0.45 * D[2:]).T, color=t["mark2"], linewidth=1.4, arrow_length_ratio=0.25)
-    ax.set_box_aspect((1, 1, 1)); ax.view_init(elev=18, azim=35)
-    ax.set_xlim(-1, 1); ax.set_ylim(-1, 1); ax.set_zlim(-1, 1)
-    ax.set_axis_off()
-    fig.subplots_adjust(0, 0, 1, 1)
+    ax = fig.add_axes([0.0, 0.0, 0.47, 0.9]); ax.set_aspect("equal"); ax.set_axis_off()
+    ax.set_xlim(-1.32, 1.32); ax.set_ylim(-1.22, 1.3)
+    ax.add_patch(Circle((0, 0), 1, facecolor=t["empty"], edgecolor=t["axis"], linewidth=1.0, zorder=0))
+    s = np.linspace(0, 2 * np.pi, 361)
+    for z0 in (0.0,) + tuple(np.sin(np.radians([-40, 40]))):          # equator and two latitude circles
+        rr = np.sqrt(1 - z0 * z0); C = np.stack([rr * np.cos(s), rr * np.sin(s), z0 + 0 * s], -1)
+        P2, front = pr(C), dp(C) >= 0
+        for msk, ls in ((front, "-"), (~front, (0, (2, 3)))):
+            Q = np.where(msk[:, None], P2, np.nan)
+            ax.plot(*Q.T, color=t["grid"] if z0 else t["axis"], linewidth=0.8, linestyle=ls, zorder=1)
+    edges = [(p, 2 + k) for p in (0, 1) for k in range(5)] + [(2 + k, 2 + (k + 1) % 5) for k in range(5)]
+    for i, j in edges:
+        back = dp(X[i]) + dp(X[j]) < -0.05
+        ax.plot(*pr(X[[i, j]]).T, color=t["muted"] if back else t["ink2"], linewidth=0.9 if back else 1.3,
+                linestyle=(0, (3, 3)) if back else "-", zorder=2 if back else 4)
+    for k in range(5):                                                  # arrows to the displaced points
+        a0, a1 = pr(X[2 + k]), pr(Y[2 + k])
+        ax.add_patch(FancyArrowPatch(a0, a1, arrowstyle="-|>", mutation_scale=11, color=t["mark2"],
+                                     linewidth=1.6, shrinkA=4, shrinkB=2, zorder=6))
+        ax.scatter(*a1, s=34, facecolor="none", edgecolor=t["mark2"], linewidth=1.1, zorder=6)
+    for i in range(7):
+        back = dp(X[i]) < 0
+        ax.scatter(*pr(X[i]), s=56 if not back else 40, color=t["mark"], alpha=0.6 if back else 1,
+                   edgecolor=t["surface"], linewidth=1.0, zorder=5 if not back else 3)
+    for i, lab, off in ((0, "N (fixed)", (10, 4)), (1, "S (fixed)", (10, -10))):
+        ax.annotate(lab, pr(X[i]), xytext=off, textcoords="offset points", color=t["ink2"], fontsize=9, zorder=7)
+    for k in range(5):                                                  # label outward, away from the arrow
+        v = pr(X[2 + k]); d = v / np.linalg.norm(v)
+        off, ha = (12 * d[0], -16 if zk[k] > 0 else 9), "left" if d[0] > 0.3 else "right" if d[0] < -0.3 else "center"
+        if k == 2:                                                      # back point next to k = 3: label inward
+            off, ha = (9, -13), "left"
+        ax.annotate(f"k = {k}", v, xytext=off, textcoords="offset points", color=t["ink2"], fontsize=8.5, ha=ha,
+                    zorder=7)
+    fig.text(0.012, 0.93, "(a) P and the k = 2 ring mode (amplitude exaggerated)", color=t["ink"], fontsize=11)
+
+    bx = fig.add_axes([0.6, 0.2, 0.38, 0.6]); style(bx, t)
+    g = np.linspace(0, 2 * np.pi, 400)
+    bx.axhline(0, color=t["axis"], linewidth=0.8)
+    bx.plot(np.degrees(g), np.cos(2 * g), color=t["mark2"], linewidth=1.6, label=r"$\cos 2\theta$ (mode $s_1$)")
+    bx.plot(np.degrees(g), np.sin(2 * g), color=t["muted"], linewidth=1.1, linestyle=(0, (4, 3)),
+            label=r"$\sin 2\theta$ (mode $s_2$)")
+    bx.vlines(np.degrees(th), 0, zk, color=t["mark2"], linewidth=1.0, alpha=0.6)
+    bx.scatter(np.degrees(th), zk, s=40, color=t["mark"], edgecolor=t["surface"], linewidth=1.0, zorder=5)
+    bx.set_xticks(np.degrees(th).tolist() + [360])
+    bx.set_xticklabels([f"k = {k}\n{72 * k}°" for k in range(5)] + ["\n360°"])
+    bx.set_yticks([-1, -0.5, 0, 0.5, 1]); bx.set_ylim(-1.15, 1.15); bx.set_xlim(-12, 372)
+    bx.grid(axis="y", color=t["grid"], linewidth=0.6)
+    bx.set_xlabel(r"ring point $k$ at azimuth $\theta_k = 2\pi k/5$")
+    bx.set_ylabel(r"vertical displacement / $a$")
+    leg = bx.legend(loc="lower left", fontsize=8.5, frameon=False, ncol=2, bbox_to_anchor=(-0.02, 1.0),
+                    handlelength=2.2, columnspacing=1.5)
+    for tx in leg.get_texts(): tx.set_color(t["ink2"])
+    fig.text(0.535, 0.93, "(b) ring heights in the two flat directions", color=t["ink"], fontsize=11)
     fig.savefig(os.path.join(OUT, name), facecolor=t["surface"], **SAVE)
     plt.close(fig)
 
