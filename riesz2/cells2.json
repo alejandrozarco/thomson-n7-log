@@ -1,0 +1,8 @@
+[
+ {"name": "Case 1", "cert": "certs/cert_case1_riesz2.json", "range": "all t_ij >= -9/10"},
+ {"name": "slab 1", "cert": "certs/cert_slab_99_98_riesz2.json", "range": "t01 in [-99/100, -49/50]"},
+ {"name": "slab 2", "cert": "certs/cert_slab_98_96_riesz2.json", "range": "t01 in [-49/50, -24/25]"},
+ {"name": "slab 3", "cert": "certs/cert_slab_96_94_riesz2.json", "range": "t01 in [-24/25, -47/50]"},
+ {"name": "slab 4", "cert": "certs/cert_slab_94_93_riesz2.json", "range": "t01 in [-47/50, -93/100]"},
+ {"name": "slab 5", "cert": "certs/cert_slab_93_90_riesz2.json", "range": "t01 in [-93/100, -9/10]"}
+]
