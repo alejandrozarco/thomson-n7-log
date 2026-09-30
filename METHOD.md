@@ -1,7 +1,7 @@
 # Method
 
 This note describes the structure of the argument, which parts the scripts in this repository check, and which
-parts are taken from the proof of the Coulomb case without being machine-checked here.
+parts are adapted from the Coulomb case [C] without being machine-checked here. Nothing here has been refereed.
 
 ## Setting
 
@@ -51,7 +51,7 @@ split at the breakpoints used for the Coulomb case, −1 ≤ −99/100 < −49/5
 * **Cap** t₀₁ ∈ [−1, −99/100], which contains P. The typed certificate (degree 12) is sharp at P: e < E(P) with
   E(P) − e = 7.29·10⁻¹⁷. The minorants touch φ at the inner products of P: H_A at −1 (with slope), H_C at c₁ and c₂
   (first-order contact) and H_B at 0 with contact of order three (H_B and φ agree in value up to η and in the first three
-  derivatives). The cap is closed as in PAPER §7.2, with the last step replaced:
+  derivatives). The argument for the cap follows PAPER §7.2, with the last step replaced:
   1. If E(y) ≤ E(P), then every term (φ − H_cls)(t_ij) is at most δ := 10⁻¹⁶ ≥ E(P) − e.
   2. *Coercivity:* (φ − H_X)(t) ≤ δ forces t to lie within τ_X of the corresponding inner product of P, with
      τ_B ≈ 4.3·10⁻⁴, τ_C ≈ 2.5·10⁻⁷, τ_A ≈ 6.6·10⁻¹⁴, all ≤ τ := 1/1650. Because of the flat mode below, the B-contact is
@@ -63,7 +63,8 @@ split at the breakpoints used for the Coulomb case, −1 ≤ −99/100 < −49/5
   5. *Local lemma* (`local/LOCAL_LEMMA.md`), replacing PAPER §7.2 step 5: after gauge fixing, and for
      Σ‖y_i − P_i‖² ≤ (1/100)² (which contains the sup ball of radius 1/300, since √7/300 < 1/100),
      E(y) − E(P) ≥ 0.0342|w|² + 0.0227|s|⁴ (Lemma L′), where s is the component of the tangent displacement in the
-     two-dimensional flat direction and w its complement. Hence E(y) ≥ E(P), with equality only at y = P.
+     two-dimensional flat direction and w its complement. On that ball this gives E(y) ≥ E(P), with equality only at
+     y = P, subject to the paper-level steps listed below.
 
 **The flat mode.** Along the ring displacement z_k ∝ cos(4πk/5) (or sin), k = 0..4 (the "k = 2 pucker"), the second
 derivative of the Riesz s-energy at P vanishes at s = 0 and at s = 2. Consequently the quadratic local inequality used in

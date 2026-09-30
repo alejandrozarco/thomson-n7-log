@@ -9,9 +9,9 @@ E(x) = \sum_{i \lt j} -\log \lVert x_i - x_j \rVert .
 ```
 
 The regular pentagonal bipyramid $P$ has $E(P) = -\log\left(1600\sqrt{5}\right)$. This repository contains exact
-certificates and checkers for the computational steps of an argument, modelled on the Lean proof of the Coulomb case
-([huwngtran/thomson-n7-lean](https://github.com/huwngtran/thomson-n7-lean)), that $P$ minimises $E$ among seven
-distinct points. Write $t_{ij} = \langle x_i, x_j \rangle$. The configuration space is split by the smallest inner
+certificates and checkers for the computational steps of an argument, modelled on the Lean formalisation of the Coulomb
+case ([huwngtran/thomson-n7-lean](https://github.com/huwngtran/thomson-n7-lean)), directed at the statement that $P$
+minimises $E$ among seven distinct points. Write $t_{ij} = \langle x_i, x_j \rangle$. The configuration space is split by the smallest inner
 product. For every configuration with all $t_{ij} \ge -9/10$, and for five slabs covering
 $-99/100 \le t_{01} \le -9/10$ of the minimal pair, a three-point semidefinite certificate gives a lower bound
 $e > E(P)$. On the remaining cap $t_{01} \in [-1, -99/100]$, which contains $P$, the certificate bound lies
@@ -19,8 +19,8 @@ $7.3 \cdot 10^{-17}$ below $E(P)$. The checkers verify the certificate data exac
 $H \le \varphi$, with $\varphi(t) = -\tfrac12 \log(2 - 2t)$, with ball arithmetic, and they verify the contact data
 used for coercivity on the cap. `local/check_local_rigorous.py` verifies the constants and inequalities of a quartic
 local lemma near $P$. The lemma is needed because the logarithmic energy has a flat second-order direction at $P$
-(`soft_mode/verify_soft_mode.py`). The deductions that link these computations into a proof are paper-level steps
-taken from the Coulomb proof. They are not machine-checked here. `METHOD.md` lists which steps are checked and which
+(`soft_mode/verify_soft_mode.py`). The deductions that connect these computations to that statement are paper-level
+steps adapted from the Coulomb case. They are not machine-checked here and have not been refereed. `METHOD.md` lists which steps are checked and which
 are not.
 
 ## Cells and margins
@@ -30,7 +30,7 @@ three-point certificate.
 
 | cell | range | $D$ | $e - E(P)$ | checks |
 |---|---|---|---|---|
-| cap | $t_{01} \in [-1, -99/100]$ | 12 | $-7.294 \cdot 10^{-17}$ (sharp at $P$ by design; closed by coercivity, ring rigidity and the local lemma) | ALL_OK, MINORANT_OK, coercivity OK ($\tau_B = 4.3 \cdot 10^{-4} \le 1/1650$, decided in exact rational arithmetic) |
+| cap | $t_{01} \in [-1, -99/100]$ | 12 | $-7.294 \cdot 10^{-17}$ (below $E(P)$ by design; this cell is treated with coercivity, ring rigidity and the local lemma) | ALL_OK, MINORANT_OK, coercivity OK ($\tau_B = 4.3 \cdot 10^{-4} \le 1/1650$, decided in exact rational arithmetic) |
 | Case 1 | all $t_{ij} \ge -9/10$ | 10 | $+5.000 \cdot 10^{-4}$ | ALL_OK, MINORANT_OK |
 | slab 1 | $t_{01} \in [-99/100, -49/50]$ | 10 | $+2.000 \cdot 10^{-4}$ | ALL_OK, MINORANT_OK |
 | slab 2 | $t_{01} \in [-49/50, -24/25]$ | 10 | $+5.000 \cdot 10^{-5}$ | ALL_OK, MINORANT_OK |
@@ -51,7 +51,7 @@ on the gauge-fixed $\ell^2$ ball of radius $1/100$ around $P$, where $s$ and $w$
 displacement in the two-dimensional flat ring mode and in its orthogonal complement.
 
 `certificates/cells/calib_case1_coulomb_D10.json` is a Case-1 certificate for the Coulomb kernel from the same
-pipeline ($e - E(P) = +1.0 \cdot 10^{-3}$). It serves as a calibration against the Coulomb proof and is not part of
+pipeline ($e - E(P) = +1.0 \cdot 10^{-3}$). It serves as a calibration against the Coulomb case and is not part of
 the logarithmic case split.
 
 ## Figures

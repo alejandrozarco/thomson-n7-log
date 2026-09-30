@@ -1,5 +1,8 @@
 # Quartic local lemma for the log energy at the pentagonal bipyramid
 
+Status: working note, not refereed. The lemma and the arguments below have not been independently reviewed or
+published; the checker `check_local_rigorous.py` verifies the constants and inequalities listed in §9.
+
 This replaces upstream `local_ineq` / `pent_local_min` (PAPER.md §7.2 step 5). That lemma says
 E − E(P) ≥ c|y − P|², which is false for the log kernel. The replacement is a centre-manifold
 ("complete the square") inequality with a quartic term in the soft pucker directions.

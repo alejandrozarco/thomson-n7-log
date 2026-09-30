@@ -34,7 +34,7 @@ from fractions import Fraction as Fr
 mp.mp.dps = 60
 e = Fr(json.load(open(capc))["e"])
 capm = mp.nstr(mp.mpf(e.numerator) / e.denominator + mp.log(1600 * mp.sqrt(5)), 60)
-rows.append(("cap (Case 2)", "t01 in [-1, -99/100]", 12, capm + " (< 0 by design; the cap is closed by coercivity + local lemma)",
+rows.append(("cap (Case 2)", "t01 in [-1, -99/100]", 12, capm + " (< 0 by design; the cap is treated with coercivity + local lemma)",
              "ALL_OK (check_cert.py)" if j1["ALL_OK"] else "FAIL",
              "MINORANT_OK, coercivity OK (check_minorant.py)" if j2.get("MINORANT_OK") and j2["coercivity"]["OK"] else "FAIL",
              rel(capc), sha(capc)))
