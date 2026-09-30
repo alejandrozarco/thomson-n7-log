@@ -11,10 +11,11 @@ equator). Its pairwise distances have product 1600√5, so E(P) = −log(1600√
 0 (pole–ring, class B), c₁ = cos 72° and c₂ = cos 144° (ring–ring, class C).
 
 The statement the argument is aimed at: E(x) ≥ E(P) for all seven distinct points on S², with equality only for images of
-P under O(3) and relabelling. For Riesz s-energies with s ∈ [0, 2] (s = 0 being the logarithmic energy) this was
-conjectured by Nerattini, Brauchart and Kiessling [NBK, eq. (29)], who also describe the branching of a C₂ family at s = 0
-and s = 2 (for s = 2 they credit Melnyk, Knop and Smith [MKS]). Armentano et al. [A+] characterise the logarithmic
-critical configurations of seven points on S² that contain an antipodal pair.
+P under O(3) and relabelling. For the logarithmic energy this is Conjecture 11.1 of Beltrán [B] and Conjecture 1 of
+Armentano et al. [A+]. Nerattini, Brauchart and Kiessling [NBK, §3.1, eq. (29)] list P as the putative optimiser for Riesz
+s-energies with s ∈ [0, 2] (s = 0 being the logarithmic energy) and describe the branching of a C₂ family at s = 0 and
+s = 2 (for s = 2 they credit Melnyk, Knop and Smith [MKS]). Armentano et al. [A+, Theorem 2] show that P is the only
+logarithmic critical configuration of seven points on S² that contains an antipodal pair.
 
 The argument follows the proof of the Coulomb case (Riesz s = 1) in [C], which is formalised in Lean 4 and explained in
 `paper/PAPER.md` of that repository (cited below as PAPER §n). That proof uses three-point semidefinite bounds as in
@@ -117,16 +118,17 @@ of the full statement.
 ## References
 
 * [NBK] R. Nerattini, J. S. Brauchart, M. K.-H. Kiessling, "Magic" numbers in Smale's 7th problem, arXiv:1307.2834
-  (J. Stat. Phys.). Conjecture: eq. (29).
-* [MKS] T. W. Melnyk, O. Knop, W. R. Smith, Extreme arrangements of points and unit charges on a sphere: equilibrium
+  (J. Stat. Phys.). List of putative optimisers: §3.1, eq. (29).
+* [MKS] T. W. Melnyk, O. Knop, W. R. Smith, Extremal arrangements of points and unit charges on a sphere: equilibrium
   configurations revisited, Can. J. Chem. 55 (1977), doi:10.1139/v77-246.
 * [A+] Armentano, Bentancur, Carrasco, Fiori, Valdés, Velasco, Characterization of logarithmic Fekete critical
-  configurations of at most six points in all dimensions, arXiv:2502.10152.
+  configurations of at most six points in all dimensions, arXiv:2502.10152. Theorem 2 and Conjecture 1 (§4.5).
 * [B] C. Beltrán, Sobre el problema número 7 de Smale, La Gaceta de la RSME 23 (2020), http://hdl.handle.net/10902/20954.
-  Conjecture 11.1.
+  Conjecture 11.1 (p. 529).
 * [CGGL] K. Constantineau, C. García-Azpeitia, L. C. García-Naranjo, J.-P. Lessard, Determination of stable branches of
   relative equilibria of the N-vortex problem on the sphere, Commun. Math. Phys. 406 (2025) 47, arXiv:2309.04320.
-* [KLT] Kryvonos, Liehr, Taylor, Energy minimization for eight points on the sphere, arXiv:2609.22077.
+* [KLT] Kryvonos, Liehr, Taylor, Energy minimization for eight points on the sphere, arXiv:2609.22077; companion
+  repository https://github.com/lukasliehr/Energy-Minimization-8-Points.
 * [C] Lean 4 proof of the Coulomb case N = 7, https://github.com/huwngtran/thomson-n7-lean (snapshot of 2026-09-27,
   commit 25f2fa5), with `paper/PAPER.md`.
 * [TZ] J. Tooby-Smith, A. Zughaid, Thomson-N-8-Warrant, https://github.com/jstoobysmith/Thomson-N-8-Warrant (Lean 4
