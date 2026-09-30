@@ -38,7 +38,8 @@ rows.append(("cap (Case 2)", "t01 in [-1, -99/100]", 12, capm + " (< 0 by design
              "ALL_OK (check_cert.py)" if j1["ALL_OK"] else "FAIL",
              "MINORANT_OK, coercivity OK (check_minorant.py)" if j2.get("MINORANT_OK") and j2["coercivity"]["OK"] else "FAIL",
              rel(capc), sha(capc)))
-allok &= j1["ALL_OK"] and j2.get("MINORANT_OK", False) and j2["coercivity"]["OK"]
+allok &= (r1.returncode == 0 and r2.returncode == 0 and j1["ALL_OK"] and j2.get("MINORANT_OK", False)
+          and j2.get("coercivity", {}).get("OK", False))
 for c in CELLS:
     p = os.path.join(CERTS, c["cert"])
     rc = check_cell.check(p, verbose=False)
