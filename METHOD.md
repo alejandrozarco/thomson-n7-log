@@ -70,8 +70,9 @@ split at the breakpoints used for the Coulomb case, −1 ≤ −99/100 < −49/5
 derivative of the Riesz s-energy at P vanishes at s = 0 and at s = 2. Consequently the quadratic local inequality used in
 the Coulomb proof (`local_ineq`: E − E(P) ≥ c‖y − P‖²) is false for the logarithmic energy. The local lemma instead
 completes the square in the complementary directions and uses the quartic term on the flat directions, whose effective
-coefficient is Q_eff = 1/10 (exact). The two-dimensional null space of the Hessian at P transversal to the rotations
-is also noted in [CGGL, Remark 6.3], where the log energy is the Hamiltonian of N = 7 point vortices of equal strength. For the same reason H_B must have third-order contact with φ at 0, and the cap
+coefficient is Q_eff = 1/10 (exact). This flat direction is known: numerically at s = 0 in [NBK] and at s = 2 in
+[MKS], and analytically at s = 0 in [CGGL, Remark 6.3] (two-dimensional null space of the Hessian at P transversal to
+the rotations; there the log energy is the Hamiltonian of N = 7 point vortices of equal strength). For the same reason H_B must have third-order contact with φ at 0, and the cap
 needed degree 12 (at degree 10 the float optimum was 1.4·10⁻⁴ below E(P)).
 
 ## What the scripts check
