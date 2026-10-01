@@ -1,8 +1,11 @@
 # Riesz $`s = 2`$, $`N = 7`$: Lean formalisation
 
-Status: machine-checked in Lean 4 (kernel), not peer reviewed.
+Status: **Lean 4 formalisation checked by the Lean kernel, not peer reviewed; produced by AI models** (see
+[`../../AI_DISCLOSURE.md`](../../AI_DISCLOSURE.md)). Like the rest of this repository, this is an AI-produced warrant, not a
+digested proof: we do not regard the statement as settled by it, and a human-readable treatment is welcome (see the
+note at the top of [`../../README.md`](../../README.md)).
 
-`Riesz2/Main.lean` proves:
+`Riesz2/Main.lean` states and the Lean kernel checks:
 
 ```lean
 -- SphereConfig 7 = {x : Fin 7 → ℝ³ | (∀ i, ‖x i‖ = 1) ∧ Function.Injective x}
@@ -25,7 +28,7 @@ $`E_2`$ ($`E_2(P) = 41/4`$). Every minimiser equals it up to an orthogonal map o
 
 ## Structure
 
-The formal proof follows the case split of `../README.md`: Case 1, a cap and five slabs.
+The formalisation follows the case split of `../README.md`: Case 1, a cap and five slabs.
 
 | module | content |
 |---|---|
@@ -121,31 +124,27 @@ lake build                  # builds Riesz2.Main and Riesz2.Check.Axioms
 ```
 
 `lake build` may compile several modules in parallel. Many modules need 6–10 GB of RAM each, and the largest needs
-14.4 GB (table below), so at least 16 GB is required. On a machine with less than about 32 GB, compile one module at a
+15.5 GB (table below), so at least 16 GB is required, and more is safer. On a machine with less than about 32 GB, compile one module at a
 time in dependency order with
 `lake env lean -o <olean> -i <ilean> <file>`, as in the build test below.
 
 ## Build test
 
-The previous layout (107 modules, before declarations copied verbatim from upstream were moved to the regenerated set)
-was tested on Linux x86_64 from a clean clone of this directory, as below. A clean build test of the current layout
-(109 modules) is in progress; this section will be updated with its result.
-
-The test:
+The build was tested on Linux x86_64 from a clean clone of this directory:
 
 1. `regen.sh`;
 2. a fresh Mathlib download with `lake exe cache get`;
-3. every one of the 107 modules compiled in dependency order with `lake env lean -j1 -DElab.async=false`, one at a
+3. every one of the 109 modules compiled in dependency order with `lake env lean -j1 -DElab.async=false`, one at a
    time.
 
-All 107 modules compiled, and the axiom check printed the axioms stated above. Machine: Linux x86_64, one thread per
+All 109 modules compiled, and the axiom check printed the axioms stated above. Machine: Linux x86_64, one thread per
 module, at low priority on a shared machine. Wall times are indicative only.
 
 | modules | count | total wall time | peak RSS (largest module) |
 |---|---|---|---|
-| `ThomsonGen/*` | 19 | 22 min | 9.5 GB |
-| `Riesz2/Cap/*` (cap, 25 SOS blocks checked separately) | 34 | 3.8 h | 8.1 GB |
-| `Riesz2/S*/*` (five slabs) | 33 | 38 min | 14.4 GB (`S9390/ChkMeta`; the others ≤ 10.3 GB) |
+| `ThomsonGen/*` (including the regenerated `Verbatim/*`) | 21 | 24 min | 9.5 GB |
+| `Riesz2/Cap/*` (cap, 25 SOS blocks checked separately) | 34 | 3.3 h | 8.0 GB |
+| `Riesz2/S*/*` (five slabs) | 33 | 37 min | 15.5 GB (`S9390/ChkMeta`; the others ≤ 10.3 GB) |
 | `Riesz2/Case1/*` | 7 | 7 min | 9.3 GB |
-| other `Riesz2/*` | 14 | 5 min | 6.4 GB |
-| total | 107 | 5.0 h | 14.4 GB |
+| other `Riesz2/*` | 14 | 4 min | 6.4 GB |
+| total | 109 | 4.5 h | 15.5 GB |

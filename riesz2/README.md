@@ -1,6 +1,9 @@
 # Riesz $`s = 2`$, $`N = 7`$: exact certificates
 
-Status: computational results, not peer reviewed.
+Status: **computational certificates and a Lean 4 formalisation, not peer reviewed; produced by AI models** (see
+[`../AI_DISCLOSURE.md`](../AI_DISCLOSURE.md)). Like the rest of this repository, this is an AI-produced warrant, not a
+digested proof: we do not regard the statement as settled by it, and a human-readable treatment is welcome (see the
+note at the top of [`../README.md`](../README.md)).
 
 For seven points $`x_1,\dots,x_7`$ on the unit sphere $`S^2`$, write $`t_{ij} = \langle x_i, x_j\rangle`$ and
 
