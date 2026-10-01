@@ -1,5 +1,3 @@
-/-! Attribution: adapted from huwngtran/thomson-n7-lean @ 25f2fa5, `ThomsonN7/Solution.lean` (ours ← upstream):
-`peval_eq_sum` ← `CutOneD.peval_eq_sum`. -/
 
 /-
 LogN7/Bridge.lean — from the 1-D minorant theorems (peval form, `LogLean.MinorCore`) and a packed typed
@@ -10,6 +8,9 @@ module's `peval HX t / HXd` are identified by the list identity `HXd·cf.HX = La
 -/
 import ThomsonGen.Cert.NBlkCap
 import LogN7.Basic
+
+/-! Attribution: adapted from huwngtran/thomson-n7-lean @ 25f2fa5, `ThomsonN7/Solution.lean` (ours ← upstream):
+`peval_eq_sum` ← `CutOneD.peval_eq_sum`. -/
 
 open Real
 

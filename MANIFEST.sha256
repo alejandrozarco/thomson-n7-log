@@ -74,8 +74,8 @@ be4cfde4e75eaa8f51753aa381974dd2c8b43435dac1ab44172b441f12c92e8b  ./lean/LogLean
 926eb199fe3968e780ed6e2a66d5d2b94deeeaac9fbbfaaa9743c01293c538a7  ./lean/LogLean/LocalScalar.lean
 084deac7e24af26cbf6a898d621182cf8acb6140fe3ca6a38a3b3c83d799054f  ./lean/LogLean/LogSeries.lean
 8ca4e9880bfa26b02778b073aa1f555fffdbde22c04d47b1cfcbb227ab16cc95  ./lean/LogLean/MinorCore.lean
-14db18589c81e29d38823245d79ee45092693096a5955d3f5baacdb7657cc333  ./lean/LogN7/Basic.lean
-859e340cf84022ba7d40460f93c3b00f639f539519160b4578349b8a9c816db4  ./lean/LogN7/Bridge.lean
+153ff1243f9bbbfac93fe98ebee919caec732e6aa85d79a1b48d27bd2856b297  ./lean/LogN7/Basic.lean
+4bb1819e215a17312ccdd69f48924f4b3b6bdafad66b2543034e11554598ec0b  ./lean/LogN7/Bridge.lean
 8f6254b01437c0926035816e4c818e4edd6faa951cb88a0cd6faf85522138d21  ./lean/LogN7/Cap/ChkA.lean
 292696d15ad5483099a1dfb9c9f87385dd47c38cffb8b51ef5653ef335c14be1  ./lean/LogN7/Cap/ChkB.lean
 102c2a7a483d51cf1e3722e267cb4642db82b9a437066b90083f12a55c05a821  ./lean/LogN7/Cap/ChkG.lean

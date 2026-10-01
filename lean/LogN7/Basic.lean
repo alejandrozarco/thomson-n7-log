@@ -1,5 +1,3 @@
-/-! Attribution: adapted from huwngtran/thomson-n7-lean @ 25f2fa5, `ThomsonN7/Solution.lean` (ours ← upstream):
-`logEnergy` ← `coulombEnergy`; `sum_Ioi_seven` ← `Reg.sum_Ioi_seven`. -/
 
 /-
 LogN7/Basic.lean — the log energy, its kernel form, and E(P).
@@ -13,6 +11,9 @@ LogN7/Basic.lean — the log energy, its kernel form, and E(P).
 -/
 import ThomsonGen.Generic.Energy
 import LogLean.MinorCore
+
+/-! Attribution: adapted from huwngtran/thomson-n7-lean @ 25f2fa5, `ThomsonN7/Solution.lean` (ours ← upstream):
+`logEnergy` ← `coulombEnergy`; `sum_Ioi_seven` ← `Reg.sum_Ioi_seven`. -/
 
 open Real
 
