@@ -18,7 +18,7 @@
     "Lean 4",
     "formal verification"
   ],
-  "notes": "Not peer reviewed. The supporting Lean library uses declarations of huwngtran/thomson-n7-lean (commit 25f2fa5); unchanged declarations are regenerated from that repository by lean/regen.sh and are not stored here.",
+  "notes": "Not peer reviewed. Produced by AI models (Claude Opus 5.5; reviews by Claude Opus 5.5, Claude Fable 5.1 and gpt-6-astra) under the direction of the repository owner; see AI_DISCLOSURE.md. The supporting Lean library uses declarations of huwngtran/thomson-n7-lean (commit 25f2fa5); unchanged declarations are regenerated from that repository by lean/regen.sh and are not stored here.",
   "related_identifiers": [
     {
       "identifier": "https://github.com/huwngtran/thomson-n7-lean",
