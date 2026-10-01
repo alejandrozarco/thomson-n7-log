@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this material, please cite it as below. Not peer reviewed."
+title: "Thomson problem, N = 7, logarithmic energy: computational certificates and Lean formalisation"
+type: software
+authors:
+  - name: alejandrozarco
+repository-code: "https://github.com/alejandrozarco/thomson-n7-log"
+abstract: >-
+  Exact certificates, checkers and a Lean 4 formalisation directed at the statement that the regular pentagonal
+  bipyramid minimises the logarithmic energy of seven distinct points on the unit sphere, uniquely up to an
+  orthogonal map and a relabelling; and the same for the Riesz s = 2 energy. Not peer reviewed.
+keywords:
+  - Thomson problem
+  - logarithmic energy
+  - Riesz energy
+  - pentagonal bipyramid
+  - computer-assisted proof
+  - Lean 4

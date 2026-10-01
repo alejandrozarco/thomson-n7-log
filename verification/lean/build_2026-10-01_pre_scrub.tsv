@@ -1,0 +1,172 @@
+# Clean build of lean/, 2026-10-01 (Linux x86_64, Lean v4.34.1)
+#
+# Package version: the lean/ package before two later changes:
+#   (1) 22 upstream lemmas moved from LogLean/MinorCore.lean and LogLean/LocalKel.lean
+#       into the regenerated set (ThomsonGen/Verbatim/*), and the upstream statement definitions
+#       imported from the regenerated ThomsonGen/Preamble.lean instead of being restated in Challenge.lean;
+#   (2) comment and attribution changes.
+# Procedure: regen.sh; a fresh Mathlib cache; every module of the import closure of LogN7.Solution,
+# LogN7.Check.Axioms and LogN7.Challenge compiled one at a time in dependency order with
+# lake env lean -j1 -DElab.async=false -o <olean> -i <ilean> <file>.
+# Columns: module, exit code, wall time (s), peak resident memory (kB).
+
+LogLean/LocalKel.lean	0	52	2022700
+LogLean/LocalSP.lean	0	14	2014820
+LogLean/LocalAtom.lean	0	135	3295816
+LogLean/LocalBomb.lean	0	20	2036208
+LogLean/LocalFrames.lean	0	43	2359160
+LogLean/LogSeries.lean	0	32	2559624
+LogLean/LocalGeom.lean	0	257	4938340
+LogLean/LocalCert.lean	0	66	3764324
+LogLean/LocalGamma1.lean	0	175	3550156
+LogLean/LocalGlobData.lean	0	349	2962284
+LogLean/LocalPairData.lean	0	90	2265196
+LogLean/LocalGlobA.lean	0	107	4325708
+LogLean/LocalGlobB.lean	0	459	7862460
+LogLean/LocalGlobB2.lean	0	328	7111240
+LogLean/LocalGlobC.lean	0	117	3789500
+LogLean/LocalGlobD.lean	0	215	4787780
+LogLean/LocalGlobD2.lean	0	226	6771840
+LogLean/LocalGlobD3a.lean	0	141	5444004
+LogLean/LocalGlobD3b.lean	0	145	5444612
+LogLean/LocalGlobD3c.lean	0	114	5439624
+LogLean/LocalGlobD3d.lean	0	127	5426928
+LogLean/LocalGlobD3e.lean	0	125	5398324
+LogLean/LocalGlobD3f.lean	0	123	5346624
+LogLean/LocalGlobD3g.lean	0	119	5261260
+LogLean/LocalGlobD4.lean	0	133	5326968
+LogLean/LocalGlobE.lean	0	88	4613260
+LogLean/LocalGlobal.lean	0	21	2143428
+LogLean/LocalPairsA.lean	0	907	8234984
+LogLean/LocalPairsB.lean	0	805	8235044
+LogLean/LocalPairsC.lean	0	721	8219224
+LogLean/LocalScalar.lean	0	332	6637248
+LogLean/LocalMain.lean	0	119	6824528
+LogLean/LocalBridge.lean	0	30	6667644
+ThomsonGen/Preamble.lean	0	40	6666552
+ThomsonGen/ThreePoint.lean	0	51	6695104
+ThomsonGen/M2.lean	0	86	8862992
+ThomsonGen/Gauge.lean	0	55	6644340
+LogLean/LocalHandoff.lean	0	20	6631060
+LogLean/MinorCore.lean	0	50	2681912
+ThomsonGen/Kron.lean	0	28	6654000
+ThomsonGen/Base.lean	0	27	6626072
+ThomsonGen/GV.lean	0	129	6717316
+ThomsonGen/TwoRegime.lean	0	36	6655336
+ThomsonGen/Generic/Energy.lean	0	24	6626116
+LogN7/Basic.lean	0	28	6637184
+ThomsonGen/Cert1.lean	0	25	6642464
+ThomsonGen/Cert3.lean	0	40	6681952
+ThomsonGen/M3.lean	0	30	6670356
+ThomsonGen/T4.lean	0	192	9822848
+ThomsonGen/RegB.lean	0	20	6577304
+ThomsonGen/Typed.lean	0	50	6757088
+ThomsonGen/CertF.lean	0	24	6637356
+ThomsonGen/CertT.lean	0	55	6712804
+ThomsonGen/Generic/Glue.lean	0	34	6666944
+ThomsonGen/Cert/NBlk.lean	0	40	6685628
+ThomsonGen/Cert/NBlkCap.lean	0	19	6619700
+LogN7/Bridge.lean	0	24	6643364
+LogN7/Cap/DataA.lean	0	372	7039512
+LogN7/Cap/DataB.lean	0	318	6730380
+LogN7/Cap/DataG.lean	0	837	7073520
+LogN7/Cap/Data.lean	0	24	6699740
+ThomsonGen/Cert/Split.lean	0	16	6700676
+LogN7/Cap/ChkA.lean	0	90	7057972
+LogN7/Cap/ChkB.lean	0	91	7089412
+LogN7/Cap/ChkG.lean	0	97	7102416
+LogN7/Cap/ChkSA0.lean	0	1360	7532064
+LogN7/Cap/ChkSA1.lean	0	381	7071036
+LogN7/Cap/ChkSA2.lean	0	392	7043800
+LogN7/Cap/ChkSA3.lean	0	362	7043724
+LogN7/Cap/ChkSA4.lean	0	403	7044164
+LogN7/Cap/ChkSA5.lean	0	378	7043772
+LogN7/Cap/ChkSA6.lean	0	389	7046096
+LogN7/Cap/ChkSA7.lean	0	119	6825448
+LogN7/Cap/ChkSA8.lean	0	420	7071144
+LogN7/Cap/ChkSB0.lean	0	1129	7450696
+LogN7/Cap/ChkSB1.lean	0	330	6995656
+LogN7/Cap/ChkSB2.lean	0	324	6995648
+LogN7/Cap/ChkSB3.lean	0	308	6995748
+LogN7/Cap/ChkSB4.lean	0	342	6996548
+LogN7/Cap/ChkSB5.lean	0	306	6995364
+LogN7/Cap/ChkSB6.lean	0	310	6995728
+LogN7/Cap/ChkSB7.lean	0	78	6780224
+LogN7/Cap/ChkSG0.lean	0	1196	7446660
+LogN7/Cap/ChkSG1.lean	0	320	6992020
+LogN7/Cap/ChkSG2.lean	0	320	6991368
+LogN7/Cap/ChkSG3.lean	0	336	6985680
+LogN7/Cap/ChkSG4.lean	0	308	6984104
+LogN7/Cap/ChkSG5.lean	0	342	6979688
+LogN7/Cap/ChkSG6.lean	0	322	6987232
+LogN7/Cap/ChkSG7.lean	0	83	6776400
+LogN7/Cap/ChkMeta.lean	0	22	6720736
+LogN7/Minor/MinorCap.lean	0	60	2777296
+LogN7/Cap/Spec.lean	0	22	6735032
+ThomsonGen/Case1Stat.lean	0	20	6695640
+LogN7/Case1/Data.lean	0	34	6686616
+LogN7/Case1/Stat.lean	0	20	6659792
+LogN7/Case1/ChkF.lean	0	33	6851168
+LogN7/Case1/ChkS0.lean	0	84	9495308
+LogN7/Case1/ChkS13.lean	0	81	7528028
+LogN7/Case1/ChkS47.lean	0	91	7515784
+LogN7/Case1/ChkBF.lean	0	22	6689076
+LogN7/Case1/ChkBS0.lean	0	46	7796788
+LogN7/Case1/ChkBS1.lean	0	50	6973676
+LogN7/Case1/Check.lean	0	23	6692200
+LogN7/Minor/MinorCase1.lean	0	12	2751928
+LogN7/Case1/Claim.lean	0	22	6728676
+LogN7/S9998/Data.lean	0	44	6710596
+LogN7/S9998/ChkMeta.lean	0	103	7044508
+LogN7/S9998/ChkA.lean	0	46	6907348
+LogN7/S9998/ChkB.lean	0	65	7154624
+LogN7/S9998/ChkG.lean	0	62	7140856
+LogN7/Minor/MinorSlab9998.lean	0	15	2704088
+LogN7/S9998/Spec.lean	0	18	6729196
+LogN7/S9896/Data.lean	0	48	6710456
+LogN7/S9896/ChkMeta.lean	0	97	7043996
+LogN7/S9896/ChkA.lean	0	52	6904988
+LogN7/S9896/ChkB.lean	0	59	7154632
+LogN7/S9896/ChkG.lean	0	54	7140764
+LogN7/Minor/MinorSlab9896.lean	0	16	2744384
+LogN7/S9896/Spec.lean	0	23	6729232
+LogN7/S9694/DataA.lean	0	76	6691276
+LogN7/S9694/DataB.lean	0	56	6690956
+LogN7/S9694/DataG.lean	0	66	6690356
+LogN7/S9694/Data.lean	0	22	6677560
+LogN7/S9694/ChkMeta.lean	0	236	7532852
+LogN7/S9694/ChkA.lean	0	92	7089960
+LogN7/S9694/ChkB.lean	0	111	7375344
+LogN7/S9694/ChkG.lean	0	105	7351852
+LogN7/Minor/MinorSlab9694.lean	0	16	2749628
+LogN7/S9694/Spec.lean	0	22	6731088
+LogN7/S9493/DataA.lean	0	76	6694276
+LogN7/S9493/DataB.lean	0	54	6690988
+LogN7/S9493/DataG.lean	0	53	6690368
+LogN7/S9493/Data.lean	0	18	6677172
+LogN7/S9493/ChkMeta.lean	0	243	7533544
+LogN7/S9493/ChkA.lean	0	82	7091592
+LogN7/S9493/ChkB.lean	0	105	7375720
+LogN7/S9493/ChkG.lean	0	98	7351696
+LogN7/Minor/MinorSlab9493.lean	0	16	2745536
+LogN7/S9493/Spec.lean	0	22	6730988
+LogN7/S9390/DataA.lean	0	68	6692072
+LogN7/S9390/DataB.lean	0	63	6691388
+LogN7/S9390/DataG.lean	0	62	6691060
+LogN7/S9390/Data.lean	0	19	6677784
+LogN7/S9390/ChkMeta.lean	0	241	7533600
+LogN7/S9390/ChkA.lean	0	91	7087208
+LogN7/S9390/ChkB.lean	0	107	7375580
+LogN7/S9390/ChkG.lean	0	102	7352144
+LogN7/Minor/MinorSlab9390.lean	0	14	2752824
+LogN7/S9390/Spec.lean	0	23	6731480
+LogN7/Main.lean	0	20	6786736
+LogN7/Solution.lean	0	20	6775768
+LogN7/Check/Axioms.lean	0	18	6745960
+LogN7/Challenge.lean	0	22	6682808
+
+# modules: 154, all exit code 0: True, total wall 24048 s (6.7 h), max peak 9822848 kB
+
+# #print axioms (LogN7/Check/Axioms.lean):
+'ThomsonN7Log.thomson_seven_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ThomsonN7Log.thomson_seven_log_unique' depends on axioms: [propext, Classical.choice, Quot.sound]

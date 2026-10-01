@@ -41,7 +41,7 @@ each proposal is then certified as follows:
 | certified radius, ℓ² tangent norm (Bombieri route, §4b) | max ≈ 0.01795 (float, not certified); **stated at 1/100** | max ≈ 0.00837; stated at 1/200 |
 | certified radius (pure-majorant route, §4a) | max ≈ 0.00336; stated at 1/400 | max ≈ 0.00190; stated at 1/600 |
 | lower bound at the stated radius (Lemma L, §3) | E − E(P) ≥ **0.2015\|v\|² + 0.0454\|s\|⁴** (certified with enclosures) | ≥ 0.4722\|v\|² + 0.1130\|s\|⁴ (floats only) |
-| Lean form (Lemma L′, §3′), same radius | E − E(P) ≥ **0.0342\|w\|² + 0.0227\|s\|⁴** (certified) | — |
+| Lean-friendly form (Lemma L′, §3′), same radius | E − E(P) ≥ **0.0342\|w\|² + 0.0227\|s\|⁴** (Python-certified; the Lean statement `LocalMain.Lprime` in `lean/` has the weaker constants 0.0268, 0.0200) | — |
 | sup-norm radius (upstream shape) | **1/300**, compared with upstream's 1/30000 | 1/530 |
 | Gram window τ the cap must deliver | **τ ≤ 1/1650** | τ ≤ 1/2915 |
 

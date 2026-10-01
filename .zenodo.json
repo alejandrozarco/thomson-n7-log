@@ -1,0 +1,34 @@
+{
+  "title": "Thomson problem, N = 7, logarithmic energy: computational certificates and Lean formalisation",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "alejandrozarco"
+    }
+  ],
+  "description": "<p>Exact certificates, checkers and a Lean 4 formalisation directed at the statement that the regular pentagonal bipyramid minimises the logarithmic energy of seven distinct points on the unit sphere, uniquely up to an orthogonal map and a relabelling (Armentano et al., Conjecture 1). For the Riesz s = 2 energy of the same configuration the repository contains exact certificates and a Lean 4 formalisation checked by the Lean kernel (standard axioms). Not peer reviewed.</p>",
+  "keywords": [
+    "Thomson problem",
+    "logarithmic energy",
+    "elliptic Fekete points",
+    "Riesz energy",
+    "pentagonal bipyramid",
+    "semidefinite programming",
+    "computer-assisted proof",
+    "Lean 4",
+    "formal verification"
+  ],
+  "notes": "Not peer reviewed. The supporting Lean library uses declarations of huwngtran/thomson-n7-lean (commit 25f2fa5); unchanged declarations are regenerated from that repository by lean/regen.sh and are not stored here.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/huwngtran/thomson-n7-lean",
+      "relation": "references",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "arXiv:2502.10152",
+      "relation": "references",
+      "resource_type": "publication-preprint"
+    }
+  ]
+}

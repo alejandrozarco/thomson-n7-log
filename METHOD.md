@@ -1,7 +1,8 @@
 # Method
 
-This note describes the structure of the argument, which parts the scripts in this repository check, and which
-parts are adapted from the Coulomb case [C] without being machine-checked here. Nothing here has been refereed.
+This note describes the structure of the argument. It says which parts the Python scripts in this repository check,
+and which parts are adapted from the Coulomb case [C] and checked only in the Lean formalisation (`lean/`). Nothing here
+has been refereed.
 
 ## Setting
 
@@ -63,7 +64,8 @@ split at the breakpoints used for the Coulomb case, −1 ≤ −99/100 < −49/5
   5. *Local lemma* (`local/LOCAL_LEMMA.md`), replacing PAPER §7.2 step 5: after gauge fixing, and for
      Σ‖y_i − P_i‖² ≤ (1/100)² (which contains the sup ball of radius 1/300, since √7/300 < 1/100),
      E(y) − E(P) ≥ 0.0342|w|² + 0.0227|s|⁴ (Lemma L′), where s is the component of the tangent displacement in the
-     two-dimensional flat direction and w its complement. On that ball this gives E(y) ≥ E(P), with equality only at
+     two-dimensional flat direction and w its complement. (The Lean statement `LocalMain.Lprime` in `lean/` has the
+     weaker constants 0.0268 and 0.0200; both give E(y) ≥ E(P) with equality only at y = P.) On that ball this gives E(y) ≥ E(P), with equality only at
      y = P, subject to the paper-level steps listed below.
 
 **The flat mode.** Along the ring displacement z_k ∝ cos(4πk/5) (or sin), k = 0..4 (the "k = 2 pucker"), the second
@@ -90,11 +92,17 @@ needed degree 12 (at degree 10 the float optimum was 1.4·10⁻⁴ below E(P)).
 `check_cell.py` also evaluates the global identities of PAPER §5.1/§6.3 on random configurations, as a guard against
 errors in transcribing the model; this is a sanity test, not part of the certificate check.
 
-## What is not checked here
+## Steps not checked by the Python scripts
 
-These steps are paper-level. They are taken from the Coulomb proof [C] (PAPER §4–7), where they are proved in Lean for
-the Coulomb kernel. Their arguments do not depend on the kernel beyond the stated hypotheses, but they have not been
-re-proved or formalised for the logarithmic kernel:
+These steps are taken from the Coulomb proof [C] (PAPER §4–7), where they are proved in Lean for the Coulomb kernel.
+The Python scripts do not check them. The Lean formalisation in `lean/` covers the full statement for the
+logarithmic kernel, and with it these steps (in its own form):
+- the glue lemmas are restated generically in the kernel (`lean/ThomsonGen/Generic/`);
+- the local lemma (form L′), with its chart, gauge and Bombieri steps, is in `lean/LogLean/Local*.lean`;
+- the closed form of E(P) is in `lean/LogN7/Basic.lean`;
+- the assembly is in `lean/LogN7/Main.lean`.
+
+The steps are:
 
 * three-point positivity (PAPER Lemma 4.1) and the identities (2) and (6) that turn a certificate into Σ H ≥ e
   (PAPER §5.1, §6.2–6.3);
@@ -111,11 +119,12 @@ Also checked by machine: the tiling of [−1, −9/10] by the cap and the five s
 certificates' own `cell` fields (`checkers/make_coverage.py`); the contact H_C′ = φ′ at both c₁ and c₂ in exact
 arithmetic (`checkers/check_cert.py`); and the comparisons of e with E(P) in ball arithmetic.
 
-The Riesz s = 2 constants in `local/LOCAL_LEMMA.md` §7 are floating-point values only, and no s = 2 certificates are
-included. `verify_soft_mode.py` is a numerical computation.
+The Riesz s = 2 constants in `local/LOCAL_LEMMA.md` §7 are floating-point values only. The s = 2 certificates
+and their checkers are in `riesz2/`. `verify_soft_mode.py` is a numerical computation.
 
-Nothing here has been refereed. The computations are certificates for the steps listed in the table above, not a proof
-of the full statement.
+The Python computations are certificates for the steps listed in the table above. The full statement, including the
+steps of this section, is the subject of the Lean formalisation in `lean/` (`lean/README.md`). Nothing here has been
+refereed.
 
 ## References
 

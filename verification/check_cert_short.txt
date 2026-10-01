@@ -1,0 +1,47 @@
+$ python3 checkers/check_cert.py certificates/cert_cap_log_D12_short.json
+identity A: EXACT  (35s)
+identity B: EXACT  (62s)
+identity G: EXACT  (92s)
+{
+ "constraint_6": true,
+ "identity_A": true,
+ "identity_B": true,
+ "identity_G": true,
+ "psd": true,
+ "psd_min_dd_slack": 4.3880941702191505e-06,
+ "HB_contact": {
+  "h1": "1/2",
+  "h2": "1/4",
+  "h3": "1/6",
+  "matches_phi_to_3rd": true
+ },
+ "HC_contact": {
+  "dHC_c1": [
+   "1/2",
+   "1/10"
+  ],
+  "dHC_c2": [
+   "1/2",
+   "-1/10"
+  ],
+  "matches_phi_prime": true
+ },
+ "HA_contact": {
+  "dHA_at_m1": "284603757341866097/1152921504606846976",
+  "phi_prime_at_m1": "1/4",
+  "slope_ok": true
+ },
+ "e": "-73701208522562973/9007199254740992",
+ "e_minus_EP": "-7.29443587421371e-17",
+ "e_le_EP": true,
+ "gaps_at_P": {
+  "A": "3.48091e-18",
+  "B": "3.47518e-18",
+  "C1": "3.48128e-18",
+  "C2": "3.46106e-18"
+ },
+ "sum_gaps_minus_(EP-e)": "-2.1392e-61",
+ "ALL_OK": true,
+ "time_s": 91.8
+}
+[exit 0]

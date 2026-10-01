@@ -1,0 +1,19 @@
+# Upstream lemmas used unchanged by LogLean/LocalKel.lean.
+# split.py copies each one verbatim into ThomsonGen/Verbatim/LogLocal.lean.
+import Mathlib.Analysis.Real.Sqrt
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
+import Mathlib.Algebra.BigOperators.Intervals
+import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Algebra.BigOperators.Field
+import Mathlib.Data.Rat.BigOperators
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
+namespace LocalKel
+open Finset
+ThomsonN7.Cert.qform_dd_nonneg
+ThomsonN7.Cert.Blk.list_sum_range_map
+ThomsonN7.Reg.sqrt5_lo
+ThomsonN7.Reg.sqrt5_hi
