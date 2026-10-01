@@ -17,7 +17,8 @@ The owner did not check the mathematics or the Lean code line by line.
 - documentation that claimed more than was checked;
 - upstream code stored in the repository, now regenerated or attributed (`lean/README.md`).
 
-AI reviews are not peer review, and no human expert has checked this work.
+AI reviews are not peer review, and no human expert has checked this work. In the terminology of the Lean community
+this is a *warrant*, not a human-readable proof (see the note at the top of `README.md`).
 
 **What is checked by software**
 - The exact checkers in `checkers/` and `local/` check the certificates and the local lemma, in exact rational or

@@ -4,6 +4,13 @@ Status: **computational certificates and a Lean 4 formalisation, not peer review
 formalisation added 2026-10-01. **Produced by AI models** under the direction of the repository owner; see
 [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md).
 
+> [!IMPORTANT]
+> This repository contains an AI-produced **warrant**: a machine-checked Lean proof that no human has digested. It is
+> a warrant for Conjecture 1 of Armentano et al. (arXiv:2502.10152) and for its Riesz $`s = 2`$ analogue. We do not
+> regard the conjecture as settled by it. We welcome a human-readable treatment, and credit for a proof belongs to
+> whoever writes one. Questions, checks and corrections:
+> [GitHub issues](https://github.com/alejandrozarco/thomson-n7-log/issues).
+
 Archived on Zenodo: [10.5281/zenodo.23086382](https://doi.org/10.5281/zenodo.23086382) (all versions).
 Cite with `CITATION.cff`.
 
