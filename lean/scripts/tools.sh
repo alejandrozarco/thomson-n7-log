@@ -1,7 +1,8 @@
-# Sourced by second-kernel.sh. Fetches and builds the pinned external checkers into $TOOLS (default: .tools/).
+# Sourced by second-kernel.sh and run_comparator.sh. Fetches and builds the pinned external checkers into $TOOLS (default: .tools/).
 # Same pins as the verification record of the Coulomb formalisation (huwngtran/thomson-n7-lean).
 EXPORT_REV=076e8e57707e813375e8f9da8bf989799ace9680       # leanprover/lean4export, format 3.1.0
 NANODA_REV=3a2407216ee84a75f9e1aead6803d0578be06ae7       # ammkrn/nanoda_lib 0.4.19
+COMPARATOR_REV=fd5d5bcf14177b187f66d4502071268d877887c3   # leanprover/comparator; builds with its own toolchain
 TOOLS="${TOOLS:-$ROOT/.tools}"; mkdir -p "$TOOLS"; TOOLS="$(cd "$TOOLS" && pwd)"
 
 fetch() {  # fetch <dir> <url> <rev>
@@ -23,4 +24,9 @@ need_nanoda() {
   fetch nanoda_lib https://github.com/ammkrn/nanoda_lib.git "$NANODA_REV"
   (cd "$TOOLS/nanoda_lib" && cargo build --release)
   NANODA_BIN="$TOOLS/nanoda_lib/target/release/nanoda_bin"
+}
+need_comparator() {
+  fetch comparator https://github.com/leanprover/comparator "$COMPARATOR_REV"
+  (cd "$TOOLS/comparator" && lake build)
+  COMPARATOR_BIN="$TOOLS/comparator/.lake/build/bin/comparator"
 }

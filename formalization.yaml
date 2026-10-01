@@ -1,0 +1,167 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml (v0.4): repo-root metadata for formalization projects.
+
+version: "v0.4"
+
+project:
+  name: "thomson-n7-log: logarithmic and Riesz s = 2 energy of seven points on the sphere"
+  description: >-
+    An AI-produced warrant, meaning a machine-checked Lean proof that no human has digested. It concerns the
+    statement that the regular pentagonal bipyramid minimises the logarithmic energy sum_{i<j} -log|x_i - x_j| of
+    seven pairwise distinct points on the unit sphere S^2, uniquely up to an orthogonal map and a relabelling
+    (Conjecture 1 of Armentano et al.). The same is stated and checked for the Riesz s = 2 energy
+    sum_{i<j} |x_i - x_j|^{-2}.
+    The argument follows the Lean formalisation of the Coulomb case (huwngtran/thomson-n7-lean):
+    - a case split by the most nearly antipodal pair (Case 1, five slabs, a cap);
+    - exact three-point (Bachoc-Vallentin type) semidefinite certificates, checked by `decide +kernel`;
+    - polynomial minorants of the kernel;
+    - on the cap: coercivity, ring rigidity and, for the logarithmic energy, a quartic local lemma. The local lemma
+      is needed because the Hessian at the bipyramid has a flat two-dimensional ring direction at s = 0 and s = 2.
+    The repository also contains the certificates as JSON with independent exact checkers in Python.
+  authors:
+    - "alejandrozarco (repository owner; directed the work)"
+    - "Claude Opus 5.5 (Anthropic), AI model that produced the mathematics, certificates and Lean code"
+  responsible_maintainers:
+    - "alejandrozarco"
+  license: "none specified (no licence file; the upstream code used is regenerated, not redistributed)"
+
+sources:
+  - title: "Characterization of Logarithmic Fekete Critical Configurations of at Most Six Points in All Dimensions"
+    authors: ["D. Armentano", "M. Bentancur", "J. Carrasco", "M. Fiori", "M. Valdés", "M. Velasco"]
+    id: "arXiv:2502.10152"
+    type: "article"
+    location: "Conjecture 1 (seven points on S^2: the pentagonal bipyramid is the unique log-energy minimiser)"
+    relationship: "other"
+    note: "Source of the conjecture that the main theorem states. Its proof is not taken from this paper."
+    author_endorsement: "not-contacted"
+  - title: "Case split, certificates and quartic local lemma for N = 7 (log and Riesz s = 2)"
+    type: "original-proof"
+    relationship: "formalizes"
+    note: >-
+      The argument was first presented in this repository (METHOD.md, local/LOCAL_LEMMA.md, lean/OVERVIEW.md). It is
+      AI-produced and has not been refereed.
+    author_endorsement: "n/a"
+  - title: "New upper bounds for kissing numbers from semidefinite programming"
+    authors: ["C. Bachoc", "F. Vallentin"]
+    id: "J. Amer. Math. Soc. 21 (2008), 909-924"
+    type: "article"
+    relationship: "background"
+    note: "Three-point positivity on S^2. The Lean version is upstream's (huwngtran/thomson-n7-lean, `bv_positivity`)."
+    author_endorsement: "n/a"
+
+related_formalizations:
+  - id: "https://github.com/huwngtran/thomson-n7-lean"
+    revision: "25f2fa53119273458cfbb3c4230904bffdd61e53"
+    relationship: "builds-on"
+    note: >-
+      Coulomb (s = 1) case for N = 7. Unchanged declarations are regenerated from it by lean/regen.sh and are not
+      stored here. Adapted declarations are stored with per-declaration attribution (lean/README.md, Upstream code).
+  - id: "https://arxiv.org/abs/2609.22077"
+    relationship: "independent"
+    note: "Kryvonos, Liehr, Taylor: energy minimisation for eight points (log, Coulomb, all Riesz s >= 0)."
+
+classification:
+  arxiv: ["math.MG", "math.OC"]
+  msc2020: ["52C17", "31C20", "90C22", "03B35"]
+
+status:
+  scope: >-
+    Logarithmic energy for N = 7 (lean/) and Riesz s = 2 energy for N = 7 (riesz2/lean/): minimality and uniqueness
+    up to O(3) and relabelling.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  main_results:
+    - declaration: "ThomsonN7Log.thomson_seven_log"
+      file: "lean/LogN7/Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "lean/comparator.json"
+      literature_dependencies: []
+    - declaration: "ThomsonN7Log.thomson_seven_log_unique"
+      file: "lean/LogN7/Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "lean/comparator.json"
+      literature_dependencies: []
+    - declaration: "Riesz2.riesz2_seven"
+      file: "riesz2/lean/Riesz2/Main.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      literature_dependencies: []
+    - declaration: "Riesz2.riesz2_seven_unique"
+      file: "riesz2/lean/Riesz2/Main.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      literature_dependencies: []
+  notes: >-
+    Axioms as reported by `#print axioms` in a clean build (verification/lean/; riesz2/lean/README.md). No
+    `native_decide`. For lean/ at the time of writing:
+    - the clean build of the previous version (154 modules) passed;
+    - the clean build of the current version and the Comparator run are in progress;
+    - a second-kernel (nanoda) check has not completed.
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["claude-opus-5-5"]
+      framework: "Claude Code"
+      tool_setup: >-
+        Several coordinated Claude Opus 5.5 sessions and sub-agents with terminal access. Python
+        (mpmath, python-flint, sympy, cvxpy/Clarabel) was used for SDP solving, exact rounding and checkers.
+        Lean 4 v4.34.1 + Mathlib, with every module built one at a time at low priority on a Linux workstation.
+      cost:
+        wall_time: "about 5 days (2026-09-27 to 2026-10-01)"
+        spend_usd: "subscription-based usage"
+        hardware: "Apple-silicon laptop; Linux workstation (6 cores, 19 GB RAM) for Lean builds"
+      prompting_notes: >-
+        The owner set goals and decided on scope, publication, wording and the handling of upstream code. The agents
+        planned and executed. Plans and results are recorded in a development journal (not public).
+    - method: "agent"
+      models: ["claude-opus-5-5", "claude-fable-5-1", "gpt-6-astra"]
+      framework: "Claude Code; OpenAI Codex CLI (gpt-6-astra)"
+      tool_setup: "Separate read-only reviewer instances, one review per stage."
+      prompting_notes: >-
+        Adversarial reviews covered the certificates, the local lemma, the list of deductions, the Lean proof
+        (statement fidelity, trust surface, assembly) and the publication package. Their findings were fixed; see
+        AI_DISCLOSURE.md.
+  spend_usd: "subscription-based usage (not separately metered)"
+  notes: "See AI_DISCLOSURE.md."
+
+fidelity:
+  divergences: >-
+    - The Lean version of the quartic local lemma (LocalMain.Lprime) has the constants 0.0268 and 0.0200. They are
+      weaker than the Python-certified 0.0342 and 0.0227, and both suffice.
+    - The cap uses a re-rounded certificate (certificates/cert_cap_log_D12_short.json) with the same bound.
+    - In the statement, SphereConfig requires injectivity (distinct points), because Lean has log 0 = 0. The
+      statement definitions are upstream's, imported from the regenerated ThomsonGen/Preamble.lean.
+
+review:
+  status: "agent-reviewed"
+  reviewers:
+    - "Claude Opus 5.5 (read-only reviewer instances)"
+    - "Claude Fable 5.1"
+    - "gpt-6-astra (OpenAI)"
+  notes: >-
+    No human expert has checked the proof. The conjecture is not regarded as settled by this warrant (README).
+    Comments and checks are welcome via GitHub issues.
+
+alignment:
+  namespace: "ThomsonN7Log"
+  statements:
+    - source: "Armentano et al., Conjecture 1 (log energy, N = 7): minimality"
+      lean: "ThomsonN7Log.thomson_seven_log"
+      module: "lean/LogN7/Solution.lean (statement: lean/LogN7/Challenge.lean)"
+      status: "proved"
+    - source: "Armentano et al., Conjecture 1 (log energy, N = 7): uniqueness up to O(3) and relabelling"
+      lean: "ThomsonN7Log.thomson_seven_log_unique"
+      module: "lean/LogN7/Solution.lean (statement: lean/LogN7/Challenge.lean)"
+      status: "proved"
+    - source: "Quartic local lemma L' (local/LOCAL_LEMMA.md, section 3')"
+      lean: "LocalMain.Lprime"
+      module: "lean/LogLean/LocalMain.lean"
+      status: "proved"
+      note: "Weaker constants than the Python version; see fidelity."
+
+acknowledgements: >-
+  Built on huwngtran/thomson-n7-lean (Coulomb N = 7). Uses Mathlib, Lean 4, and Python numerical libraries.

@@ -1,0 +1,13 @@
+{
+  "challenge_module": "LogN7.Challenge",
+  "solution_module": "LogN7.Solution",
+  "theorem_names": [
+    "ThomsonN7Log.thomson_seven_log",
+    "ThomsonN7Log.thomson_seven_log_unique"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

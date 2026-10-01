@@ -4,7 +4,7 @@ d871008cb72f057497036a1e813c195a7185fb5d12c7170146c07917ef100872  ./.zenodo.json
 8ae7fbb9a24c8cdec68b954ef4ed10d671505e610bf28a3e523dbede6541b28e  ./CITATION.cff
 43c04df1fb4faafd51aad99693360b31d96e0a8b559f64e1f80f9aa27499ca92  ./COVERAGE.md
 c90c3d53c69e4c101da976058737e36c6c844c0bf7a434cb62578b633a25aac6  ./METHOD.md
-b24608dea843da25d9077a1997dff2bc80846e808a427a2b8574c7e6156971ea  ./README.md
+4f89c04adbe58915206c185b5662beed4f95eb1dc8b5a6c3d58302ff17d42732  ./README.md
 9c7cc183fcb930efe2451c463a9528245aec64121c9aec27fc606cf0572ae4e4  ./certificates/cells.json
 be95bd0d02115b5cae6dc65154301feed2a775ff9972b0755d6e87d1af704e70  ./certificates/cells/calib_case1_coulomb_D10.json
 d50793adbadf05c191e9c0f39ea08d4739399df89e22598252ed086d63a7b3ae  ./certificates/cells/cert_case1_log_D10.json
@@ -31,6 +31,7 @@ c0e7ca846f9f3028b116130037f5105ab26b30ff728b127eb2455e19850d96a5  ./figures/mino
 a14fb00dfcd204b4c2aba0daed2fadbe342b7356776a89528d20fd70e2e34963  ./figures/minorant_cap_light.svg
 735eff477c1aa4aa69f37ee698564629fc2225d8fb4a0dea346ad42d01e1791d  ./figures/soft_mode_dark.svg
 9e25e416f4f970dd7b3f420cc573b6dad278620b82ebb189e914f9631cdfe53d  ./figures/soft_mode_light.svg
+f4d655f91a066f220725f56db2a12b6950f7c9882fd0a52d5cd5478cfaca930d  ./formalization.yaml
 610b381434137c2329f8b54b2807c3cf6318a3c69266e8bed11209abc335d32e  ./generate/face.py
 290b66a36cca15e337aaf33e6426287e3ddf38acf2dc4a6cc1db8c02a619cdb6  ./generate/polyk.py
 6ab8bf9d7852eee299dc137ac6c4a5340b7909b2a125078f6df0e9adb62069d4  ./generate/round_cell.py
@@ -186,6 +187,7 @@ b4bcd650738785cd21190f65d63b7a0fcfa1856d07549b26b1f43ad09029d306  ./lean/Thomson
 4953986405de8663cb94d82f90d354c6e6423542623057ff5ca77cb0c600fde6  ./lean/ThomsonGen/scripts/verbatim/Generic.txt
 5cb343efceb05d2c13e56beb94837173cf540ae6eef3416c1956f994c0730ba3  ./lean/ThomsonGen/scripts/verbatim/LogLocal.txt
 f4d995d79fdb135c6f30f71e9db03a52c0339ad3ea8cd2147954823893d64cc8  ./lean/ThomsonGen/scripts/verbatim/LogMinor.txt
+2472bcb3528fc7a4180e8f108da86d45accacee21eb1b9bd759e9d493a571778  ./lean/comparator.json
 a79f5c7ec5b7b699a42b9540a43aaf968963dcb72ab4ad364c7aa36fa7b6e8ba  ./lean/gen/LogPhi.lean
 523b72518de1e7bb5ccb015cb7fa75a03385b482545cae0d0cc10dd522d2634b  ./lean/gen/README.md
 e58ed735504d02386c9096faf09a3985aa1d43119542c31ed01a0c7f0990d71a  ./lean/gen/assemble_core.py
@@ -217,8 +219,9 @@ d43ee313121070ea1eca8302a6b56559dd1db6ed6146b5fa5bac399e090df35b  ./lean/lake-ma
 cfdd95e79b888189556ad852fdf1357b02854d4e0b61f8449cd64dbe804f078a  ./lean/lakefile.toml
 d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b  ./lean/lean-toolchain
 b24df49d65aa1b5d45025e22cfecaf3fd979a71a798e6898ccb9f26484fc62a6  ./lean/regen.sh
+792b28f9aed0854e8d236b9da4d2599f117084e5fd5c3a2f9b1d0a560f519022  ./lean/scripts/run_comparator.sh
 21221654cab0a8712b8139f7c7072808f808c06c13afdf777fe6f1cd9d9adef2  ./lean/scripts/second-kernel.sh
-6c35c21fe1d370d9e7e7357c420d9be5ce567959cdb4902bf4d6021e6bf46e34  ./lean/scripts/tools.sh
+dba897d6bc00fbe14a22f0a0007c162f1bb8be5e86753b61eb4d2d280b865a91  ./lean/scripts/tools.sh
 89b557dc5a2779cbc6797954959b479116d0332434b71a83c0f34701198d282e  ./local/LOCAL_LEMMA.md
 74a31bb9e593743c9d8befa23f92aa30b6ed72f29138ff674835919fb5b265c6  ./local/check_local_rigorous.py
 ec916682c7de5be2f7e2a9d378f8d4ce84cba2cd677aad4850726846a7171415  ./riesz2/COVERAGE.md
