@@ -325,7 +325,7 @@ c23066394b553aaf80a096656b460a13b21884f8b4a2181ce647d4628069b6df  ./riesz2/lean/
 049dd977229c6ebd91e061447653b4f57d84a5a696abeb8c361851c51bb466ec  ./riesz2/lean/Riesz2/S9998/Spec.lean
 6300233c32e9aea145e7776315bd4f55262aaab8cfe5e1c35edd941ac4889d7c  ./riesz2/lean/Riesz2/Sharp.lean
 9de74418feaff380ca20720e55b10f6edd2990c50324d89965f8b0d35eb8a6f6  ./riesz2/lean/ThomsonGen/Cert/NBlk.lean
-a69de3ad59fa1b050574f249b826631ef6b24a935a034aa81a7ec0eda25c25ac  ./riesz2/lean/ThomsonGen/Generic/Energy.lean
+ef017a07cd36291456ad73427e42f1a4dc2a35998efad52f66dc7536c18ebfbb  ./riesz2/lean/ThomsonGen/Generic/Energy.lean
 0ebf56d4189ad49d5619faecf5a46e01e27ea669e563a823a193da3a86608536  ./riesz2/lean/ThomsonGen/Generic/Glue.lean
 563300eeb2d07679245f57214e251ba1707047167c7dd0d6cc816753f9ff9ca8  ./riesz2/lean/ThomsonGen/scripts/depdump.tsv
 4d257f8bdcc1a97909d52e6bb8296bc4ae77bce0c19d2dff1722da26d387495d  ./riesz2/lean/ThomsonGen/scripts/gen_roots.txt

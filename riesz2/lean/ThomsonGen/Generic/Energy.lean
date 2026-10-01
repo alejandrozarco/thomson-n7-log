@@ -5,8 +5,8 @@ import ThomsonGen.TwoRegime
 
 `pairEnergy φ x = ∑_{i<j} φ ⟪x i, x j⟫` for an arbitrary kernel `φ : ℝ → ℝ` of the inner product.
 Everything here uses only this sum form, `O(3)`/`S₇` invariance (which hold for every `φ`), and the
-kernel-free chart lemma `GV.exists_iso_close`.  The Coulomb energy is the instance `φ = Base.phi`
-on unit configurations (`ThomsonGen.Coulomb`); the log energy will be `φ₀ t = -½ log (2 - 2t)`.
+kernel-free chart lemma `GV.exists_iso_close`.  For unit vectors, the Coulomb energy is the instance
+`φ = Base.phi`, the Riesz `s = 2` energy is `φ t = 1 / (2 - 2t)` and the log energy is `φ t = -½ log (2 - 2t)`.
 
 Generic versions of upstream `TwoRegime.LocalMinAt`, `localMinAt_of_sq`, `LocalGram`,
 `localGram_of_localMinAt`, `LocalGramA`, `localGramA_of_localGram`, `local_of_windowA`, and of
