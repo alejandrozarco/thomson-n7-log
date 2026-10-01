@@ -1,5 +1,7 @@
 # Thomson problem, N = 7, logarithmic energy: computational certificates and Lean formalisation
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23086382.svg)](https://doi.org/10.5281/zenodo.23086382)
+
 Status: **computational certificates and a Lean 4 formalisation, not peer reviewed.** Prepared 2026-09-29; Lean
 formalisation added 2026-10-01. **Produced by AI models** under the direction of the repository owner; see
 [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md).
