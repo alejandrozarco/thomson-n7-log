@@ -2,6 +2,9 @@
 
 Status: Lean 4 formalisation, checked by the Lean kernel (see Build test); not peer reviewed.
 
+A readable overview of how the formal proof fits together, and what is new relative to the Coulomb formalisation:
+[`OVERVIEW.md`](OVERVIEW.md).
+
 `LogN7/Challenge.lean` states two theorems with `sorry`, and `LogN7/Solution.lean` proves the same two statements over the same definitions:
 
 ```lean
