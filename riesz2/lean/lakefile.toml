@@ -1,0 +1,21 @@
+name = "Riesz2N7"
+defaultTargets = ["Riesz2"]
+
+# Mathlib is the only dependency (same revision as the Coulomb formalisation); lake-manifest.json
+# records the resolved revisions of its own dependencies.
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "d13f23b723b8a846827a245b89c10fc7d3f11612"
+
+# Main theorems and axiom check.
+[[lean_lib]]
+name = "Riesz2"
+roots = ["Riesz2.Main", "Riesz2.Check.Axioms"]
+
+# Support library: three files in this directory plus modules regenerated from the upstream
+# Coulomb formalisation by ./regen.sh.
+[[lean_lib]]
+name = "ThomsonGen"
+globs = ["ThomsonGen.+"]

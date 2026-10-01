@@ -24,6 +24,8 @@ argument in the parent directory (`../checkers/check_cert.py`, `../checkers/chec
 kernel-free, and only the minorants $`H \le \varphi_2`$ and the value $`e`$ vs. $`E_2(P)`$ depend on the kernel. See
 `../METHOD.md` for the shared structure and `../README.md` for the log-kernel case.
 
+The statement is also checked in Lean 4 (standard axioms only) in `lean/`; see `lean/README.md`.
+
 ## Headline
 
 At $`s = 2`$ every value and derivative of $`\varphi_2`$ at the inner products of $`P`$ lies in $`\mathbb{Q}(\sqrt5)`$, and
