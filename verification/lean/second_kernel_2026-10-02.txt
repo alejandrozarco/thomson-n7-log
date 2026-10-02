@@ -1,0 +1,48 @@
+Second-kernel check of lean/, 2026-10-02 (Linux x86_64), with lean/scripts/second-kernel.sh
+
+Tools: leanprover/lean4export 076e8e57707e813375e8f9da8bf989799ace9680 (export format 3.1.0);
+       ammkrn/nanoda_lib 3a2407216ee84a75f9e1aead6803d0578be06ae7 (0.4.19), nat_extension and string_extension on.
+Input: the build of verification/lean/build_2026-10-02.tsv (same sources as this commit).
+Export of ThomsonN7Log.thomson_seven_log and ThomsonN7Log.thomson_seven_log_unique from LogN7.Solution:
+  9247093 lines, 515242290 bytes, sha256 4391e294dce40ac424e2196717e6ec39aa984737a24968d817813cfaff2f232c.
+Export plus check: 5 h 19 min wall time, peak resident memory 6.9 GB (single thread).
+
+== nanoda on the export (pretty-printed statements, axioms, result)
+theorem ThomsonN7Log.thomson_seven_log :
+  forall (x : Fin (OfNat.ofNat 7) → ThomsonN7.R3),
+  Membership.mem (ThomsonN7.SphereConfig (OfNat.ofNat 7)) x → LE.le (ThomsonN7Log.logEnergy ThomsonN7.pentBipyramid)
+    (ThomsonN7Log.logEnergy x) :=
+  _
+
+theorem ThomsonN7Log.thomson_seven_log_unique :
+  forall (x : Fin (OfNat.ofNat 7) → ThomsonN7.R3),
+  Membership.mem (ThomsonN7.SphereConfig (OfNat.ofNat 7)) x → Eq (ThomsonN7Log.logEnergy x)
+      (ThomsonN7Log.logEnergy ThomsonN7.pentBipyramid) →
+  Exists
+    (fun (g : LinearIsometryEquiv (RingHom.id Real) ThomsonN7.R3 ThomsonN7.R3) =>
+    Exists
+      (fun (σ : Equiv.Perm (Fin (OfNat.ofNat 7))) =>
+      forall (i : Fin (OfNat.ofNat 7)),
+      Eq (x i) (DFunLike.coe g (ThomsonN7.pentBipyramid (DFunLike.coe σ i))))) :=
+  _
+
+axiom propext {a b : Prop} : Iff a b → Eq a b
+
+axiom Quot.sound.{u} {α : Sort u} {r : α → α → Prop} {a b : α} : r a b → Eq (Quot.mk r a) (Quot.mk r b)
+
+axiom Classical.choice.{u} {α : Sort u} : Nonempty α → α
+
+Checked 58525 declarations with no errors
+
+== negative control
+The first natural-number literal with at least 15 digits that occurs exactly once in the export, 2236067977499789,
+was changed to 2236067977499791, the smallest larger value that occurs nowhere in the export. nanoda rejected the
+tampered export in its type checker after about 3 minutes:
+  thread 'main' panicked at src/tc.rs:955:71:
+  assertion failed: self.def_eq(u, v)
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+(nanoda reports a failed definitional-equality check by this assertion.)
+
+An earlier run of the control changed the literal to 2236067977499790, which already occurs elsewhere in the export.
+nanoda's parser then stopped with "Attempted to insert duplicate Expr" before any type checking, so that run did not
+test the checker. The script now picks a value that does not occur and treats a parser rejection as inconclusive.

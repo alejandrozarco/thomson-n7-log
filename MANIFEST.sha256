@@ -5,7 +5,7 @@
 43c04df1fb4faafd51aad99693360b31d96e0a8b559f64e1f80f9aa27499ca92  ./COVERAGE.md
 192457fbc2a1504f60719f0f9581c2409aace42d9960a8fb6f94e4541267fade  ./LICENSE
 c90c3d53c69e4c101da976058737e36c6c844c0bf7a434cb62578b633a25aac6  ./METHOD.md
-5013dc1a12da09e33b34fdfffbe8df8a617fca391ceae9ee346622504160469f  ./README.md
+937b6694ff7e222658d11dc9b27b4f8c5f02c3a6edc9a90d33b07aa135d0b743  ./README.md
 9c7cc183fcb930efe2451c463a9528245aec64121c9aec27fc606cf0572ae4e4  ./certificates/cells.json
 be95bd0d02115b5cae6dc65154301feed2a775ff9972b0755d6e87d1af704e70  ./certificates/cells/calib_case1_coulomb_D10.json
 d50793adbadf05c191e9c0f39ea08d4739399df89e22598252ed086d63a7b3ae  ./certificates/cells/cert_case1_log_D10.json
@@ -32,7 +32,7 @@ c0e7ca846f9f3028b116130037f5105ab26b30ff728b127eb2455e19850d96a5  ./figures/mino
 a14fb00dfcd204b4c2aba0daed2fadbe342b7356776a89528d20fd70e2e34963  ./figures/minorant_cap_light.svg
 735eff477c1aa4aa69f37ee698564629fc2225d8fb4a0dea346ad42d01e1791d  ./figures/soft_mode_dark.svg
 9e25e416f4f970dd7b3f420cc573b6dad278620b82ebb189e914f9631cdfe53d  ./figures/soft_mode_light.svg
-bb070ca236231e07dfa1ff7e805136356f89e00497960d3d1b4f25864f8036e5  ./formalization.yaml
+8175115c32dd08a42e8333866a1c0304be6eaac0ba7437bba4c313849c7351c5  ./formalization.yaml
 610b381434137c2329f8b54b2807c3cf6318a3c69266e8bed11209abc335d32e  ./generate/face.py
 290b66a36cca15e337aaf33e6426287e3ddf38acf2dc4a6cc1db8c02a619cdb6  ./generate/polyk.py
 6ab8bf9d7852eee299dc137ac6c4a5340b7909b2a125078f6df0e9adb62069d4  ./generate/round_cell.py
@@ -173,8 +173,8 @@ cc7fb313d98218278fe30c638d39ffdfa2d17e5db6f9fa41106c12108cdbacc7  ./lean/LogN7/S
 eff9cf7b0a321ccfcd3347ab1148f2f7e922a8cba62dccab77917194bf5afe00  ./lean/LogN7/S9998/Data.lean
 2b6d05772a1e57c7ae0aecbc4e2c26ba10845753a5dc119da65c567c7c6175d4  ./lean/LogN7/S9998/Spec.lean
 727895a64f246a7c5d84380b014e94eff30ee2ad10d61f43c6a8852f8b5e2161  ./lean/LogN7/Solution.lean
-47541eeb59914a8857abfc59501f90ec1ec884822047a8b91f07db6049664941  ./lean/OVERVIEW.md
-e4d5f83a8dfe5c683f913091270005624a242c9002f5d6e1a2ba62c7fe0f081a  ./lean/README.md
+6ecf5a4e74840f0ee34a29f66d38f58bb151a185c82b8685eb08d14503cab607  ./lean/OVERVIEW.md
+3acbe68162e04ac0bc7a214e27ecf6634e5bffa059a93d1dbe7a6a3a32239fd1  ./lean/README.md
 9de74418feaff380ca20720e55b10f6edd2990c50324d89965f8b0d35eb8a6f6  ./lean/ThomsonGen/Cert/NBlk.lean
 94a8aa1ca7a4589a0d4c95eab6856068194f656840854d098e8077b79d6e7804  ./lean/ThomsonGen/Cert/NBlkCap.lean
 3998e50653b55468a63e649a3a85b92dc9e3ea7da1c486567f9947a1903791c8  ./lean/ThomsonGen/Cert/Split.lean
@@ -221,7 +221,7 @@ cfdd95e79b888189556ad852fdf1357b02854d4e0b61f8449cd64dbe804f078a  ./lean/lakefil
 d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b  ./lean/lean-toolchain
 b24df49d65aa1b5d45025e22cfecaf3fd979a71a798e6898ccb9f26484fc62a6  ./lean/regen.sh
 792b28f9aed0854e8d236b9da4d2599f117084e5fd5c3a2f9b1d0a560f519022  ./lean/scripts/run_comparator.sh
-21221654cab0a8712b8139f7c7072808f808c06c13afdf777fe6f1cd9d9adef2  ./lean/scripts/second-kernel.sh
+5c84a8d083085b79b129fbd6419377486ad2a1e7fd26f3f63e8a92baafd5a859  ./lean/scripts/second-kernel.sh
 dba897d6bc00fbe14a22f0a0007c162f1bb8be5e86753b61eb4d2d280b865a91  ./lean/scripts/tools.sh
 89b557dc5a2779cbc6797954959b479116d0332434b71a83c0f34701198d282e  ./local/LOCAL_LEMMA.md
 74a31bb9e593743c9d8befa23f92aa30b6ed72f29138ff674835919fb5b265c6  ./local/check_local_rigorous.py
@@ -361,5 +361,6 @@ b95193c09f33028de29b5c2fd2dbf78c4cf767267b018276707065447c0b50fb  ./verification
 a371aa50cdd2872536fe8fe98c1aa2b4ea792201bc8e12292af642133d89d799  ./verification/lean/build_2026-10-01_pre_scrub.tsv
 46f3dad12dbe694abb3f4059bce6adefdeea79ca5aaa1471b2087c9e375a685e  ./verification/lean/build_2026-10-02.tsv
 eef24a32a6cc6242ee2ee383cdbb27d38124bec56702b4972ab74aea727b6ed9  ./verification/lean/riesz2_build_2026-10-01.tsv
+418e14d87d560efeb5033a80a409051a4c5d0ea3c3143483efc36a6143c5aa92  ./verification/lean/second_kernel_2026-10-02.txt
 4d94eeaee539c10c5235f6803063557d55b51c2370ace2023a7d359a162be88c  ./verification/make_coverage.txt
 52bbbd32c9b2a02afbe7e0a097704c36f29d89522c7597064b4196c1cd506fbe  ./verification/verify_soft_mode.txt

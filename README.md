@@ -84,7 +84,8 @@ the same bound $`e - E(P) = -7.294 \cdot 10^{-17}`$ and passes `check_cert.py` a
 (`verification/check_cert_short.txt`, `verification/check_minorant_short.txt`). The local lemma enters in its form L′.
 
 A clean build of the current `lean/` in dependency order (157 modules, Linux x86_64) passed on 2026-10-02, with
-`#print axioms` reporting `[propext, Classical.choice, Quot.sound]` for both theorems. An earlier version (154 modules,
+`#print axioms` reporting `[propext, Classical.choice, Quot.sound]` for both theorems. A second kernel (nanoda)
+accepted an export of both theorems and rejected a copy with one changed literal. An earlier version (154 modules,
 before the upstream-code changes described in `lean/README.md`) passed on 2026-10-01. The records are in
 `verification/lean/`.
 

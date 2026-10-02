@@ -98,7 +98,9 @@ status:
     Axioms as reported by `#print axioms` in a clean build (verification/lean/; riesz2/lean/README.md). No
     `native_decide`. For lean/ at the time of writing:
     - the clean build of the current version (157 modules, 2026-10-02) passed;
-    - no Comparator run and no second-kernel (nanoda) check has completed.
+    - a second kernel (nanoda) accepted an export of both theorems (58525 declarations) and rejected a tampered
+      copy (verification/lean/second_kernel_2026-10-02.txt);
+    - no Comparator run has completed.
 
 automation:
   methods:

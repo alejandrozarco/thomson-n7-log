@@ -168,3 +168,7 @@ one at a time, in dependency order, with `lake env lean -j1 -DElab.async=false`.
   - Largest peak memory: 9.5 GB, in `LogN7/Case1/ChkS0.lean`.
   - `#print axioms`: `[propext, Classical.choice, Quot.sound]` for both theorems.
   - Per-module record: `../verification/lean/build_2026-10-02.tsv`.
+  - Second kernel (`scripts/second-kernel.sh`): nanoda accepted the lean4export export of both theorems
+    (58525 declarations, no errors, axioms `propext`, `Quot.sound`, `Classical.choice`; 5.3 h, 6.9 GB). As a
+    negative control, it rejected a copy of the export with one large literal changed. Record:
+    `../verification/lean/second_kernel_2026-10-02.txt`.

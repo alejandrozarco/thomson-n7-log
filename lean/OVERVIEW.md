@@ -216,7 +216,9 @@ certificate has degree 12 for this reason.
 - **What was checked, and by whom.**
   - The Lean kernel: a clean build of this version in dependency order (157 modules, 2026-10-02,
     `../verification/lean/build_2026-10-02.tsv`; `README.md`, Build test).
-  - `scripts/second-kernel.sh` re-checks an export with nanoda. No record of a run is included.
+  - A second kernel: nanoda, an independent implementation of the Lean 4 type checker, accepted an export of both
+    theorems (58525 declarations, standard axioms) and rejected a copy with one changed literal
+    (`scripts/second-kernel.sh`; `../verification/lean/second_kernel_2026-10-02.txt`).
   - Separate read-only AI instances (Claude Opus 5.5, Claude Fable 5.1, gpt-6-astra) reviewed the work
     (`../AI_DISCLOSURE.md`). AI reviews are not peer review.
   - No human expert has checked the proof.
