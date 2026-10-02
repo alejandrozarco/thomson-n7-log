@@ -255,8 +255,13 @@ def fig_configuration(t, name):
             Q = np.where(msk[:, None], P2, np.nan)
             ax.plot(*Q.T, color=t["grid"] if z0 else t["axis"], linewidth=0.8, linestyle=ls, zorder=1)
     edges = [(p, 2 + k) for p in (0, 1) for k in range(5)] + [(2 + k, 2 + (k + 1) % 5) for k in range(5)]
+    # Hidden-line rule for a convex polyhedron: an edge or vertex is visible iff one of its faces faces the viewer.
+    faces = [(p, 2 + k, 2 + (k + 1) % 5) for p in (0, 1) for k in range(5)]
+    front = [f for f in faces if np.cross(X[f[1]] - X[f[0]], X[f[2]] - X[f[0]]) @ w
+             * np.sign(np.cross(X[f[1]] - X[f[0]], X[f[2]] - X[f[0]]) @ X[list(f)].sum(0)) > 0]
+    seen = lambda *v: any(set(v) <= set(f) for f in front)
     for i, j in edges:
-        back = dp(X[i]) + dp(X[j]) < -0.05
+        back = not seen(i, j)
         ax.plot(*pr(X[[i, j]]).T, color=t["muted"] if back else t["ink2"], linewidth=0.9 if back else 1.3,
                 linestyle=(0, (3, 3)) if back else "-", zorder=2 if back else 4)
     for k in range(5):                                                  # arrows to the displaced points
@@ -265,7 +270,7 @@ def fig_configuration(t, name):
                                      linewidth=1.6, shrinkA=4, shrinkB=2, zorder=6))
         ax.scatter(*a1, s=34, facecolor="none", edgecolor=t["mark2"], linewidth=1.1, zorder=6)
     for i in range(7):
-        back = dp(X[i]) < 0
+        back = not seen(i)
         ax.scatter(*pr(X[i]), s=56 if not back else 40, color=t["mark"], alpha=0.6 if back else 1,
                    edgecolor=t["surface"], linewidth=1.0, zorder=5 if not back else 3)
     for i, lab, off in ((0, "N (fixed)", (10, 4)), (1, "S (fixed)", (10, -10))):
