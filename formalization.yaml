@@ -23,7 +23,7 @@ project:
     - "Claude Opus 5.5 (Anthropic), AI model that produced the mathematics, certificates and Lean code"
   responsible_maintainers:
     - "alejandrozarco"
-  license: "none specified; unchanged upstream declarations are regenerated, adapted ones are stored with attribution"
+  license: "Apache-2.0 (LICENSE); not covering the regenerated upstream code or the upstream material in adapted declarations (README, Licence)"
 
 sources:
   - title: "Characterization of Logarithmic Fekete Critical Configurations of at Most Six Points in All Dimensions"

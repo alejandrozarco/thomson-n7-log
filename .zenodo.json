@@ -30,5 +30,6 @@
       "relation": "references",
       "resource_type": "publication-preprint"
     }
-  ]
+  ],
+  "license": "Apache-2.0"
 }
