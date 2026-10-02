@@ -14,10 +14,10 @@ For seven points $`x_1,\dots,x_7`$ on the unit sphere $`S^2`$, write $`t_{ij} = 
 The regular pentagonal bipyramid $`P`$ (one point at each pole, five equally spaced on the equator) has
 
 ```math
-E_2(P) = \frac14 + 10\cdot\frac12 + 5\bigl(\varphi_2(c_1) + \varphi_2(c_2)\bigr) = \frac{41}{4}, \qquad c_{1,2} = \frac12 \pm \frac{\sqrt5}{10},
+E_2(P) = \frac14 + 10\cdot\frac12 + 5\bigl(\varphi_2(c_1) + \varphi_2(c_2)\bigr) = \frac{41}{4}, \qquad \varphi_2(c_{1,2}) = \frac12 \pm \frac{\sqrt5}{10},
 ```
 
-$`c_1, c_2`$ being the two equatorial inner products of $`P`$ ($`\cos 72^\circ`$, $`\cos 144^\circ`$). This directory contains
+$`c_1, c_2`$ being the two equatorial inner products of $`P`$ ($`c_1 = \cos 72^\circ = (\sqrt5-1)/4`$, $`c_2 = \cos 144^\circ = -(\sqrt5+1)/4`$). This directory contains
 exact certificates and checkers for the statement: for every configuration of seven **pairwise distinct** points on
 $`S^2`$, $`E_2(x) \ge 41/4`$, with equality iff $`x = P`$ up to $`O(3)`$ and relabelling. (Distinctness matters under any
 convention where $`1/0`$ is given a finite value; with $`1/0 = 0`$, seven coincident points would give $`E_2 = 0`$.)
@@ -38,8 +38,8 @@ inequality is decided exactly (rational arithmetic, no floating point, no interv
 $`\varphi_2(t) - H(t) = p(t)/(2-2t)`$ with $`p(t) = 1 - (2-2t)H(t)`$ a polynomial, $`p = F \cdot q`$ for an exact touching
 factor $`F \ge 0`$ and a quotient $`q`$ with no root in the closed range and $`q(a) \gt 0`$ at the left endpoint (Sturm
 sequence, exact rational coefficients). Since the cap bound is sharp, the equality case follows directly from the
-touching factors of the cap minorants: no local lemma or coercivity/rigidity handoff is needed at $`s = 2`$ (it is used
-as a backup route in the source project, not included here).
+touching factors of the cap minorants: no local lemma and no positive-width coercivity estimate are needed at $`s = 2`$. The Lean proof
+(`lean/Riesz2/Sharp.lean`) still applies ring rigidity at zero tube width for uniqueness.
 
 ## Case split
 

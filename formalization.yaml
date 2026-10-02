@@ -23,11 +23,11 @@ project:
     - "Claude Opus 5.5 (Anthropic), AI model that produced the mathematics, certificates and Lean code"
   responsible_maintainers:
     - "alejandrozarco"
-  license: "none specified (no licence file; the upstream code used is regenerated, not redistributed)"
+  license: "none specified; unchanged upstream declarations are regenerated, adapted ones are stored with attribution"
 
 sources:
   - title: "Characterization of Logarithmic Fekete Critical Configurations of at Most Six Points in All Dimensions"
-    authors: ["D. Armentano", "M. Bentancur", "J. Carrasco", "M. Fiori", "M. Valdés", "M. Velasco"]
+    authors: ["D. Armentano", "L. Bentancur", "F. Carrasco", "M. Fiori", "M. Valdés", "M. Velasco"]
     id: "arXiv:2502.10152"
     type: "article"
     location: "Conjecture 1 (seven points on S^2: the pentagonal bipyramid is the unique log-energy minimiser)"
@@ -97,9 +97,8 @@ status:
   notes: >-
     Axioms as reported by `#print axioms` in a clean build (verification/lean/; riesz2/lean/README.md). No
     `native_decide`. For lean/ at the time of writing:
-    - the clean build of the previous version (154 modules) passed;
-    - the clean build of the current version and the Comparator run are in progress;
-    - a second-kernel (nanoda) check has not completed.
+    - the clean build of the current version (157 modules, 2026-10-02) passed;
+    - no Comparator run and no second-kernel (nanoda) check has completed.
 
 automation:
   methods:
@@ -123,8 +122,8 @@ automation:
       tool_setup: "Separate read-only reviewer instances, one review per stage."
       prompting_notes: >-
         Adversarial reviews covered the certificates, the local lemma, the list of deductions, the Lean proof
-        (statement fidelity, trust surface, assembly) and the publication package. Their findings were fixed; see
-        AI_DISCLOSURE.md.
+        (statement fidelity, trust surface, assembly) and the publication package. The maintainers report that the
+        findings were addressed (review reports not public); see AI_DISCLOSURE.md.
   spend_usd: "subscription-based usage (not separately metered)"
   notes: "See AI_DISCLOSURE.md."
 

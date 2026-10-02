@@ -1,10 +1,10 @@
 3c14864439684366c2fc540f4d0c6efc323735799f3679f2b3151513153a5b50  ./.gitignore
 d871008cb72f057497036a1e813c195a7185fb5d12c7170146c07917ef100872  ./.zenodo.json
-1d08dc638134328af59f9f9b8890ad9244c5d03a5879b68bdc32dd0ed25d2b8f  ./AI_DISCLOSURE.md
+80ace0b0a7fbe12650a6f5e7983b010d19ccacb5e14005ea6db448a407b09c1d  ./AI_DISCLOSURE.md
 8ae7fbb9a24c8cdec68b954ef4ed10d671505e610bf28a3e523dbede6541b28e  ./CITATION.cff
 43c04df1fb4faafd51aad99693360b31d96e0a8b559f64e1f80f9aa27499ca92  ./COVERAGE.md
 c90c3d53c69e4c101da976058737e36c6c844c0bf7a434cb62578b633a25aac6  ./METHOD.md
-4f89c04adbe58915206c185b5662beed4f95eb1dc8b5a6c3d58302ff17d42732  ./README.md
+cc112f9145f7d6b18bf0de6a42dd0f66ceee3d32dc021b435af24591185e1b2e  ./README.md
 9c7cc183fcb930efe2451c463a9528245aec64121c9aec27fc606cf0572ae4e4  ./certificates/cells.json
 be95bd0d02115b5cae6dc65154301feed2a775ff9972b0755d6e87d1af704e70  ./certificates/cells/calib_case1_coulomb_D10.json
 d50793adbadf05c191e9c0f39ea08d4739399df89e22598252ed086d63a7b3ae  ./certificates/cells/cert_case1_log_D10.json
@@ -31,7 +31,7 @@ c0e7ca846f9f3028b116130037f5105ab26b30ff728b127eb2455e19850d96a5  ./figures/mino
 a14fb00dfcd204b4c2aba0daed2fadbe342b7356776a89528d20fd70e2e34963  ./figures/minorant_cap_light.svg
 735eff477c1aa4aa69f37ee698564629fc2225d8fb4a0dea346ad42d01e1791d  ./figures/soft_mode_dark.svg
 9e25e416f4f970dd7b3f420cc573b6dad278620b82ebb189e914f9631cdfe53d  ./figures/soft_mode_light.svg
-f4d655f91a066f220725f56db2a12b6950f7c9882fd0a52d5cd5478cfaca930d  ./formalization.yaml
+0b2f75dcf9f83a8dca191c9be61831c02fa43a89ab422f13aeb4d092f75b82d2  ./formalization.yaml
 610b381434137c2329f8b54b2807c3cf6318a3c69266e8bed11209abc335d32e  ./generate/face.py
 290b66a36cca15e337aaf33e6426287e3ddf38acf2dc4a6cc1db8c02a619cdb6  ./generate/polyk.py
 6ab8bf9d7852eee299dc137ac6c4a5340b7909b2a125078f6df0e9adb62069d4  ./generate/round_cell.py
@@ -124,7 +124,7 @@ ee0f42dc5fbdb5f73978d4c640b7815cb24d327973150a6a5796aab48c189727  ./lean/LogN7/C
 d916ed096574ecd4c80b61e7eacd621c870d628338615ba0605bff05fc6347a6  ./lean/LogN7/Case1/Stat.lean
 4b81dfb88eec0cab3dfa2fca3e1cdc49d1abbbd1db655d29e80287ddf12dfaa9  ./lean/LogN7/Challenge.lean
 b6548cee9215441a9e45c517af25dec0c5b0271fd097ef01e8187a0c4e00fe01  ./lean/LogN7/Check/Axioms.lean
-be8866b2f2886356ada4cc6f5f6b76ae2e3ebc1160065e65367d33a95ad871b6  ./lean/LogN7/Main.lean
+aff08cc3547b97a6707596712e9fcd7ae285fff0be9ee8ed5385852f4f11e9a4  ./lean/LogN7/Main.lean
 123ed2062393bba30ba0633734139313cbd8c73e24c8842747700797ec2f124c  ./lean/LogN7/Minor/MinorCap.lean
 19c040b7e62805a5c7860a7dd20151b6cc15283ec275752a2d24d3e73b1d7c11  ./lean/LogN7/Minor/MinorCase1.lean
 5d8af210e4aa6936b86a69c3d05050fbf2bd3264a5e1e38d2615412f60c32a00  ./lean/LogN7/Minor/MinorSlab9390.lean
@@ -171,13 +171,13 @@ cc7fb313d98218278fe30c638d39ffdfa2d17e5db6f9fa41106c12108cdbacc7  ./lean/LogN7/S
 2129da8be0eeff13d1414ed81486544b6667c5abc6ff3fd00284ab19e9cfdbf7  ./lean/LogN7/S9998/ChkMeta.lean
 eff9cf7b0a321ccfcd3347ab1148f2f7e922a8cba62dccab77917194bf5afe00  ./lean/LogN7/S9998/Data.lean
 2b6d05772a1e57c7ae0aecbc4e2c26ba10845753a5dc119da65c567c7c6175d4  ./lean/LogN7/S9998/Spec.lean
-9191876efd09c323be447e55d37872e2095374f3ee864ba517bdb81f25b05861  ./lean/LogN7/Solution.lean
-75e2186997199a7e4dc4da4b98f4e330c91ad3008ac1ce03333714dff631f0ba  ./lean/OVERVIEW.md
-6449e98cc3a150ec7b62d8d9d469bc0ca3cfe8428c2fce1bcb746d5644e94d08  ./lean/README.md
+727895a64f246a7c5d84380b014e94eff30ee2ad10d61f43c6a8852f8b5e2161  ./lean/LogN7/Solution.lean
+47541eeb59914a8857abfc59501f90ec1ec884822047a8b91f07db6049664941  ./lean/OVERVIEW.md
+e4d5f83a8dfe5c683f913091270005624a242c9002f5d6e1a2ba62c7fe0f081a  ./lean/README.md
 9de74418feaff380ca20720e55b10f6edd2990c50324d89965f8b0d35eb8a6f6  ./lean/ThomsonGen/Cert/NBlk.lean
 94a8aa1ca7a4589a0d4c95eab6856068194f656840854d098e8077b79d6e7804  ./lean/ThomsonGen/Cert/NBlkCap.lean
 3998e50653b55468a63e649a3a85b92dc9e3ea7da1c486567f9947a1903791c8  ./lean/ThomsonGen/Cert/Split.lean
-a69de3ad59fa1b050574f249b826631ef6b24a935a034aa81a7ec0eda25c25ac  ./lean/ThomsonGen/Generic/Energy.lean
+ef017a07cd36291456ad73427e42f1a4dc2a35998efad52f66dc7536c18ebfbb  ./lean/ThomsonGen/Generic/Energy.lean
 0ebf56d4189ad49d5619faecf5a46e01e27ea669e563a823a193da3a86608536  ./lean/ThomsonGen/Generic/Glue.lean
 563300eeb2d07679245f57214e251ba1707047167c7dd0d6cc816753f9ff9ca8  ./lean/ThomsonGen/scripts/depdump.tsv
 4d257f8bdcc1a97909d52e6bb8296bc4ae77bce0c19d2dff1722da26d387495d  ./lean/ThomsonGen/scripts/gen_roots.txt
@@ -210,7 +210,7 @@ d9a24c069c1787484f89229315ddd409fe5b32b41bf209a7ea2a57ad652b11e4  ./lean/gen/spl
 3d17101b4da8f50516fb8e0e2d9c7c7eba6db7667a9a8dae1bec52aa025fc343  ./lean/gen/split_global.py
 44417bb9d0d1df87b51f7c799f5d7db8092c4fa4fd1b84326a12103bde364d7b  ./lean/gen_log/cert3_parse.py
 f4f6a1193385ee21b668530474fe873984d56c9c5ddcf5f6338fc4767fd4e80d  ./lean/gen_log/cert3_util.py
-392584f14da6340372c79c25c8abe15ffcc3c17741e46772fc9ca74ca46631f1  ./lean/gen_log/emit_cert3.py
+9ae91743157f53b0306d973f64ff3c8582c074cbaae237bfb7f13e6b0b530b64  ./lean/gen_log/emit_cert3.py
 e3f8451eec934daf4c2e0a2451e0c67e17924e8a0b7df982aaad6f2dab021326  ./lean/gen_log/emit_tcert.py
 46c8063289b55aa4ef21b0c3a206384234b26167a4ca2e1ac2d1f90790f4b653  ./lean/gen_log/gen_capchk.py
 33789963c4adc7bb0f7cf1662a23a87660d07adc6a61be2fd51f98833dac4fa7  ./lean/gen_log/gen_spec_log.py
@@ -225,7 +225,7 @@ dba897d6bc00fbe14a22f0a0007c162f1bb8be5e86753b61eb4d2d280b865a91  ./lean/scripts
 89b557dc5a2779cbc6797954959b479116d0332434b71a83c0f34701198d282e  ./local/LOCAL_LEMMA.md
 74a31bb9e593743c9d8befa23f92aa30b6ed72f29138ff674835919fb5b265c6  ./local/check_local_rigorous.py
 ec916682c7de5be2f7e2a9d378f8d4ce84cba2cd677aad4850726846a7171415  ./riesz2/COVERAGE.md
-a57d74fc81a7e68e793ab9b7b9f2faf4f2e54a617c6b0c5c3f002ba0a792f785  ./riesz2/README.md
+1f351659fce17fcf4f4e23b1f521290c7ce5dd672a4190e8de2d913ba540f8ac  ./riesz2/README.md
 83438d7f496095596b291f261cd1a839a24dace64c9e9ccd7cb78005fa9348c7  ./riesz2/cells2.json
 82f90afa5f7b66c1feab3a3b1aad4ad97a7e559e07304e2e996d24780d616269  ./riesz2/cert_cap_riesz2_D12.json
 5266b1476990c48a293b740e9f6ddc3c13691f99541a75a840a2fe549104dd8b  ./riesz2/cert_cap_riesz2_D12_dyadic.json
@@ -358,5 +358,7 @@ ad14011f54434ac5d54c62e96aa6af4437e777e70e6b429ff77122de01654899  ./verification
 eb4cd67cf923d0c80a2ec6c547e37b45df6fb48cc3439a952ef12b829fe20115  ./verification/environment.txt
 b95193c09f33028de29b5c2fd2dbf78c4cf767267b018276707065447c0b50fb  ./verification/generate_smoke.txt
 a371aa50cdd2872536fe8fe98c1aa2b4ea792201bc8e12292af642133d89d799  ./verification/lean/build_2026-10-01_pre_scrub.tsv
+46f3dad12dbe694abb3f4059bce6adefdeea79ca5aaa1471b2087c9e375a685e  ./verification/lean/build_2026-10-02.tsv
+eef24a32a6cc6242ee2ee383cdbb27d38124bec56702b4972ab74aea727b6ed9  ./verification/lean/riesz2_build_2026-10-01.tsv
 4d94eeaee539c10c5235f6803063557d55b51c2370ace2023a7d359a162be88c  ./verification/make_coverage.txt
 52bbbd32c9b2a02afbe7e0a097704c36f29d89522c7597064b4196c1cd506fbe  ./verification/verify_soft_mode.txt

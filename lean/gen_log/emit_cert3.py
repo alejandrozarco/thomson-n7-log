@@ -263,7 +263,7 @@ def emit(cf, meta, rep, src, sha, outdir, pack, budget):
     L.append(HDR.format(what="log kernel, Case 1 (all pair inner products `≥ -9/10`): the exact cut three-point "
                              "certificate\nin upstream's `ThomsonN7.Cert.Cert3` format (common denominator `Λ = lam_`).\n\n"
                              "* minorant: `H x = (∑_{j<11} h_j x^j) / lam_` = `cf.Hf x` = `LogN7.Minor.peval h_ x / lam_`;\n"
-                             "* margin: `eps_ / lam_ = e`, `e - 41/4 > 0`;\n"
+                             "* margin: `eps_ / lam_ = e`, `e - logEnergy pentBipyramid > 0`;\n"
                              "* `F0..F3`: kernel blocks, `F_k = ent_k / lam_`, `ent = ∑_q d_q l_q l_qᵀ + Δ` (`Δ` diagonally dominant);\n"
                              "* `S0..S7`: SOS blocks (multiplier codes of `Cert.codeE`, identity permutation, basis `z`).\n"
                              + ("Blocks are packed by `ThomsonN7.Cert.mkBlk` (offset-binary fields, least significant first)."

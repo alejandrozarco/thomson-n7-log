@@ -83,9 +83,10 @@ The formal proof uses the Case 1 and slab certificates of `certificates/cells/`.
 the same bound $`e - E(P) = -7.294 \cdot 10^{-17}`$ and passes `check_cert.py` and `check_minorant.py`
 (`verification/check_cert_short.txt`, `verification/check_minorant_short.txt`). The local lemma enters in its form L′.
 
-A clean build of `lean/` in dependency order (154 modules, Linux x86_64) passed on 2026-10-01 for the version before
-the upstream-code changes described in `lean/README.md`. The clean build of the current version is in progress. The
-records are in `verification/lean/`.
+A clean build of the current `lean/` in dependency order (157 modules, Linux x86_64) passed on 2026-10-02, with
+`#print axioms` reporting `[propext, Classical.choice, Quot.sound]` for both theorems. An earlier version (154 modules,
+before the upstream-code changes described in `lean/README.md`) passed on 2026-10-01. The records are in
+`verification/lean/`.
 
 See `lean/OVERVIEW.md` for an overview of the formal proof, and `lean/README.md` for the module structure, the build
 and the measured costs. Parts of the supporting library come
@@ -131,9 +132,11 @@ $\varphi(t) - H_X(t)$ for the minorants $H_A, H_B, H_C$ of `certificates/cert_ca
 `riesz2/` contains a separate, self-contained case split and set of exact certificates for the Riesz $`s = 2`$ kernel
 $`\varphi_2(t) = 1/(2-2t)`$, for the same configuration ($`N = 7`$ points on $`S^2`$) and the same pentagonal bipyramid
 $`P`$ ($`E_2(P) = 41/4`$). It reuses the kernel-free identity and PSD-checking machinery of `checkers/` above. At
-$`s = 2`$ the cap certificate rounds exactly at $`P`$ (no gap between the certificate bound and $`E_2(P)`$), so the
-case split closes without the coercivity/rigidity/local-lemma steps used for the log kernel. The $`s = 2`$ statement is
-also machine-checked in Lean 4 (`riesz2/lean/`, standard axioms only). See `riesz2/README.md`.
+$`s = 2`$ the cap certificate rounds exactly at $`P`$ (no gap between the certificate bound and $`E_2(P)`$), so no
+positive-width coercivity estimate and no quartic local lemma are needed; the Lean proof still uses ring rigidity at
+zero tube width for uniqueness (`riesz2/lean/Riesz2/Sharp.lean`). The $`s = 2`$ statement is
+also machine-checked in Lean 4 (`riesz2/lean/`, standard axioms only; clean-build record with the `#print axioms`
+output: `verification/lean/riesz2_build_2026-10-01.tsv`). See `riesz2/README.md`.
 
 ## Contents
 

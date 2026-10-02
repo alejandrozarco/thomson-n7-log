@@ -10,7 +10,8 @@ The owner did not check the mathematics or the Lean code line by line.
   (OpenAI, via the Codex CLI).
 - The commits carry a `Co-Authored-By: Claude Opus 5.5` trailer.
 
-**Reviews.** The AI reviews found real errors, all fixed:
+**Reviews.** The AI reviews found real errors. The maintainers report that the listed findings were addressed (the
+review reports themselves are not public):
 - a checker that accepted a certificate with an empty SOS section (the tampered-certificate controls in
   `checkers/check_controls.py` were added as a result);
 - gaps and wrong constants in written deductions;

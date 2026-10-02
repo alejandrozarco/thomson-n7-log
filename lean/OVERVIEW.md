@@ -139,8 +139,8 @@ For example, `Cap.capB` checks $`H_B + t^4/1000 \le \varphi`$ on $`[-1/20, 1/20]
 
 ### 4.3 Facially reduced cap blocks and per-block splitting (`ThomsonGen/Cert/`)
 
-The cap certificate is tight at $`P`$, so its PSD blocks are singular. Upstream `Blk.ok` cannot certify a singular
-block. `NBlk.lean` stores each block as $`N B' N^\top`$ with an integer basis $`N`$ and a positive definite reduced
+The cap certificate is tight at $`P`$ (its minorant bound touches $`\varphi`$ at the inner products of $`P`$), so its PSD
+blocks are singular. These certificates use facially reduced blocks: `NBlk.lean` stores each block as $`N B' N^\top`$ with an integer basis $`N`$ and a positive definite reduced
 block $`B'`$. $`B'`$ is checked as upstream; the expanded block is computed in the kernel and fed to the upstream
 identity checks. The only new fact is positivity by congruence (`NBlk.qf_expand_nonneg`,
 `NBlk.fmat_psd_expand`). `TCertN.sound_lo` is the resulting soundness lemma, and `NBlkCap.lean` turns it into a
@@ -214,9 +214,8 @@ certificate has degree 12 for this reason.
 - **Generated data.** The certificate data in `LogN7/*/Data*.lean` and in the `Local*` data modules was emitted by
   the scripts in `gen_log/` and `gen/`. The scripts are not trusted: the kernel checks the data.
 - **What was checked, and by whom.**
-  - The Lean kernel: a clean build in dependency order of the version before the upstream-code changes (154 modules,
-    2026-10-01, `../verification/lean/build_2026-10-01_pre_scrub.tsv`). The clean build of the current version
-    (157 modules) is in progress (`README.md`, Build test).
+  - The Lean kernel: a clean build of this version in dependency order (157 modules, 2026-10-02,
+    `../verification/lean/build_2026-10-02.tsv`; `README.md`, Build test).
   - `scripts/second-kernel.sh` re-checks an export with nanoda. No record of a run is included.
   - Separate read-only AI instances (Claude Opus 5.5, Claude Fable 5.1, gpt-6-astra) reviewed the work
     (`../AI_DISCLOSURE.md`). AI reviews are not peer review.

@@ -1,0 +1,122 @@
+# Clean build of riesz2/lean/, 2026-10-01 (Linux x86_64, Lean v4.34.1), finished 16:37 UTC
+#
+# Package version: riesz2/lean/ as published at 56c511c (the later commit 500d972 changed only a comment in
+# ThomsonGen/Generic/Energy.lean). Procedure: regen.sh; a fresh Mathlib cache; every module of the import closure
+# compiled one at a time in dependency order with lake env lean -j1 -DElab.async=false -o <olean> -i <ilean> <file>.
+# Columns: module, exit code, wall time (s), peak resident memory (kB).
+
+ThomsonGen/Preamble.lean	0	403	6675728
+ThomsonGen/Base.lean	0	34	6704224
+ThomsonGen/Verbatim/MinorPoly.lean	0	12	2652068
+Riesz2/MinorCore.lean	0	18	2679180
+Riesz2/Basic.lean	0	28	6702848
+ThomsonGen/ThreePoint.lean	0	53	6776912
+ThomsonGen/Kron.lean	0	32	6726204
+ThomsonGen/M2.lean	0	93	8939552
+ThomsonGen/GV.lean	0	143	6803452
+ThomsonGen/TwoRegime.lean	0	52	6749544
+ThomsonGen/Generic/Energy.lean	0	28	6715744
+ThomsonGen/Cert1.lean	0	27	6728364
+ThomsonGen/Cert3.lean	0	38	6770124
+ThomsonGen/M3.lean	0	42	6758872
+ThomsonGen/T4.lean	0	196	9915584
+ThomsonGen/RegB.lean	0	20	6670260
+ThomsonGen/Typed.lean	0	58	6850092
+ThomsonGen/CertF.lean	0	32	6725280
+ThomsonGen/CertT.lean	0	48	6803072
+ThomsonGen/Verbatim/Generic.lean	0	18	6689560
+ThomsonGen/Generic/Glue.lean	0	28	6751872
+ThomsonGen/Cert/NBlk.lean	0	47	6768980
+Riesz2/Sharp.lean	0	20	6720696
+Riesz2/Bridge.lean	0	26	6730984
+Riesz2/Cap/DataA.lean	0	296	7126412
+Riesz2/Cap/DataB.lean	0	282	7061288
+Riesz2/Cap/DataG.lean	0	819	7070692
+Riesz2/Cap/Data.lean	0	22	6701472
+Riesz2/Cap/ChkA.lean	0	45	8296516
+Riesz2/Cap/ChkB.lean	0	54	8418480
+Riesz2/Cap/ChkG.lean	0	59	8342880
+Riesz2/Cap/ChkSA0.lean	0	1384	7527576
+Riesz2/Cap/ChkSA1.lean	0	441	7069548
+Riesz2/Cap/ChkSA2.lean	0	334	7042236
+Riesz2/Cap/ChkSA3.lean	0	362	7041984
+Riesz2/Cap/ChkSA4.lean	0	393	7042020
+Riesz2/Cap/ChkSA5.lean	0	366	7042524
+Riesz2/Cap/ChkSA6.lean	0	362	7042940
+Riesz2/Cap/ChkSA7.lean	0	117	6826228
+Riesz2/Cap/ChkSA8.lean	0	399	7069360
+Riesz2/Cap/ChkSB0.lean	0	1100	7444976
+Riesz2/Cap/ChkSB1.lean	0	298	6987860
+Riesz2/Cap/ChkSB2.lean	0	310	6988100
+Riesz2/Cap/ChkSB3.lean	0	300	6987668
+Riesz2/Cap/ChkSB4.lean	0	340	6990248
+Riesz2/Cap/ChkSB5.lean	0	308	6990236
+Riesz2/Cap/ChkSB6.lean	0	294	6990816
+Riesz2/Cap/ChkSB7.lean	0	83	6780660
+Riesz2/Cap/ChkSG0.lean	0	1139	7444608
+Riesz2/Cap/ChkSG1.lean	0	295	6991972
+Riesz2/Cap/ChkSG2.lean	0	318	6991940
+Riesz2/Cap/ChkSG3.lean	0	326	6992468
+Riesz2/Cap/ChkSG4.lean	0	324	6991988
+Riesz2/Cap/ChkSG5.lean	0	308	6990488
+Riesz2/Cap/ChkSG6.lean	0	342	6989908
+Riesz2/Cap/ChkSG7.lean	0	88	6780840
+Riesz2/Cap/ChkMeta.lean	0	17	6726588
+Riesz2/MinorCap.lean	0	14	2682364
+Riesz2/Cap/Spec.lean	0	18	6738876
+ThomsonGen/Case1Stat.lean	0	22	6702540
+Riesz2/Case1/Data.lean	0	38	6689868
+Riesz2/Case1/Stat.lean	0	17	6667032
+Riesz2/Case1/ChkF.lean	0	36	6855564
+Riesz2/Case1/ChkS03.lean	0	147	9506048
+Riesz2/Case1/ChkS47.lean	0	82	7519924
+Riesz2/Case1/Check.lean	0	84	9760012
+Riesz2/MinorCase1.lean	0	12	2704552
+Riesz2/Case1/Claim.lean	0	20	6721132
+Riesz2/Final.lean	0	18	6717068
+Riesz2/S9998/Data.lean	0	52	6717940
+Riesz2/S9998/ChkMeta.lean	0	125	10802488
+Riesz2/S9998/ChkA.lean	0	38	7520784
+Riesz2/S9998/ChkB.lean	0	45	7816848
+Riesz2/S9998/ChkG.lean	0	42	7815236
+Riesz2/MinorS9998.lean	0	10	2704460
+Riesz2/S9998/Spec.lean	0	22	6717212
+Riesz2/S9896/Data.lean	0	55	6721100
+Riesz2/S9896/ChkMeta.lean	0	131	10801424
+Riesz2/S9896/ChkA.lean	0	30	7507896
+Riesz2/S9896/ChkB.lean	0	38	7814616
+Riesz2/S9896/ChkG.lean	0	38	7813024
+Riesz2/MinorS9896.lean	0	10	2703164
+Riesz2/S9896/Spec.lean	0	19	6716768
+Riesz2/S9694/Data.lean	0	48	6718536
+Riesz2/S9694/ChkMeta.lean	0	169	7748844
+Riesz2/S9694/ChkA.lean	0	135	7376564
+Riesz2/S9694/ChkB.lean	0	48	7774204
+Riesz2/S9694/ChkG.lean	0	47	7795308
+Riesz2/MinorS9694.lean	0	14	2691840
+Riesz2/S9694/Spec.lean	0	22	6697268
+Riesz2/S9493/Data.lean	0	53	6701688
+Riesz2/S9493/ChkMeta.lean	0	124	10780636
+Riesz2/S9493/ChkA.lean	0	33	7490228
+Riesz2/S9493/ChkB.lean	0	50	7799492
+Riesz2/S9493/ChkG.lean	0	36	7792752
+Riesz2/MinorS9493.lean	0	15	2697964
+Riesz2/S9493/Spec.lean	0	20	6697632
+Riesz2/S9390/DataA.lean	0	70	6688024
+Riesz2/S9390/DataB.lean	0	59	6681360
+Riesz2/S9390/DataG.lean	0	62	6683368
+Riesz2/S9390/Data.lean	0	16	6668492
+Riesz2/S9390/ChkMeta.lean	0	387	16205824
+Riesz2/S9390/ChkA.lean	0	70	8820324
+Riesz2/S9390/ChkB.lean	0	69	9204064
+Riesz2/S9390/ChkG.lean	0	64	9192884
+Riesz2/MinorS9390.lean	0	14	2705628
+Riesz2/S9390/Spec.lean	0	16	6696344
+Riesz2/Main.lean	0	22	6722048
+Riesz2/Check/Axioms.lean	0	18	6688264
+
+# modules: 109, all exit code 0: True, total wall 16265 s (4.5 h), max peak 16205824 kB
+
+# #print axioms (Riesz2/Check/Axioms.lean):
+'Riesz2.riesz2_seven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Riesz2.riesz2_seven_unique' depends on axioms: [propext, Classical.choice, Quot.sound]

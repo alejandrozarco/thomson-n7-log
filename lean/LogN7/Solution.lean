@@ -6,9 +6,9 @@ import LogN7.Main
 /-!
 # Solution of `LogN7/Challenge.lean`
 
-Same statements, same definitions: `ThomsonN7.R3/SphereConfig/cyl/pentBipyramid` are upstream's
-preamble (`ThomsonGen.Preamble`; the challenge's copies of these four definitions are textually identical), and `ThomsonN7Log.logEnergy`
-below is the challenge's definition verbatim (definitionally `LogN7.logEnergy`).
+Same statements, same definitions: `ThomsonN7.R3/SphereConfig/cyl/pentBipyramid` come from the regenerated upstream
+preamble `ThomsonGen.Preamble`, which `LogN7/Challenge.lean` imports as well, and `ThomsonN7Log.logEnergy` below is the
+challenge's definition verbatim (definitionally `LogN7.logEnergy`).
 -/
 
 open Real

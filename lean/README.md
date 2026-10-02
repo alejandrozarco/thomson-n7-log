@@ -163,5 +163,8 @@ one at a time, in dependency order, with `lake env lean -j1 -DElab.async=false`.
   - Largest peak memory: 9.8 GB, in the regenerated `ThomsonGen/T4.lean`.
   - `#print axioms`: `[propext, Classical.choice, Quot.sound]` for both theorems.
   - Per-module record: `../verification/lean/build_2026-10-01_pre_scrub.tsv`.
-* **This version (157 modules):** the clean build is in progress. Its record will be added to
-  `../verification/lean/`.
+* **2026-10-02:** this version.
+  - 157 modules, all exit code 0; 6.7 h of compile time in total.
+  - Largest peak memory: 9.5 GB, in `LogN7/Case1/ChkS0.lean`.
+  - `#print axioms`: `[propext, Classical.choice, Quot.sound]` for both theorems.
+  - Per-module record: `../verification/lean/build_2026-10-02.tsv`.
