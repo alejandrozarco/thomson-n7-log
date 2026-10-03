@@ -1,0 +1,1445 @@
+Build completed successfully (6 jobs).
+Build completed successfully (15 jobs).
+WARNING: no landrun found, using the non-sandboxing shim <tools>/comparator/scripts/fake-landrun.sh
+Building LogN7.Challenge
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build LogN7.Challenge
+⚠ [8925/8925] Replayed LogN7.Challenge
+warning: LogN7/Challenge.lean:28:8: declaration uses `sorry`
+warning: LogN7/Challenge.lean:32:8: declaration uses `sorry`
+Build completed successfully (8925 jobs).
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec <tools>/lean4export/.lake/build/bin/lean4export LogN7.Challenge -- Quot Quot.mk Quot.lift Quot.ind ThomsonN7Log.thomson_seven_log ThomsonN7Log.thomson_seven_log_unique propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ThomsonN7Log.thomson_seven_log, ThomsonN7Log.thomson_seven_log_unique, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from LogN7.Challenge
+Building LogN7.Solution
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build LogN7.Solution
+⚠ [8924/8936] Replayed ThomsonGen.ThreePoint
+warning: ThomsonGen/ThreePoint.lean:161:30: This simp argument is unused:
+  real_inner_self_eq_norm_sq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Set.domRestrict, v, hx]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThomsonGen/ThreePoint.lean:206:65: This simp argument is unused:
+  Pi.star_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [matDot, Matrix.sum_apply, Matrix.vecMulVec_apply, star_trivial, dotProduct, Matrix.mulVec,
+    Finset.sum_mul, Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThomsonGen/ThreePoint.lean:243:85: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8927/8964] Replayed ThomsonGen.Cert1
+warning: ThomsonGen/Cert1.lean:48:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Cert1.lean:48:31: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Cert1.lean:49:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Cert1.lean:49:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Cert1.lean:74:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Cert1.lean:74:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [8940/8964] Replayed LogN7.Case1.Check
+warning: LogN7/Case1/Check.lean:53:134: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, r2c1_blk_F0, r2c1_blk_F1, r2c1_blk_F2, r2c1_blk_F3, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/Case1/Check.lean:57:174: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, r2c1_blk_S0, r2c1_blk_S1, r2c1_blk_S2, r2c1_blk_S3, r2c1_blk_S4,
+    r2c1_blk_S5, r2c1_blk_S6, r2c1_blk_S7, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8949/8964] Replayed ThomsonGen.Typed
+warning: ThomsonGen/Typed.lean:156:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:159:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:159:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:160:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Typed.lean:160:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Typed.lean:200:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:200:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:163:27: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8952/8964] Replayed ThomsonGen.Cert.NBlk
+warning: ThomsonGen/Cert/NBlk.lean:146:39: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:146:39: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:282:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ThomsonGen/Cert/NBlk.lean:325:41: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:325:41: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:561:80: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:561:80: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8956/8964] Replayed LogN7.Basic
+warning: LogN7/Basic.lean:65:44: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [one_mul, mul_one, mul_zero, add_zero, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/Basic.lean:65:64: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [one_mul, mul_one, mul_zero, zero_mul, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/Basic.lean:67:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: LogN7/Basic.lean:69:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: LogN7/Basic.lean:67:4: Unused tactic linter: `(
+  rw [← cos_neg]; simp only [one_mul, mul_one, mul_zero, zero_mul, add_zero, zero_add]
+  congr 1; ring)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogN7/Basic.lean:69:4: Unused tactic linter: `(
+  simp only [one_mul, mul_one, mul_zero, zero_mul, add_zero, zero_add, cos_sub]
+  rw [← cos_neg, cos_neg]; simp only [cos_sub]; ring)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogN7/Basic.lean:106:84: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: LogN7/Basic.lean:108:84: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: LogN7/Basic.lean:110:84: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: LogN7/Basic.lean:104:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogN7/Basic.lean:112:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogN7/Basic.lean:114:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogN7/Basic.lean:116:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogN7/Basic.lean:118:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogN7/Basic.lean:120:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogN7/Basic.lean:106:84: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogN7/Basic.lean:108:84: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogN7/Basic.lean:110:84: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ℹ [8958/8964] Replayed LogN7.Minor.MinorCase1
+info: LogN7/Minor/MinorCase1.lean:31:0: type checking took 5.21s
+info: LogN7/Minor/MinorCase1.lean:33:0: type checking took 5.46s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.178ms
+	compilation (IR) 1.24ms
+	compilation (LCNF base) 14.5ms
+	compilation (LCNF impure) 8.4ms
+	compilation (LCNF mono) 15.8ms
+	elaboration 138ms
+	fix level params 0.2ms
+	instantiate metavars 0.553ms
+	let-to-have transformation 0.199ms
+	linting 199ms
+	overlappingInstancesLinter 8.25ms
+	parsing 9.05ms
+	process pre-definitions 16.4ms
+	share common exprs 1.27ms
+	tactic execution 13.3ms
+	tacticAnalysis 36.3ms
+	type checking 10.7s
+	typeclass inference 68.2ms
+ℹ [8994/8996] Replayed LogN7.Minor.MinorCap
+info: LogN7/Minor/MinorCap.lean:171:0: type checking took 10.1s
+info: LogN7/Minor/MinorCap.lean:174:0: type checking took 10.4s
+info: LogN7/Minor/MinorCap.lean:178:0: type checking took 10.8s
+info: LogN7/Minor/MinorCap.lean:183:0: type checking took 11.8s
+info: LogN7/Minor/MinorCap.lean:190:0: type checking took 13.9s
+info: LogN7/Minor/MinorCap.lean:192:0: type checking took 14.1s
+info: LogN7/Minor/MinorCap.lean:194:0: type checking took 14.2s
+info: LogN7/Minor/MinorCap.lean:196:0: type checking took 14.4s
+info: LogN7/Minor/MinorCap.lean:197:0: tactic execution of Mathlib.Tactic.linarith took 336ms
+tactic execution of Mathlib.Tactic.linarith took 353ms
+info: LogN7/Minor/MinorCap.lean:221:0: type checking took 14.7s
+info: LogN7/Minor/MinorCap.lean:223:0: type checking took 14.8s
+info: LogN7/Minor/MinorCap.lean:224:0: tactic execution of Mathlib.Tactic.linarith took 201ms
+tactic execution of Mathlib.Tactic.linarith took 212ms
+tactic execution of Mathlib.Tactic.linarith took 489ms
+info: LogN7/Minor/MinorCap.lean:249:0: type checking took 15.1s
+info: LogN7/Minor/MinorCap.lean:254:0: type checking took 15.8s
+info: LogN7/Minor/MinorCap.lean:258:0: type checking took 16.5s
+info: LogN7/Minor/MinorCap.lean:260:0: type checking took 16.9s
+info: LogN7/Minor/MinorCap.lean:286:0: tactic execution of Mathlib.Tactic.linarith took 203ms
+tactic execution of Lean.Parser.Tactic.exact took 218ms
+tactic execution of Lean.Parser.Tactic.exact took 200ms
+info: LogN7/Minor/MinorCap.lean:312:0: tactic execution of Mathlib.Tactic.linarith took 213ms
+tactic execution of Mathlib.Tactic.linarith took 253ms
+tactic execution of Mathlib.Tactic.linarith took 286ms
+tactic execution of Mathlib.Tactic.linarith took 368ms
+tactic execution of Mathlib.Tactic.linarith took 216ms
+tactic execution of Mathlib.Tactic.linarith took 356ms
+tactic execution of Mathlib.Tactic.linarith took 338ms
+tactic execution of Mathlib.Tactic.linarith took 219ms
+tactic execution of Mathlib.Tactic.linarith took 348ms
+tactic execution of Mathlib.Tactic.linarith took 345ms
+share common exprs took 534ms
+info: LogN7/Minor/MinorCap.lean:313:8: type checking took 404ms
+info: LogN7/Minor/MinorCap.lean:312:0: linting took 401ms
+info: stderr:
+cumulative profiling times:
+	attribute application 7.37ms
+	compilation (IR) 6.29ms
+	compilation (LCNF base) 64.5ms
+	compilation (LCNF impure) 39.6ms
+	compilation (LCNF mono) 71.1ms
+	congr simp thm 46.8ms
+	elaboration 1.22s
+	fix level params 27.1ms
+	instantiate metavars 48.3ms
+	let-to-have transformation 11.5ms
+	linting 1.59s
+	norm_num 18.6s
+	overlappingInstancesLinter 55.4ms
+	parsing 125ms
+	process pre-definitions 321ms
+	ring 1.67s
+	share common exprs 956ms
+	simp 757ms
+	tactic execution 15.6s
+	tacticAnalysis 360ms
+	type checking 195s
+	typeclass inference 6.16s
+⚠ [8997/9015] Replayed LogN7.S9998.ChkMeta
+warning: LogN7/S9998/ChkMeta.lean:22:126: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mP0, tc_s9998_mP1, tc_s9998_mP2, tc_s9998_mP3, tc_s9998_mP4,
+    tc_s9998_mP5, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9998/ChkMeta.lean:22:141: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mP0, tc_s9998_mP1, tc_s9998_mP2, tc_s9998_mP3, tc_s9998_mP4,
+    tc_s9998_mP5, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9998/ChkMeta.lean:32:126: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mR0, tc_s9998_mR1, tc_s9998_mR2, tc_s9998_mR3, tc_s9998_mR4,
+    tc_s9998_mR5, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9998/ChkMeta.lean:32:141: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mR0, tc_s9998_mR1, tc_s9998_mR2, tc_s9998_mR3, tc_s9998_mR4,
+    tc_s9998_mR5, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9998/ChkMeta.lean:45:177: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mSA0, tc_s9998_mSA1, tc_s9998_mSA2, tc_s9998_mSA3,
+    tc_s9998_mSA4, tc_s9998_mSA5, tc_s9998_mSA6, tc_s9998_mSA7, tc_s9998_mSA8, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9998/ChkMeta.lean:45:192: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mSA0, tc_s9998_mSA1, tc_s9998_mSA2, tc_s9998_mSA3,
+    tc_s9998_mSA4, tc_s9998_mSA5, tc_s9998_mSA6, tc_s9998_mSA7, tc_s9998_mSA8, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9998/ChkMeta.lean:57:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mSB0, tc_s9998_mSB1, tc_s9998_mSB2, tc_s9998_mSB3,
+    tc_s9998_mSB4, tc_s9998_mSB5, tc_s9998_mSB6, tc_s9998_mSB7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9998/ChkMeta.lean:57:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mSB0, tc_s9998_mSB1, tc_s9998_mSB2, tc_s9998_mSB3,
+    tc_s9998_mSB4, tc_s9998_mSB5, tc_s9998_mSB6, tc_s9998_mSB7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9998/ChkMeta.lean:69:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mSG0, tc_s9998_mSG1, tc_s9998_mSG2, tc_s9998_mSG3,
+    tc_s9998_mSG4, tc_s9998_mSG5, tc_s9998_mSG6, tc_s9998_mSG7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9998/ChkMeta.lean:69:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mSG0, tc_s9998_mSG1, tc_s9998_mSG2, tc_s9998_mSG3,
+    tc_s9998_mSG4, tc_s9998_mSG5, tc_s9998_mSG6, tc_s9998_mSG7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [9001/9015] Replayed LogN7.Minor.MinorSlab9998
+info: LogN7/Minor/MinorSlab9998.lean:21:0: type checking took 328ms
+info: LogN7/Minor/MinorSlab9998.lean:38:0: type checking took 1.43s
+info: LogN7/Minor/MinorSlab9998.lean:40:0: type checking took 1.66s
+info: LogN7/Minor/MinorSlab9998.lean:55:0: type checking took 3.22s
+info: LogN7/Minor/MinorSlab9998.lean:57:0: type checking took 3.43s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.421ms
+	compilation (IR) 1.76ms
+	compilation (LCNF base) 35.3ms
+	compilation (LCNF impure) 20ms
+	compilation (LCNF mono) 24.3ms
+	elaboration 326ms
+	fix level params 0.436ms
+	instantiate metavars 0.792ms
+	let-to-have transformation 0.36ms
+	linting 354ms
+	overlappingInstancesLinter 12.5ms
+	parsing 19.3ms
+	process pre-definitions 17.9ms
+	share common exprs 2.12ms
+	tactic execution 10.5ms
+	tacticAnalysis 51.7ms
+	type checking 10.1s
+	typeclass inference 184ms
+⚠ [9004/9015] Replayed LogN7.S9896.ChkMeta
+warning: LogN7/S9896/ChkMeta.lean:22:126: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mP0, tc_s9896_mP1, tc_s9896_mP2, tc_s9896_mP3, tc_s9896_mP4,
+    tc_s9896_mP5, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9896/ChkMeta.lean:22:141: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mP0, tc_s9896_mP1, tc_s9896_mP2, tc_s9896_mP3, tc_s9896_mP4,
+    tc_s9896_mP5, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9896/ChkMeta.lean:32:126: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mR0, tc_s9896_mR1, tc_s9896_mR2, tc_s9896_mR3, tc_s9896_mR4,
+    tc_s9896_mR5, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9896/ChkMeta.lean:32:141: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mR0, tc_s9896_mR1, tc_s9896_mR2, tc_s9896_mR3, tc_s9896_mR4,
+    tc_s9896_mR5, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9896/ChkMeta.lean:45:177: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mSA0, tc_s9896_mSA1, tc_s9896_mSA2, tc_s9896_mSA3,
+    tc_s9896_mSA4, tc_s9896_mSA5, tc_s9896_mSA6, tc_s9896_mSA7, tc_s9896_mSA8, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9896/ChkMeta.lean:45:192: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mSA0, tc_s9896_mSA1, tc_s9896_mSA2, tc_s9896_mSA3,
+    tc_s9896_mSA4, tc_s9896_mSA5, tc_s9896_mSA6, tc_s9896_mSA7, tc_s9896_mSA8, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9896/ChkMeta.lean:57:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mSB0, tc_s9896_mSB1, tc_s9896_mSB2, tc_s9896_mSB3,
+    tc_s9896_mSB4, tc_s9896_mSB5, tc_s9896_mSB6, tc_s9896_mSB7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9896/ChkMeta.lean:57:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mSB0, tc_s9896_mSB1, tc_s9896_mSB2, tc_s9896_mSB3,
+    tc_s9896_mSB4, tc_s9896_mSB5, tc_s9896_mSB6, tc_s9896_mSB7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9896/ChkMeta.lean:69:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mSG0, tc_s9896_mSG1, tc_s9896_mSG2, tc_s9896_mSG3,
+    tc_s9896_mSG4, tc_s9896_mSG5, tc_s9896_mSG6, tc_s9896_mSG7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9896/ChkMeta.lean:69:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mSG0, tc_s9896_mSG1, tc_s9896_mSG2, tc_s9896_mSG3,
+    tc_s9896_mSG4, tc_s9896_mSG5, tc_s9896_mSG6, tc_s9896_mSG7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [9008/9015] Replayed LogN7.Minor.MinorSlab9896
+info: LogN7/Minor/MinorSlab9896.lean:21:0: type checking took 234ms
+info: LogN7/Minor/MinorSlab9896.lean:39:0: type checking took 2.08s
+info: LogN7/Minor/MinorSlab9896.lean:41:0: type checking took 2.3s
+info: LogN7/Minor/MinorSlab9896.lean:58:0: type checking took 3.93s
+info: LogN7/Minor/MinorSlab9896.lean:60:0: type checking took 4.09s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.432ms
+	compilation (IR) 2.06ms
+	compilation (LCNF base) 37.6ms
+	compilation (LCNF impure) 15.9ms
+	compilation (LCNF mono) 40.1ms
+	elaboration 243ms
+	fix level params 0.474ms
+	instantiate metavars 0.924ms
+	let-to-have transformation 0.381ms
+	linting 324ms
+	overlappingInstancesLinter 7.83ms
+	parsing 13.7ms
+	process pre-definitions 19ms
+	share common exprs 2.31ms
+	tactic execution 23.5ms
+	tacticAnalysis 63ms
+	type checking 12.6s
+	typeclass inference 135ms
+⚠ [9014/9027] Replayed LogN7.S9694.ChkMeta
+warning: LogN7/S9694/ChkMeta.lean:23:140: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mP0, tc_s9694_mP1, tc_s9694_mP2, tc_s9694_mP3, tc_s9694_mP4,
+    tc_s9694_mP5, tc_s9694_mP6, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9694/ChkMeta.lean:23:155: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mP0, tc_s9694_mP1, tc_s9694_mP2, tc_s9694_mP3, tc_s9694_mP4,
+    tc_s9694_mP5, tc_s9694_mP6, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9694/ChkMeta.lean:34:140: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mR0, tc_s9694_mR1, tc_s9694_mR2, tc_s9694_mR3, tc_s9694_mR4,
+    tc_s9694_mR5, tc_s9694_mR6, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9694/ChkMeta.lean:34:155: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mR0, tc_s9694_mR1, tc_s9694_mR2, tc_s9694_mR3, tc_s9694_mR4,
+    tc_s9694_mR5, tc_s9694_mR6, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9694/ChkMeta.lean:47:177: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mSA0, tc_s9694_mSA1, tc_s9694_mSA2, tc_s9694_mSA3,
+    tc_s9694_mSA4, tc_s9694_mSA5, tc_s9694_mSA6, tc_s9694_mSA7, tc_s9694_mSA8, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9694/ChkMeta.lean:47:192: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mSA0, tc_s9694_mSA1, tc_s9694_mSA2, tc_s9694_mSA3,
+    tc_s9694_mSA4, tc_s9694_mSA5, tc_s9694_mSA6, tc_s9694_mSA7, tc_s9694_mSA8, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9694/ChkMeta.lean:59:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mSB0, tc_s9694_mSB1, tc_s9694_mSB2, tc_s9694_mSB3,
+    tc_s9694_mSB4, tc_s9694_mSB5, tc_s9694_mSB6, tc_s9694_mSB7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9694/ChkMeta.lean:59:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mSB0, tc_s9694_mSB1, tc_s9694_mSB2, tc_s9694_mSB3,
+    tc_s9694_mSB4, tc_s9694_mSB5, tc_s9694_mSB6, tc_s9694_mSB7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9694/ChkMeta.lean:71:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mSG0, tc_s9694_mSG1, tc_s9694_mSG2, tc_s9694_mSG3,
+    tc_s9694_mSG4, tc_s9694_mSG5, tc_s9694_mSG6, tc_s9694_mSG7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9694/ChkMeta.lean:71:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mSG0, tc_s9694_mSG1, tc_s9694_mSG2, tc_s9694_mSG3,
+    tc_s9694_mSG4, tc_s9694_mSG5, tc_s9694_mSG6, tc_s9694_mSG7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [9018/9027] Replayed LogN7.Minor.MinorSlab9694
+info: LogN7/Minor/MinorSlab9694.lean:21:0: type checking took 368ms
+info: LogN7/Minor/MinorSlab9694.lean:40:0: type checking took 4.45s
+info: LogN7/Minor/MinorSlab9694.lean:42:0: type checking took 4.76s
+info: LogN7/Minor/MinorSlab9694.lean:57:0: type checking took 6.99s
+info: LogN7/Minor/MinorSlab9694.lean:59:0: type checking took 7.33s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.326ms
+	compilation (IR) 2.14ms
+	compilation (LCNF base) 37.3ms
+	compilation (LCNF impure) 33.1ms
+	compilation (LCNF mono) 52.7ms
+	elaboration 235ms
+	fix level params 0.476ms
+	instantiate metavars 0.882ms
+	let-to-have transformation 0.33ms
+	linting 365ms
+	overlappingInstancesLinter 19.8ms
+	parsing 12.5ms
+	process pre-definitions 19.1ms
+	share common exprs 2.18ms
+	tactic execution 10.1ms
+	tacticAnalysis 95.8ms
+	type checking 23.9s
+	typeclass inference 143ms
+⚠ [9024/9040] Replayed LogN7.S9493.ChkMeta
+warning: LogN7/S9493/ChkMeta.lean:23:140: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mP0, tc_s9493_mP1, tc_s9493_mP2, tc_s9493_mP3, tc_s9493_mP4,
+    tc_s9493_mP5, tc_s9493_mP6, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9493/ChkMeta.lean:23:155: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mP0, tc_s9493_mP1, tc_s9493_mP2, tc_s9493_mP3, tc_s9493_mP4,
+    tc_s9493_mP5, tc_s9493_mP6, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9493/ChkMeta.lean:34:140: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mR0, tc_s9493_mR1, tc_s9493_mR2, tc_s9493_mR3, tc_s9493_mR4,
+    tc_s9493_mR5, tc_s9493_mR6, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9493/ChkMeta.lean:34:155: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mR0, tc_s9493_mR1, tc_s9493_mR2, tc_s9493_mR3, tc_s9493_mR4,
+    tc_s9493_mR5, tc_s9493_mR6, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9493/ChkMeta.lean:47:177: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mSA0, tc_s9493_mSA1, tc_s9493_mSA2, tc_s9493_mSA3,
+    tc_s9493_mSA4, tc_s9493_mSA5, tc_s9493_mSA6, tc_s9493_mSA7, tc_s9493_mSA8, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9493/ChkMeta.lean:47:192: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mSA0, tc_s9493_mSA1, tc_s9493_mSA2, tc_s9493_mSA3,
+    tc_s9493_mSA4, tc_s9493_mSA5, tc_s9493_mSA6, tc_s9493_mSA7, tc_s9493_mSA8, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9493/ChkMeta.lean:59:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mSB0, tc_s9493_mSB1, tc_s9493_mSB2, tc_s9493_mSB3,
+    tc_s9493_mSB4, tc_s9493_mSB5, tc_s9493_mSB6, tc_s9493_mSB7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9493/ChkMeta.lean:59:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mSB0, tc_s9493_mSB1, tc_s9493_mSB2, tc_s9493_mSB3,
+    tc_s9493_mSB4, tc_s9493_mSB5, tc_s9493_mSB6, tc_s9493_mSB7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9493/ChkMeta.lean:71:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mSG0, tc_s9493_mSG1, tc_s9493_mSG2, tc_s9493_mSG3,
+    tc_s9493_mSG4, tc_s9493_mSG5, tc_s9493_mSG6, tc_s9493_mSG7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9493/ChkMeta.lean:71:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mSG0, tc_s9493_mSG1, tc_s9493_mSG2, tc_s9493_mSG3,
+    tc_s9493_mSG4, tc_s9493_mSG5, tc_s9493_mSG6, tc_s9493_mSG7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [9028/9040] Replayed LogN7.Minor.MinorSlab9493
+info: LogN7/Minor/MinorSlab9493.lean:21:0: type checking took 350ms
+info: LogN7/Minor/MinorSlab9493.lean:39:0: type checking took 3.77s
+info: LogN7/Minor/MinorSlab9493.lean:41:0: type checking took 4.08s
+info: LogN7/Minor/MinorSlab9493.lean:55:0: type checking took 6.13s
+info: LogN7/Minor/MinorSlab9493.lean:57:0: type checking took 6.39s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.42ms
+	compilation (IR) 2.04ms
+	compilation (LCNF base) 38.1ms
+	compilation (LCNF impure) 35.9ms
+	compilation (LCNF mono) 37ms
+	elaboration 234ms
+	fix level params 0.489ms
+	instantiate metavars 3.17ms
+	let-to-have transformation 0.436ms
+	linting 382ms
+	overlappingInstancesLinter 25ms
+	parsing 14.6ms
+	process pre-definitions 18.4ms
+	share common exprs 6.19ms
+	tactic execution 13.5ms
+	tacticAnalysis 70.3ms
+	type checking 20.7s
+	typeclass inference 166ms
+⚠ [9034/9040] Replayed LogN7.S9390.ChkMeta
+warning: LogN7/S9390/ChkMeta.lean:23:140: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mP0, tc_s9390_mP1, tc_s9390_mP2, tc_s9390_mP3, tc_s9390_mP4,
+    tc_s9390_mP5, tc_s9390_mP6, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9390/ChkMeta.lean:23:155: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mP0, tc_s9390_mP1, tc_s9390_mP2, tc_s9390_mP3, tc_s9390_mP4,
+    tc_s9390_mP5, tc_s9390_mP6, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9390/ChkMeta.lean:34:140: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mR0, tc_s9390_mR1, tc_s9390_mR2, tc_s9390_mR3, tc_s9390_mR4,
+    tc_s9390_mR5, tc_s9390_mR6, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9390/ChkMeta.lean:34:155: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mR0, tc_s9390_mR1, tc_s9390_mR2, tc_s9390_mR3, tc_s9390_mR4,
+    tc_s9390_mR5, tc_s9390_mR6, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9390/ChkMeta.lean:47:177: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mSA0, tc_s9390_mSA1, tc_s9390_mSA2, tc_s9390_mSA3,
+    tc_s9390_mSA4, tc_s9390_mSA5, tc_s9390_mSA6, tc_s9390_mSA7, tc_s9390_mSA8, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9390/ChkMeta.lean:47:192: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mSA0, tc_s9390_mSA1, tc_s9390_mSA2, tc_s9390_mSA3,
+    tc_s9390_mSA4, tc_s9390_mSA5, tc_s9390_mSA6, tc_s9390_mSA7, tc_s9390_mSA8, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9390/ChkMeta.lean:59:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mSB0, tc_s9390_mSB1, tc_s9390_mSB2, tc_s9390_mSB3,
+    tc_s9390_mSB4, tc_s9390_mSB5, tc_s9390_mSB6, tc_s9390_mSB7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9390/ChkMeta.lean:59:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mSB0, tc_s9390_mSB1, tc_s9390_mSB2, tc_s9390_mSB3,
+    tc_s9390_mSB4, tc_s9390_mSB5, tc_s9390_mSB6, tc_s9390_mSB7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9390/ChkMeta.lean:71:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mSG0, tc_s9390_mSG1, tc_s9390_mSG2, tc_s9390_mSG3,
+    tc_s9390_mSG4, tc_s9390_mSG5, tc_s9390_mSG6, tc_s9390_mSG7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogN7/S9390/ChkMeta.lean:71:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mSG0, tc_s9390_mSG1, tc_s9390_mSG2, tc_s9390_mSG3,
+    tc_s9390_mSG4, tc_s9390_mSG5, tc_s9390_mSG6, tc_s9390_mSG7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [9038/9040] Replayed LogN7.Minor.MinorSlab9390
+info: LogN7/Minor/MinorSlab9390.lean:21:0: type checking took 201ms
+info: LogN7/Minor/MinorSlab9390.lean:38:0: type checking took 3.17s
+info: LogN7/Minor/MinorSlab9390.lean:40:0: type checking took 3.4s
+info: LogN7/Minor/MinorSlab9390.lean:59:0: type checking took 7.99s
+info: LogN7/Minor/MinorSlab9390.lean:61:0: type checking took 8.32s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.367ms
+	compilation (IR) 1.61ms
+	compilation (LCNF base) 32.6ms
+	compilation (LCNF impure) 19.4ms
+	compilation (LCNF mono) 24.3ms
+	elaboration 289ms
+	fix level params 0.446ms
+	instantiate metavars 0.922ms
+	let-to-have transformation 0.405ms
+	linting 336ms
+	overlappingInstancesLinter 6.97ms
+	parsing 16.7ms
+	process pre-definitions 20.6ms
+	share common exprs 2.29ms
+	tactic execution 33.3ms
+	tacticAnalysis 71.6ms
+	type checking 23.1s
+	typeclass inference 167ms
+⚠ [9040/9070] Replayed ThomsonGen.Verbatim.LogLocal
+warning: ThomsonGen/Verbatim/LogLocal.lean:31:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Verbatim/LogLocal.lean:31:31: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Verbatim/LogLocal.lean:32:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Verbatim/LogLocal.lean:32:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Verbatim/LogLocal.lean:57:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Verbatim/LogLocal.lean:57:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [9043/9070] Replayed LogLean.LocalAtom
+warning: LogLean/LocalAtom.lean:239:8: Variable name `cl` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _cl
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LogLean/LocalAtom.lean:396:0: automatically included section variable(s) unused in theorem `LocalAtom.Ok_atomA`:
+  h
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit h in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LogLean/LocalAtom.lean:398:0: automatically included section variable(s) unused in theorem `LocalAtom.Ok_atomB`:
+  h
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit h in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LogLean/LocalAtom.lean:400:0: automatically included section variable(s) unused in theorem `LocalAtom.Ok_atomC`:
+  h
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit h in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LogLean/LocalAtom.lean:402:0: automatically included section variable(s) unused in theorem `LocalAtom.Ok_atomCp`:
+  h
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit h in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LogLean/LocalAtom.lean:404:0: automatically included section variable(s) unused in theorem `LocalAtom.Ok_atomRi`:
+  h
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit h in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LogLean/LocalAtom.lean:406:0: automatically included section variable(s) unused in theorem `LocalAtom.Ok_atomRj`:
+  h
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit h in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LogLean/LocalAtom.lean:418:0: automatically included section variable(s) unused in theorem `LocalAtom.Ok_add`:
+  h
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit h in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: LogLean/LocalAtom.lean:633:0: type checking took 26.7s
+info: LogLean/LocalAtom.lean:724:0: type checking took 49.5s
+info: LogLean/LocalAtom.lean:779:0: type checking took 70.7s
+info: LogLean/LocalAtom.lean:868:0: type checking took 86.6s
+info: LogLean/LocalAtom.lean:880:0: 'LocalAtom.bound_adj' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalAtom.lean:881:0: 'LocalAtom.bound_diag' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalAtom.lean:882:0: 'LocalAtom.bound_pole' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalAtom.lean:883:0: 'LocalAtom.bound_pp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: stderr:
+cumulative profiling times:
+	attribute application 0.0977ms
+	elaboration 2.58ms
+	fix level params 0.0389ms
+	instantiate metavars 0.0643ms
+	let-to-have transformation 0.0506ms
+	overlappingInstancesLinter 1.44ms
+	process pre-definitions 9.71ms
+	share common exprs 0.158ms
+	tactic execution 3.41ms
+	tacticAnalysis 10.1ms
+	type checking 234s
+	typeclass inference 1.83ms
+⚠ [9045/9070] Replayed LogLean.LocalBomb
+warning: LogLean/LocalBomb.lean:43:13: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogLean/LocalBomb.lean:166:17: `if_true` has been deprecated: Use `ite_true` instead
+warning: LogLean/LocalBomb.lean:166:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:166:68: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:167:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:170:17: `if_true` has been deprecated: Use `ite_true` instead
+warning: LogLean/LocalBomb.lean:170:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:170:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:171:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:174:17: `if_true` has been deprecated: Use `ite_true` instead
+warning: LogLean/LocalBomb.lean:174:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:174:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:174:48: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:177:17: `if_true` has been deprecated: Use `ite_true` instead
+warning: LogLean/LocalBomb.lean:177:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:177:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:177:48: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:178:15: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:178:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:178:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:178:48: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalBomb.lean:184:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: LogLean/LocalBomb.lean:184:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: LogLean/LocalBomb.lean:184:44: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: LogLean/LocalBomb.lean:184:63: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: LogLean/LocalBomb.lean:338:79: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: LogLean/LocalBomb.lean:348:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogLean/LocalBomb.lean:338:79: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9047/9070] Replayed LogLean.LocalGeom
+warning: LogLean/LocalGeom.lean:78:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: LogLean/LocalGeom.lean:78:34: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: LogLean/LocalGeom.lean:80:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalGeom.lean:80:34: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalGeom.lean:159:0: automatically included section variable(s) unused in theorem `LocalGeom.hv_le`:
+  hy
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hy in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LogLean/LocalGeom.lean:160:67: Variable name `k` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _k
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LogLean/LocalGeom.lean:223:96: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogLean/LocalGeom.lean:293:62: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: LogLean/LocalGeom.lean:293:62: Unused tactic linter: `norm_num` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogLean/LocalGeom.lean:297:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalGeom.lean:350:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalGeom.lean:395:68: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: LogLean/LocalGeom.lean:395:68: Unused tactic linter: `norm_num` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogLean/LocalGeom.lean:549:0: automatically included section variable(s) unused in theorem `LocalGeom.e_le`:
+  hi
+  hj
+  hij
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hi hj hij in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LogLean/LocalGeom.lean:631:18: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: LogLean/LocalGeom.lean:631:18: Unused tactic linter: `(simp only [hu, hℓ, hhh]; ring)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogLean/LocalGeom.lean:680:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: LogLean/LocalGeom.lean:680:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalGeom.lean:682:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalGeom.lean:682:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: LogLean/LocalGeom.lean:704:75: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: LogLean/LocalGeom.lean:704:75: Unused tactic linter: `norm_num` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogLean/LocalGeom.lean:756:13: This simp argument is unused:
+  Pv
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [E1v, E2v]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9048/9070] Replayed LogLean.LocalCert
+warning: LogLean/LocalCert.lean:248:43: `if_true` has been deprecated: Use `ite_true` instead
+warning: LogLean/LocalCert.lean:255:28: `if_true` has been deprecated: Use `ite_true` instead
+warning: LogLean/LocalCert.lean:255:68: `if_false` has been deprecated: Use `ite_false` instead
+warning: LogLean/LocalCert.lean:262:28: `if_true` has been deprecated: Use `ite_true` instead
+warning: LogLean/LocalCert.lean:262:68: `if_false` has been deprecated: Use `ite_false` instead
+warning: LogLean/LocalCert.lean:268:85: `if_false` has been deprecated: Use `ite_false` instead
+info: LogLean/LocalCert.lean:341:0: 'LocalCert.certOK_true' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalCert.lean:342:0: 'LocalCert.Cprime' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9049/9070] Replayed LogLean.LocalGamma1
+info: LogLean/LocalGamma1.lean:181:0: type checking took 34.1s
+info: LogLean/LocalGamma1.lean:183:0: type checking took 67.4s
+info: LogLean/LocalGamma1.lean:185:0: type checking took 107s
+info: LogLean/LocalGamma1.lean:187:0: type checking took 142s
+warning: LogLean/LocalGamma1.lean:272:4: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+info: LogLean/LocalGamma1.lean:359:0: 'LocalGamma1.cert0' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalGamma1.lean:360:0: 'LocalGamma1.coupling_bound_a' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: stderr:
+cumulative profiling times:
+	attribute application 0.102ms
+	elaboration 2.05ms
+	fix level params 0.0302ms
+	instantiate metavars 0.092ms
+	let-to-have transformation 0.052ms
+	overlappingInstancesLinter 1.35ms
+	process pre-definitions 7.48ms
+	share common exprs 0.105ms
+	tactic execution 3.53ms
+	tacticAnalysis 5.81ms
+	type checking 351s
+	typeclass inference 2.94ms
+⚠ [9052/9070] Replayed LogLean.LocalGlobA
+warning: LogLean/LocalGlobA.lean:59:23: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LogLean/LocalGlobA.lean:81:38: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogLean/LocalGlobA.lean:83:38: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogLean/LocalGlobA.lean:121:4: This simp argument is unused:
+  ev_unit0 16 (2 + p) (by omega)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [forms, ev_merge, ev_formTerm, ev_unit0 16 0 (by norm_num), ev_unit0 16 1 (by norm_num)]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [9053/9070] Replayed LogLean.LocalGlobB
+info: LogLean/LocalGlobB.lean:9:0: type checking took 37.8s
+info: LogLean/LocalGlobB.lean:11:0: type checking took 206s
+info: LogLean/LocalGlobB.lean:13:0: type checking took 347s
+info: LogLean/LocalGlobB.lean:15:0: type checking took 455s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.101ms
+	elaboration 3.04ms
+	fix level params 0.0353ms
+	instantiate metavars 0.0763ms
+	let-to-have transformation 0.0565ms
+	overlappingInstancesLinter 1.78ms
+	process pre-definitions 1.26ms
+	share common exprs 0.134ms
+	tactic execution 4.69ms
+	tacticAnalysis 12.3ms
+	type checking 1.05e+03s
+	typeclass inference 2.39ms
+ℹ [9054/9070] Replayed LogLean.LocalGlobB2
+info: LogLean/LocalGlobB2.lean:9:0: type checking took 154s
+info: LogLean/LocalGlobB2.lean:11:0: type checking took 283s
+info: LogLean/LocalGlobB2.lean:13:0: type checking took 333s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.0971ms
+	elaboration 2.23ms
+	fix level params 0.0296ms
+	instantiate metavars 0.0545ms
+	let-to-have transformation 0.0442ms
+	overlappingInstancesLinter 1.72ms
+	process pre-definitions 3.26ms
+	share common exprs 0.137ms
+	tactic execution 2.51ms
+	tacticAnalysis 8.11ms
+	type checking 770s
+	typeclass inference 6.22ms
+ℹ [9055/9070] Replayed LogLean.LocalGlobC
+info: LogLean/LocalGlobC.lean:10:0: type checking took 15.6s
+info: LogLean/LocalGlobC.lean:12:0: type checking took 40.8s
+info: LogLean/LocalGlobC.lean:19:0: type checking took 43.3s
+info: LogLean/LocalGlobC.lean:21:0: type checking took 86.1s
+info: LogLean/LocalGlobC.lean:23:0: type checking took 99.7s
+info: LogLean/LocalGlobC.lean:27:0: type checking took 110s
+info: LogLean/LocalGlobC.lean:30:0: type checking took 111s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.163ms
+	elaboration 10.9ms
+	fix level params 0.0871ms
+	instantiate metavars 0.206ms
+	let-to-have transformation 0.156ms
+	overlappingInstancesLinter 10.2ms
+	process pre-definitions 7ms
+	share common exprs 0.466ms
+	tactic execution 9.76ms
+	tacticAnalysis 26.3ms
+	type checking 506s
+	typeclass inference 12.7ms
+ℹ [9056/9070] Replayed LogLean.LocalGlobD
+info: LogLean/LocalGlobD.lean:13:0: type checking took 7.45s
+info: LogLean/LocalGlobD.lean:15:0: type checking took 31s
+info: LogLean/LocalGlobD.lean:17:0: type checking took 61.6s
+info: LogLean/LocalGlobD.lean:19:0: type checking took 80.9s
+info: LogLean/LocalGlobD.lean:21:0: type checking took 83.4s
+info: LogLean/LocalGlobD.lean:23:0: type checking took 129s
+info: LogLean/LocalGlobD.lean:25:0: type checking took 176s
+info: LogLean/LocalGlobD.lean:27:0: type checking took 184s
+info: LogLean/LocalGlobD.lean:29:0: type checking took 184s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.217ms
+	elaboration 14.4ms
+	fix level params 0.107ms
+	instantiate metavars 0.246ms
+	let-to-have transformation 0.148ms
+	overlappingInstancesLinter 6.22ms
+	process pre-definitions 7.79ms
+	share common exprs 0.555ms
+	tactic execution 16.2ms
+	tacticAnalysis 18.4ms
+	type checking 938s
+	typeclass inference 8.88ms
+ℹ [9057/9070] Replayed LogLean.LocalGlobD2
+info: LogLean/LocalGlobD2.lean:575:0: type checking took 118s
+info: LogLean/LocalGlobD2.lean:577:0: type checking took 118s
+info: LogLean/LocalGlobD2.lean:579:0: type checking took 128s
+info: LogLean/LocalGlobD2.lean:581:0: type checking took 194s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.0815ms
+	elaboration 6.96ms
+	fix level params 0.0436ms
+	instantiate metavars 0.0699ms
+	let-to-have transformation 0.0538ms
+	overlappingInstancesLinter 2.57ms
+	process pre-definitions 1.14ms
+	share common exprs 0.179ms
+	tactic execution 8.39ms
+	tacticAnalysis 10.1ms
+	type checking 559s
+	typeclass inference 2.94ms
+ℹ [9058/9070] Replayed LogLean.LocalGlobD3a
+info: LogLean/LocalGlobD3a.lean:1027:0: type checking took 97.7s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.0287ms
+	elaboration 0.668ms
+	fix level params 0.0179ms
+	instantiate metavars 0.0316ms
+	let-to-have transformation 0.0451ms
+	overlappingInstancesLinter 0.5ms
+	process pre-definitions 0.32ms
+	share common exprs 0.0954ms
+	tactic execution 2.74ms
+	tacticAnalysis 2.5ms
+	type checking 97.7s
+	typeclass inference 1.45ms
+ℹ [9059/9070] Replayed LogLean.LocalGlobD3b
+info: LogLean/LocalGlobD3b.lean:1027:0: type checking took 94s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.0247ms
+	elaboration 0.556ms
+	fix level params 0.0113ms
+	instantiate metavars 0.0296ms
+	let-to-have transformation 0.0226ms
+	overlappingInstancesLinter 0.393ms
+	process pre-definitions 0.145ms
+	share common exprs 0.066ms
+	tactic execution 0.961ms
+	tacticAnalysis 2.32ms
+	type checking 94s
+	typeclass inference 7.2ms
+ℹ [9060/9070] Replayed LogLean.LocalGlobD3c
+info: LogLean/LocalGlobD3c.lean:1027:0: type checking took 72.1s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.019ms
+	elaboration 0.516ms
+	fix level params 0.0123ms
+	instantiate metavars 0.0205ms
+	let-to-have transformation 0.0197ms
+	overlappingInstancesLinter 0.438ms
+	process pre-definitions 0.154ms
+	share common exprs 0.0642ms
+	tactic execution 0.659ms
+	tacticAnalysis 5.54ms
+	type checking 72.1s
+	typeclass inference 1.04ms
+ℹ [9061/9070] Replayed LogLean.LocalGlobD3d
+info: LogLean/LocalGlobD3d.lean:1027:0: type checking took 82.1s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.0205ms
+	elaboration 0.713ms
+	fix level params 0.0158ms
+	instantiate metavars 0.0249ms
+	let-to-have transformation 0.0469ms
+	overlappingInstancesLinter 0.348ms
+	process pre-definitions 0.24ms
+	share common exprs 0.0896ms
+	tactic execution 0.869ms
+	tacticAnalysis 2.48ms
+	type checking 82.1s
+	typeclass inference 1.15ms
+ℹ [9062/9070] Replayed LogLean.LocalGlobD3e
+info: LogLean/LocalGlobD3e.lean:1027:0: type checking took 74s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.0294ms
+	elaboration 0.944ms
+	fix level params 0.0163ms
+	instantiate metavars 0.0353ms
+	let-to-have transformation 0.0317ms
+	overlappingInstancesLinter 0.462ms
+	process pre-definitions 0.665ms
+	share common exprs 0.092ms
+	tactic execution 0.94ms
+	tacticAnalysis 2.48ms
+	type checking 74s
+	typeclass inference 1.42ms
+ℹ [9063/9070] Replayed LogLean.LocalGlobD3f
+info: LogLean/LocalGlobD3f.lean:1027:0: type checking took 95s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.0256ms
+	elaboration 0.757ms
+	fix level params 0.0161ms
+	instantiate metavars 0.0325ms
+	let-to-have transformation 0.0268ms
+	overlappingInstancesLinter 0.48ms
+	process pre-definitions 0.225ms
+	share common exprs 0.0923ms
+	tactic execution 5.48ms
+	tacticAnalysis 2.36ms
+	type checking 95s
+	typeclass inference 1.52ms
+ℹ [9064/9070] Replayed LogLean.LocalGlobD3g
+info: LogLean/LocalGlobD3g.lean:1027:0: type checking took 72s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.0228ms
+	elaboration 0.92ms
+	fix level params 0.0196ms
+	instantiate metavars 0.0261ms
+	let-to-have transformation 0.0387ms
+	overlappingInstancesLinter 0.475ms
+	process pre-definitions 0.64ms
+	share common exprs 0.088ms
+	tactic execution 1.07ms
+	tacticAnalysis 2.57ms
+	type checking 72s
+	typeclass inference 5.4ms
+ℹ [9065/9070] Replayed LogLean.LocalGlobD4
+info: LogLean/LocalGlobD4.lean:20:0: type checking took 62.4s
+info: LogLean/LocalGlobD4.lean:22:0: type checking took 141s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.049ms
+	elaboration 1.57ms
+	fix level params 0.0169ms
+	instantiate metavars 0.0363ms
+	let-to-have transformation 0.0281ms
+	overlappingInstancesLinter 0.808ms
+	process pre-definitions 0.644ms
+	share common exprs 0.0598ms
+	tactic execution 1.85ms
+	tacticAnalysis 3.57ms
+	type checking 204s
+	typeclass inference 5.61ms
+ℹ [9066/9070] Replayed LogLean.LocalGlobE
+info: LogLean/LocalGlobE.lean:18:0: type checking took 76.9s
+info: LogLean/LocalGlobE.lean:20:0: type checking took 93.9s
+info: stderr:
+cumulative profiling times:
+	attribute application 0.0507ms
+	elaboration 1.74ms
+	fix level params 0.0233ms
+	instantiate metavars 0.0401ms
+	let-to-have transformation 0.0483ms
+	overlappingInstancesLinter 0.879ms
+	process pre-definitions 0.641ms
+	share common exprs 0.0832ms
+	tactic execution 5.69ms
+	tacticAnalysis 3.92ms
+	type checking 171s
+	typeclass inference 1.45ms
+⚠ [9067/9070] Replayed LogLean.LocalGlobal
+warning: LogLean/LocalGlobal.lean:53:33: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogLean/LocalGlobal.lean:82:40: This simp argument is unused:
+  ev_replicate
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [n2_16, ev, Mono.ev, Kel.ev_ofQ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogLean/LocalGlobal.lean:82:54: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogLean/LocalGlobal.lean:82:68: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogLean/LocalGlobal.lean:82:58: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogLean/LocalGlobal.lean:102:38: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [9068/9070] Replayed LogLean.LocalPairsA
+info: LogLean/LocalPairsA.lean:15:0: type checking took 157s
+info: LogLean/LocalPairsA.lean:19:0: type checking took 290s
+info: LogLean/LocalPairsA.lean:23:0: type checking took 425s
+info: LogLean/LocalPairsA.lean:27:0: type checking took 559s
+info: LogLean/LocalPairsA.lean:31:0: type checking took 646s
+info: LogLean/LocalPairsA.lean:35:0: type checking took 739s
+info: LogLean/LocalPairsA.lean:39:0: type checking took 870s
+info: LogLean/LocalPairsA.lean:44:0: 'LocalPairs.check01' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsA.lean:45:0: 'LocalPairs.check02' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsA.lean:46:0: 'LocalPairs.check03' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsA.lean:47:0: 'LocalPairs.check04' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsA.lean:48:0: 'LocalPairs.check05' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsA.lean:49:0: 'LocalPairs.check06' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsA.lean:50:0: 'LocalPairs.check12' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: stderr:
+cumulative profiling times:
+	attribute application 0.155ms
+	elaboration 8.48ms
+	fix level params 0.132ms
+	instantiate metavars 0.235ms
+	let-to-have transformation 0.168ms
+	overlappingInstancesLinter 3.7ms
+	process pre-definitions 5.31ms
+	share common exprs 0.768ms
+	tactic execution 8.64ms
+	tacticAnalysis 19.3ms
+	type checking 3.68e+03s
+	typeclass inference 7.75ms
+ℹ [9070/9078] Replayed LogLean.LocalPairsB
+info: LogLean/LocalPairsB.lean:15:0: type checking took 139s
+info: LogLean/LocalPairsB.lean:19:0: type checking took 294s
+info: LogLean/LocalPairsB.lean:23:0: type checking took 365s
+info: LogLean/LocalPairsB.lean:27:0: type checking took 443s
+info: LogLean/LocalPairsB.lean:31:0: type checking took 598s
+info: LogLean/LocalPairsB.lean:35:0: type checking took 737s
+info: LogLean/LocalPairsB.lean:39:0: type checking took 810s
+info: LogLean/LocalPairsB.lean:44:0: 'LocalPairs.check13' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsB.lean:45:0: 'LocalPairs.check14' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsB.lean:46:0: 'LocalPairs.check15' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsB.lean:47:0: 'LocalPairs.check16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsB.lean:48:0: 'LocalPairs.check23' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsB.lean:49:0: 'LocalPairs.check24' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsB.lean:50:0: 'LocalPairs.check25' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: stderr:
+cumulative profiling times:
+	attribute application 0.18ms
+	elaboration 9.03ms
+	fix level params 0.0978ms
+	instantiate metavars 0.254ms
+	let-to-have transformation 0.185ms
+	overlappingInstancesLinter 5.12ms
+	process pre-definitions 6.33ms
+	share common exprs 0.698ms
+	tactic execution 21.1ms
+	tacticAnalysis 17.2ms
+	type checking 3.39e+03s
+	typeclass inference 15.1ms
+ℹ [9071/9078] Replayed LogLean.LocalPairsC
+info: LogLean/LocalPairsC.lean:15:0: type checking took 70.3s
+info: LogLean/LocalPairsC.lean:19:0: type checking took 229s
+info: LogLean/LocalPairsC.lean:23:0: type checking took 320s
+info: LogLean/LocalPairsC.lean:27:0: type checking took 410s
+info: LogLean/LocalPairsC.lean:31:0: type checking took 494s
+info: LogLean/LocalPairsC.lean:35:0: type checking took 582s
+info: LogLean/LocalPairsC.lean:39:0: type checking took 722s
+info: LogLean/LocalPairsC.lean:44:0: 'LocalPairs.check26' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsC.lean:45:0: 'LocalPairs.check34' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsC.lean:46:0: 'LocalPairs.check35' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsC.lean:47:0: 'LocalPairs.check36' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsC.lean:48:0: 'LocalPairs.check45' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsC.lean:49:0: 'LocalPairs.check46' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalPairsC.lean:50:0: 'LocalPairs.check56' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: stderr:
+cumulative profiling times:
+	attribute application 0.21ms
+	elaboration 6.87ms
+	fix level params 0.106ms
+	instantiate metavars 0.291ms
+	let-to-have transformation 0.194ms
+	overlappingInstancesLinter 3.11ms
+	process pre-definitions 7.99ms
+	share common exprs 0.783ms
+	tactic execution 28ms
+	tacticAnalysis 18.1ms
+	type checking 2.83e+03s
+	typeclass inference 14.3ms
+ℹ [9072/9078] Replayed LogLean.LocalScalar
+info: LogLean/LocalScalar.lean:238:0: 'LocalScalar.Lprime_scalar' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalScalar.lean:239:0: 'LocalScalar.Lprime_nonneg_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalScalar.lean:240:0: 'LocalScalar.scalar_cheap' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9073/9078] Replayed LogLean.LocalMain
+warning: LogLean/LocalMain.lean:36:39: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogLean/LocalMain.lean:90:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalMain.lean:90:51: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: LogLean/LocalMain.lean:97:27: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LogLean/LocalMain.lean:103:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogLean/LocalMain.lean:106:0: automatically included section variable(s) unused in theorem `LocalMain.energy_step`:
+  hg
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hg in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LogLean/LocalMain.lean:145:0: automatically included section variable(s) unused in theorem `LocalMain.W_step`:
+  hg
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hg in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LogLean/LocalMain.lean:160:0: automatically included section variable(s) unused in theorem `LocalMain.T_step`:
+  hy
+  hg
+  hball
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hy hg hball in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LogLean/LocalMain.lean:177:0: automatically included section variable(s) unused in theorem `LocalMain.R_step`:
+  hy
+  hg
+  hball
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hy hg hball in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LogLean/LocalMain.lean:365:49: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LogLean/LocalMain.lean:459:51: This simp argument is unused:
+  sq_abs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [dot, Fin.sum_univ_three, Real.norm_eq_abs, pow_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LogLean/LocalMain.lean:505:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+info: LogLean/LocalMain.lean:624:0: 'LocalMain.Lprime' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalMain.lean:625:0: 'LocalMain.Lprime_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalMain.lean:626:0: 'LocalMain.pent_local_min_sup_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9076/9078] Replayed LogLean.LocalHandoff
+info: LogLean/LocalHandoff.lean:38:0: 'LocalBridge.Pbip_eq_pent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogLean/LocalHandoff.lean:39:0: 'LocalHandoff.pent_local_min_sup_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (9078 jobs).
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec <tools>/lean4export/.lake/build/bin/lean4export LogN7.Solution -- Quot Quot.mk Quot.lift Quot.ind ThomsonN7Log.thomson_seven_log ThomsonN7Log.thomson_seven_log_unique propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ThomsonN7Log.thomson_seven_log, ThomsonN7Log.thomson_seven_log_unique, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from LogN7.Solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+real 16020.69
+user 15441.86
+sys 515.63
+COMPARATOR EXIT: 0

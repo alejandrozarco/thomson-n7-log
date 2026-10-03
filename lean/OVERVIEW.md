@@ -219,6 +219,8 @@ certificate has degree 12 for this reason.
   - A second kernel: nanoda, an independent implementation of the Lean 4 type checker, accepted an export of both
     theorems (58525 declarations, standard axioms) and rejected a copy with one changed literal
     (`scripts/second-kernel.sh`; `../verification/lean/second_kernel_2026-10-02.txt`).
+  - Comparator: the main theorems have the statements of `LogN7/Challenge.lean`, use only the standard axioms and
+    are accepted by the kernel on replay (`comparator.json`; `../verification/lean/comparator_2026-10-02.txt`).
   - Separate read-only AI instances (Claude Opus 5.5, Claude Fable 5.1, gpt-6-astra) reviewed the work
     (`../AI_DISCLOSURE.md`). AI reviews are not peer review.
   - No human expert has checked the proof.

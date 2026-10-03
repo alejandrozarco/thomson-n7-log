@@ -100,7 +100,8 @@ status:
     - the clean build of the current version (157 modules, 2026-10-02) passed;
     - a second kernel (nanoda) accepted an export of both theorems (58525 declarations) and rejected a tampered
       copy (verification/lean/second_kernel_2026-10-02.txt);
-    - no Comparator run has completed.
+    - Comparator (lean/comparator.json) reported "Your solution is okay!"; it ran without the landrun sandbox
+      (verification/lean/comparator_2026-10-02.txt).
 
 automation:
   methods:

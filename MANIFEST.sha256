@@ -5,7 +5,7 @@
 43c04df1fb4faafd51aad99693360b31d96e0a8b559f64e1f80f9aa27499ca92  ./COVERAGE.md
 192457fbc2a1504f60719f0f9581c2409aace42d9960a8fb6f94e4541267fade  ./LICENSE
 c90c3d53c69e4c101da976058737e36c6c844c0bf7a434cb62578b633a25aac6  ./METHOD.md
-937b6694ff7e222658d11dc9b27b4f8c5f02c3a6edc9a90d33b07aa135d0b743  ./README.md
+c94578441516be1d245d1204ff1d1edff77f295b0ccfd7df50ba2308d870dc06  ./README.md
 9c7cc183fcb930efe2451c463a9528245aec64121c9aec27fc606cf0572ae4e4  ./certificates/cells.json
 be95bd0d02115b5cae6dc65154301feed2a775ff9972b0755d6e87d1af704e70  ./certificates/cells/calib_case1_coulomb_D10.json
 d50793adbadf05c191e9c0f39ea08d4739399df89e22598252ed086d63a7b3ae  ./certificates/cells/cert_case1_log_D10.json
@@ -32,7 +32,7 @@ c0e7ca846f9f3028b116130037f5105ab26b30ff728b127eb2455e19850d96a5  ./figures/mino
 a14fb00dfcd204b4c2aba0daed2fadbe342b7356776a89528d20fd70e2e34963  ./figures/minorant_cap_light.svg
 735eff477c1aa4aa69f37ee698564629fc2225d8fb4a0dea346ad42d01e1791d  ./figures/soft_mode_dark.svg
 9e25e416f4f970dd7b3f420cc573b6dad278620b82ebb189e914f9631cdfe53d  ./figures/soft_mode_light.svg
-8175115c32dd08a42e8333866a1c0304be6eaac0ba7437bba4c313849c7351c5  ./formalization.yaml
+00c0a2c4a162a81fef7f9a9ee93d9864a5c73a873f4deee07d00e99e13867af6  ./formalization.yaml
 610b381434137c2329f8b54b2807c3cf6318a3c69266e8bed11209abc335d32e  ./generate/face.py
 290b66a36cca15e337aaf33e6426287e3ddf38acf2dc4a6cc1db8c02a619cdb6  ./generate/polyk.py
 6ab8bf9d7852eee299dc137ac6c4a5340b7909b2a125078f6df0e9adb62069d4  ./generate/round_cell.py
@@ -173,8 +173,8 @@ cc7fb313d98218278fe30c638d39ffdfa2d17e5db6f9fa41106c12108cdbacc7  ./lean/LogN7/S
 eff9cf7b0a321ccfcd3347ab1148f2f7e922a8cba62dccab77917194bf5afe00  ./lean/LogN7/S9998/Data.lean
 2b6d05772a1e57c7ae0aecbc4e2c26ba10845753a5dc119da65c567c7c6175d4  ./lean/LogN7/S9998/Spec.lean
 727895a64f246a7c5d84380b014e94eff30ee2ad10d61f43c6a8852f8b5e2161  ./lean/LogN7/Solution.lean
-6ecf5a4e74840f0ee34a29f66d38f58bb151a185c82b8685eb08d14503cab607  ./lean/OVERVIEW.md
-3acbe68162e04ac0bc7a214e27ecf6634e5bffa059a93d1dbe7a6a3a32239fd1  ./lean/README.md
+da9b62c7a37025ddc7f9a84736b536968b85d0caa8f1fda7ebb62a1a792a17f6  ./lean/OVERVIEW.md
+e78f3b5c30d6b4c95878b2a56ae05d80fe49c56bb63f3502b20e96bb68e9c5bf  ./lean/README.md
 9de74418feaff380ca20720e55b10f6edd2990c50324d89965f8b0d35eb8a6f6  ./lean/ThomsonGen/Cert/NBlk.lean
 94a8aa1ca7a4589a0d4c95eab6856068194f656840854d098e8077b79d6e7804  ./lean/ThomsonGen/Cert/NBlkCap.lean
 3998e50653b55468a63e649a3a85b92dc9e3ea7da1c486567f9947a1903791c8  ./lean/ThomsonGen/Cert/Split.lean
@@ -360,6 +360,8 @@ eb4cd67cf923d0c80a2ec6c547e37b45df6fb48cc3439a952ef12b829fe20115  ./verification
 b95193c09f33028de29b5c2fd2dbf78c4cf767267b018276707065447c0b50fb  ./verification/generate_smoke.txt
 a371aa50cdd2872536fe8fe98c1aa2b4ea792201bc8e12292af642133d89d799  ./verification/lean/build_2026-10-01_pre_scrub.tsv
 46f3dad12dbe694abb3f4059bce6adefdeea79ca5aaa1471b2087c9e375a685e  ./verification/lean/build_2026-10-02.tsv
+13f88e345fd3c3207428584170b44988836b78e50e54f3372d8f6a2167ea9490  ./verification/lean/comparator_2026-10-02.log
+70ff23e500ecb4b043213b1ae7a2f7e252d7c33ed3b407b08d834dc5fdb185d4  ./verification/lean/comparator_2026-10-02.txt
 eef24a32a6cc6242ee2ee383cdbb27d38124bec56702b4972ab74aea727b6ed9  ./verification/lean/riesz2_build_2026-10-01.tsv
 418e14d87d560efeb5033a80a409051a4c5d0ea3c3143483efc36a6143c5aa92  ./verification/lean/second_kernel_2026-10-02.txt
 4d94eeaee539c10c5235f6803063557d55b51c2370ace2023a7d359a162be88c  ./verification/make_coverage.txt

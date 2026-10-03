@@ -1,0 +1,36 @@
+Comparator run on lean/, 2026-10-02 (Linux x86_64), with lean/scripts/run_comparator.sh and lean/comparator.json
+
+Tool: leanprover/comparator fd5d5bcf14177b187f66d4502071268d877887c3 (own toolchain leanprover/lean4:v4.35.0-rc3),
+      with leanprover/lean4export 076e8e57707e813375e8f9da8bf989799ace9680 built on this project's toolchain.
+Config (lean/comparator.json):
+  challenge module  LogN7.Challenge   (statements with `sorry`)
+  solution module   LogN7.Solution
+  theorems          ThomsonN7Log.thomson_seven_log, ThomsonN7Log.thomson_seven_log_unique
+  permitted axioms  propext, Quot.sound, Classical.choice
+Sources: every stored .lean file, comparator.json, the scripts, regen.sh, lakefile.toml, lake-manifest.json and
+lean-toolchain were byte-identical (sha256) to lean/ as published; the regenerated modules matched
+ThomsonGen/scripts/generated.sha256.
+
+Sandbox: landrun was not installed. Comparator used its own non-sandboxing shim (scripts/fake-landrun.sh), so the
+builds and exports ran unsandboxed (the log says "THIS IS NOT REAL LANDRUN"). The sandbox protects the checking
+machine from the solution's build; it does not change the checks below.
+
+Preparation: the workspace had been built by plain `lean -o` in the clean build (build_2026-10-02.tsv), which
+writes no lake trace files. To avoid a parallel full rebuild inside Comparator, every module was first built with
+`lake build +<Module>`, one at a time in dependency order; `lake build --no-build` then reported
+"All targets up-to-date". Comparator's own builds replayed these.
+
+Run: 4 h 27 min wall time (mostly the kernel replay), peak resident memory 7.3 GB.
+Steps and result (from comparator_2026-10-02.log, warnings and replayed build messages omitted):
+  Building LogN7.Challenge                       (the two `sorry` warnings are the challenge statements)
+  Exporting LogN7.Challenge
+  Building LogN7.Solution
+  Exporting LogN7.Solution
+  Running Lean default kernel on solution.
+  Lean default kernel accepts the solution
+  Your solution is okay!
+  COMPARATOR EXIT: 0
+
+Comparator reports success only if the solution's theorems have the same statements as the challenge's, use only
+the permitted axioms, and are accepted by the Lean kernel when replayed from the export.
+Full log (local paths shortened): comparator_2026-10-02.log.

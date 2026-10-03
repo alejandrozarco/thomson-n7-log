@@ -172,3 +172,6 @@ one at a time, in dependency order, with `lake env lean -j1 -DElab.async=false`.
     (58525 declarations, no errors, axioms `propext`, `Quot.sound`, `Classical.choice`; 5.3 h, 6.9 GB). As a
     negative control, it rejected a copy of the export with one large literal changed. Record:
     `../verification/lean/second_kernel_2026-10-02.txt`.
+  - Comparator (`scripts/run_comparator.sh`, `comparator.json`): same statements as `LogN7/Challenge.lean`, only
+    `propext`, `Quot.sound`, `Classical.choice`, accepted by the Lean kernel on replay: "Your solution is okay!"
+    (4.5 h, 7.3 GB; run without the landrun sandbox). Record: `../verification/lean/comparator_2026-10-02.txt`.
