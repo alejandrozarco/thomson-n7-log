@@ -1,0 +1,182 @@
+Build completed successfully (6 jobs).
+Build completed successfully (15 jobs).
+WARNING: no landrun found, using the non-sandboxing shim <tools>/comparator/scripts/fake-landrun.sh
+Building Riesz2.Challenge
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build Riesz2.Challenge
+⚠ [8925/8925] Replayed Riesz2.Challenge
+warning: Riesz2/Challenge.lean:27:8: declaration uses `sorry`
+warning: Riesz2/Challenge.lean:31:8: declaration uses `sorry`
+Build completed successfully (8925 jobs).
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec <tools>/lean4export/.lake/build/bin/lean4export Riesz2.Challenge -- Quot Quot.mk Quot.lift Quot.ind ThomsonN7Riesz2.riesz2_seven ThomsonN7Riesz2.riesz2_seven_unique propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ThomsonN7Riesz2.riesz2_seven, ThomsonN7Riesz2.riesz2_seven_unique, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Riesz2.Challenge
+Building Riesz2.Solution
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build Riesz2.Solution
+⚠ [8924/8959] Replayed ThomsonGen.ThreePoint
+warning: ThomsonGen/ThreePoint.lean:161:30: This simp argument is unused:
+  real_inner_self_eq_norm_sq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Set.domRestrict, v, hx]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThomsonGen/ThreePoint.lean:206:65: This simp argument is unused:
+  Pi.star_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [matDot, Matrix.sum_apply, Matrix.vecMulVec_apply, star_trivial, dotProduct, Matrix.mulVec,
+    Finset.sum_mul, Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThomsonGen/ThreePoint.lean:243:85: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8932/8959] Replayed ThomsonGen.Cert1
+warning: ThomsonGen/Cert1.lean:48:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Cert1.lean:48:31: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Cert1.lean:49:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Cert1.lean:49:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Cert1.lean:74:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Cert1.lean:74:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [8937/8959] Replayed ThomsonGen.Typed
+warning: ThomsonGen/Typed.lean:156:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:159:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:159:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:160:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Typed.lean:160:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Typed.lean:200:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:200:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:163:27: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8941/8959] Replayed ThomsonGen.Cert.NBlk
+warning: ThomsonGen/Cert/NBlk.lean:146:39: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:146:39: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:282:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ThomsonGen/Cert/NBlk.lean:325:41: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:325:41: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:561:80: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:561:80: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8945/8959] Replayed Riesz2.Basic
+warning: Riesz2/Basic.lean:68:44: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [one_mul, mul_one, mul_zero, add_zero, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Riesz2/Basic.lean:68:64: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [one_mul, mul_one, mul_zero, zero_mul, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Riesz2/Basic.lean:70:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Riesz2/Basic.lean:72:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Riesz2/Basic.lean:70:4: Unused tactic linter: `(
+  rw [← cos_neg]; simp only [one_mul, mul_one, mul_zero, zero_mul, add_zero, zero_add]
+  congr 1; ring)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Riesz2/Basic.lean:72:4: Unused tactic linter: `(
+  simp only [one_mul, mul_one, mul_zero, zero_mul, add_zero, zero_add, cos_sub]
+  rw [← cos_neg, cos_neg]; simp only [cos_sub]; ring)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Riesz2/Basic.lean:82:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Riesz2/Basic.lean:82:4: Unused tactic linter: `(
+  have h := Real.sq_sqrt (show (0 : ℝ) ≤ 5 by norm_num)
+  nlinarith [Real.sqrt_nonneg 5])` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Riesz2/Basic.lean:98:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Riesz2/Basic.lean:99:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Riesz2/Basic.lean:98:4: Unused tactic linter: `linear_combination (-1 / 4 : ℝ) * h5` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Riesz2/Basic.lean:99:4: Unused tactic linter: `nlinarith [h5]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Riesz2/Basic.lean:108:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Riesz2/Basic.lean:108:4: Unused tactic linter: `nlinarith [h5]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Riesz2/Basic.lean:128:84: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Riesz2/Basic.lean:130:84: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Riesz2/Basic.lean:132:84: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Riesz2/Basic.lean:126:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Riesz2/Basic.lean:134:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Riesz2/Basic.lean:136:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Riesz2/Basic.lean:138:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Riesz2/Basic.lean:140:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Riesz2/Basic.lean:142:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Riesz2/Basic.lean:128:84: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Riesz2/Basic.lean:130:84: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Riesz2/Basic.lean:132:84: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Build completed successfully (9032 jobs).
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec <tools>/lean4export/.lake/build/bin/lean4export Riesz2.Solution -- Quot Quot.mk Quot.lift Quot.ind ThomsonN7Riesz2.riesz2_seven ThomsonN7Riesz2.riesz2_seven_unique propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ThomsonN7Riesz2.riesz2_seven, ThomsonN7Riesz2.riesz2_seven_unique, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Riesz2.Solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+real 8813.16
+user 8559.22
+sys 247.61
+COMPARATOR EXIT: 0

@@ -24,7 +24,9 @@ E(x) = \sum_{i \lt j} -\log \lVert x_i - x_j \rVert .
 
 The regular pentagonal bipyramid $P$ has $E(P) = -\log\left(1600\sqrt{5}\right)$. This repository contains exact
 certificates and checkers for the computational steps of an argument, modelled on the Lean formalisation of the Coulomb
-case ([huwngtran/thomson-n7-lean](https://github.com/huwngtran/thomson-n7-lean)), directed at the statement that $P$
+case by Hung Tran ([huwngtran/thomson-n7-lean](https://github.com/huwngtran/thomson-n7-lean)), which follows the
+$N = 8$ method of Kryvonos, Liehr and Taylor ([arXiv:2609.22077](https://arxiv.org/abs/2609.22077)) and its Lean
+development by Tooby-Smith and Zughaid ([Thomson-N-8-Warrant](https://github.com/jstoobysmith/Thomson-N-8-Warrant)). It is directed at the statement that $P$
 minimises $E$ among seven distinct points. Write $t_{ij} = \langle x_i, x_j \rangle$. The configuration space is split by the smallest inner
 product. For every configuration with all $t_{ij} \ge -9/10$, and for five slabs covering
 $-99/100 \le t_{01} \le -9/10$ of the minimal pair, a three-point semidefinite certificate gives a lower bound
@@ -93,7 +95,7 @@ before the upstream-code changes described in `lean/README.md`) passed on 2026-1
 
 See `lean/OVERVIEW.md` for an overview of the formal proof, and `lean/README.md` for the module structure, the build
 and the measured costs. Parts of the supporting library come
-from the Lean formalisation of the Coulomb case, [huwngtran/thomson-n7-lean](https://github.com/huwngtran/thomson-n7-lean)
+from the Lean formalisation of the Coulomb case by Hung Tran, [huwngtran/thomson-n7-lean](https://github.com/huwngtran/thomson-n7-lean)
 (commit `25f2fa5`). Declarations used unchanged are regenerated from that repository by `lean/regen.sh` and are not
 stored here. Adapted declarations are stored with attribution to the upstream declaration
 (`lean/README.md`, section Upstream code).
@@ -139,7 +141,9 @@ $`s = 2`$ the cap certificate rounds exactly at $`P`$ (no gap between the certif
 positive-width coercivity estimate and no quartic local lemma are needed; the Lean proof still uses ring rigidity at
 zero tube width for uniqueness (`riesz2/lean/Riesz2/Sharp.lean`). The $`s = 2`$ statement is
 also machine-checked in Lean 4 (`riesz2/lean/`, standard axioms only; clean-build record with the `#print axioms`
-output: `verification/lean/riesz2_build_2026-10-01.tsv`). See `riesz2/README.md`.
+output: `verification/lean/riesz2_build_2026-10-01.tsv`). Comparator (`riesz2/lean/comparator.json`: the statements in
+`riesz2/lean/Riesz2/Challenge.lean` against `Riesz2/Solution.lean`, standard axioms only) reported "Your solution is
+okay!" (`verification/lean/riesz2_comparator_2026-10-03.txt`). See `riesz2/README.md`.
 
 ## Contents
 

@@ -18,3 +18,40 @@ keywords:
   - computer-assisted proof
   - Lean 4
 license: Apache-2.0
+references:
+  - type: software
+    title: "thomson-n7-lean: Lean 4 proof of the Thomson problem for N = 7 (Coulomb energy)"
+    authors:
+      - given-names: Hung
+        family-names: Tran
+    repository-code: "https://github.com/huwngtran/thomson-n7-lean"
+    commit: "25f2fa53119273458cfbb3c4230904bffdd61e53"
+  - type: article
+    title: "Energy minimization for eight points on the sphere"
+    authors:
+      - family-names: Kryvonos
+      - family-names: Liehr
+      - family-names: Taylor
+    identifiers:
+      - type: url
+        value: "https://arxiv.org/abs/2609.22077"
+  - type: software
+    title: "Thomson-N-8-Warrant"
+    authors:
+      - given-names: Joseph
+        family-names: Tooby-Smith
+      - given-names: A.
+        family-names: Zughaid
+    repository-code: "https://github.com/jstoobysmith/Thomson-N-8-Warrant"
+  - type: article
+    title: "Characterization of Logarithmic Fekete Critical Configurations of at Most Six Points in All Dimensions"
+    authors:
+      - {given-names: D., family-names: Armentano}
+      - {given-names: L., family-names: Bentancur}
+      - {given-names: F., family-names: Carrasco}
+      - {given-names: M., family-names: Fiori}
+      - {given-names: M., family-names: Valdés}
+      - {given-names: M., family-names: Velasco}
+    identifiers:
+      - type: url
+        value: "https://arxiv.org/abs/2502.10152"

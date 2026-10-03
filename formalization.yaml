@@ -41,6 +41,15 @@ sources:
       The argument was first presented in this repository (METHOD.md, local/LOCAL_LEMMA.md, lean/OVERVIEW.md). It is
       AI-produced and has not been refereed.
     author_endorsement: "n/a"
+  - title: "Energy minimization for eight points on the sphere"
+    authors: ["Kryvonos", "Liehr", "Taylor"]
+    id: "arXiv:2609.22077"
+    type: "article"
+    relationship: "adapts"
+    note: >-
+      Source of the method (three-point bounds, case split, certificates), via the N = 7 Coulomb formalisation
+      huwngtran/thomson-n7-lean. Also treats the logarithmic and all Riesz s >= 0 energies for eight points.
+    author_endorsement: "not-contacted"
   - title: "New upper bounds for kissing numbers from semidefinite programming"
     authors: ["C. Bachoc", "F. Vallentin"]
     id: "J. Amer. Math. Soc. 21 (2008), 909-924"
@@ -56,9 +65,11 @@ related_formalizations:
     note: >-
       Coulomb (s = 1) case for N = 7. Unchanged declarations are regenerated from it by lean/regen.sh and are not
       stored here. Adapted declarations are stored with per-declaration attribution (lean/README.md, Upstream code).
-  - id: "https://arxiv.org/abs/2609.22077"
-    relationship: "independent"
-    note: "Kryvonos, Liehr, Taylor: energy minimisation for eight points (log, Coulomb, all Riesz s >= 0)."
+  - id: "https://github.com/jstoobysmith/Thomson-N-8-Warrant"
+    relationship: "other"
+    note: >-
+      Tooby-Smith and Zughaid: Lean development for N = 8, whose approach huwngtran/thomson-n7-lean follows. Not used
+      directly here.
 
 classification:
   arxiv: ["math.MG", "math.OC"]
@@ -88,11 +99,13 @@ status:
       file: "riesz2/lean/Riesz2/Main.lean"
       sorry_count: 0
       axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "riesz2/lean/comparator.json"
       literature_dependencies: []
     - declaration: "Riesz2.riesz2_seven_unique"
       file: "riesz2/lean/Riesz2/Main.lean"
       sorry_count: 0
       axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "riesz2/lean/comparator.json"
       literature_dependencies: []
   notes: >-
     Axioms as reported by `#print axioms` in a clean build (verification/lean/; riesz2/lean/README.md). No
@@ -102,6 +115,9 @@ status:
       copy (verification/lean/second_kernel_2026-10-02.txt);
     - Comparator (lean/comparator.json) reported "Your solution is okay!"; it ran without the landrun sandbox
       (verification/lean/comparator_2026-10-02.txt).
+    For riesz2/lean/: Comparator (riesz2/lean/comparator.json; the theorems ThomsonN7Riesz2.riesz2_seven(_unique) of
+    Riesz2/Solution.lean) reported "Your solution is okay!", without the landrun sandbox
+    (verification/lean/riesz2_comparator_2026-10-03.txt).
 
 automation:
   methods:
@@ -166,4 +182,5 @@ alignment:
       note: "Weaker constants than the Python version; see fidelity."
 
 acknowledgements: >-
-  Built on huwngtran/thomson-n7-lean (Coulomb N = 7). Uses Mathlib, Lean 4, and Python numerical libraries.
+  Built on the Lean formalisation of the Coulomb case N = 7 by Hung Tran (huwngtran/thomson-n7-lean), which follows
+  the N = 8 method of Kryvonos, Liehr and Taylor and the Lean development of Tooby-Smith and Zughaid. Uses Mathlib, Lean 4, and Python numerical libraries.

@@ -29,6 +29,16 @@
       "identifier": "arXiv:2502.10152",
       "relation": "references",
       "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "arXiv:2609.22077",
+      "relation": "references",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://github.com/jstoobysmith/Thomson-N-8-Warrant",
+      "relation": "references",
+      "resource_type": "software"
     }
   ],
   "license": "Apache-2.0"

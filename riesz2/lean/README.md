@@ -120,7 +120,7 @@ revision are pinned in `lean-toolchain` and `lakefile.toml`.
 ```sh
 ./regen.sh                  # fetch upstream, regenerate ThomsonGen/*, check hashes: "regen OK"
 lake exe cache get          # Mathlib build cache
-lake build                  # builds Riesz2.Main and Riesz2.Check.Axioms
+lake build                  # builds Riesz2.Main, Riesz2.Check.Axioms, Riesz2.Challenge and Riesz2.Solution
 ```
 
 `lake build` may compile several modules in parallel. Many modules need 6–10 GB of RAM each, and the largest needs
@@ -148,3 +148,14 @@ module, at low priority on a shared machine. Wall times are indicative only.
 | `Riesz2/Case1/*` | 7 | 7 min | 9.3 GB |
 | other `Riesz2/*` | 14 | 4 min | 6.4 GB |
 | total | 109 | 4.5 h | 15.5 GB |
+
+## Comparator
+
+`Riesz2/Challenge.lean` states the two theorems with `sorry`, using only the regenerated upstream preamble
+(`ThomsonGen/Preamble.lean`) and its own definition of `riesz2Energy`. `Riesz2/Solution.lean` repeats the statements
+and proves them with `Riesz2.riesz2_seven` and `Riesz2.riesz2_seven_unique`. `comparator.json` names the two theorems
+(`ThomsonN7Riesz2.riesz2_seven`, `ThomsonN7Riesz2.riesz2_seven_unique`) and permits only `propext`, `Quot.sound` and
+`Classical.choice`. Run it with `bash scripts/run_comparator.sh` on a built workspace.
+
+On 2026-10-03, Comparator reported "Your solution is okay!" (2.5 h, 10.8 GB; run without the landrun sandbox). Record:
+`../../verification/lean/riesz2_comparator_2026-10-03.txt`.

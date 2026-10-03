@@ -1,11 +1,11 @@
 3c14864439684366c2fc540f4d0c6efc323735799f3679f2b3151513153a5b50  ./.gitignore
-8a3f696e83d997ea15c8283553748f96eb3a20d0fb49ceb0cf3ec2b1642319ec  ./.zenodo.json
+8f4f03ed2f258fbda125a516d413d8b66912126ef8f4a674d394f02c456d1f56  ./.zenodo.json
 80ace0b0a7fbe12650a6f5e7983b010d19ccacb5e14005ea6db448a407b09c1d  ./AI_DISCLOSURE.md
-56a292b98870147283a052f70125afe1b6ce19234de97a694e7e07fca0354aef  ./CITATION.cff
+d37082743fb98feac0124703226119ef9e6fd3bf130c0311ec9e468a648c4033  ./CITATION.cff
 43c04df1fb4faafd51aad99693360b31d96e0a8b559f64e1f80f9aa27499ca92  ./COVERAGE.md
 192457fbc2a1504f60719f0f9581c2409aace42d9960a8fb6f94e4541267fade  ./LICENSE
 c90c3d53c69e4c101da976058737e36c6c844c0bf7a434cb62578b633a25aac6  ./METHOD.md
-c94578441516be1d245d1204ff1d1edff77f295b0ccfd7df50ba2308d870dc06  ./README.md
+8717334546c938f783221e73265bfbd2cc0a56cee8af0b43f6a56e646712bf04  ./README.md
 9c7cc183fcb930efe2451c463a9528245aec64121c9aec27fc606cf0572ae4e4  ./certificates/cells.json
 be95bd0d02115b5cae6dc65154301feed2a775ff9972b0755d6e87d1af704e70  ./certificates/cells/calib_case1_coulomb_D10.json
 d50793adbadf05c191e9c0f39ea08d4739399df89e22598252ed086d63a7b3ae  ./certificates/cells/cert_case1_log_D10.json
@@ -32,7 +32,7 @@ c0e7ca846f9f3028b116130037f5105ab26b30ff728b127eb2455e19850d96a5  ./figures/mino
 a14fb00dfcd204b4c2aba0daed2fadbe342b7356776a89528d20fd70e2e34963  ./figures/minorant_cap_light.svg
 735eff477c1aa4aa69f37ee698564629fc2225d8fb4a0dea346ad42d01e1791d  ./figures/soft_mode_dark.svg
 9e25e416f4f970dd7b3f420cc573b6dad278620b82ebb189e914f9631cdfe53d  ./figures/soft_mode_light.svg
-00c0a2c4a162a81fef7f9a9ee93d9864a5c73a873f4deee07d00e99e13867af6  ./formalization.yaml
+d61db50b23207413bc62c15a061049e7fe1c092643ef0d2a3fd1e7a151fc1876  ./formalization.yaml
 610b381434137c2329f8b54b2807c3cf6318a3c69266e8bed11209abc335d32e  ./generate/face.py
 290b66a36cca15e337aaf33e6426287e3ddf38acf2dc4a6cc1db8c02a619cdb6  ./generate/polyk.py
 6ab8bf9d7852eee299dc137ac6c4a5340b7909b2a125078f6df0e9adb62069d4  ./generate/round_cell.py
@@ -240,7 +240,7 @@ c58d36e660442081d1506ff781139793272bb5fb637c4886402b46880fd22dd2  ./riesz2/check
 3c1d6a03379b98960149e753a9be7055627fe427cc2379d6f2b7974379288f93  ./riesz2/check_cell2.py
 407ee4d11a5abc8f68d29617b27abd53d95e3d1a313266f448b565ad0c7bb207  ./riesz2/controls2.py
 d4f93d812f00bfa0ab801c513b0d02abb43193003e2b6e55c8d4f0e5e989e2c9  ./riesz2/lean/.gitignore
-a414d74e890537dea55119a3f8b394ae818bd35ec96d7ac7779b652b8ccb17cc  ./riesz2/lean/README.md
+8ac541ece0dbdfad7835424c9fc4fa3e0c5a010f4713cf3f0aeafead49874a92  ./riesz2/lean/README.md
 f60f66a59060ba59abb5476e13bfc7d9898b2b0a5976b5f592830b8becaaea39  ./riesz2/lean/Riesz2/Basic.lean
 bba764eab1766f6ab94634818e4166ea412a29d12134d6e64889acefcdf1489e  ./riesz2/lean/Riesz2/Bridge.lean
 5b0e4e84ed70d41728bd635f779b38c1edc3b5d57dcd08f555804a3af36724db  ./riesz2/lean/Riesz2/Cap/ChkA.lean
@@ -284,6 +284,7 @@ c62ec4c13304245587fce353c6ee0563d60f166b5ad7456fe7b044f2eab3b3c6  ./riesz2/lean/
 a8c9acb9e2599cb2d2aa501bc0e0b133b0181b4ff921c52d4593f3f6a367d5db  ./riesz2/lean/Riesz2/Case1/Claim.lean
 7f0f33d969966dc310336c41f3307fd27ea6d72b756c8ae79f60accde85fd0a5  ./riesz2/lean/Riesz2/Case1/Data.lean
 272be3e87b0af372e5437f332c68ec7a002e9609025196d92bb5126c3577e206  ./riesz2/lean/Riesz2/Case1/Stat.lean
+32ae01a2c96b1d445b48edd240db763eea37cdf090cbfc0f963ad57b861e10dd  ./riesz2/lean/Riesz2/Challenge.lean
 0c1f918735ff2f0ec19fb80b6d1cfad19bd2029dd1e38fb8c2e07e09bc2f5e2f  ./riesz2/lean/Riesz2/Check/Axioms.lean
 10c1ec304553f66ba27cce4ebf8d6849ae4287701b347ca14cef674169ee6a69  ./riesz2/lean/Riesz2/Final.lean
 163f4473d80a8a6c66b13f3a145fd3fa71177fd99e5e7c079088806d5a38cb90  ./riesz2/lean/Riesz2/Main.lean
@@ -329,6 +330,7 @@ c23066394b553aaf80a096656b460a13b21884f8b4a2181ce647d4628069b6df  ./riesz2/lean/
 703085604aa6077c4093f2d2f52c620967311760aab04c7926ddcdad11516c9a  ./riesz2/lean/Riesz2/S9998/Data.lean
 049dd977229c6ebd91e061447653b4f57d84a5a696abeb8c361851c51bb466ec  ./riesz2/lean/Riesz2/S9998/Spec.lean
 6300233c32e9aea145e7776315bd4f55262aaab8cfe5e1c35edd941ac4889d7c  ./riesz2/lean/Riesz2/Sharp.lean
+441fb27317692fccc7d6b23f9fc7229ab93756bfa1a0f94fbf93f073595de8d6  ./riesz2/lean/Riesz2/Solution.lean
 9de74418feaff380ca20720e55b10f6edd2990c50324d89965f8b0d35eb8a6f6  ./riesz2/lean/ThomsonGen/Cert/NBlk.lean
 ef017a07cd36291456ad73427e42f1a4dc2a35998efad52f66dc7536c18ebfbb  ./riesz2/lean/ThomsonGen/Generic/Energy.lean
 0ebf56d4189ad49d5619faecf5a46e01e27ea669e563a823a193da3a86608536  ./riesz2/lean/ThomsonGen/Generic/Glue.lean
@@ -339,10 +341,13 @@ f5b09c3c5ee70230271ea55e5d765e6ff089c0e27e0318461a62a0402b3dede4  ./riesz2/lean/
 54fcb45e50a1c369205eed08b60f515aa71199d3a2e33b789835232996192fa5  ./riesz2/lean/ThomsonGen/scripts/split.py
 4953986405de8663cb94d82f90d354c6e6423542623057ff5ca77cb0c600fde6  ./riesz2/lean/ThomsonGen/scripts/verbatim/Generic.txt
 47d5e59950acd80f7918da784596c1e9c024c534767bae880afcb8d0f8a737e4  ./riesz2/lean/ThomsonGen/scripts/verbatim/MinorPoly.txt
+e6fbc2f59737f858aa689308adcd694c82d707f1c3553f70bd59ca47b364c589  ./riesz2/lean/comparator.json
 2dd92b3b21f8342b06a98ab782fcd0eb9afe02946ae00d48784f28361b67056a  ./riesz2/lean/lake-manifest.json
-626033602af88697812304931fdbc1d854907a4d2e74b93c738c58e9cf60a042  ./riesz2/lean/lakefile.toml
+4a08099267d775cb26f23d1bbddbd029f7524edc7151a996ba7624bf89fa23ef  ./riesz2/lean/lakefile.toml
 d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b  ./riesz2/lean/lean-toolchain
 b24df49d65aa1b5d45025e22cfecaf3fd979a71a798e6898ccb9f26484fc62a6  ./riesz2/lean/regen.sh
+e6db5bbf8ab9fe221687cf47307ac40964367b75fb8319729dfd7a064d4727f9  ./riesz2/lean/scripts/run_comparator.sh
+6dee112ac152706b9d95492832acf0fb64a16872e416177550188d20c3927bd9  ./riesz2/lean/scripts/tools.sh
 aa551087967ad3c60f93f20c56dddff18eaaa41331a6877d94214c5f9155000e  ./riesz2/make_coverage2.py
 89957c3691117fe7bcd330b45b11305438fefe4199e59fcb2cdc94759d18b802  ./riesz2/minorant2.py
 d22c5b98255f2e86a64baa75635030e36cdf38a7ddb2adee25e655e9dac7247a  ./soft_mode/verify_soft_mode.py
@@ -363,6 +368,8 @@ a371aa50cdd2872536fe8fe98c1aa2b4ea792201bc8e12292af642133d89d799  ./verification
 13f88e345fd3c3207428584170b44988836b78e50e54f3372d8f6a2167ea9490  ./verification/lean/comparator_2026-10-02.log
 70ff23e500ecb4b043213b1ae7a2f7e252d7c33ed3b407b08d834dc5fdb185d4  ./verification/lean/comparator_2026-10-02.txt
 eef24a32a6cc6242ee2ee383cdbb27d38124bec56702b4972ab74aea727b6ed9  ./verification/lean/riesz2_build_2026-10-01.tsv
+8c30dbd7b1d59292f91c82f8b1a56b79ce8f1cf7604edb9d12b4f50e237ad281  ./verification/lean/riesz2_comparator_2026-10-03.log
+750d058a165f142d0380ea0e8e65e9507b02603e22ae2200cfb8f18f9faa66a9  ./verification/lean/riesz2_comparator_2026-10-03.txt
 418e14d87d560efeb5033a80a409051a4c5d0ea3c3143483efc36a6143c5aa92  ./verification/lean/second_kernel_2026-10-02.txt
 4d94eeaee539c10c5235f6803063557d55b51c2370ace2023a7d359a162be88c  ./verification/make_coverage.txt
 52bbbd32c9b2a02afbe7e0a097704c36f29d89522c7597064b4196c1cd506fbe  ./verification/verify_soft_mode.txt

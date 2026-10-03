@@ -1,0 +1,36 @@
+Comparator run on riesz2/lean/, 2026-10-03 (Linux x86_64), with riesz2/lean/scripts/run_comparator.sh and
+riesz2/lean/comparator.json
+
+Tool: leanprover/comparator fd5d5bcf14177b187f66d4502071268d877887c3 (own toolchain leanprover/lean4:v4.35.0-rc3),
+      with leanprover/lean4export 076e8e57707e813375e8f9da8bf989799ace9680 built on this project's toolchain.
+Config (riesz2/lean/comparator.json):
+  challenge module  Riesz2.Challenge   (statements with `sorry`)
+  solution module   Riesz2.Solution    (the same statements, proved by Riesz2.riesz2_seven(_unique) of Riesz2/Main.lean)
+  theorems          ThomsonN7Riesz2.riesz2_seven, ThomsonN7Riesz2.riesz2_seven_unique
+  permitted axioms  propext, Quot.sound, Classical.choice
+Sources: every stored .lean file, comparator.json, the scripts, regen.sh, lakefile.toml, lake-manifest.json and
+lean-toolchain were byte-identical (sha256) to riesz2/lean/ as published with this record; the regenerated modules
+matched ThomsonGen/scripts/generated.sha256.
+
+Sandbox: landrun was not installed. Comparator used its own non-sandboxing shim (scripts/fake-landrun.sh), so the
+builds and exports ran unsandboxed (the log says "THIS IS NOT REAL LANDRUN"). The sandbox protects the checking
+machine from the solution's build; it does not change the checks below.
+
+Preparation: all 111 modules (the 109 of riesz2_build_2026-10-01.tsv plus Riesz2/Challenge.lean and
+Riesz2/Solution.lean) were built with `lake build +<Module>`, one at a time in dependency order, all with exit code 0;
+`lake build --no-build` then reported "All targets up-to-date". Comparator's own builds replayed these.
+
+Run: 2 h 27 min wall time (mostly the kernel replay), peak resident memory 10.8 GB.
+Steps and result (from riesz2_comparator_2026-10-03.log, warnings and replayed build messages omitted):
+  Building Riesz2.Challenge                      (the two `sorry` warnings are the challenge statements)
+  Exporting Riesz2.Challenge
+  Building Riesz2.Solution
+  Exporting Riesz2.Solution
+  Running Lean default kernel on solution.
+  Lean default kernel accepts the solution
+  Your solution is okay!
+  COMPARATOR EXIT: 0
+
+Comparator reports success only if the solution's theorems have the same statements as the challenge's, use only
+the permitted axioms, and are accepted by the Lean kernel when replayed from the export.
+Full log (local paths shortened): riesz2_comparator_2026-10-03.log.

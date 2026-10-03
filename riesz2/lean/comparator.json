@@ -1,0 +1,13 @@
+{
+  "challenge_module": "Riesz2.Challenge",
+  "solution_module": "Riesz2.Solution",
+  "theorem_names": [
+    "ThomsonN7Riesz2.riesz2_seven",
+    "ThomsonN7Riesz2.riesz2_seven_unique"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}
