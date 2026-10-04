@@ -29,9 +29,9 @@ references:
   - type: article
     title: "Energy minimization for eight points on the sphere"
     authors:
-      - family-names: Kryvonos
-      - family-names: Liehr
-      - family-names: Taylor
+      - {given-names: Liudmyla, family-names: Kryvonos}
+      - {given-names: Lukas, family-names: Liehr}
+      - {given-names: Mitchell A., family-names: Taylor}
     identifiers:
       - type: url
         value: "https://arxiv.org/abs/2609.22077"
@@ -46,12 +46,17 @@ references:
   - type: article
     title: "Characterization of Logarithmic Fekete Critical Configurations of at Most Six Points in All Dimensions"
     authors:
-      - {given-names: D., family-names: Armentano}
-      - {given-names: L., family-names: Bentancur}
-      - {given-names: F., family-names: Carrasco}
-      - {given-names: M., family-names: Fiori}
-      - {given-names: M., family-names: Valdés}
-      - {given-names: M., family-names: Velasco}
+      - {given-names: Diego, family-names: Armentano}
+      - {given-names: Leandro, family-names: Bentancur}
+      - {given-names: Federico, family-names: Carrasco}
+      - {given-names: Marcelo, family-names: Fiori}
+      - {given-names: Matías, family-names: Valdés}
+      - {given-names: Mauricio, family-names: Velasco}
+    journal: "Journal of Symbolic Computation"
+    volume: 137
+    start: 102570
+    year: 2026
+    doi: "10.1016/j.jsc.2026.102570"
     identifiers:
       - type: url
         value: "https://arxiv.org/abs/2502.10152"

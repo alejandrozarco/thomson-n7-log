@@ -27,8 +27,10 @@ project:
 
 sources:
   - title: "Characterization of Logarithmic Fekete Critical Configurations of at Most Six Points in All Dimensions"
-    authors: ["D. Armentano", "L. Bentancur", "F. Carrasco", "M. Fiori", "M. Valdés", "M. Velasco"]
+    authors: ["Diego Armentano", "Leandro Bentancur", "Federico Carrasco", "Marcelo Fiori", "Matías Valdés", "Mauricio Velasco"]
     id: "arXiv:2502.10152"
+    doi: "10.1016/j.jsc.2026.102570"
+    venue: "J. Symbolic Comput. 137 (2026), 102570"
     type: "article"
     location: "Conjecture 1 (seven points on S^2: the pentagonal bipyramid is the unique log-energy minimiser)"
     relationship: "other"
@@ -42,7 +44,7 @@ sources:
       AI-produced and has not been refereed.
     author_endorsement: "n/a"
   - title: "Energy minimization for eight points on the sphere"
-    authors: ["Kryvonos", "Liehr", "Taylor"]
+    authors: ["Liudmyla Kryvonos", "Lukas Liehr", "Mitchell A. Taylor"]
     id: "arXiv:2609.22077"
     type: "article"
     relationship: "adapts"

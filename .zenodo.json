@@ -39,6 +39,11 @@
       "identifier": "https://github.com/jstoobysmith/Thomson-N-8-Warrant",
       "relation": "references",
       "resource_type": "software"
+    },
+    {
+      "identifier": "10.1016/j.jsc.2026.102570",
+      "relation": "references",
+      "resource_type": "publication-article"
     }
   ],
   "license": "Apache-2.0"
