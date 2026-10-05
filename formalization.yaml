@@ -4,9 +4,9 @@
 version: "v0.4"
 
 project:
-  name: "thomson-n7-log: logarithmic and Riesz s = 2 energy of seven points on the sphere"
+  name: "thomson-n7-log: the pentagonal bipyramid as the unique logarithmic-energy (and Riesz s = 2) minimiser for seven points on the sphere"
   description: >-
-    An AI-produced warrant, meaning a machine-checked Lean proof that no human has digested. It concerns the
+    An AI-produced warrant, meaning a machine-checked Lean development that no human has digested. It concerns the
     statement that the regular pentagonal bipyramid minimises the logarithmic energy sum_{i<j} -log|x_i - x_j| of
     seven pairwise distinct points on the unit sphere S^2, uniquely up to an orthogonal map and a relabelling
     (Conjecture 1 of Armentano et al.). The same is stated and checked for the Riesz s = 2 energy
@@ -142,7 +142,7 @@ automation:
       framework: "Claude Code; OpenAI Codex CLI (gpt-6-astra)"
       tool_setup: "Separate read-only reviewer instances, one review per stage."
       prompting_notes: >-
-        Adversarial reviews covered the certificates, the local lemma, the list of deductions, the Lean proof
+        Adversarial reviews covered the certificates, the local lemma, the list of deductions, the Lean development
         (statement fidelity, trust surface, assembly) and the publication package. The maintainers report that the
         findings were addressed (review reports not public); see AI_DISCLOSURE.md.
   spend_usd: "subscription-based usage (not separately metered)"

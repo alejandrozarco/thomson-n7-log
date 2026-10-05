@@ -1,12 +1,12 @@
 {
-  "title": "Thomson problem, N = 7, logarithmic energy: computational certificates and Lean formalisation",
+  "title": "The pentagonal bipyramid as the unique logarithmic-energy minimiser for seven points on the sphere: a Lean 4 warrant (Conjecture 1 of Armentano et al.)",
   "upload_type": "software",
   "creators": [
     {
       "name": "alejandrozarco"
     }
   ],
-  "description": "<p>An AI-produced warrant (a machine-checked Lean proof that no human has digested); the conjecture is not regarded as settled by it, and a human-readable treatment is welcome. Exact certificates, checkers and a Lean 4 formalisation directed at the statement that the regular pentagonal bipyramid minimises the logarithmic energy of seven distinct points on the unit sphere, uniquely up to an orthogonal map and a relabelling (Armentano et al., Conjecture 1). For the Riesz s = 2 energy of the same configuration the repository contains exact certificates and a Lean 4 formalisation checked by the Lean kernel (standard axioms). Not peer reviewed.</p>",
+  "description": "<p>A Lean 4 formalisation states and checks that, among all configurations of seven distinct points on the unit sphere S^2, the regular pentagonal bipyramid uniquely minimises the logarithmic energy, up to orthogonal transformations and relabelling (Conjecture 1 of Armentano et al., J. Symbolic Comput. 137 (2026)); Comparator and the independent checker nanoda accept it. The same is stated and checked for the Riesz s = 2 energy. AI-produced, not peer reviewed.</p><p>A public, timestamped, AI-produced warrant: a machine-checked argument that no human has yet digested. We do not regard the question as settled by it; independent verification and human-readable expositions are welcome. The repository also contains the exact three-point certificates, as JSON, with independent exact checkers in Python.</p>",
   "keywords": [
     "Thomson problem",
     "logarithmic energy",

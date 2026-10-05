@@ -1,4 +1,4 @@
-# Thomson problem, N = 7, logarithmic energy: computational certificates and Lean formalisation
+# The pentagonal bipyramid as the unique logarithmic-energy minimiser for seven points on the sphere: a Lean 4 warrant (Conjecture 1 of Armentano et al.)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23086382.svg)](https://doi.org/10.5281/zenodo.23086382)
 
@@ -141,7 +141,7 @@ $\varphi(t) - H_X(t)$ for the minorants $H_A, H_B, H_C$ of `certificates/cert_ca
 $`\varphi_2(t) = 1/(2-2t)`$, for the same configuration ($`N = 7`$ points on $`S^2`$) and the same pentagonal bipyramid
 $`P`$ ($`E_2(P) = 41/4`$). It reuses the kernel-free identity and PSD-checking machinery of `checkers/` above. At
 $`s = 2`$ the cap certificate rounds exactly at $`P`$ (no gap between the certificate bound and $`E_2(P)`$), so no
-positive-width coercivity estimate and no quartic local lemma are needed; the Lean proof still uses ring rigidity at
+positive-width coercivity estimate and no quartic local lemma are needed; the Lean development still uses ring rigidity at
 zero tube width for uniqueness (`riesz2/lean/Riesz2/Sharp.lean`). The $`s = 2`$ statement is
 also machine-checked in Lean 4 (`riesz2/lean/`, standard axioms only; clean-build record with the `#print axioms`
 output: `verification/lean/riesz2_build_2026-10-01.tsv`). Comparator (`riesz2/lean/comparator.json`: the statements in
