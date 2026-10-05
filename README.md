@@ -1,4 +1,4 @@
-# The pentagonal bipyramid as the unique logarithmic-energy minimiser for seven points on the sphere: a Lean 4 warrant (Conjecture 1 of Armentano et al.)
+# The pentagonal bipyramid as the unique logarithmic-energy minimiser for seven points on the sphere: an unreviewed Lean 4 warrant (Conjecture 1 of Armentano et al.)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23086382.svg)](https://doi.org/10.5281/zenodo.23086382)
 

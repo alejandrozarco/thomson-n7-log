@@ -4,7 +4,7 @@
 version: "v0.4"
 
 project:
-  name: "thomson-n7-log: the pentagonal bipyramid as the unique logarithmic-energy (and Riesz s = 2) minimiser for seven points on the sphere"
+  name: "thomson-n7-log: the pentagonal bipyramid as the unique logarithmic-energy (and Riesz s = 2) minimiser for seven points on the sphere (an unreviewed Lean 4 warrant)"
   description: >-
     An AI-produced warrant, meaning a machine-checked Lean development that no human has digested. It concerns the
     statement that the regular pentagonal bipyramid minimises the logarithmic energy sum_{i<j} -log|x_i - x_j| of
