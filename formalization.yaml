@@ -40,7 +40,7 @@ sources:
     type: "original-proof"
     relationship: "formalizes"
     note: >-
-      The argument was first presented in this repository (METHOD.md, local/LOCAL_LEMMA.md, lean/OVERVIEW.md). It is
+      The argument was presented in this repository (METHOD.md, local/LOCAL_LEMMA.md, lean/OVERVIEW.md). It is
       AI-produced and has not been refereed.
     author_endorsement: "n/a"
   - title: "Energy minimization for eight points on the sphere"
@@ -129,7 +129,7 @@ automation:
       tool_setup: >-
         Several coordinated Claude Opus 5.5 sessions and sub-agents with terminal access. Python
         (mpmath, python-flint, sympy, cvxpy/Clarabel) was used for SDP solving, exact rounding and checkers.
-        Lean 4 v4.34.1 + Mathlib, with every module built one at a time at low priority on a Linux workstation.
+        Lean 4 v4.34.1 + Mathlib, with every module built one at a time (nice 19) on a Linux workstation.
       cost:
         wall_time: "about 5 days (2026-09-27 to 2026-10-01)"
         spend_usd: "subscription-based usage"
