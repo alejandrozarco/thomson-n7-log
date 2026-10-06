@@ -97,14 +97,14 @@ status:
       axioms: ["propext", "Classical.choice", "Quot.sound"]
       comparator_config: "lean/comparator.json"
       literature_dependencies: []
-    - declaration: "Riesz2.riesz2_seven"
-      file: "riesz2/lean/Riesz2/Main.lean"
+    - declaration: "ThomsonN7Riesz2.riesz2_seven"
+      file: "riesz2/lean/Riesz2/Solution.lean"
       sorry_count: 0
       axioms: ["propext", "Classical.choice", "Quot.sound"]
       comparator_config: "riesz2/lean/comparator.json"
       literature_dependencies: []
-    - declaration: "Riesz2.riesz2_seven_unique"
-      file: "riesz2/lean/Riesz2/Main.lean"
+    - declaration: "ThomsonN7Riesz2.riesz2_seven_unique"
+      file: "riesz2/lean/Riesz2/Solution.lean"
       sorry_count: 0
       axioms: ["propext", "Classical.choice", "Quot.sound"]
       comparator_config: "riesz2/lean/comparator.json"
