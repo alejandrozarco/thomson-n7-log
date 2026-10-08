@@ -1,0 +1,1467 @@
+⚠ [8924/9041] Replayed ThomsonGen.ThreePoint
+warning: ThomsonGen/ThreePoint.lean:161:30: This simp argument is unused:
+  real_inner_self_eq_norm_sq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Set.domRestrict, v, hx]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThomsonGen/ThreePoint.lean:206:65: This simp argument is unused:
+  Pi.star_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [matDot, Matrix.sum_apply, Matrix.vecMulVec_apply, star_trivial, dotProduct, Matrix.mulVec,
+    Finset.sum_mul, Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ThomsonGen/ThreePoint.lean:243:85: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8930/9041] Replayed ThomsonGen.Typed
+warning: ThomsonGen/Typed.lean:156:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:159:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:159:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:160:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Typed.lean:160:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Typed.lean:200:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:200:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Typed.lean:163:27: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8931/9041] Replayed ThomsonGen.Cert1
+warning: ThomsonGen/Cert1.lean:48:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Cert1.lean:48:31: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ThomsonGen/Cert1.lean:49:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Cert1.lean:49:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Cert1.lean:74:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ThomsonGen/Cert1.lean:74:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [8942/9041] Replayed CoulN7.S9493.ChkMeta
+warning: CoulN7/S9493/ChkMeta.lean:23:140: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mP0, tc_s9493_mP1, tc_s9493_mP2, tc_s9493_mP3, tc_s9493_mP4,
+    tc_s9493_mP5, tc_s9493_mP6, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9493/ChkMeta.lean:23:155: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mP0, tc_s9493_mP1, tc_s9493_mP2, tc_s9493_mP3, tc_s9493_mP4,
+    tc_s9493_mP5, tc_s9493_mP6, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9493/ChkMeta.lean:34:140: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mR0, tc_s9493_mR1, tc_s9493_mR2, tc_s9493_mR3, tc_s9493_mR4,
+    tc_s9493_mR5, tc_s9493_mR6, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9493/ChkMeta.lean:34:155: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mR0, tc_s9493_mR1, tc_s9493_mR2, tc_s9493_mR3, tc_s9493_mR4,
+    tc_s9493_mR5, tc_s9493_mR6, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9493/ChkMeta.lean:47:177: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mSA0, tc_s9493_mSA1, tc_s9493_mSA2, tc_s9493_mSA3,
+    tc_s9493_mSA4, tc_s9493_mSA5, tc_s9493_mSA6, tc_s9493_mSA7, tc_s9493_mSA8, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9493/ChkMeta.lean:47:192: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mSA0, tc_s9493_mSA1, tc_s9493_mSA2, tc_s9493_mSA3,
+    tc_s9493_mSA4, tc_s9493_mSA5, tc_s9493_mSA6, tc_s9493_mSA7, tc_s9493_mSA8, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9493/ChkMeta.lean:59:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mSB0, tc_s9493_mSB1, tc_s9493_mSB2, tc_s9493_mSB3,
+    tc_s9493_mSB4, tc_s9493_mSB5, tc_s9493_mSB6, tc_s9493_mSB7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9493/ChkMeta.lean:59:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mSB0, tc_s9493_mSB1, tc_s9493_mSB2, tc_s9493_mSB3,
+    tc_s9493_mSB4, tc_s9493_mSB5, tc_s9493_mSB6, tc_s9493_mSB7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9493/ChkMeta.lean:71:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mSG0, tc_s9493_mSG1, tc_s9493_mSG2, tc_s9493_mSG3,
+    tc_s9493_mSG4, tc_s9493_mSG5, tc_s9493_mSG6, tc_s9493_mSG7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9493/ChkMeta.lean:71:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9493_mSG0, tc_s9493_mSG1, tc_s9493_mSG2, tc_s9493_mSG3,
+    tc_s9493_mSG4, tc_s9493_mSG5, tc_s9493_mSG6, tc_s9493_mSG7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8954/9041] Replayed ThomsonGen.Cert.NBlk
+warning: ThomsonGen/Cert/NBlk.lean:146:39: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:146:39: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:282:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ThomsonGen/Cert/NBlk.lean:325:41: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:325:41: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:561:80: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/Cert/NBlk.lean:561:80: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8981/9054] Replayed CoulN7.S9896.ChkMeta
+warning: CoulN7/S9896/ChkMeta.lean:22:126: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mP0, tc_s9896_mP1, tc_s9896_mP2, tc_s9896_mP3, tc_s9896_mP4,
+    tc_s9896_mP5, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9896/ChkMeta.lean:22:141: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mP0, tc_s9896_mP1, tc_s9896_mP2, tc_s9896_mP3, tc_s9896_mP4,
+    tc_s9896_mP5, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9896/ChkMeta.lean:32:126: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mR0, tc_s9896_mR1, tc_s9896_mR2, tc_s9896_mR3, tc_s9896_mR4,
+    tc_s9896_mR5, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9896/ChkMeta.lean:32:141: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mR0, tc_s9896_mR1, tc_s9896_mR2, tc_s9896_mR3, tc_s9896_mR4,
+    tc_s9896_mR5, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9896/ChkMeta.lean:45:177: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mSA0, tc_s9896_mSA1, tc_s9896_mSA2, tc_s9896_mSA3,
+    tc_s9896_mSA4, tc_s9896_mSA5, tc_s9896_mSA6, tc_s9896_mSA7, tc_s9896_mSA8, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9896/ChkMeta.lean:45:192: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mSA0, tc_s9896_mSA1, tc_s9896_mSA2, tc_s9896_mSA3,
+    tc_s9896_mSA4, tc_s9896_mSA5, tc_s9896_mSA6, tc_s9896_mSA7, tc_s9896_mSA8, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9896/ChkMeta.lean:57:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mSB0, tc_s9896_mSB1, tc_s9896_mSB2, tc_s9896_mSB3,
+    tc_s9896_mSB4, tc_s9896_mSB5, tc_s9896_mSB6, tc_s9896_mSB7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9896/ChkMeta.lean:57:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mSB0, tc_s9896_mSB1, tc_s9896_mSB2, tc_s9896_mSB3,
+    tc_s9896_mSB4, tc_s9896_mSB5, tc_s9896_mSB6, tc_s9896_mSB7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9896/ChkMeta.lean:69:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mSG0, tc_s9896_mSG1, tc_s9896_mSG2, tc_s9896_mSG3,
+    tc_s9896_mSG4, tc_s9896_mSG5, tc_s9896_mSG6, tc_s9896_mSG7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9896/ChkMeta.lean:69:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9896_mSG0, tc_s9896_mSG1, tc_s9896_mSG2, tc_s9896_mSG3,
+    tc_s9896_mSG4, tc_s9896_mSG5, tc_s9896_mSG6, tc_s9896_mSG7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8992/9054] Replayed CoulN7.Case1.Check
+warning: CoulN7/Case1/Check.lean:53:134: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, r2c1_blk_F0, r2c1_blk_F1, r2c1_blk_F2, r2c1_blk_F3, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/Case1/Check.lean:57:174: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, r2c1_blk_S0, r2c1_blk_S1, r2c1_blk_S2, r2c1_blk_S3, r2c1_blk_S4,
+    r2c1_blk_S5, r2c1_blk_S6, r2c1_blk_S7, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9025/9054] Replayed CoulN7.S9998.ChkMeta
+warning: CoulN7/S9998/ChkMeta.lean:22:126: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mP0, tc_s9998_mP1, tc_s9998_mP2, tc_s9998_mP3, tc_s9998_mP4,
+    tc_s9998_mP5, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9998/ChkMeta.lean:22:141: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mP0, tc_s9998_mP1, tc_s9998_mP2, tc_s9998_mP3, tc_s9998_mP4,
+    tc_s9998_mP5, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9998/ChkMeta.lean:32:126: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mR0, tc_s9998_mR1, tc_s9998_mR2, tc_s9998_mR3, tc_s9998_mR4,
+    tc_s9998_mR5, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9998/ChkMeta.lean:32:141: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mR0, tc_s9998_mR1, tc_s9998_mR2, tc_s9998_mR3, tc_s9998_mR4,
+    tc_s9998_mR5, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9998/ChkMeta.lean:45:177: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mSA0, tc_s9998_mSA1, tc_s9998_mSA2, tc_s9998_mSA3,
+    tc_s9998_mSA4, tc_s9998_mSA5, tc_s9998_mSA6, tc_s9998_mSA7, tc_s9998_mSA8, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9998/ChkMeta.lean:45:192: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mSA0, tc_s9998_mSA1, tc_s9998_mSA2, tc_s9998_mSA3,
+    tc_s9998_mSA4, tc_s9998_mSA5, tc_s9998_mSA6, tc_s9998_mSA7, tc_s9998_mSA8, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9998/ChkMeta.lean:57:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mSB0, tc_s9998_mSB1, tc_s9998_mSB2, tc_s9998_mSB3,
+    tc_s9998_mSB4, tc_s9998_mSB5, tc_s9998_mSB6, tc_s9998_mSB7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9998/ChkMeta.lean:57:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mSB0, tc_s9998_mSB1, tc_s9998_mSB2, tc_s9998_mSB3,
+    tc_s9998_mSB4, tc_s9998_mSB5, tc_s9998_mSB6, tc_s9998_mSB7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9998/ChkMeta.lean:69:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mSG0, tc_s9998_mSG1, tc_s9998_mSG2, tc_s9998_mSG3,
+    tc_s9998_mSG4, tc_s9998_mSG5, tc_s9998_mSG6, tc_s9998_mSG7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9998/ChkMeta.lean:69:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9998_mSG0, tc_s9998_mSG1, tc_s9998_mSG2, tc_s9998_mSG3,
+    tc_s9998_mSG4, tc_s9998_mSG5, tc_s9998_mSG6, tc_s9998_mSG7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9031/9054] Replayed CoulN7.S9694.ChkMeta
+warning: CoulN7/S9694/ChkMeta.lean:23:140: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mP0, tc_s9694_mP1, tc_s9694_mP2, tc_s9694_mP3, tc_s9694_mP4,
+    tc_s9694_mP5, tc_s9694_mP6, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9694/ChkMeta.lean:23:155: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mP0, tc_s9694_mP1, tc_s9694_mP2, tc_s9694_mP3, tc_s9694_mP4,
+    tc_s9694_mP5, tc_s9694_mP6, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9694/ChkMeta.lean:34:140: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mR0, tc_s9694_mR1, tc_s9694_mR2, tc_s9694_mR3, tc_s9694_mR4,
+    tc_s9694_mR5, tc_s9694_mR6, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9694/ChkMeta.lean:34:155: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mR0, tc_s9694_mR1, tc_s9694_mR2, tc_s9694_mR3, tc_s9694_mR4,
+    tc_s9694_mR5, tc_s9694_mR6, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9694/ChkMeta.lean:47:177: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mSA0, tc_s9694_mSA1, tc_s9694_mSA2, tc_s9694_mSA3,
+    tc_s9694_mSA4, tc_s9694_mSA5, tc_s9694_mSA6, tc_s9694_mSA7, tc_s9694_mSA8, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9694/ChkMeta.lean:47:192: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mSA0, tc_s9694_mSA1, tc_s9694_mSA2, tc_s9694_mSA3,
+    tc_s9694_mSA4, tc_s9694_mSA5, tc_s9694_mSA6, tc_s9694_mSA7, tc_s9694_mSA8, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9694/ChkMeta.lean:59:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mSB0, tc_s9694_mSB1, tc_s9694_mSB2, tc_s9694_mSB3,
+    tc_s9694_mSB4, tc_s9694_mSB5, tc_s9694_mSB6, tc_s9694_mSB7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9694/ChkMeta.lean:59:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mSB0, tc_s9694_mSB1, tc_s9694_mSB2, tc_s9694_mSB3,
+    tc_s9694_mSB4, tc_s9694_mSB5, tc_s9694_mSB6, tc_s9694_mSB7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9694/ChkMeta.lean:71:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mSG0, tc_s9694_mSG1, tc_s9694_mSG2, tc_s9694_mSG3,
+    tc_s9694_mSG4, tc_s9694_mSG5, tc_s9694_mSG6, tc_s9694_mSG7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9694/ChkMeta.lean:71:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9694_mSG0, tc_s9694_mSG1, tc_s9694_mSG2, tc_s9694_mSG3,
+    tc_s9694_mSG4, tc_s9694_mSG5, tc_s9694_mSG6, tc_s9694_mSG7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9037/9054] Replayed CoulN7.S9390.ChkMeta
+warning: CoulN7/S9390/ChkMeta.lean:23:140: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mP0, tc_s9390_mP1, tc_s9390_mP2, tc_s9390_mP3, tc_s9390_mP4,
+    tc_s9390_mP5, tc_s9390_mP6, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9390/ChkMeta.lean:23:155: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mP0, tc_s9390_mP1, tc_s9390_mP2, tc_s9390_mP3, tc_s9390_mP4,
+    tc_s9390_mP5, tc_s9390_mP6, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9390/ChkMeta.lean:34:140: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mR0, tc_s9390_mR1, tc_s9390_mR2, tc_s9390_mR3, tc_s9390_mR4,
+    tc_s9390_mR5, tc_s9390_mR6, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9390/ChkMeta.lean:34:155: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mR0, tc_s9390_mR1, tc_s9390_mR2, tc_s9390_mR3, tc_s9390_mR4,
+    tc_s9390_mR5, tc_s9390_mR6, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9390/ChkMeta.lean:47:177: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mSA0, tc_s9390_mSA1, tc_s9390_mSA2, tc_s9390_mSA3,
+    tc_s9390_mSA4, tc_s9390_mSA5, tc_s9390_mSA6, tc_s9390_mSA7, tc_s9390_mSA8, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9390/ChkMeta.lean:47:192: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mSA0, tc_s9390_mSA1, tc_s9390_mSA2, tc_s9390_mSA3,
+    tc_s9390_mSA4, tc_s9390_mSA5, tc_s9390_mSA6, tc_s9390_mSA7, tc_s9390_mSA8, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9390/ChkMeta.lean:59:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mSB0, tc_s9390_mSB1, tc_s9390_mSB2, tc_s9390_mSB3,
+    tc_s9390_mSB4, tc_s9390_mSB5, tc_s9390_mSB6, tc_s9390_mSB7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9390/ChkMeta.lean:59:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mSB0, tc_s9390_mSB1, tc_s9390_mSB2, tc_s9390_mSB3,
+    tc_s9390_mSB4, tc_s9390_mSB5, tc_s9390_mSB6, tc_s9390_mSB7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9390/ChkMeta.lean:71:162: This simp argument is unused:
+  Bool.and_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mSG0, tc_s9390_mSG1, tc_s9390_mSG2, tc_s9390_mSG3,
+    tc_s9390_mSG4, tc_s9390_mSG5, tc_s9390_mSG6, tc_s9390_mSG7, Bool.true_and, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CoulN7/S9390/ChkMeta.lean:71:177: This simp argument is unused:
+  Bool.true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.all_cons, List.all_nil, tc_s9390_mSG0, tc_s9390_mSG1, tc_s9390_mSG2, tc_s9390_mSG3,
+    tc_s9390_mSG4, tc_s9390_mSG5, tc_s9390_mSG6, tc_s9390_mSG7, Bool.and_true, Bool.and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9044/9054] Replayed ThomsonGen.P1
+warning: ThomsonGen/P1.lean:82:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThomsonGen/P1.lean:445:141: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/P1.lean:446:141: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/P1.lean:444:137: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThomsonGen/P1.lean:445:141: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/P1.lean:446:141: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/P1.lean:454:141: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/P1.lean:452:137: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThomsonGen/P1.lean:453:137: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThomsonGen/P1.lean:454:141: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/P1.lean:462:141: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/P1.lean:460:137: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThomsonGen/P1.lean:461:137: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThomsonGen/P1.lean:462:141: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/P1.lean:470:141: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/P1.lean:468:137: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThomsonGen/P1.lean:469:137: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThomsonGen/P1.lean:470:141: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/P1.lean:478:141: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/P1.lean:476:137: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThomsonGen/P1.lean:477:137: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThomsonGen/P1.lean:478:141: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/P1.lean:485:141: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/P1.lean:486:141: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/P1.lean:484:137: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThomsonGen/P1.lean:485:141: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/P1.lean:486:141: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/P1.lean:493:141: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/P1.lean:494:141: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ThomsonGen/P1.lean:492:137: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ThomsonGen/P1.lean:493:141: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ThomsonGen/P1.lean:494:141: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9046/9054] Replayed ThomsonGen.QCore1
+warning: ThomsonGen/QCore1.lean:14:26: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:14:32: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:15:26: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:15:30: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:15:32: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:16:26: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:16:28: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:16:32: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:17:24: Variable name `c` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _c
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:17:26: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:17:28: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:17:30: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:18:32: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:19:24: Variable name `c` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _c
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:19:30: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:19:32: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:20:26: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:20:30: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:20:32: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:21:28: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:21:32: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:22:26: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:22:28: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:22:32: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:23:28: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:23:32: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:24:25: Variable name `c` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _c
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:24:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:24:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:25:27: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:26:25: Variable name `c` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _c
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:26:27: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:26:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:26:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:27:25: Variable name `c` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _c
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:27:27: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:27:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:27:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:28:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:29:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:30:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:30:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:31:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:31:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:32:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:32:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:33:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:33:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:34:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:34:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:35:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:35:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:36:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:37:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:37:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:38:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:38:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:39:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:39:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:40:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:40:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:41:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:41:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:42:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:42:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:44:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:44:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:45:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:45:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:46:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:46:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:47:27: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:47:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:47:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:48:25: Variable name `c` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _c
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:48:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:48:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:49:27: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:49:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:49:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:50:25: Variable name `c` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _c
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:50:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:50:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:51:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:52:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:53:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:53:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:54:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:54:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:55:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:55:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:56:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:57:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:57:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:58:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:58:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:59:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:59:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:61:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:61:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:62:27: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:62:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:62:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:63:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:63:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:64:27: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:64:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:64:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:65:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:65:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:66:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:67:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:67:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:68:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:68:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:69:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:70:27: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:70:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:70:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:71:25: Variable name `c` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _c
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:71:27: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:71:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:71:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:71:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:72:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:72:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:73:25: Variable name `c` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _c
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:73:27: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:73:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:73:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:73:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:74:25: Variable name `c` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _c
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:74:27: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:74:29: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:74:31: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:74:33: Variable name `r` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _r
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:207:53: Variable name `h2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:208:23: Variable name `h4` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h4
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:1018:30: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:1031:30: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ThomsonGen/QCore1.lean:1036:30: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9049/9054] Replayed ThomsonGen.Loc2
+warning: ThomsonGen/Loc2.lean:36:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ThomsonGen/Loc2.lean:42:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ThomsonGen/Loc2.lean:53:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ThomsonGen/Loc2.lean:57:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9050/9054] Replayed CoulN7.Challenge
+warning: CoulN7/Challenge.lean:22:8: declaration uses `sorry`
+warning: CoulN7/Challenge.lean:26:8: declaration uses `sorry`
+ℹ [9052/9054] Replayed CoulN7.Check.Axioms
+info: CoulN7/Check/Axioms.lean:5:0: 'CoulN7.coulomb_seven' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: CoulN7/Check/Axioms.lean:6:0: 'CoulN7.coulomb_seven_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+All targets up-to-date (9054 jobs).

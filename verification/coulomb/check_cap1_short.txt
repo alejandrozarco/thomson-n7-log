@@ -1,0 +1,46 @@
+identity A: EXACT  (3s)
+identity B: EXACT  (6s)
+identity G: EXACT  (8s)
+{
+ "constraint_6": true,
+ "identity_A": true,
+ "identity_B": true,
+ "identity_G": true,
+ "psd": true,
+ "psd_min_dd_slack": 5.0889655661897275e-06,
+ "gaps_at_P": {
+  "A": "3.46945e-18",
+  "B": "3.47484e-18",
+  "C1": "3.46173e-18",
+  "C2": "3.48702e-18"
+ },
+ "e": "533220750926491111663/36893488147419103232",
+ "e_minus_EP": "-7.29616374584441e-17",
+ "e_le_EP": true,
+ "EP_minus_e_le_1e-16": true,
+ "minorants": {
+  "A": {
+   "roots_in_closed_range": 0,
+   "squarefree": true,
+   "endpoints_pos": true,
+   "float_min_phi_minus_H": 3.469446951953614e-18,
+   "ok": true
+  },
+  "B": {
+   "roots_in_closed_range": 0,
+   "squarefree": true,
+   "endpoints_pos": true,
+   "float_min_phi_minus_H": 3.474844750386478e-18,
+   "ok": true
+  },
+  "C": {
+   "roots_in_closed_range": 0,
+   "squarefree": true,
+   "endpoints_pos": true,
+   "float_min_phi_minus_H": 1.0382302815072516e-12,
+   "ok": true
+  }
+ },
+ "ALL_OK": true,
+ "time_s": 9.4
+}

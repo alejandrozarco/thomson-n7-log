@@ -4,7 +4,7 @@
 version: "v0.4"
 
 project:
-  name: "thomson-n7-log: the pentagonal bipyramid as the unique logarithmic-energy (and Riesz s = 2) minimiser for seven points on the sphere (an unreviewed Lean 4 warrant)"
+  name: "thomson-n7-log: the pentagonal bipyramid as the unique logarithmic-energy (and Riesz s = 2, Coulomb s = 1) minimiser for seven points on the sphere (an unreviewed Lean 4 warrant)"
   description: >-
     An AI-produced warrant, meaning a machine-checked Lean development that no human has digested. It concerns the
     statement that the regular pentagonal bipyramid minimises the logarithmic energy sum_{i<j} -log|x_i - x_j| of
@@ -18,6 +18,9 @@ project:
     - on the cap: coercivity, ring rigidity and, for the logarithmic energy, a quartic local lemma. The local lemma
       is needed because the Hessian at the bipyramid has a flat two-dimensional ring direction at s = 0 and s = 2.
     The repository also contains the certificates as JSON with independent exact checkers in Python.
+    For the Coulomb energy (s = 1), whose Lean formalisation is H. Tran's (huwngtran/thomson-n7-lean), coulomb/ is a
+    second check with this repository's own certificates; its Lean development (coulomb/lean/) uses Tran's local
+    lemma and machinery, so it is not independent of his.
   authors:
     - "alejandrozarco (repository owner; directed the work)"
     - "Claude Opus 5.5 (Anthropic), AI model that produced the mathematics, certificates and Lean code"
@@ -67,6 +70,8 @@ related_formalizations:
     note: >-
       Coulomb (s = 1) case for N = 7. Unchanged declarations are regenerated from it by lean/regen.sh and are not
       stored here. Adapted declarations are stored with per-declaration attribution (lean/README.md, Upstream code).
+      coulomb/lean/ restates its main theorems (thomson_seven, thomson_seven_unique, renamed) and checks them again
+      with this repository's certificates, using its local lemma Reg.pent_local_min_sup.
   - id: "https://github.com/jstoobysmith/Thomson-N-8-Warrant"
     relationship: "other"
     note: >-
@@ -79,8 +84,8 @@ classification:
 
 status:
   scope: >-
-    Logarithmic energy for N = 7 (lean/) and Riesz s = 2 energy for N = 7 (riesz2/lean/): minimality and uniqueness
-    up to O(3) and relabelling.
+    Logarithmic energy for N = 7 (lean/), Riesz s = 2 energy for N = 7 (riesz2/lean/) and Coulomb energy for N = 7
+    (coulomb/lean/, a second check of H. Tran's theorem): minimality and uniqueness up to O(3) and relabelling.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Classical.choice", "Quot.sound"]
@@ -109,6 +114,18 @@ status:
       axioms: ["propext", "Classical.choice", "Quot.sound"]
       comparator_config: "riesz2/lean/comparator.json"
       literature_dependencies: []
+    - declaration: "ThomsonN7S1.coulomb_seven"
+      file: "coulomb/lean/CoulN7/Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "coulomb/lean/comparator_coul.json"
+      literature_dependencies: []
+    - declaration: "ThomsonN7S1.coulomb_seven_unique"
+      file: "coulomb/lean/CoulN7/Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "coulomb/lean/comparator_coul.json"
+      literature_dependencies: []
   notes: >-
     Axioms as reported by `#print axioms` in a clean build (verification/lean/; riesz2/lean/README.md). No
     `native_decide`. For lean/ at the time of writing:
@@ -120,6 +137,9 @@ status:
     For riesz2/lean/: Comparator (riesz2/lean/comparator.json; the theorems ThomsonN7Riesz2.riesz2_seven(_unique) of
     Riesz2/Solution.lean) reported "Your solution is okay!", without the landrun sandbox
     (verification/lean/riesz2_comparator_2026-10-03.txt).
+    For coulomb/lean/ (2026-10-08): clean build of 130 modules; Comparator (coulomb/lean/comparator_coul.json)
+    reported "Your solution is okay!", without the landrun sandbox; nanoda accepted an export of both theorems
+    (54624 declarations) and rejected a tampered copy (verification/lean/coulomb/record_2026-10-08.txt).
 
 automation:
   methods:

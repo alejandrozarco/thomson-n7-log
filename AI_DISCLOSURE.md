@@ -16,15 +16,19 @@ review reports themselves are not public):
   `checkers/check_controls.py` were added as a result);
 - gaps and wrong constants in written deductions;
 - documentation that claimed more than was checked;
-- upstream code stored in the repository, now regenerated or attributed (`lean/README.md`).
+- upstream code stored in the repository, now regenerated or attributed (`lean/README.md`);
+- for the Coulomb case (`coulomb/`, 2026-10-08; two gpt-6-astra reviews, of the Python chain and of the Lean port):
+  a coercivity checker that exited with status 0 when coercivity failed; a Python cross-check of the emitted Lean
+  data that could pass with missing blocks (Lean's own checks were not affected); a certified lower bound rounded up
+  in a summary; stale descriptions carried over from the log case.
 
 AI reviews are not peer review, and no human expert has checked this work. In the terminology of the Lean community
 this is a *warrant*, not a human-readable proof (see the note at the top of `README.md`).
 
 **What is checked by software**
-- The exact checkers in `checkers/` and `local/` check the certificates and the local lemma, in exact rational or
-  ball arithmetic.
-- The Lean 4 kernel checks the formalisations in `lean/` and `riesz2/lean/`. `#print axioms` reports
+- The exact checkers in `checkers/`, `local/`, `riesz2/` and `coulomb/` check the certificates and the local lemmas,
+  in exact rational or ball arithmetic.
+- The Lean 4 kernel checks the formalisations in `lean/`, `riesz2/lean/` and `coulomb/lean/`. `#print axioms` reports
   `[propext, Classical.choice, Quot.sound]`.
 
 What remains to be trusted:

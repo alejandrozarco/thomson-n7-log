@@ -1,0 +1,110 @@
+# reround_cap1.log -- 2026-10-07, worktree beautiful-cannon-c96b6d, cwd numerics/n7_interval
+# python-flint 0.6.0, numpy 1.26.4; all runs: OMP_NUM_THREADS=1 nice -n 19
+
+$ python3 lean/gen/reround_cap1.py cap1/cert_cap_coulomb_D12.json cap1/cert_cap_coulomb_D12_short.json --face cap1/face_D12_val.json --K 64
+[19:52:48 +    0.0s] cap1/cert_cap_coulomb_D12.json: kernel 'coulomb  phi(t) = (2-2t)^(-1/2)' D=12 K=64
+[19:52:48 +    0.2s] N of every block equals the face file
+[19:52:48 +    0.2s] LHS unknowns: 211
+[19:52:48 +    0.4s] lambda columns done
+[19:52:49 +    0.5s] A: 452 designated leading monomials, 3 free monomials
+[19:52:49 +    0.6s] B: 447 designated leading monomials, 8 free monomials
+[19:52:49 +    0.7s] G: 435 designated leading monomials, 20 free monomials
+[19:52:50 +    1.7s] stage-1 rows for A: 3
+[19:52:50 +    2.4s] stage-1 rows for B: 8
+[19:52:52 +    3.5s] stage-1 rows for G: 20
+[19:52:52 +    3.5s] pins (exact, from the input): {'hB[0]': '52175271301331128593/73786976294838206464', 'hB[1]': '26087635650665564425/73786976294838206464', 'hA(-1)': '144115188075855871/288230376151711744', 'hC(c1).x': '25389765034612591721/36893488147419103232', 'hC(c1).y': '670117203639042343/9223372036854775808', "hC'(c1).x": '28070233849168761221/73786976294838206464', "hC'(c1).y": '3879210910739343871/36893488147419103232', 'e': '533220750926491111663/36893488147419103232'}
+[19:52:52 +    3.5s] stage 1: 21 pivots of 39 rows; non-smooth pivots: 1; inconsistent dependent rows: 0
+[19:52:52 +    3.5s]   non-smooth pivots: [('NF_B(0, 1, 1)', ('F', 'R', 5, 0, 1), '-11967983/294912')]
+[19:52:52 +    3.5s] stage 1 solved; max |x - x_input| over LHS unknowns 3.25e-19; max bits 120; pivot vars: ['F', 'e', 'hA', 'hB', 'hC', 'pBa', 'pCb']
+[19:52:53 +    5.3s] stage 2 A: identity exact, 353 designated entries corrected
+[19:52:55 +    6.8s] stage 2 B: identity exact, 252 designated entries corrected
+[19:52:57 +    8.8s] stage 2 G: identity exact, 271 designated entries corrected
+[19:52:57 +    9.0s] PSD certificates OK; smallest eigenvalues: {'A1': '1.02e-05', 'A0': '1.14e-05', 'G7': '1.14e-05', 'A5': '1.14e-05', 'A6': '1.14e-05'}
+[19:52:57 +    9.1s] wrote cap1/cert_cap_coulomb_D12_short.json (5024 KiB)
+[19:52:59 +   10.7s] size table: group | max bits before | max odd-den bits before | max bits after | max odd-den bits after | #
+[19:52:59 +   10.7s]   H_A              59      1       59      1   13
+[19:52:59 +   10.7s]   H_B              67      1       67      1   13
+[19:52:59 +   10.7s]   H_C              68      1       68      1   13
+[19:52:59 +   10.7s]   psi_Ba         1034    943      114     40   13
+[19:52:59 +   10.7s]   psi_Cb         1037    943      120     40   13
+[19:52:59 +   10.7s]   ca               57      1       57      1   1
+[19:52:59 +   10.7s]   cb               52      1       52      1   1
+[19:52:59 +   10.7s]   e                69      1       69      1   1
+[19:52:59 +   10.7s]   cg             1038    943       82      6   1
+[19:52:59 +   10.7s]   pins             67      1       67      1   7
+[19:52:59 +   10.7s]   F red          1032    940      116     37   236
+[19:52:59 +   10.7s]   F N               7      5        7      5   255
+[19:52:59 +   10.7s]   F L,d            61      1       61      1   286
+[19:52:59 +   10.7s]   SOS A red      1058    963      119     37   29511
+[19:52:59 +   10.7s]   SOS N             7      1        7      1   80633
+[19:52:59 +   10.7s]   SOS L,d          61      1       61      1   78486
+[19:52:59 +   10.7s]   SOS B red      1039    943      119     37   25309
+[19:52:59 +   10.7s]   SOS G red      1031    940      114     37   22309
+[19:52:59 +   10.7s]   H_A coefficient bits before [52, 52, 50, 55, 51, 53, 57, 53, 53, 52, 51, 52, 59]
+[19:52:59 +   10.7s]   H_A coefficient bits after  [52, 52, 50, 55, 51, 53, 57, 53, 53, 52, 51, 52, 59]
+[19:52:59 +   10.7s]   H_A changed coefficients [], max |change| 0
+[19:52:59 +   10.7s]   H_B coefficient bits before [67, 67, 55, 53, 55, 57, 56, 54, 54, 54, 53, 53, 53]
+[19:52:59 +   10.7s]   H_B coefficient bits after  [67, 67, 55, 53, 55, 57, 56, 54, 54, 54, 53, 53, 53]
+[19:52:59 +   10.7s]   H_B changed coefficients [], max |change| 0
+[19:52:59 +   10.7s]   H_C coefficient bits before [68, 67, 66, 64, 54, 55, 55, 53, 53, 56, 53, 53, 52]
+[19:52:59 +   10.7s]   H_C coefficient bits after  [68, 67, 66, 64, 54, 55, 55, 53, 53, 56, 53, 53, 52]
+[19:52:59 +   10.7s]   H_C changed coefficients [], max |change| 0
+# wall 10.8 s, peak RSS 112 MB
+
+$ python3 cap1/check_cap1.py cap1/cert_cap_coulomb_D12_short.json     -> exit 0
+identity A: EXACT  (3s)
+identity B: EXACT  (6s)
+identity G: EXACT  (9s)
+{
+ "constraint_6": true,
+ "identity_A": true,
+ "identity_B": true,
+ "identity_G": true,
+ "psd": true,
+ "psd_min_dd_slack": 5.0889655661897275e-06,
+ "gaps_at_P": {
+  "A": "3.46945e-18",
+  "B": "3.47484e-18",
+  "C1": "3.46173e-18",
+  "C2": "3.48702e-18"
+ },
+ "e": "533220750926491111663/36893488147419103232",
+ "e_minus_EP": "-7.29616374584441e-17",
+ "e_le_EP": true,
+ "EP_minus_e_le_1e-16": true,
+ "minorants": {
+  "A": {
+   "roots_in_closed_range": 0,
+   "squarefree": true,
+   "endpoints_pos": true,
+   "float_min_phi_minus_H": 3.469446951953614e-18,
+   "ok": true
+  },
+  "B": {
+   "roots_in_closed_range": 0,
+   "squarefree": true,
+   "endpoints_pos": true,
+   "float_min_phi_minus_H": 3.474844750386478e-18,
+   "ok": true
+  },
+  "C": {
+   "roots_in_closed_range": 0,
+   "squarefree": true,
+   "endpoints_pos": true,
+   "float_min_phi_minus_H": 1.0382302815072516e-12,
+   "ok": true
+  }
+ },
+ "ALL_OK": true,
+ "time_s": 10.4
+}
+# wall 10.4 s, peak RSS 57 MB; output identical to cap1/check_cap1.txt (input cert) up to timings
+
+$ python3 cap1/check_coerc1.py cap1/cert_cap_coulomb_D12_short.json        -> exit 0, ALL_OK (delta = E(P)-e = 7.296e-17)
+#   tauB 7.404e-07, tauC 5.600e-07, tauA 1.867e-14 (tau_needed 1e-06); output identical to the same run on the input cert
+$ python3 cap1/check_coerc1.py cap1/cert_cap_coulomb_D12_short.json 1e-16  -> exit 0, ALL_OK
+#   tauB 8.668e-07, tauC 6.556e-07, tauA 2.559e-14; output identical to cap1/check_coerc1.txt (input cert, delta 1e-16)
+
+# H_A, H_B, H_C, ca, cb, e, pins: unchanged (bit-identical to the input). Changed: psi_Ba, psi_Cb, cg, all reduced
+# blocks red (F', B'), their L, d.  Odd denominators come from the face N (factor 31, 7) and from the one forced
+# non-smooth stage-1 pivot -11967983/294912 (11967983 = 17*37*53*359).

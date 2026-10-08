@@ -1,0 +1,3 @@
+start 2026-10-08T08:18:24+00:00 cmd: bash -c cd <workspace> && TOOLS=<tools> TARGET=coul bash scripts/second-kernel.sh
+job pid/pgid=1898201 guard pid=1898196
+end 2026-10-08T12:29:47+00:00 rc=0 wall=15083s min_MemAvailable=5384508kB

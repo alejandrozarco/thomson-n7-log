@@ -165,3 +165,11 @@ refereed.
   commit 25f2fa5), with `paper/PAPER.md`.
 * [TZ] J. Tooby-Smith, A. Zughaid, Thomson-N-8-Warrant, https://github.com/jstoobysmith/Thomson-N-8-Warrant (Lean 4
   development whose approach [C] follows).
+
+## Coulomb s = 1 (`coulomb/`)
+
+The same case split, with the Coulomb kernel φ₁(t) = (2−2t)^(−1/2), as a second check of Hung Tran's Lean theorem
+(huwngtran/thomson-n7-lean). Differences: no soft-mode conditions on the cap face (the bipyramid is non-degenerate at
+s = 1), quadratic contact of H_B at 0, dyadic contact slopes with a certified mismatch, coercivity windows τ ≤ 10⁻⁶,
+and a second-order local lemma (`coulomb/check_local1.py`; in Lean, Hung Tran's `Reg.pent_local_min_sup` is used
+instead). Details and records: `coulomb/README.md`.

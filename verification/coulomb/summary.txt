@@ -1,0 +1,9 @@
+check_cell rc=0 37s
+check_minorant_cell rc=0 0s
+check_cap1 rc=0 10s
+check_cap1_short rc=0 10s
+check_coerc1 rc=0 0s
+check_coerc1_short rc=0 0s
+check_local1 rc=0 0s
+scan_upstream rc=0 (re-run with UPSTREAM_SOLUTION at 25f2fa5 and the explicit file list)
+DONE

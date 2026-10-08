@@ -1,0 +1,13 @@
+{
+  "challenge_module": "CoulN7.Challenge",
+  "solution_module": "CoulN7.Solution",
+  "theorem_names": [
+    "ThomsonN7S1.coulomb_seven",
+    "ThomsonN7S1.coulomb_seven_unique"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

@@ -1,0 +1,169 @@
+  cert_case1_coulomb_D10.json: identity S EXACT (0s)
+{
+ "cert": "cert_case1_coulomb_D10.json",
+ "kind": "case1",
+ "kernel": "coulomb",
+ "cell": {
+  "a": "-9/10"
+ },
+ "D": 10,
+ "identity_S": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "4068292218555945/281474976710656",
+ "e_minus_EP": "0.000499999999999976515495002062860336871997458699466317288223295",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "8.82e-39",
+  "identity_ok": true,
+  "min_Sigma_all": "1.1976",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 1.0
+}
+  cert_slab_99_98_coulomb_D10.json: identity A EXACT (1s)
+  cert_slab_99_98_coulomb_D10.json: identity B EXACT (1s)
+  cert_slab_99_98_coulomb_D10.json: identity G EXACT (1s)
+{
+ "cert": "cert_slab_99_98_coulomb_D10.json",
+ "kind": "slab",
+ "kernel": "coulomb",
+ "cell": {
+  "lo": "-99/100",
+  "hi": "-49/50"
+ },
+ "D": 10,
+ "constraint_6": true,
+ "identity_A": "EXACT",
+ "identity_B": "EXACT",
+ "identity_G": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "8136308591634713/562949953421312",
+ "e_minus_EP": "0.00000999999999898687157263539532145557011757588696631728822329539",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "3.67e-40",
+  "identity_ok": true,
+  "min_Sigma_all": "0.89143",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 1.4
+}
+  cert_slab_98_96_coulomb_D10.json: identity A EXACT (1s)
+  cert_slab_98_96_coulomb_D10.json: identity B EXACT (1s)
+  cert_slab_98_96_coulomb_D10.json: identity G EXACT (2s)
+{
+ "cert": "cert_slab_98_96_coulomb_D10.json",
+ "kind": "slab",
+ "kernel": "coulomb",
+ "cell": {
+  "lo": "-49/50",
+  "hi": "-24/25"
+ },
+ "D": 10,
+ "constraint_6": true,
+ "identity_A": "EXACT",
+ "identity_B": "EXACT",
+ "identity_G": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "8136308591634713/562949953421312",
+ "e_minus_EP": "0.00000999999999898687157263539532145557011757588696631728822329539",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "1.47e-39",
+  "identity_ok": true,
+  "min_Sigma_all": "0.84946",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 1.6
+}
+  cert_slab_96_94_coulomb_D12.json: identity A EXACT (5s)
+  cert_slab_96_94_coulomb_D12.json: identity B EXACT (8s)
+  cert_slab_96_94_coulomb_D12.json: identity G EXACT (11s)
+{
+ "cert": "cert_slab_96_94_coulomb_D12.json",
+ "kind": "slab",
+ "kernel": "coulomb",
+ "cell": {
+  "lo": "-24/25",
+  "hi": "-47/50"
+ },
+ "D": 12,
+ "constraint_6": true,
+ "identity_A": "EXACT",
+ "identity_B": "EXACT",
+ "identity_G": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "8136308591634713/562949953421312",
+ "e_minus_EP": "0.00000999999999898687157263539532145557011757588696631728822329539",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "2.07e-40",
+  "identity_ok": true,
+  "min_Sigma_all": "0.87726",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 11.1
+}
+  cert_slab_94_93_coulomb_D12.json: identity A EXACT (4s)
+  cert_slab_94_93_coulomb_D12.json: identity B EXACT (8s)
+  cert_slab_94_93_coulomb_D12.json: identity G EXACT (11s)
+{
+ "cert": "cert_slab_94_93_coulomb_D12.json",
+ "kind": "slab",
+ "kernel": "coulomb",
+ "cell": {
+  "lo": "-47/50",
+  "hi": "-93/100"
+ },
+ "D": 12,
+ "constraint_6": true,
+ "identity_A": "EXACT",
+ "identity_B": "EXACT",
+ "identity_G": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "8136308591634711/562949953421312",
+ "e_minus_EP": "0.00000999999999543415789383489439209994877968526196631728822329539",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "7.35e-40",
+  "identity_ok": true,
+  "min_Sigma_all": "0.83783",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 11.2
+}
+  cert_slab_93_90_coulomb_D12.json: identity A EXACT (4s)
+  cert_slab_93_90_coulomb_D12.json: identity B EXACT (8s)
+  cert_slab_93_90_coulomb_D12.json: identity G EXACT (11s)
+{
+ "cert": "cert_slab_93_90_coulomb_D12.json",
+ "kind": "slab",
+ "kernel": "coulomb",
+ "cell": {
+  "lo": "-93/100",
+  "hi": "-9/10"
+ },
+ "D": 12,
+ "constraint_6": true,
+ "identity_A": "EXACT",
+ "identity_B": "EXACT",
+ "identity_G": "EXACT",
+ "all_blocks_positive_definite": true,
+ "e": "2034077147908679/140737488355328",
+ "e_minus_EP": "0.0000100000000043159420908361467154890021244118244663172882232954",
+ "e_gt_EP": true,
+ "sanity": {
+  "max_identity_error": "5.28e-40",
+  "identity_ok": true,
+  "min_Sigma_all": "0.87004",
+  "Sigma_all_nonneg": true
+ },
+ "ALL_OK": true,
+ "time_s": 11.0
+}
+CHECK_CELL ALL_OK

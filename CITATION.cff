@@ -10,12 +10,14 @@ abstract: >-
   A Lean 4 formalisation states and checks that, among all configurations of seven distinct points on the unit
   sphere S^2, the regular pentagonal bipyramid uniquely minimises the logarithmic energy, up to orthogonal
   transformations and relabelling (Conjecture 1 of Armentano et al., J. Symbolic Comput. 137 (2026)); Comparator and
-  the independent checker nanoda accept it. The same is stated and checked for the Riesz s = 2 energy. AI-produced,
+  the independent checker nanoda accept it. The same is stated and checked for the Riesz s = 2 energy, and, as a
+  second check of H. Tran's Lean theorem, with this repository's own certificates, for the Coulomb energy. AI-produced,
   not peer reviewed. The repository also contains the exact certificates with independent checkers.
 keywords:
   - Thomson problem
   - logarithmic energy
   - Riesz energy
+  - Coulomb energy
   - pentagonal bipyramid
   - computer-assisted proof
   - Lean 4
@@ -45,6 +47,15 @@ references:
       - given-names: A.
         family-names: Zughaid
     repository-code: "https://github.com/jstoobysmith/Thomson-N-8-Warrant"
+  - type: article
+    title: "\"Magic\" numbers in Smale's 7th problem"
+    authors:
+      - {given-names: R., family-names: Nerattini}
+      - {given-names: J. S., family-names: Brauchart}
+      - {given-names: M. K.-H., family-names: Kiessling}
+    identifiers:
+      - type: url
+        value: "https://arxiv.org/abs/1307.2834"
   - type: article
     title: "Characterization of Logarithmic Fekete Critical Configurations of at Most Six Points in All Dimensions"
     authors:

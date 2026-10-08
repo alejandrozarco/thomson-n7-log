@@ -1,0 +1,75 @@
+NEAR      CoulN7/Basic.lean:33-37  CoulN7.sin_pi_five_sq ~ upstream ThomsonN7.EPBounds.sin_pi_div_five_sq  ratio 0.961  attributed
+NEAR      CoulN7/Basic.lean:39-41  CoulN7.sin_two_pi_five ~ upstream ThomsonN7.EPBounds.sin_two_pi_div_five  ratio 0.894  attributed
+NEAR      CoulN7/Bridge.lean:22-33  CoulN7.peval_eq_sum ~ upstream ThomsonN7.CutOneD.peval_eq_sum  ratio 0.852  attributed
+TRIVIAL   CoulN7/Case1/Check.lean:23  CoulN7.Case1.r2c1_K ~ upstream ThomsonN7.Case1.c1_K  ratio 0.867 (one short line; exempt)
+NEAR      CoulN7/Case1/Check.lean:25-25  CoulN7.Case1.r2c1_S ~ upstream ThomsonN7.Case1.c1_S  ratio 0.841  attributed
+TRIVIAL   CoulN7/Case1/Check.lean:27  CoulN7.Case1.r2c1_range ~ upstream ThomsonN7.Case1.c1_range4  ratio 0.905 (one short line; exempt)
+NEAR      CoulN7/Case1/Check.lean:36-47  CoulN7.Case1.r2c1_cf_chk ~ upstream ThomsonN7.Case1.cf_chk  ratio 0.895  attributed
+COMMENT   CoulN7/Case1/Check.lean:29  8-word run shared with an upstream comment (upstream line 10430, ThomsonN7.Case1.c1_idE_stat)  attributed
+COMMENT   CoulN7/Case1/Check.lean:49  8-word run shared with an upstream comment (upstream line 10452, ThomsonN7.Case1.cf_blocks)  attributed
+COMMENT   CoulN7/Case1/Check.lean:55  8-word run shared with an upstream comment (upstream line 10457, ThomsonN7.Case1.cf_sos)  attributed
+TRIVIAL   CoulN7/Case1/Data.lean:42  CoulN7.Case1Data.S0 ~ upstream ThomsonN7.Case1Data.S0  ratio 1.000 (one short line; exempt)
+TRIVIAL   CoulN7/Case1/Data.lean:48  CoulN7.Case1Data.S1 ~ upstream ThomsonN7.Case1Data.S1  ratio 1.000 (one short line; exempt)
+TRIVIAL   CoulN7/Case1/Data.lean:54  CoulN7.Case1Data.S2 ~ upstream ThomsonN7.Case1Data.S2  ratio 1.000 (one short line; exempt)
+TRIVIAL   CoulN7/Case1/Data.lean:60  CoulN7.Case1Data.S3 ~ upstream ThomsonN7.Case1Data.S3  ratio 1.000 (one short line; exempt)
+TRIVIAL   CoulN7/Case1/Data.lean:66  CoulN7.Case1Data.S4 ~ upstream ThomsonN7.Case1Data.S4  ratio 1.000 (one short line; exempt)
+TRIVIAL   CoulN7/Case1/Data.lean:72  CoulN7.Case1Data.S5 ~ upstream ThomsonN7.Case1Data.S5  ratio 1.000 (one short line; exempt)
+TRIVIAL   CoulN7/Case1/Data.lean:78  CoulN7.Case1Data.S6 ~ upstream ThomsonN7.Case1Data.S6  ratio 1.000 (one short line; exempt)
+TRIVIAL   CoulN7/Case1/Data.lean:84  CoulN7.Case1Data.S7 ~ upstream ThomsonN7.Case1Data.S7  ratio 1.000 (one short line; exempt)
+COMMENT   CoulN7/Challenge.lean:6  8-word run shared with an upstream comment (upstream line 17882, ThomsonN7.thomson_seven)  attributed
+TRIVIAL   CoulN7/Main.lean:41  CoulN7.hK ~ upstream ThomsonN7.Final.hK  ratio 1.000 (one short line; exempt)
+LINES     LogLean/MinorCore.lean:225-227  3 lines of LogLean.Minor.peval_nonneg_of_all identical to upstream ThomsonN7.CutOneD.peval_eq_zero_of_all  attributed
+NEAR      ThomsonGen/Cert/NBlk.lean:65-68  ThomsonN7.Cert.NBlk.padd ~ upstream ThomsonN7.SlabOneD.padd  ratio 0.909  attributed
+TRIVIAL   ThomsonGen/Cert/NBlk.lean:70  ThomsonN7.Cert.NBlk.pscale ~ upstream ThomsonN7.SlabOneD.pscale  ratio 0.867 (one short line; exempt)
+NEAR      ThomsonGen/Cert/NBlk.lean:488-511  ThomsonN7.Cert.NBlk.fmat_psd_expand ~ upstream ThomsonN7.Cert.fmat_psd  ratio 0.878  attributed
+NEAR      ThomsonGen/Cert/NBlk.lean:624-631  ThomsonN7.Cert.tsum_nonneg_N ~ upstream ThomsonN7.Cert.tsum_nonneg  ratio 0.917  attributed
+NEAR      ThomsonGen/Cert/NBlk.lean:645-669  ThomsonN7.Cert.TCert.alpha_nonneg' ~ upstream ThomsonN7.Cert.TCert.alpha_nonneg  ratio 0.837  attributed
+NEAR      ThomsonGen/Cert/NBlk.lean:671-694  ThomsonN7.Cert.TCert.beta_nonneg' ~ upstream ThomsonN7.Cert.TCert.beta_nonneg  ratio 0.841  attributed
+NEAR      ThomsonGen/Cert/NBlk.lean:696-722  ThomsonN7.Cert.TCert.gamma_nonneg' ~ upstream ThomsonN7.Cert.TCert.gamma_nonneg  ratio 0.869  attributed
+NEAR      ThomsonGen/Cert/NBlkCap.lean:43-56  ThomsonGen.capSpec_of_tcertN ~ upstream ThomsonN7.Glue.capSpec_of_tcert  ratio 0.858  attributed
+NEAR      ThomsonGen/Generic/Energy.lean:46-64  ThomsonGen.pairEnergy_comp_perm ~ upstream ThomsonN7.Base.coulombEnergy_comp_perm  ratio 0.862  attributed
+NEAR      ThomsonGen/Generic/Energy.lean:77-81  ThomsonGen.Concl ~ upstream ThomsonN7.Glue.Concl  ratio 0.832  attributed
+NEAR      ThomsonGen/Generic/Energy.lean:99-114  ThomsonGen.localMinAt_of_sq ~ upstream ThomsonN7.TwoRegime.localMinAt_of_sq  ratio 0.903  attributed
+NEAR      ThomsonGen/Generic/Energy.lean:138-164  ThomsonGen.localGram_of_localMinAt ~ upstream ThomsonN7.TwoRegime.localGram_of_localMinAt  ratio 0.936  attributed
+NEAR      ThomsonGen/Generic/Energy.lean:173-182  ThomsonGen.localGramA_of_localGram ~ upstream ThomsonN7.TwoRegime.localGramA_of_localGram  ratio 0.918  attributed
+NEAR      ThomsonGen/Generic/Energy.lean:184-200  ThomsonGen.local_of_windowA ~ upstream ThomsonN7.TwoRegime.local_of_windowA  ratio 0.843  attributed
+LINES     ThomsonGen/Generic/Energy.lean:130-133  4 lines of ThomsonGen.LocalGram identical to upstream ThomsonN7.TwoRegime.LocalGram  attributed
+COMMENT   ThomsonGen/Generic/Energy.lean:129  8-word run shared with an upstream comment (upstream line 6269, ThomsonN7.TwoRegime.InWindow)  attributed
+COMMENT   ThomsonGen/Generic/Energy.lean:166  8-word run shared with an upstream comment (upstream line 6277, ThomsonN7.TwoRegime.LocalGramA)  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:58-67  ThomsonGen.concl_of_comp_perm ~ upstream ThomsonN7.Glue.concl_of_comp_perm  ratio 0.946  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:69-80  ThomsonGen.exists_minpair_perm ~ upstream ThomsonN7.Glue.exists_minpair_perm  ratio 0.985  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:82-85  ThomsonGen.RootedClaim ~ upstream ThomsonN7.Glue.RootedClaim  ratio 0.944  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:87-96  ThomsonGen.case2_of_rooted ~ upstream ThomsonN7.Glue.case2_of_rooted  ratio 0.939  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:118-133  ThomsonGen.exists_cell ~ upstream ThomsonN7.Glue.exists_cell  ratio 0.896  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:135-147  ThomsonGen.rooted_of_cap_slabs ~ upstream ThomsonN7.Glue.rooted_of_cap_slabs  ratio 0.976  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:155-158  ThomsonGen.cls3 ~ upstream ThomsonN7.Glue.cls3  ratio 0.948  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:162-188  ThomsonGen.pair_facts_tube ~ upstream ThomsonN7.Glue.pair_facts_tube  ratio 0.979  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:190-212  ThomsonGen.slab_of_typed ~ upstream ThomsonN7.Glue.slab_of_typed  ratio 0.878  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:232-238  ThomsonGen.inWindow_of_close ~ upstream ThomsonN7.Glue.inWindow_of_close  ratio 0.879  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:240-317  ThomsonGen.cap_of_typed_tube ~ upstream ThomsonN7.Glue.cap_of_typed_tube  ratio 0.935  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:334-340  ThomsonGen.capSpec_sound ~ upstream ThomsonN7.Glue.capSpec_sound  ratio 0.827  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:342-351  ThomsonGen.SlabSpec ~ upstream ThomsonN7.Glue.SlabSpec  ratio 0.840  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:353-358  ThomsonGen.slabSpec_sound ~ upstream ThomsonN7.Glue.slabSpec_sound  ratio 0.890  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:417-422  ThomsonGen.H7_eq_cls3 ~ upstream ThomsonN7.Glue.H7_eq_cls3  ratio 0.907  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:424-428  ThomsonGen.sum_H7_eq_sum_cls3 ~ upstream ThomsonN7.Glue.sum_H7_eq_sum_cls3  ratio 0.927  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:430-448  ThomsonGen.typed7_cls3 ~ upstream ThomsonN7.Glue.typed7_cls3  ratio 0.931  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:450-469  ThomsonGen.typed7_cls3_lo ~ upstream ThomsonN7.Glue.typed7_cls3_lo  ratio 0.945  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:471-492  ThomsonGen.capSpec_of_typed7 ~ upstream ThomsonN7.Glue.capSpec_of_typed7  ratio 0.947  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:494-513  ThomsonGen.slabSpec_of_typed7 ~ upstream ThomsonN7.Glue.slabSpec_of_typed7  ratio 0.974  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:515-525  ThomsonGen.tcert_bound ~ upstream ThomsonN7.Glue.tcert_bound  ratio 0.926  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:527-536  ThomsonGen.tcert_bound_cap ~ upstream ThomsonN7.Glue.tcert_bound_cap  ratio 0.932  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:538-547  ThomsonGen.slabSpec_of_tcert ~ upstream ThomsonN7.Glue.slabSpec_of_tcert  ratio 0.816  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:549-561  ThomsonGen.capSpec_of_tcert ~ upstream ThomsonN7.Glue.capSpec_of_tcert  ratio 0.865  attributed
+NEAR      ThomsonGen/Generic/Glue.lean:583-602  ThomsonGen.margin_of_threePoint_cut ~ upstream ThomsonN7.TwoRegime.margin_of_threePoint_cut  ratio 0.893  attributed
+LINES     ThomsonGen/Generic/Glue.lean:80-84  3 lines of ThomsonGen.exists_minpair_perm identical to upstream ThomsonN7.Glue.exists_minpair_perm  attributed
+LINES     ThomsonGen/Generic/Glue.lean:109-111  3 lines of ThomsonGen.seven_of_case2 identical to upstream ThomsonN7.Case1.seven_of_case2  attributed
+LINES     ThomsonGen/Generic/Glue.lean:131-137  5 lines of ThomsonGen.exists_cell identical to upstream ThomsonN7.Glue.exists_cell  attributed
+LINES     ThomsonGen/Generic/Glue.lean:220-222  3 lines of ThomsonGen.TubeRigid identical to upstream ThomsonN7.Glue.TubeRigid  attributed
+LINES     ThomsonGen/Generic/Glue.lean:417-469  48 lines of ThomsonGen.H7_eq_cls3 identical to upstream ThomsonN7.Glue.H7_eq_cls3  attributed
+LINES     ThomsonGen/Generic/Glue.lean:490-497  6 lines of ThomsonGen.capSpec_of_typed7 identical to upstream ThomsonN7.Glue.capSpec_of_typed7  attributed
+LINES     ThomsonGen/Generic/Glue.lean:536-541  3 lines of ThomsonGen.tcert_bound_cap identical to upstream ThomsonN7.Glue.tcert_bound_cap  attributed
+COMMENT   ThomsonGen/Generic/Glue.lean:98  8-word run shared with an upstream comment (upstream line 10494, ThomsonN7.Case1.case1_margin)  attributed
+COMMENT   ThomsonGen/Generic/Glue.lean:361  8-word run shared with an upstream comment (upstream line 12802, ThomsonN7.Glue.seven_of_specs)  attributed
+COMMENT   ThomsonGen/Generic/Glue.lean:362  8-word run shared with an upstream comment (upstream line 12802, ThomsonN7.Glue.seven_of_specs)  attributed
+scanned 104 stored files against 2788 upstream declarations: 0 verbatim, 52 near-copies, 0 without attribution
+PASS

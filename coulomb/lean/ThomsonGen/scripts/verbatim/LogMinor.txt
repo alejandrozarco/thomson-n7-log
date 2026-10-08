@@ -1,0 +1,23 @@
+# Upstream integer-polynomial and Bernstein-piece helpers used unchanged by LogLean/MinorCore.lean.
+# split.py copies each one verbatim into ThomsonGen/Verbatim/LogMinor.lean.
+import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+import Mathlib.Analysis.Calculus.Deriv.MeanValue
+namespace LogLean.Minor
+ThomsonN7.CutOneD.peval
+ThomsonN7.CutOneD.padd
+ThomsonN7.CutOneD.pscale
+ThomsonN7.CutOneD.pneg
+ThomsonN7.CutOneD.pmul
+ThomsonN7.Glue.Coerce.ppow
+ThomsonN7.CutOneD.peval_padd
+ThomsonN7.CutOneD.peval_pscale
+ThomsonN7.CutOneD.peval_pneg
+ThomsonN7.CutOneD.peval_pmul
+ThomsonN7.Glue.Coerce.peval_ppow
+ThomsonN7.CutOneD.peval_eq_zero_of_all
+ThomsonN7.Glue.Coerce.bernSum
+ThomsonN7.Glue.Coerce.bernSum_nonneg
+ThomsonN7.Glue.Coerce.BPiece
+ThomsonN7.Glue.Coerce.BPiece.diff
+ThomsonN7.Glue.Coerce.BPiece.check
+ThomsonN7.Glue.Coerce.BPiece.nonneg
