@@ -1,5 +1,9 @@
 Verification run: 2026-09-29 20:39 CEST
-Repository commit checked: ac5038753e0d52efff2673391cb9c477d3f7de85 (fresh clone in a temporary directory; checkers and certificates unchanged since)
+Repository commit checked: ac5038753e0d52efff2673391cb9c477d3f7de85 (fresh clone in a temporary directory)
+Note (2026-10-12): on 2026-09-30 (commits ffcfa8c, ea399e6) the checkers were extended (missing/extra SOS sections
+rejected; e vs E(P) decided in ball arithmetic; exact contact check at c2; exact tiling check) and the outputs in
+this directory were regenerated with them; the certificates were unchanged. The timings below are from the
+2026-09-29 run.
 Machine: Apple M5, Darwin arm64, macOS 27.0
 Load average during the run: ~28 (10 cores); two checker streams in parallel, OMP_NUM_THREADS=1
 Python 3.9.6

@@ -100,9 +100,9 @@ needed degree 12 (at degree 10 the float optimum was 1.4·10⁻⁴ below E(P)).
 
 | step | script | arithmetic |
 |---|---|---|
-| Case 1 and slab certificates: multipliers as required, all kernel and Gram blocks positive definite, polynomial identities coefficient by coefficient, constraint (6), e − E(P) > 0 | `checkers/check_cell.py` | exact rationals; E(P) at 60 digits (mpmath) |
+| Case 1 and slab certificates: multipliers as required, all kernel and Gram blocks positive definite, polynomial identities coefficient by coefficient, constraint (6), e − E(P) > 0 | `checkers/check_cell.py` | exact rationals; e − E(P) > 0 decided in ball arithmetic (arb, 256 bits); the 60-digit mpmath value is reported only |
 | minorants H ≤ φ on the whole ranges (Case 1, slabs), with φ − H > 10⁻⁷ | `checkers/check_minorant_cell.py` | arb balls, 256 bits, bisection covering each interval, monotonicity near t = 1 |
-| cap certificate: multipliers, PSD of all (facially reduced) blocks, identities, constraint (6), exact contact conditions of H_A, H_B, H_C at the inner products of P, e ≤ E(P) | `checkers/check_cert.py` | exact rationals and Q(√5); E(P) at 60 digits |
+| cap certificate: multipliers, PSD of all (facially reduced) blocks, identities, constraint (6), exact contact conditions of H_A, H_B, H_C at the inner products of P, e ≤ E(P) | `checkers/check_cert.py` | exact rationals and Q(√5); e ≤ E(P) decided in ball arithmetic (arb, 256 bits); the 60-digit mpmath value is reported only |
 | cap minorants H ≤ φ, contact windows, coercivity radii τ_X ≤ 1/1650 for δ = 10⁻¹⁶, E(P) − e < δ | `checkers/check_minorant.py` | arb balls, 256 bits; the final τ formulas are evaluated in double precision from certified lower bounds (τ_B = 0.71 · 1/1650) |
 | all of the above, assembled into the coverage table | `checkers/make_coverage.py` → `COVERAGE.md` | — |
 | local lemma: identity (1), Taylor data over Q(√(10+2√5)), Hessian spectrum and kernel, C(s,s,s) = 0, Q_eff = 1/10, tensor-norm and remainder bounds, the 17×17 PSD certificate, the scalar inequalities of Lemmas L and L′, the handoff constants (radius 1/100 ⇐ 1/300 ⇐ τ = 1/1650) | `local/check_local_rigorous.py` (45 checks) | sympy exact, arb 320 bits, exact LDLᵀ over Q, Fractions |

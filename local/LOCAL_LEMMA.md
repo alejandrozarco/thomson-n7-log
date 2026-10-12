@@ -38,8 +38,8 @@ each proposal is then certified as follows:
 | **Q_eff = Q − (9/2)⟨c,H_W⁻¹c⟩** | **(1/10)\|s\|⁴** (exact, isotropic) | **(18/65)\|s\|⁴** |
 | naive Q − 9γ²/(2λ_W) | 3/80 = 0.0375 > 0 | 0.1666 > 0 |
 | κ = \|w*(s)\|/\|s\|², with w* = −3H_W⁻¹c(s) | √(67/120) = 0.74722 | √(805/1352) = 0.77163 |
-| certified radius, ℓ² tangent norm (Bombieri route, §4b) | max ≈ 0.01795 (float, not certified); **stated at 1/100** | max ≈ 0.00837; stated at 1/200 |
-| certified radius (pure-majorant route, §4a) | max ≈ 0.00336; stated at 1/400 | max ≈ 0.00190; stated at 1/600 |
+| radius, ℓ² tangent norm (Bombieri route, §4b): float maximum; certified radius | max ≈ 0.01795 (float, not certified); **certified at 1/100** | max ≈ 0.00837 (float); stated at 1/200 |
+| radius (pure-majorant route, §4a): float maximum; stated radius | max ≈ 0.00336 (float); stated at 1/400 | max ≈ 0.00190 (float); stated at 1/600 |
 | lower bound at the stated radius (Lemma L, §3) | E − E(P) ≥ **0.2015\|v\|² + 0.0454\|s\|⁴** (certified with enclosures) | ≥ 0.4722\|v\|² + 0.1130\|s\|⁴ (floats only) |
 | Lean-friendly form (Lemma L′, §3′), same radius | E − E(P) ≥ **0.0342\|w\|² + 0.0227\|s\|⁴** (Python-certified; the Lean statement `LocalMain.Lprime` in `lean/` has the weaker constants 0.0268, 0.0200) | — |
 | sup-norm radius (upstream shape) | **1/300**, compared with upstream's 1/30000 | 1/530 |
@@ -58,7 +58,9 @@ The cost moves to the cap certificate (§6). The soft mode moves the pole–ring
 first order. So H_B must osculate φ to third order at t = 0, and B-class coercivity scales as
 τ ≈ (δ/κ₄)^{1/4} with κ₄ ≤ 1/6.
 
-For τ = 1/1650 the certificate slack must therefore satisfy **δ ≲ κ₄τ⁴ ≤ 2.2·10⁻¹⁴**.
+For τ = 1/1650 the certificate slack must therefore satisfy **δ ≲ κ₄τ⁴ ≤ 2.2·10⁻¹⁴**. This is a heuristic upper estimate
+(κ₄ ≤ 1/6); with the certified κ_B = 0.0029357 of the actual cap certificate the binding requirement is
+δ ≤ κ_B·1650⁻⁴ ≈ 3.96·10⁻¹⁶, and the certificate has δ = 10⁻¹⁶ (`checkers/check_minorant.py`).
 
 ## 1. Coordinates and an exact identity (no derivative bounds on log needed)
 
