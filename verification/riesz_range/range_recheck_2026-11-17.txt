@@ -1,0 +1,381 @@
+range_check.py --recheck of the release candidate on a Linux workstation (2026-11-17, 02:34:37-04:02:23 UTC)
+=============================================================================================================
+
+Why: the piece reports of the recorded --recheck run (2026-11-07, n7_interval/RANGE_RECHECK_OUTPUT_full.txt) recorded
+absolute paths of the development machine in their provenance. This run regenerated them from a directory whose path
+names no user, so that the reports in the release record only that neutral path.
+
+Machine: Linux 6.8 (x86-64, Intel Core i5-8259U, 6 cores, 19 GiB RAM), Python 3.12.3 (/usr/bin/python3),
+python-flint 0.6.0 (the version of the recorded runs), mpmath 1.3.0. Time zone UTC.
+Tree: a copy of riesz_range/n7_interval/ and riesz_range/hp/ of the release candidate (commit a0b8ddc, `git archive`,
+285 files, sha256-identical to the commit) at /mnt/ssd/thomson/rel/thomson-n7-log/riesz_range/, so that
+../hp/check_cert.py resolves as in the repository. The reports record paths under this directory, the interpreter
+/usr/bin/python3, and the working directories n7_interval/, n7_interval/cellsS/, n7_interval/localS/ (set by
+range_check.py); they record no user name, home directory, host name or environment variable other than the
+check_capR settings.
+Command, in riesz_range/n7_interval/:
+
+  python3 range_check.py --range 1/3 7/4 --recheck --json-out ext/range_check_ext.json
+
+run with an empty environment except PATH=<bin>:/usr/bin:/bin, PYTHONPATH=<python-flint install>,
+PYTHONNOUSERSITE=1, PYTHONDONTWRITEBYTECODE=1, LANG=C.UTF-8 and a neutral HOME, under nice 19 and ionice idle, one
+piece at a time (heavy_lock.py), under /usr/bin/time -v. <bin> contains only a stand-in for the macOS command
+`taskpolicy`, which heavy_lock.py calls as `nice -n 19 taskpolicy -b CMD...`: a 12-line sh script that drops
+taskpolicy's options and execs CMD unchanged. No .py file was edited; the checker and range_check.py sha256 are those
+of the release (range_check.py 28de4aa25fc0f4e9...; "all 7 checker scripts unchanged" below).
+
+The stand-in `taskpolicy`, verbatim:
+
+  #!/bin/sh
+  # Linux stand-in for the macOS `taskpolicy` command, used only for the range_check.py --recheck run in this
+  # directory tree (heavy_lock.py calls `nice -n 19 taskpolicy -b CMD...`). It drops taskpolicy's options
+  # (-b; -c/-d/-g/-t/-l/-p with an argument) and execs the remaining command unchanged.
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      -b|-B|-s) shift ;;
+      -c|-d|-g|-t|-l|-p) shift 2 ;;
+      *) break ;;
+    esac
+  done
+  exec "$@"
+
+Result: exit status 0, "RANGE_OK [1/3, 7/4] route=local"; 267 of 267 used pieces re-run, 267 OK, 0 FAILED, 0 verdict
+changes; afterwards 267 of 267 used pieces authenticated by sha256 (0 by the mtime fallback), all 267 recorded as re-run
+by this --recheck in ext/range_check_ext.json.
+Wall time 5 274 s (1 h 28 min; the recheck loop itself 5 244 s), CPU 4 770 s user + 133 s system. Memory: maximum
+resident set size of a single process 0.78 GiB (819 036 KiB, /usr/bin/time -v; range_check.py itself held 0.77 GiB
+14 s after its start); peak of the summed resident set size of range_check.py and the running checker, sampled every
+5 s: 1.05 GiB (1 098 944 KiB).
+The recorded run of 2026-11-07 (macOS arm64, Python 3.9.6) took 22 613 s for the same 267 pieces; its memory was not
+recorded.
+
+Rewritten (42 files): the 41 report files that hold the 267 used pieces (capR/pieces/*.txt: 23, capR/pieces_nsub/*.txt:
+13, cellsS/range_pieces.jsonl, cellsS/logs/check_piece_case1.txt, cellsS/logs/check_bern_case1.txt,
+localS/cover2q_1o20_48o25_tau1e-6.jsonl, localS/cover2q_1o2_3o2_tau1e-6.jsonl) and the inventory
+ext/range_check_ext.json. range_check.py also wrote pre_recheck/<time>/ (copies of the old reports) and the lock file
+.mac_heavy.lock; neither is in the release. The 9 unused cap records (NOT_OK ... stale below) are not re-run by
+--recheck and were not rewritten; they keep the development path in their "dirs" field (RC_EXACTNESS.txt, section 5).
+
+Differences from the old reports, as range_check.py reports them per piece below ("report fields differ"): none for
+the 231 Case 1, slab and local pieces. All 36 cap pieces differ in floating-point diagnostic fields only (m_sub, mu,
+mu_min, tau, slack, slackS, slackW, P_min_slack; 262 to 293 of 474 fields per piece; largest relative difference
+1.2e-6, in cap [7/12, 2/3], otherwise at most 3.2e-9). No sign of any of these fields changed; no exact, rational or
+boolean field and no verdict changed. The recorded run on macOS had 0 differing fields; these floats are computed in
+double precision outside the exact and ball-arithmetic checks, so they depend on the platform.
+
+Expected differences from RANGE_RECHECK_OUTPUT_full.txt besides the times and the cap field counts: the nine
+NOT_OK lines name the copy time of the tree (02:13:37) as the modification time of checkers and inputs (mtime rule
+for records without hashes; unused records, no effect on RANGE_OK), and two WARN lines report the change of the Python
+version against the previous inventory (3.9.6 -> 3.12.3).
+
+--- stdout (verbatim; stderr was empty) ---
+recheck: 267 pieces (used, or dropped only as stale); reports are rewritten in place, originals copied to pre_recheck/<time>/
+recheck 1/267 case1 [1/2, 5/8] cellsS/logs/check_piece_case1.txt line 1: OK PIECE_OK=True (3.2 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 2/267 case1 [5/8, 3/4] cellsS/logs/check_piece_case1.txt line 2: OK PIECE_OK=True (3.0 s); verdict True -> True; 0/20 report fields differ [3 s]
+recheck 3/267 case1 [3/4, 7/8] cellsS/logs/check_piece_case1.txt line 3: OK PIECE_OK=True (3.3 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 4/267 case1 [7/8, 1] cellsS/logs/check_piece_case1.txt line 4: OK PIECE_OK=True (2.9 s); verdict True -> True; 0/20 report fields differ [3 s]
+recheck 5/267 case1 [1, 9/8] cellsS/logs/check_piece_case1.txt line 5: OK PIECE_OK=True (3.2 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 6/267 case1 [9/8, 5/4] cellsS/logs/check_piece_case1.txt line 6: OK PIECE_OK=True (3.0 s); verdict True -> True; 0/20 report fields differ [3 s]
+recheck 7/267 case1 [5/4, 11/8] cellsS/logs/check_piece_case1.txt line 7: OK PIECE_OK=True (3.2 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 8/267 case1 [11/8, 3/2] cellsS/logs/check_piece_case1.txt line 8: OK PIECE_OK=True (3.2 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 9/267 case1 [1/2, 3/2] cellsS/logs/check_bern_case1.txt: OK BERN_OK=True (19.8 s); verdict True -> True; 0/19 report fields differ [20 s]
+recheck 10/267 case1 [1/2, 5/8] cellsS/range_pieces.jsonl line 1: OK PIECE_OK=True (3.2 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 11/267 case1 [5/8, 3/4] cellsS/range_pieces.jsonl line 2: OK PIECE_OK=True (3.0 s); verdict True -> True; 0/20 report fields differ [3 s]
+recheck 12/267 case1 [3/4, 7/8] cellsS/range_pieces.jsonl line 3: OK PIECE_OK=True (3.2 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 13/267 case1 [7/8, 1] cellsS/range_pieces.jsonl line 4: OK PIECE_OK=True (3.0 s); verdict True -> True; 0/20 report fields differ [3 s]
+recheck 14/267 case1 [1, 9/8] cellsS/range_pieces.jsonl line 5: OK PIECE_OK=True (3.2 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 15/267 case1 [9/8, 5/4] cellsS/range_pieces.jsonl line 6: OK PIECE_OK=True (3.1 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 16/267 case1 [5/4, 11/8] cellsS/range_pieces.jsonl line 7: OK PIECE_OK=True (3.2 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 17/267 case1 [11/8, 3/2] cellsS/range_pieces.jsonl line 8: OK PIECE_OK=True (3.1 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 18/267 slab[-99/100, -49/50] [1/2, 9/16] cellsS/range_pieces.jsonl line 9: OK PIECE_OK=True (10.1 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 19/267 slab[-49/50, -24/25] [1/2, 9/16] cellsS/range_pieces.jsonl line 10: OK PIECE_OK=True (9.4 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 20/267 slab[-24/25, -47/50] [1/2, 9/16] cellsS/range_pieces.jsonl line 11: OK PIECE_OK=True (8.9 s); verdict True -> True; 0/32 report fields differ [9 s]
+recheck 21/267 slab[-47/50, -93/100] [1/2, 9/16] cellsS/range_pieces.jsonl line 12: OK PIECE_OK=True (9.1 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 22/267 slab[-93/100, -183/200] [1/2, 9/16] cellsS/range_pieces.jsonl line 13: OK PIECE_OK=True (9.2 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 23/267 slab[-183/200, -9/10] [1/2, 9/16] cellsS/range_pieces.jsonl line 14: OK PIECE_OK=True (9.3 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 24/267 slab[-99/100, -49/50] [17/12, 3/2] cellsS/range_pieces.jsonl line 15: OK PIECE_OK=True (9.7 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 25/267 slab[-49/50, -24/25] [17/12, 3/2] cellsS/range_pieces.jsonl line 16: OK PIECE_OK=True (10.2 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 26/267 slab[-24/25, -47/50] [17/12, 3/2] cellsS/range_pieces.jsonl line 17: OK PIECE_OK=True (9.5 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 27/267 slab[-47/50, -93/100] [17/12, 3/2] cellsS/range_pieces.jsonl line 18: OK PIECE_OK=True (11.6 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 28/267 slab[-93/100, -183/200] [17/12, 3/2] cellsS/range_pieces.jsonl line 19: OK PIECE_OK=True (12.0 s); verdict True -> True; 0/32 report fields differ [13 s]
+recheck 29/267 slab[-183/200, -9/10] [17/12, 3/2] cellsS/range_pieces.jsonl line 20: OK PIECE_OK=True (11.6 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 30/267 slab[-99/100, -49/50] [9/16, 5/8] cellsS/range_pieces.jsonl line 21: OK PIECE_OK=True (11.6 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 31/267 slab[-49/50, -24/25] [9/16, 5/8] cellsS/range_pieces.jsonl line 22: OK PIECE_OK=True (10.2 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 32/267 slab[-24/25, -47/50] [9/16, 5/8] cellsS/range_pieces.jsonl line 23: OK PIECE_OK=True (11.6 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 33/267 slab[-47/50, -93/100] [9/16, 5/8] cellsS/range_pieces.jsonl line 24: OK PIECE_OK=True (9.9 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 34/267 slab[-93/100, -183/200] [9/16, 5/8] cellsS/range_pieces.jsonl line 25: OK PIECE_OK=True (9.4 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 35/267 slab[-183/200, -9/10] [9/16, 5/8] cellsS/range_pieces.jsonl line 26: OK PIECE_OK=True (9.3 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 36/267 slab[-99/100, -49/50] [5/4, 4/3] cellsS/range_pieces.jsonl line 27: OK PIECE_OK=True (9.8 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 37/267 slab[-99/100, -49/50] [4/3, 17/12] cellsS/range_pieces.jsonl line 28: OK PIECE_OK=True (10.5 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 38/267 slab[-49/50, -24/25] [5/4, 4/3] cellsS/range_pieces.jsonl line 29: OK PIECE_OK=True (10.5 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 39/267 slab[-49/50, -24/25] [4/3, 17/12] cellsS/range_pieces.jsonl line 30: OK PIECE_OK=True (10.3 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 40/267 slab[-24/25, -47/50] [5/4, 4/3] cellsS/range_pieces.jsonl line 31: OK PIECE_OK=True (11.3 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 41/267 slab[-24/25, -47/50] [4/3, 17/12] cellsS/range_pieces.jsonl line 32: OK PIECE_OK=True (12.7 s); verdict True -> True; 0/32 report fields differ [13 s]
+recheck 42/267 slab[-47/50, -93/100] [5/4, 4/3] cellsS/range_pieces.jsonl line 33: OK PIECE_OK=True (12.0 s); verdict True -> True; 0/32 report fields differ [13 s]
+recheck 43/267 slab[-47/50, -93/100] [4/3, 17/12] cellsS/range_pieces.jsonl line 34: OK PIECE_OK=True (13.2 s); verdict True -> True; 0/32 report fields differ [14 s]
+recheck 44/267 slab[-93/100, -183/200] [5/4, 4/3] cellsS/range_pieces.jsonl line 35: OK PIECE_OK=True (14.6 s); verdict True -> True; 0/32 report fields differ [15 s]
+recheck 45/267 slab[-93/100, -183/200] [4/3, 17/12] cellsS/range_pieces.jsonl line 36: OK PIECE_OK=True (16.2 s); verdict True -> True; 0/32 report fields differ [17 s]
+recheck 46/267 slab[-183/200, -9/10] [5/4, 4/3] cellsS/range_pieces.jsonl line 37: OK PIECE_OK=True (11.7 s); verdict True -> True; 0/32 report fields differ [13 s]
+recheck 47/267 slab[-183/200, -9/10] [4/3, 17/12] cellsS/range_pieces.jsonl line 38: OK PIECE_OK=True (11.1 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 48/267 slab[-99/100, -49/50] [5/8, 11/16] cellsS/range_pieces.jsonl line 39: OK PIECE_OK=True (12.7 s); verdict True -> True; 0/32 report fields differ [13 s]
+recheck 49/267 slab[-99/100, -49/50] [11/16, 3/4] cellsS/range_pieces.jsonl line 40: OK PIECE_OK=True (14.0 s); verdict True -> True; 0/32 report fields differ [16 s]
+recheck 50/267 slab[-49/50, -24/25] [5/8, 11/16] cellsS/range_pieces.jsonl line 41: OK PIECE_OK=True (12.2 s); verdict True -> True; 0/32 report fields differ [14 s]
+recheck 51/267 slab[-49/50, -24/25] [11/16, 3/4] cellsS/range_pieces.jsonl line 42: OK PIECE_OK=True (12.5 s); verdict True -> True; 0/32 report fields differ [14 s]
+recheck 52/267 slab[-24/25, -47/50] [5/8, 11/16] cellsS/range_pieces.jsonl line 43: OK PIECE_OK=True (13.1 s); verdict True -> True; 0/32 report fields differ [14 s]
+recheck 53/267 slab[-24/25, -47/50] [11/16, 3/4] cellsS/range_pieces.jsonl line 44: OK PIECE_OK=True (14.1 s); verdict True -> True; 0/32 report fields differ [15 s]
+recheck 54/267 slab[-47/50, -93/100] [5/8, 11/16] cellsS/range_pieces.jsonl line 45: OK PIECE_OK=True (11.3 s); verdict True -> True; 0/32 report fields differ [252 s]
+recheck 55/267 slab[-47/50, -93/100] [11/16, 3/4] cellsS/range_pieces.jsonl line 46: OK PIECE_OK=True (10.8 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 56/267 slab[-93/100, -183/200] [5/8, 11/16] cellsS/range_pieces.jsonl line 47: OK PIECE_OK=True (11.3 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 57/267 slab[-93/100, -183/200] [11/16, 3/4] cellsS/range_pieces.jsonl line 48: OK PIECE_OK=True (10.0 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 58/267 slab[-183/200, -9/10] [5/8, 11/16] cellsS/range_pieces.jsonl line 49: OK PIECE_OK=True (11.0 s); verdict True -> True; 0/32 report fields differ [13 s]
+recheck 59/267 slab[-183/200, -9/10] [11/16, 3/4] cellsS/range_pieces.jsonl line 50: OK PIECE_OK=True (14.2 s); verdict True -> True; 0/32 report fields differ [15 s]
+recheck 60/267 slab[-99/100, -49/50] [7/6, 5/4] cellsS/range_pieces.jsonl line 51: OK PIECE_OK=True (10.6 s); verdict True -> True; 0/32 report fields differ [13 s]
+recheck 61/267 slab[-49/50, -24/25] [7/6, 5/4] cellsS/range_pieces.jsonl line 52: OK PIECE_OK=True (10.8 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 62/267 slab[-24/25, -47/50] [7/6, 5/4] cellsS/range_pieces.jsonl line 53: OK PIECE_OK=True (10.3 s); verdict True -> True; 0/32 report fields differ [15 s]
+recheck 63/267 slab[-47/50, -93/100] [7/6, 5/4] cellsS/range_pieces.jsonl line 54: OK PIECE_OK=True (10.8 s); verdict True -> True; 0/32 report fields differ [14 s]
+recheck 64/267 slab[-93/100, -183/200] [7/6, 5/4] cellsS/range_pieces.jsonl line 55: OK PIECE_OK=True (14.0 s); verdict True -> True; 0/32 report fields differ [15 s]
+recheck 65/267 slab[-183/200, -9/10] [7/6, 5/4] cellsS/range_pieces.jsonl line 56: OK PIECE_OK=True (10.7 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 66/267 slab[-99/100, -49/50] [3/4, 13/16] cellsS/range_pieces.jsonl line 57: OK PIECE_OK=True (10.1 s); verdict True -> True; 0/32 report fields differ [15 s]
+recheck 67/267 slab[-49/50, -24/25] [3/4, 13/16] cellsS/range_pieces.jsonl line 58: OK PIECE_OK=True (10.4 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 68/267 slab[-24/25, -47/50] [3/4, 13/16] cellsS/range_pieces.jsonl line 59: OK PIECE_OK=True (10.2 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 69/267 slab[-47/50, -93/100] [3/4, 13/16] cellsS/range_pieces.jsonl line 60: OK PIECE_OK=True (11.2 s); verdict True -> True; 0/32 report fields differ [13 s]
+recheck 70/267 slab[-93/100, -183/200] [3/4, 13/16] cellsS/range_pieces.jsonl line 61: OK PIECE_OK=True (9.9 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 71/267 slab[-183/200, -9/10] [3/4, 13/16] cellsS/range_pieces.jsonl line 62: OK PIECE_OK=True (13.9 s); verdict True -> True; 0/32 report fields differ [15 s]
+recheck 72/267 slab[-99/100, -49/50] [13/12, 7/6] cellsS/range_pieces.jsonl line 63: OK PIECE_OK=True (10.5 s); verdict True -> True; 0/32 report fields differ [13 s]
+recheck 73/267 slab[-49/50, -24/25] [13/12, 7/6] cellsS/range_pieces.jsonl line 64: OK PIECE_OK=True (11.8 s); verdict True -> True; 0/32 report fields differ [14 s]
+recheck 74/267 slab[-24/25, -47/50] [13/12, 7/6] cellsS/range_pieces.jsonl line 65: OK PIECE_OK=True (10.0 s); verdict True -> True; 0/32 report fields differ [13 s]
+recheck 75/267 slab[-47/50, -93/100] [13/12, 7/6] cellsS/range_pieces.jsonl line 66: OK PIECE_OK=True (11.1 s); verdict True -> True; 0/32 report fields differ [14 s]
+recheck 76/267 slab[-93/100, -183/200] [13/12, 7/6] cellsS/range_pieces.jsonl line 67: OK PIECE_OK=True (13.0 s); verdict True -> True; 0/32 report fields differ [14 s]
+recheck 77/267 slab[-183/200, -9/10] [13/12, 7/6] cellsS/range_pieces.jsonl line 68: OK PIECE_OK=True (13.6 s); verdict True -> True; 0/32 report fields differ [17 s]
+recheck 78/267 slab[-99/100, -49/50] [13/16, 7/8] cellsS/range_pieces.jsonl line 69: OK PIECE_OK=True (10.5 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 79/267 slab[-49/50, -24/25] [13/16, 7/8] cellsS/range_pieces.jsonl line 70: OK PIECE_OK=True (10.5 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 80/267 slab[-24/25, -47/50] [13/16, 7/8] cellsS/range_pieces.jsonl line 71: OK PIECE_OK=True (11.4 s); verdict True -> True; 0/32 report fields differ [44 s]
+recheck 81/267 slab[-47/50, -93/100] [13/16, 7/8] cellsS/range_pieces.jsonl line 72: OK PIECE_OK=True (9.5 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 82/267 slab[-93/100, -183/200] [13/16, 7/8] cellsS/range_pieces.jsonl line 73: OK PIECE_OK=True (10.5 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 83/267 slab[-183/200, -9/10] [13/16, 7/8] cellsS/range_pieces.jsonl line 74: OK PIECE_OK=True (9.8 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 84/267 slab[-99/100, -49/50] [1, 13/12] cellsS/range_pieces.jsonl line 75: OK PIECE_OK=True (9.6 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 85/267 slab[-49/50, -24/25] [1, 13/12] cellsS/range_pieces.jsonl line 76: OK PIECE_OK=True (9.7 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 86/267 slab[-24/25, -47/50] [1, 13/12] cellsS/range_pieces.jsonl line 77: OK PIECE_OK=True (9.2 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 87/267 slab[-47/50, -93/100] [1, 13/12] cellsS/range_pieces.jsonl line 78: OK PIECE_OK=True (9.4 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 88/267 slab[-93/100, -183/200] [1, 13/12] cellsS/range_pieces.jsonl line 79: OK PIECE_OK=True (9.6 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 89/267 slab[-183/200, -9/10] [1, 13/12] cellsS/range_pieces.jsonl line 80: OK PIECE_OK=True (9.6 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 90/267 slab[-99/100, -49/50] [7/8, 15/16] cellsS/range_pieces.jsonl line 81: OK PIECE_OK=True (9.7 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 91/267 slab[-99/100, -49/50] [15/16, 1] cellsS/range_pieces.jsonl line 82: OK PIECE_OK=True (9.5 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 92/267 slab[-49/50, -24/25] [7/8, 15/16] cellsS/range_pieces.jsonl line 83: OK PIECE_OK=True (9.7 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 93/267 slab[-49/50, -24/25] [15/16, 1] cellsS/range_pieces.jsonl line 84: OK PIECE_OK=True (9.6 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 94/267 slab[-24/25, -47/50] [7/8, 15/16] cellsS/range_pieces.jsonl line 85: OK PIECE_OK=True (10.0 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 95/267 slab[-24/25, -47/50] [15/16, 1] cellsS/range_pieces.jsonl line 86: OK PIECE_OK=True (11.2 s); verdict True -> True; 0/32 report fields differ [12 s]
+recheck 96/267 slab[-47/50, -93/100] [7/8, 15/16] cellsS/range_pieces.jsonl line 87: OK PIECE_OK=True (9.6 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 97/267 slab[-47/50, -93/100] [15/16, 1] cellsS/range_pieces.jsonl line 88: OK PIECE_OK=True (9.6 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 98/267 slab[-93/100, -183/200] [7/8, 15/16] cellsS/range_pieces.jsonl line 89: OK PIECE_OK=True (10.8 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 99/267 slab[-93/100, -183/200] [15/16, 1] cellsS/range_pieces.jsonl line 90: OK PIECE_OK=True (10.6 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 100/267 slab[-183/200, -9/10] [7/8, 15/16] cellsS/range_pieces.jsonl line 91: OK PIECE_OK=True (10.3 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 101/267 slab[-183/200, -9/10] [15/16, 1] cellsS/range_pieces.jsonl line 92: OK PIECE_OK=True (10.2 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 102/267 case1 [3/2, 19/12] cellsS/range_pieces.jsonl line 93: OK PIECE_OK=True (3.5 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 103/267 slab[-99/100, -49/50] [3/2, 19/12] cellsS/range_pieces.jsonl line 94: OK PIECE_OK=True (10.3 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 104/267 slab[-49/50, -24/25] [3/2, 19/12] cellsS/range_pieces.jsonl line 95: OK PIECE_OK=True (10.0 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 105/267 slab[-24/25, -47/50] [3/2, 19/12] cellsS/range_pieces.jsonl line 96: OK PIECE_OK=True (9.8 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 106/267 slab[-47/50, -93/100] [3/2, 19/12] cellsS/range_pieces.jsonl line 97: OK PIECE_OK=True (9.9 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 107/267 slab[-93/100, -183/200] [3/2, 19/12] cellsS/range_pieces.jsonl line 98: OK PIECE_OK=True (10.4 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 108/267 slab[-183/200, -9/10] [3/2, 19/12] cellsS/range_pieces.jsonl line 99: OK PIECE_OK=True (11.0 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 109/267 case1 [19/12, 5/3] cellsS/range_pieces.jsonl line 100: OK PIECE_OK=True (3.2 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 110/267 slab[-99/100, -49/50] [19/12, 5/3] cellsS/range_pieces.jsonl line 101: OK PIECE_OK=True (10.0 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 111/267 slab[-49/50, -24/25] [19/12, 5/3] cellsS/range_pieces.jsonl line 102: OK PIECE_OK=True (10.3 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 112/267 slab[-24/25, -47/50] [19/12, 5/3] cellsS/range_pieces.jsonl line 103: OK PIECE_OK=True (9.7 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 113/267 slab[-47/50, -93/100] [19/12, 5/3] cellsS/range_pieces.jsonl line 104: OK PIECE_OK=True (10.3 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 114/267 slab[-93/100, -183/200] [19/12, 5/3] cellsS/range_pieces.jsonl line 105: OK PIECE_OK=True (9.9 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 115/267 slab[-183/200, -9/10] [19/12, 5/3] cellsS/range_pieces.jsonl line 106: OK PIECE_OK=True (10.4 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 116/267 case1 [5/3, 7/4] cellsS/range_pieces.jsonl line 107: OK PIECE_OK=True (3.1 s); verdict True -> True; 0/20 report fields differ [4 s]
+recheck 117/267 slab[-99/100, -49/50] [5/3, 7/4] cellsS/range_pieces.jsonl line 108: OK PIECE_OK=True (10.6 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 118/267 slab[-49/50, -24/25] [5/3, 7/4] cellsS/range_pieces.jsonl line 109: OK PIECE_OK=True (10.9 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 119/267 slab[-93/100, -183/200] [1/3, 17/48] cellsS/range_pieces.jsonl line 110: OK PIECE_OK=True (10.5 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 120/267 slab[-24/25, -47/50] [5/3, 7/4] cellsS/range_pieces.jsonl line 111: OK PIECE_OK=True (10.9 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 121/267 slab[-99/100, -49/50] [1/3, 3/8] cellsS/range_pieces.jsonl line 112: OK PIECE_OK=True (10.1 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 122/267 slab[-47/50, -93/100] [5/3, 7/4] cellsS/range_pieces.jsonl line 113: OK PIECE_OK=True (10.7 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 123/267 slab[-49/50, -24/25] [1/3, 3/8] cellsS/range_pieces.jsonl line 114: OK PIECE_OK=True (10.1 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 124/267 slab[-93/100, -183/200] [5/3, 7/4] cellsS/range_pieces.jsonl line 115: OK PIECE_OK=True (9.9 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 125/267 slab[-93/100, -183/200] [17/48, 3/8] cellsS/range_pieces.jsonl line 116: OK PIECE_OK=True (9.1 s); verdict True -> True; 0/32 report fields differ [9 s]
+recheck 126/267 slab[-183/200, -9/10] [5/3, 7/4] cellsS/range_pieces.jsonl line 117: OK PIECE_OK=True (10.1 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 127/267 slab[-183/200, -9/10] [1/3, 3/8] cellsS/range_pieces.jsonl line 118: OK PIECE_OK=True (9.5 s); verdict True -> True; 0/32 report fields differ [11 s]
+recheck 128/267 slab[-93/100, -183/200] [3/8, 19/48] cellsS/range_pieces.jsonl line 119: OK PIECE_OK=True (9.4 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 129/267 case1 [1/3, 5/12] cellsS/range_pieces.jsonl line 120: OK PIECE_OK=True (2.8 s); verdict True -> True; 0/20 report fields differ [3 s]
+recheck 130/267 case1 [5/12, 1/2] cellsS/range_pieces.jsonl line 121: OK PIECE_OK=True (2.8 s); verdict True -> True; 0/20 report fields differ [3 s]
+recheck 131/267 slab[-24/25, -47/50] [1/3, 17/48] cellsS/range_pieces.jsonl line 122: OK PIECE_OK=True (8.9 s); verdict True -> True; 0/32 report fields differ [9 s]
+recheck 132/267 slab[-99/100, -49/50] [3/8, 5/12] cellsS/range_pieces.jsonl line 123: OK PIECE_OK=True (9.2 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 133/267 slab[-47/50, -93/100] [1/3, 17/48] cellsS/range_pieces.jsonl line 124: OK PIECE_OK=True (8.9 s); verdict True -> True; 0/32 report fields differ [9 s]
+recheck 134/267 slab[-49/50, -24/25] [3/8, 5/12] cellsS/range_pieces.jsonl line 125: OK PIECE_OK=True (9.1 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 135/267 slab[-24/25, -47/50] [17/48, 3/8] cellsS/range_pieces.jsonl line 126: OK PIECE_OK=True (8.9 s); verdict True -> True; 0/32 report fields differ [9 s]
+recheck 136/267 slab[-93/100, -183/200] [19/48, 5/12] cellsS/range_pieces.jsonl line 127: OK PIECE_OK=True (9.2 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 137/267 slab[-47/50, -93/100] [17/48, 3/8] cellsS/range_pieces.jsonl line 128: OK PIECE_OK=True (9.1 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 138/267 slab[-183/200, -9/10] [3/8, 5/12] cellsS/range_pieces.jsonl line 129: OK PIECE_OK=True (9.1 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 139/267 slab[-24/25, -47/50] [3/8, 19/48] cellsS/range_pieces.jsonl line 130: OK PIECE_OK=True (8.9 s); verdict True -> True; 0/32 report fields differ [9 s]
+recheck 140/267 slab[-99/100, -49/50] [5/12, 11/24] cellsS/range_pieces.jsonl line 131: OK PIECE_OK=True (9.2 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 141/267 slab[-99/100, -49/50] [11/24, 1/2] cellsS/range_pieces.jsonl line 132: OK PIECE_OK=True (9.3 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 142/267 slab[-47/50, -93/100] [3/8, 19/48] cellsS/range_pieces.jsonl line 133: OK PIECE_OK=True (8.9 s); verdict True -> True; 0/32 report fields differ [9 s]
+recheck 143/267 slab[-49/50, -24/25] [5/12, 11/24] cellsS/range_pieces.jsonl line 134: OK PIECE_OK=True (8.8 s); verdict True -> True; 0/32 report fields differ [9 s]
+recheck 144/267 slab[-49/50, -24/25] [11/24, 1/2] cellsS/range_pieces.jsonl line 135: OK PIECE_OK=True (9.2 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 145/267 slab[-24/25, -47/50] [19/48, 5/12] cellsS/range_pieces.jsonl line 136: OK PIECE_OK=True (9.5 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 146/267 slab[-93/100, -183/200] [5/12, 11/24] cellsS/range_pieces.jsonl line 137: OK PIECE_OK=True (9.3 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 147/267 slab[-93/100, -183/200] [11/24, 1/2] cellsS/range_pieces.jsonl line 138: OK PIECE_OK=True (9.6 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 148/267 slab[-47/50, -93/100] [19/48, 5/12] cellsS/range_pieces.jsonl line 139: OK PIECE_OK=True (9.5 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 149/267 slab[-183/200, -9/10] [5/12, 11/24] cellsS/range_pieces.jsonl line 140: OK PIECE_OK=True (9.7 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 150/267 slab[-183/200, -9/10] [11/24, 1/2] cellsS/range_pieces.jsonl line 141: OK PIECE_OK=True (9.7 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 151/267 slab[-24/25, -47/50] [5/12, 11/24] cellsS/range_pieces.jsonl line 142: OK PIECE_OK=True (9.4 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 152/267 slab[-24/25, -47/50] [11/24, 1/2] cellsS/range_pieces.jsonl line 143: OK PIECE_OK=True (9.7 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 153/267 slab[-47/50, -93/100] [5/12, 11/24] cellsS/range_pieces.jsonl line 144: OK PIECE_OK=True (9.8 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 154/267 slab[-47/50, -93/100] [11/24, 1/2] cellsS/range_pieces.jsonl line 145: OK PIECE_OK=True (9.3 s); verdict True -> True; 0/32 report fields differ [10 s]
+recheck 155/267 cap [11/12, 23/24] capR/pieces/check_capR_11_12__23_24.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 279/474 report fields differ (max rel 1.1e-09: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [100 s]
+recheck 156/267 cap [11/24, 1/2] capR/pieces/check_capR_11_24__1_2.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 263/474 report fields differ (max rel 2.8e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [102 s]
+recheck 157/267 cap [13/12, 7/6] capR/pieces/check_capR_13_12__7_6.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 290/474 report fields differ (max rel 2.6e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [95 s]
+recheck 158/267 cap [13/24, 7/12] capR/pieces/check_capR_13_24__7_12.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 271/474 report fields differ (max rel 6.2e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [93 s]
+recheck 159/267 cap [17/12, 3/2] capR/pieces/check_capR_17_12__3_2.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 293/474 report fields differ (max rel 5.0e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [91 s]
+recheck 160/267 cap [17/24, 3/4] capR/pieces/check_capR_17_24__3_4.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 268/474 report fields differ (max rel 5.1e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [92 s]
+recheck 161/267 cap [19/12, 5/3] capR/pieces/check_capR_19_12__5_3.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 274/474 report fields differ (max rel 3.4e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [93 s]
+recheck 162/267 cap [1, 25/24] capR/pieces/check_capR_1_1__25_24.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 276/474 report fields differ (max rel 1.3e-09: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [96 s]
+recheck 163/267 cap [1/2, 13/24] capR/pieces/check_capR_1_2__13_24.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 285/474 report fields differ (max rel 3.1e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [93 s]
+recheck 164/267 cap [1/3, 3/8] capR/pieces/check_capR_1_3__3_8.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 267/474 report fields differ (max rel 5.3e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [93 s]
+recheck 165/267 cap [23/24, 1] capR/pieces/check_capR_23_24__1_1.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 269/474 report fields differ (max rel 1.2e-09: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [90 s]
+recheck 166/267 cap [25/24, 13/12] capR/pieces/check_capR_25_24__13_12.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 280/474 report fields differ (max rel 5.6e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [93 s]
+recheck 167/267 cap [2/3, 17/24] capR/pieces/check_capR_2_3__17_24.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 264/474 report fields differ (max rel 1.7e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [91 s]
+recheck 168/267 cap [3/2, 19/12] capR/pieces/check_capR_3_2__19_12.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 293/474 report fields differ (max rel 5.0e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [94 s]
+recheck 169/267 cap [3/4, 5/6] capR/pieces/check_capR_3_4__5_6.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 274/474 report fields differ (max rel 5.1e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [95 s]
+recheck 170/267 cap [3/8, 5/12] capR/pieces/check_capR_3_8__5_12.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 268/474 report fields differ (max rel 4.3e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [93 s]
+recheck 171/267 cap [4/3, 17/12] capR/pieces/check_capR_4_3__17_12.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 284/474 report fields differ (max rel 4.0e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [93 s]
+recheck 172/267 cap [5/12, 11/24] capR/pieces/check_capR_5_12__11_24.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 262/474 report fields differ (max rel 4.6e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [92 s]
+recheck 173/267 cap [5/3, 7/4] capR/pieces/check_capR_5_3__7_4.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 286/474 report fields differ (max rel 5.9e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [93 s]
+recheck 174/267 cap [5/4, 4/3] capR/pieces/check_capR_5_4__4_3.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 276/474 report fields differ (max rel 6.3e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [92 s]
+recheck 175/267 cap [5/6, 11/12] capR/pieces/check_capR_5_6__11_12.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 288/474 report fields differ (max rel 3.2e-09: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [93 s]
+recheck 176/267 cap [7/12, 2/3] capR/pieces/check_capR_7_12__2_3.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 281/474 report fields differ (max rel 1.2e-06: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [91 s]
+recheck 177/267 cap [7/6, 5/4] capR/pieces/check_capR_7_6__5_4.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 283/474 report fields differ (max rel 5.0e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [91 s]
+recheck 178/267 cap [11/12, 1] capR/pieces_nsub/check_capR_11_12__1_1_nsub4.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=1 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 287/473 report fields differ (max rel 3.0e-09: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [91 s]
+recheck 179/267 cap [11/12, 1] capR/pieces_nsub/check_capR_11_12__1_1_nsub4_os.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 287/474 report fields differ (max rel 3.0e-09: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [93 s]
+recheck 180/267 cap [11/12, 23/24] capR/pieces_nsub/check_capR_11_12__23_24_nsub4_os.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 279/474 report fields differ (max rel 1.1e-09: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [91 s]
+recheck 181/267 cap [13/12, 7/6] capR/pieces_nsub/check_capR_13_12__7_6_nsub4_os.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 290/474 report fields differ (max rel 2.6e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [90 s]
+recheck 182/267 cap [1, 13/12] capR/pieces_nsub/check_capR_1_1__13_12_nsub4.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=1 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 278/473 report fields differ (max rel 2.0e-09: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [92 s]
+recheck 183/267 cap [1, 13/12] capR/pieces_nsub/check_capR_1_1__13_12_nsub4_os.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 278/474 report fields differ (max rel 2.0e-09: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [93 s]
+recheck 184/267 cap [1, 25/24] capR/pieces_nsub/check_capR_1_1__25_24_nsub4_os.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 276/474 report fields differ (max rel 1.3e-09: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [91 s]
+recheck 185/267 cap [23/24, 1] capR/pieces_nsub/check_capR_23_24__1_1_nsub4_os.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 269/474 report fields differ (max rel 1.2e-09: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [91 s]
+recheck 186/267 cap [25/24, 13/12] capR/pieces_nsub/check_capR_25_24__13_12_nsub4_os.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 280/474 report fields differ (max rel 5.6e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [92 s]
+recheck 187/267 cap [3/4, 5/6] capR/pieces_nsub/check_capR_3_4__5_6_nsub4_os.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 274/474 report fields differ (max rel 5.1e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [94 s]
+recheck 188/267 cap [5/4, 4/3] capR/pieces_nsub/check_capR_5_4__4_3_nsub4_os.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 276/474 report fields differ (max rel 6.3e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [92 s]
+recheck 189/267 cap [5/6, 11/12] capR/pieces_nsub/check_capR_5_6__11_12_nsub4_os.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 288/474 report fields differ (max rel 3.2e-09: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [94 s]
+recheck 190/267 cap [7/6, 5/4] capR/pieces_nsub/check_capR_7_6__5_4_nsub4_os.txt: OK PIECE_OK (env NSUB=4 M_TWOSIDED=0 NWIN=400 N0=64 RB=1/20 RC=1/50 RA=1/500); verdict True -> True; 283/474 report fields differ (max rel 5.0e-10: P_blocks.A_B0.m_sub[0], P_blocks.A_B0.m_sub[1], P_blocks.A_B0.m_sub[2], P_blocks.A_B0.m_sub[3], P_blocks.A_B0.m_sub[4], P_blocks.A_B0.mu) [90 s]
+recheck 191/267 local [1/20, 41/800] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 1: OK LOCAL_OK=True lambda_S=4.16051916545257e-05; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 192/267 local [41/800, 17/320] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 2: OK LOCAL_OK=True lambda_S=4.131675814278424e-05; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 193/267 local [17/320, 179/3200] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 3: OK LOCAL_OK=True lambda_S=3.913842374458909e-05; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 194/267 local [179/3200, 743/12800] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 4: OK LOCAL_OK=True lambda_S=4.880937922280282e-05; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 195/267 local [743/12800, 1567/25600] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 5: OK LOCAL_OK=True lambda_S=4.5945431338623166e-05; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 196/267 local [1567/25600, 6511/102400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 6: OK LOCAL_OK=True lambda_S=5.795661127194762e-05; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 197/267 local [6511/102400, 13751/204800] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 7: OK LOCAL_OK=True lambda_S=5.421755486167967e-05; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 198/267 local [13751/204800, 57191/819200] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 8: OK LOCAL_OK=True lambda_S=6.915100675541908e-05; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 199/267 local [57191/819200, 120943/1638400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 9: OK LOCAL_OK=True lambda_S=6.42985396552831e-05; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 200/267 local [120943/1638400, 100691/1310720] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 10: OK LOCAL_OK=True lambda_S=8.288123353850096e-05; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 201/267 local [100691/1310720, 1065959/13107200] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 11: OK LOCAL_OK=True lambda_S=7.661644485779107e-05; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 202/267 local [1065959/13107200, 4440983/52428800] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 12: OK LOCAL_OK=True lambda_S=9.975563443731517e-05; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 203/267 local [4440983/52428800, 9413407/104857600] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 13: OK LOCAL_OK=True lambda_S=9.170458361040801e-05; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 204/267 local [9413407/104857600, 39247951/419430400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 14: OK LOCAL_OK=True lambda_S=0.00012053121463395655; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 205/267 local [39247951/419430400, 83278871/838860800] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 15: OK LOCAL_OK=True lambda_S=0.00011022741091437638; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 206/267 local [83278871/838860800, 180906649/1677721600] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 16: OK LOCAL_OK=True lambda_S=7.939864008221775e-05; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 207/267 local [180906649/1677721600, 766673317/6710886400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 17: OK LOCAL_OK=True lambda_S=0.00014825038670096546; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 208/267 local [766673317/6710886400, 1662486797/13421772800] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 18: OK LOCAL_OK=True lambda_S=0.00011037086369469762; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 209/267 local [1662486797/13421772800, 7037367677/53687091200] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 19: OK LOCAL_OK=True lambda_S=0.00019736170361284167; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 210/267 local [7037367677/53687091200, 15236996821/107374182400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 20: OK LOCAL_OK=True lambda_S=0.0001508462883066386; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 211/267 local [15236996821/107374182400, 12886954337/85899345920] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 21: OK LOCAL_OK=True lambda_S=0.00026046435232274234; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 212/267 local [12886954337/85899345920, 139329896573/858993459200] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 22: OK LOCAL_OK=True lambda_S=0.00020339616457931697; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 213/267 local [139329896573/858993459200, 588700645901/3435973836800] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 23: OK LOCAL_OK=True lambda_S=0.0003411478246562183; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 214/267 local [588700645901/3435973836800, 1271544470629/6871947673600] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 24: OK LOCAL_OK=True lambda_S=0.0002712193236220628; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 215/267 local [1271544470629/6871947673600, 5368607418997/27487790694400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 25: OK LOCAL_OK=True lambda_S=0.00044382159831002355; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 216/267 local [5368607418997/27487790694400, 11584503447437/54975581388800] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 26: OK LOCAL_OK=True lambda_S=0.00035826858947984874; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 217/267 local [11584503447437/54975581388800, 48879879618077/219902325555200] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 27: OK LOCAL_OK=True lambda_S=0.000573859186260961; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 218/267 local [48879879618077/219902325555200, 105385356721141/439804651110400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 28: OK LOCAL_OK=True lambda_S=0.00046938804734963924; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 219/267 local [105385356721141/439804651110400, 17776728773581/70368744177664] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 29: OK LOCAL_OK=True lambda_S=0.0007377435395028442; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 220/267 local [17776728773581/70368744177664, 957466816043933/3518437208883200] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 30: OK LOCAL_OK=True lambda_S=0.0006104514613980427; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 221/267 local [957466816043933/3518437208883200, 424164952836503/1407374883553280] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 31: OK LOCAL_OK=True lambda_S=0.00026971074112225324; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 222/267 local [424164952836503/1407374883553280, 9100972453014007/28147497671065600] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 32: OK LOCAL_OK=True lambda_S=0.0009187368850689381; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 223/267 local [9100972453014007/28147497671065600, 4010993018975971/11258999068426240] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 33: OK LOCAL_OK=True lambda_S=0.0005185974732739851; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 224/267 local [4010993018975971/11258999068426240, 85778920946074943/225179981368524800] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 34: OK LOCAL_OK=True lambda_S=0.0013205090363044292; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 225/267 local [85778920946074943/225179981368524800, 37647004718363291/90071992547409920] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 35: OK LOCAL_OK=True lambda_S=0.000852016091812402; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 226/267 local [37647004718363291/90071992547409920, 802971639466265527/1801439850948198400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 36: OK LOCAL_OK=True lambda_S=0.0018327397847315297; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 227/267 local [802971639466265527/1801439850948198400, 70241516569181207/144115188075855872] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 37: OK LOCAL_OK=True lambda_S=0.0012858660193160176; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 228/267 local [70241516569181207/144115188075855872, 7474435562809118063/14411518807585587200] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 38: OK LOCAL_OK=True lambda_S=0.002471354222507216; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 229/267 local [7474435562809118063/14411518807585587200, 3259944568658245643/5764607523034234880] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 39: OK LOCAL_OK=True lambda_S=0.001834711743867956; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 230/267 local [3259944568658245643/5764607523034234880, 69251446526183889127/115292150460684697600] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 40: OK LOCAL_OK=True lambda_S=0.0032411270949523896; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 231/267 local [69251446526183889127/115292150460684697600, 30132111702284941411/46116860184273879040] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 41: OK LOCAL_OK=True lambda_S=0.0024427966418443248; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 232/267 local [30132111702284941411/46116860184273879040, 639115230422869614623/922337203685477580800] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 42: OK LOCAL_OK=True lambda_S=0.004100710153579712; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 233/267 local [639115230422869614623/922337203685477580800, 277529889995450317691/368934881474191032320] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 43: OK LOCAL_OK=True lambda_S=0.0030949395877541974; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 234/267 local [277529889995450317691/368934881474191032320, 5878854767303543431447/7378697629483820646400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 44: OK LOCAL_OK=True lambda_S=0.005053869899711572; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 235/267 local [5878854767303543431447/7378697629483820646400, 509699217471627923831/590295810358705651712] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 45: OK LOCAL_OK=True lambda_S=0.003775224700802937; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 236/267 local [509699217471627923831/590295810358705651712, 53924234453713626081743/59029581035870565171200] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 46: OK LOCAL_OK=True lambda_S=0.006043578192475252; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 237/267 local [53924234453713626081743/59029581035870565171200, 23342281405415950651883/23611832414348226068480] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 47: OK LOCAL_OK=True lambda_S=0.004402740029036067; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 238/267 local [23342281405415950651883/23611832414348226068480, 493434442467276516325447/472236648286964521369600] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 48: OK LOCAL_OK=True lambda_S=0.006961189705180004; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 239/267 local [493434442467276516325447/472236648286964521369600, 213327065602285108502851/188894659314785808547840] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 49: OK LOCAL_OK=True lambda_S=0.0048359842476202175; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 240/267 local [213327065602285108502851/188894659314785808547840, 4505840641276319699647103/3777893186295716170956800] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 50: OK LOCAL_OK=True lambda_S=0.007619641124620102; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 241/267 local [4505840641276319699647103/3777893186295716170956800, 1945915854048898397612891/1511157274518286468382720] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 51: OK LOCAL_OK=True lambda_S=0.004843186659854837; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 242/267 local [1945915854048898397612891/1511157274518286468382720, 41072011044053525718568567/30223145490365729367654400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 52: OK LOCAL_OK=True lambda_S=0.00769153815053869; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 243/267 local [41072011044053525718568567/30223145490365729367654400, 3544204159093348989442775/2417851639229258349412352] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 53: OK LOCAL_OK=True lambda_S=0.003655889260699041; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 244/267 local [3544204159093348989442775/2417851639229258349412352, 373803661577014918841074223/241785163922925834941235200] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 54: OK LOCAL_OK=True lambda_S=0.006162732941447757; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 245/267 local [373803661577014918841074223/241785163922925834941235200, 1553364383311099735054687061/967140655691703339764940800] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 55: OK LOCAL_OK=True lambda_S=0.007124964758986607; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 246/267 local [1553364383311099735054687061/967140655691703339764940800, 3281177977631319649180544629/1934281311383406679529881600] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 56: OK LOCAL_OK=True lambda_S=0.003526579253957607; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 247/267 local [3281177977631319649180544629/1934281311383406679529881600, 13648059543552639133935690037/7737125245533626718119526400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 57: OK LOCAL_OK=True lambda_S=0.004203917647828348; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 248/267 local [13648059543552639133935690037/7737125245533626718119526400, 56162281073292638147383294711/30948500982134506872478105600] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 58: OK LOCAL_OK=True lambda_S=0.004110265843337402; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 249/267 local [56162281073292638147383294711/30948500982134506872478105600, 229359252990416797424454782533/123794003928538027489912422400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 59: OK LOCAL_OK=True lambda_S=0.003724907583091408; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 250/267 local [229359252990416797424454782533/123794003928538027489912422400, 931567398053405924202583941199/495176015714152109959649689600] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 60: OK LOCAL_OK=True lambda_S=0.003268040920374915; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 251/267 local [931567398053405924202583941199/495176015714152109959649689600, 3768660750488839900324630197997/1980704062856608439838598758400] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 61: OK LOCAL_OK=True lambda_S=0.002834815430105664; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 252/267 local [3768660750488839900324630197997/1980704062856608439838598758400, 48/25] localS/cover2q_1o20_48o25_tau1e-6.jsonl line 62: OK LOCAL_OK=True lambda_S=0.002405853709205985; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 253/267 local [1/2, 13/25] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 1: OK LOCAL_OK=True lambda_S=0.0031180580554064363; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 254/267 local [13/25, 11/20] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 2: OK LOCAL_OK=True lambda_S=0.002940717968158424; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 255/267 local [11/20, 119/200] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 3: OK LOCAL_OK=True lambda_S=0.002399714518105611; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 256/267 local [119/200, 53/80] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 4: OK LOCAL_OK=True lambda_S=0.0009210791031364352; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 257/267 local [53/80, 1141/1600] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 5: OK LOCAL_OK=True lambda_S=0.003435728431213647; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 258/267 local [1141/1600, 101/128] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 6: OK LOCAL_OK=True lambda_S=0.0016202867409447208; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 259/267 local [101/128, 10829/12800] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 7: OK LOCAL_OK=True lambda_S=0.0045786283881170675; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 260/267 local [10829/12800, 4769/5120] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 8: OK LOCAL_OK=True lambda_S=0.0023196130787255242; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 261/267 local [4769/5120, 101941/102400] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 9: OK LOCAL_OK=True lambda_S=0.005699047149391845; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 262/267 local [101941/102400, 44713/40960] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 10: OK LOCAL_OK=True lambda_S=0.0028477644664235413; verdict True -> True; 0/4 report fields differ [1 s]
+recheck 263/267 local [44713/40960, 953309/819200] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 11: OK LOCAL_OK=True lambda_S=0.006560328489285894; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 264/267 local [953309/819200, 416753/327680] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 12: OK LOCAL_OK=True lambda_S=0.002910190392867662; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 265/267 local [416753/327680, 8866501/6553600] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 13: OK LOCAL_OK=True lambda_S=0.006766772683477029; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 266/267 local [8866501/6553600, 37060327/26214400] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 14: OK LOCAL_OK=True lambda_S=0.008431909649516456; verdict True -> True; 0/4 report fields differ [0 s]
+recheck 267/267 local [37060327/26214400, 3/2] localS/cover2q_1o2_3o2_tau1e-6.jsonl line 15: OK LOCAL_OK=True lambda_S=0.005888312225579284; verdict True -> True; 0/4 report fields differ [1 s]
+recheck done: 267 OK, 0 FAILED, verdict changed vs the stored reports: 0; originals in pre_recheck/20261117_023453; 5244 s
+range_check: s in [1/3, 7/4], route=local, local=cover2q (exact), freshness=on
+
+component                    used dropped  certified (within range)      gaps
+case1 (cut -9/10)              22       0  [1/3, 7/4]                    -
+slab [-99/100, -49/50]         21       0  [1/3, 7/4]                    -
+slab [-49/50, -24/25]          21       0  [1/3, 7/4]                    -
+slab [-24/25, -47/50]          23       0  [1/3, 7/4]                    -
+slab [-47/50, -93/100]         23       0  [1/3, 7/4]                    -
+slab [-93/100, -183/200]       23       0  [1/3, 7/4]                    -
+slab [-183/200, -9/10]         21       0  [1/3, 7/4]                    -
+cap [-1, -99/100]              36       9  [1/3, 7/4]                    -
+local lemma                    77       0  [1/3, 7/4]                    -
+
+NOT_OK  cap [11/12, 1] capR/pieces/check_capR_11_12__1_1.txt: stale: input capS/cert_cap_s11_12_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:12:15; stale: input capS/cert_cap_s1_1_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:12:15; stale: input capR/cert_dirs_D12.json modified 11-17 02:13:37 >= run start ~11-17 02:12:15; stale: checker capR/check_capR.py modified 11-17 02:13:37 >= run start ~11-17 02:12:15
+NOT_OK  cap [1, 13/12] capR/pieces/check_capR_1_1__13_12.txt: stale: input capS/cert_cap_s1_1_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:11:57; stale: input capS/cert_cap_s13_12_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:11:57; stale: input capR/cert_dirs_D12.json modified 11-17 02:13:37 >= run start ~11-17 02:11:57; stale: checker capR/check_capR.py modified 11-17 02:13:37 >= run start ~11-17 02:11:57
+NOT_OK  cap [2/3, 3/4] capR/pieces/check_capR_2_3__3_4.txt: stale: input capS/cert_cap_s2_3_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: input capS/cert_cap_s3_4_node_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: input capR/cert_dirs_D12.json modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: checker capR/check_capR.py modified 11-17 02:13:37 >= run start ~11-17 02:13:35
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8.txt: stale: input capS/cert_cap_s11_12_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: input capS/cert_cap_s13_12_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: input capR/cert_dirs_D12.json modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: checker capR/check_capR.py modified 11-17 02:13:37 >= run start ~11-17 02:13:35
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8_os.txt: stale: input capS/cert_cap_s11_12_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: input capS/cert_cap_s13_12_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: input capR/cert_dirs_D12.json modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: checker capR/check_capR.py modified 11-17 02:13:37 >= run start ~11-17 02:13:35
+NOT_OK  cap [11/12, 1] capR/pieces_nsub/check_capR_11_12__1_1_nsub1.txt: stale: input capS/cert_cap_s11_12_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:12:23; stale: input capS/cert_cap_s1_1_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:12:23; stale: input capR/cert_dirs_D12.json modified 11-17 02:13:37 >= run start ~11-17 02:12:23; stale: checker capR/check_capR.py modified 11-17 02:13:37 >= run start ~11-17 02:12:23
+NOT_OK  cap [1, 13/12] capR/pieces_nsub/check_capR_1_1__13_12_nsub1.txt: stale: input capS/cert_cap_s1_1_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:12:14; stale: input capS/cert_cap_s13_12_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:12:14; stale: input capR/cert_dirs_D12.json modified 11-17 02:13:37 >= run start ~11-17 02:12:14; stale: checker capR/check_capR.py modified 11-17 02:13:37 >= run start ~11-17 02:12:14
+NOT_OK  cap [2/3, 3/4] capR/pieces_nsub/check_capR_2_3__3_4_nsub4_os.txt: stale: input capS/cert_cap_s2_3_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: input capS/cert_cap_s3_4_node_D12.json.gz modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: input capR/cert_dirs_D12.json modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: checker capR/check_capR.py modified 11-17 02:13:37 >= run start ~11-17 02:13:35
+NOT_OK  cap [3/4, 1] capR/pieces_nsub/check_capR_negctrl_3_4__1_nsub4_os.txt: stale: input capS/cert_cap_s3_4_D12.json modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: input cap1/cert_cap_coulomb_D12.json modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: input capR/cert_dirs_D12.json modified 11-17 02:13:37 >= run start ~11-17 02:13:35; stale: checker capR/check_capR.py modified 11-17 02:13:37 >= run start ~11-17 02:13:35
+WARN cellsS/results.jsonl: 9 piece record(s) without `certs` ignored (cell labels are not trusted)
+NOTE authentication of the 267 used pieces: 267 by sha256 (checker + inputs), 0 by the mtime fallback (reports without hashes)
+NOTE recheck: 267 OK, 0 FAILED, verdict changed vs the stored reports: 0; regenerated reports read back from disk; originals in pre_recheck/20261117_023453
+CHECK ok   cap cell [-1, -99/100] hard-coded in check_capR.py (fmpq(-99, 100), Fr(-99, 100) assert)
+CHECK ok   check_localS.check_piece uses r = sqrt7 (11/2) tau, tau exact (qarb)
+CHECK ok   check_localS.qarb: Fraction -> arb(num) / arb(den)
+CHECK ok   check_localS cover2q reads a, b, tau as Fractions
+CHECK ok   cell boundaries -1 < -99/100 < -9/10
+NOTE local tau from file name '1e-6' read as exact: 1/1000000
+NOTE local files: localS/cover2q_1o20_48o25_tau1e-6.jsonl, localS/cover2q_1o2_3o2_tau1e-6.jsonl  (float cover2 files only with --local-legacy)
+NOTE range_check.py sha256 28de4aa25fc0f4e93d8a27c0f53d114538e97f8f2feea2df2f2813054924a438 (this run: python 3.12.3, python-flint 0.6.0)
+NOTE versions recorded by the used reports: python 3.12.3, python-flint 0.6.0 (267)
+NOTE recheck status: 267 of the 267 used pieces are recorded as re-run by a --recheck with the current report (what --recheck-new may skip)
+NOTE all 7 checker scripts unchanged (sha256) since the previous run (2026-11-07 21:11:34)
+WARN python version of this run changed since the previous run: 3.9.6 -> 3.12.3
+WARN versions recorded by the used reports changed since the previous run: {'python 3.9.6, python-flint 0.6.0': 267} -> {'python 3.12.3, python-flint 0.6.0': 267}
+
+RANGE_OK [1/3, 7/4] route=local
+--- exit status 0 ---

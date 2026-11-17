@@ -1,0 +1,9 @@
+case1             13 OK pieces  covers [1/3, 7/4]
+slab_99_98        21 OK pieces  covers [1/3, 7/4]
+slab_98_96        21 OK pieces  covers [1/3, 7/4]
+slab_96_94        23 OK pieces  covers [1/3, 7/4]
+slab_94_93        23 OK pieces  covers [1/3, 7/4]
+slab_93_915       23 OK pieces  covers [1/3, 7/4]
+slab_915_90       21 OK pieces  covers [1/3, 7/4]
+tiling: 25 elementary s-intervals, all tiled: Case 1 (cut -9/10) + slabs chaining -99/100 -> -9/10
+CELLS_RANGE_OK  s in [1/3, 7/4] x {Case 1, six slabs tiling t01 in [-99/100, -9/10]}  (records + sha256; run --recheck to re-verify)

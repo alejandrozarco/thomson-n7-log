@@ -1,0 +1,13 @@
+{
+  "challenge_module": "RieszN7.Release.Core12Challenge",
+  "solution_module": "RieszN7.Release.Core12Solution",
+  "theorem_names": [
+    "ThomsonN7Riesz.riesz_seven_core",
+    "ThomsonN7Riesz.riesz_seven_unique_core"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

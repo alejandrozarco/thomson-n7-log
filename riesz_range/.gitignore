@@ -1,0 +1,13 @@
+# Bulk data of this directory: not in git, fetched and verified by fetch_bulk.sh (files listed in BULK_SHA256SUMS)
+/cap_rr/
+/exports/
+/n7_interval/cap1/*.json
+/n7_interval/capR/cert_dirs_D12.json
+/n7_interval/capR/pieces/
+/n7_interval/capR/pieces_nsub/
+/n7_interval/capS/*.json
+/n7_interval/capS/*.json.gz
+/n7_interval/cellsS/certs_*/
+/n7_interval/cellsS/*.jsonl
+/n7_interval/cellsS/logs/
+/n7_interval/localS/*.jsonl

@@ -3,6 +3,8 @@ message: "If you use this material, please cite it as below. Not peer reviewed. 
 title: "The pentagonal bipyramid as the unique logarithmic-energy minimiser for seven points on the sphere: an unreviewed Lean 4 warrant (Conjecture 1 of Armentano et al.)"
 type: software
 doi: "10.5281/zenodo.23086382"
+version: "v2.8"
+date-released: "2026-11-17"
 authors:
   - name: alejandrozarco
 repository-code: "https://github.com/alejandrozarco/thomson-n7-log"
@@ -11,15 +13,17 @@ abstract: >-
   sphere S^2, the regular pentagonal bipyramid uniquely minimises the logarithmic energy, up to orthogonal
   transformations and relabelling (Conjecture 1 of Armentano et al., J. Symbolic Comput. 137 (2026)); Comparator and
   the independent checker nanoda accept it. The same is stated and checked for the Riesz s = 2 energy, and, as a
-  second check of H. Tran's Lean theorem, with this repository's own certificates, for the Coulomb energy. AI-produced,
-  not peer reviewed. The repository also contains the exact certificates with independent checkers.
+  second check of H. Tran's Lean theorem, with this repository's own certificates, for the Coulomb energy; and for the
+  Riesz s-energy for every real s with 1/3 <= s <= 7/4 (riesz_range/; Comparator, run without a sandbox and with
+  prebuilt imports, and nanoda accept it). AI-produced, not peer reviewed. The repository also contains the exact certificates with independent checkers.
 keywords:
   - Thomson problem
   - logarithmic energy
   - Riesz energy
   - Coulomb energy
   - pentagonal bipyramid
-  - computer-assisted proof
+  - computer-assisted mathematics
+  - Riesz s-energy
   - Lean 4
 license: Apache-2.0
 references:
@@ -56,6 +60,16 @@ references:
     identifiers:
       - type: url
         value: "https://arxiv.org/abs/1307.2834"
+  - type: article
+    title: "Extremal arrangements of points and unit charges on a sphere: equilibrium configurations revisited"
+    authors:
+      - {given-names: T. W., family-names: Melnyk}
+      - {given-names: O., family-names: Knop}
+      - {given-names: W. R., family-names: Smith}
+    journal: "Canadian Journal of Chemistry"
+    volume: 55
+    year: 1977
+    doi: "10.1139/v77-246"
   - type: article
     title: "Characterization of Logarithmic Fekete Critical Configurations of at Most Six Points in All Dimensions"
     authors:

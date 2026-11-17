@@ -3,15 +3,17 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23086382.svg)](https://doi.org/10.5281/zenodo.23086382)
 
 Status: **computational certificates and a Lean 4 formalisation, not peer reviewed.** Prepared 2026-09-29; Lean
-formalisation added 2026-10-01; Coulomb case (`coulomb/`) added 2026-10-08. **Produced by AI models** under the direction of the repository owner; see
+formalisation added 2026-10-01; Coulomb case (`coulomb/`) added 2026-10-08; Riesz $`s`$-energy on the interval
+$`1/3 \le s \le 7/4`$ (`riesz_range/`) added 2026-11-17. **Produced by AI models** under the direction of the repository owner; see
 [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md).
 
 > [!IMPORTANT]
 > This repository is a public, timestamped, AI-produced **warrant** for Conjecture 1 of Armentano et al.
 > (J. Symbolic Comput. 137 (2026), 102570; arXiv:2502.10152), that the pentagonal bipyramid is the unique minimiser of
-> the logarithmic energy of seven points on $`S^2`$, and for its Riesz $`s = 2`$ analogue: a machine-checked argument
+> the logarithmic energy of seven points on $`S^2`$, for its Riesz $`s = 2`$ analogue and, in `riesz_range/`, for the
+> Riesz $`s`$-energy for every $`s`$ in the interval $`1/3 \le s \le 7/4`$: a machine-checked argument
 > that no human has yet digested. We do not regard the question as settled by it. Independent verification and
-> human-readable expositions are welcome, and credit for a human-readable proof belongs to whoever writes one. To
+> human-readable expositions are welcome, and credit for a human-readable argument belongs to whoever writes one. To
 > refer to the computational result, please cite the archived repository
 > ([10.5281/zenodo.23086382](https://doi.org/10.5281/zenodo.23086382)). Questions, checks and corrections:
 > [GitHub issues](https://github.com/alejandrozarco/thomson-n7-log/issues).
@@ -79,11 +81,11 @@ the logarithmic case split.
 `lean/LogN7/Challenge.lean` states, with `sorry`, that the regular pentagonal bipyramid minimises
 `logEnergy x = ∑ i, ∑ j ∈ Finset.Ioi i, -Real.log ‖x i - x j‖` over seven pairwise distinct unit vectors in
 $`\mathbb{R}^3`$, and that every minimiser is its image under a linear isometry of $`\mathbb{R}^3`$ after a
-relabelling. `lean/LogN7/Solution.lean` proves both statements over the same definitions. `#print axioms` reports
-`[propext, Classical.choice, Quot.sound]` for both. The proof contains no `sorry` and no `native_decide`, and every
-certificate check is a `Bool` computation closed by `decide +kernel`.
+relabelling. The kernel checks both statements in `lean/LogN7/Solution.lean` over the same definitions. `#print axioms` reports
+`[propext, Classical.choice, Quot.sound]` for both. Apart from the two statement placeholders in `Challenge.lean`, the Lean development contains no `sorry`; it uses no `native_decide`, and every
+certificate check is a `Bool` computation decided by `decide +kernel`.
 
-The formal proof uses the Case 1 and slab certificates of `certificates/cells/`. For the cap it uses
+The Lean development uses the Case 1 and slab certificates of `certificates/cells/`. For the cap it uses
 `certificates/cert_cap_log_D12_short.json`, the cap certificate re-rounded to shorter rationals. This certificate has
 the same bound $`e - E(P) = -7.294 \cdot 10^{-17}`$ and passes `check_cert.py` and `check_minorant.py`
 (`verification/check_cert_short.txt`, `verification/check_minorant_short.txt`). The local lemma enters in its form L′.
@@ -96,7 +98,7 @@ is okay!". An earlier version (154 modules,
 before the upstream-code changes described in `lean/README.md`) passed on 2026-10-01. The records are in
 `verification/lean/`.
 
-See `lean/OVERVIEW.md` for an overview of the formal proof, and `lean/README.md` for the module structure, the build
+See `lean/OVERVIEW.md` for an overview of the Lean development, and `lean/README.md` for the module structure, the build
 and the measured costs. Parts of the supporting library come
 from the Lean formalisation of the Coulomb case by Hung Tran, [huwngtran/thomson-n7-lean](https://github.com/huwngtran/thomson-n7-lean)
 (commit `25f2fa5`). Declarations used unchanged are regenerated from that repository by `lean/regen.sh` and are not
@@ -161,6 +163,31 @@ and the generic machinery adapted from his code, so it is not independent of his
 no flat second-order direction, so no soft-mode conditions and no quartic local lemma are needed. See
 `coulomb/README.md`.
 
+## Riesz $`s`$ on the interval $`1/3 \le s \le 7/4`$
+
+`riesz_range/` is directed at the Riesz $`s`$-energy $`E_s(x) = \sum_{i \lt j} \lVert x_i - x_j \rVert^{-s}`$ of seven
+points for every real $`s`$ with $`1/3 \le s \le 7/4`$ at once: $`E_s(x) \ge E_s(P)`$ for seven pairwise distinct
+points on $`S^2`$, with equality only on the orbit of $`P`$ under orthogonal maps and relabelling. Status: computational
+results and a Lean 4 formalisation, not peer reviewed, AI-produced ([`AI_DISCLOSURE.md`](AI_DISCLOSURE.md)).
+- The same case split (Case 1, six slabs, the cap) is covered piece by piece in $`s`$: exact node certificates and
+  Python checkers certify each piece for every real $`s`$ in a sub-interval, and `riesz_range/n7_interval/range_check.py`
+  decides in exact arithmetic that the 267 used pieces cover $`[1/3, 7/4]`$ (RANGE_OK).
+- `riesz_range/lean/RieszN7/Release/FullChallenge.lean` states `ThomsonN7Riesz.riesz_seven_range` and
+  `ThomsonN7Riesz.riesz_seven_unique_range` (hypothesis `1 / 3 ≤ s ∧ s ≤ 7 / 4`), and the kernel checks them in
+  `FullSolution.lean`: `#print axioms` of the theorems they apply (`RieszN7.Full.*`) gives `[propext,
+  Classical.choice, Quot.sound]`; Comparator and nanoda enforce the same three axioms on the `ThomsonN7Riesz`
+  theorems; nanoda accepts an export of both theorems and rejects two tampered copies; Comparator (`riesz_range/lean/comparator_full.json`, run without the
+  landrun sandbox and with prebuilt imports) reported "Your solution is okay!". Records:
+  `verification/lean/riesz_range/`; comparison of this copy with the checked files: `verification/riesz_range/RC_EXACTNESS.txt`.
+- The certificate files and per-piece reports of `riesz_range/` (about 0.45 GB) and the Lean kernel exports are not in
+  git but in a separate Zenodo archive; `sh riesz_range/fetch_bulk.sh` downloads and verifies them (see
+  `riesz_range/README.md`, Bulk data).
+- Nothing outside $`1/3 \le s \le 7/4`$ is treated, and the putative optimality of $`P`$ for all $`0 \le s \le 2`$
+  (Melnyk, Knop and Smith 1977; Nerattini, Brauchart and Kiessling) is not claimed. The method, including
+  certificates on intervals of $`s`$, is that of Kryvonos, Liehr and Taylor for $`N = 8`$ (for eight points their
+  treatment of all $`s \ge 0`$ is computer-assisted and in their companion repository; their Lean-verified Riesz
+  result is for all sufficiently large $`s`$). See `riesz_range/README.md`.
+
 ## Contents
 
 | path | content |
@@ -173,13 +200,14 @@ no flat second-order direction, so no soft-mode conditions and no quartic local 
 | `local/LOCAL_LEMMA.md`, `local/check_local_rigorous.py` | the quartic local lemma and its checker |
 | `soft_mode/verify_soft_mode.py` | second derivative of the Riesz s-energy along the k = 2 ring mode (vanishes at s = 0 and s = 2) |
 | `generate/` | scripts that produced the certificates (optional; see below) |
-| `verification/` | outputs of every checker from the verification run, and the environment; `verification/lean/`: clean Lean build records |
+| `verification/` | outputs of every checker from the verification run, and the environment; `verification/lean/`: clean Lean build records; `verification/riesz_range/`, `verification/lean/riesz_range/`: records for `riesz_range/` |
 | `lean/` | Lean 4 formalisation of the statement and the argument; overview in `lean/OVERVIEW.md`, details in `lean/README.md` |
 | `METHOD.md` | structure of the argument; which steps are checked by which tool; references |
 | `COVERAGE.md` | coverage table generated by `make_coverage.py` |
 | `figures/` | figures and the script that makes them (`make_figures.py`) |
 | `riesz2/` | exact certificates and checkers for the Riesz $s = 2$ kernel, and its Lean formalisation (`riesz2/lean/`); see `riesz2/README.md` |
 | `coulomb/` | exact certificates and checkers for the Coulomb kernel ($s = 1$; a second check of Hung Tran's theorem), and a Lean 4 development (`coulomb/lean/`); see `coulomb/README.md` |
+| `riesz_range/` | Riesz $s$-energy for every $s$ with $1/3 \le s \le 7/4$: checkers (`riesz_range/n7_interval/`; the certificates and per-piece reports are in a separate Zenodo archive, fetched and verified by `riesz_range/fetch_bulk.sh`), and a Lean 4 development (`riesz_range/lean/`); see `riesz_range/README.md` |
 | `formalization.yaml` | project metadata in the community format ([formalization.yaml](https://github.com/mathlib-initiative/formalization.yaml)): sources, status, axioms, how it was produced, review status |
 | `AI_DISCLOSURE.md` | how the repository was produced (AI models), and what is checked by software |
 | `CITATION.cff`, `.zenodo.json` | citation metadata |
@@ -210,11 +238,13 @@ python3 coulomb/check_cap1.py coulomb/cert_cap_coulomb_D12_short.json         # 
 python3 coulomb/check_coerc1.py coulomb/cert_cap_coulomb_D12_short.json 1e-16 # Coulomb coercivity             (<1 s)
 python3 coulomb/check_local1.py                                              # Coulomb local lemma            (<1 s)
 python3 figures/make_figures.py                                              # figures, matplotlib 3.9.4      (~5 s)
+sh riesz_range/fetch_bulk.sh                                                 # riesz_range/ bulk data (separate archive): BULK OK
+(cd riesz_range/n7_interval && python3 range_check.py --range 1/3 7/4 --no-json)  # Riesz 1/3 <= s <= 7/4: RANGE_OK (~6 s)
 sha256sum -c MANIFEST.sha256                                                 # or: shasum -a 256 -c MANIFEST.sha256
 ```
 
 Each checker exits with status 0 only if all of its checks pass. For the Lean formalisation see the Build section of
-`lean/README.md`.
+`lean/README.md`; for `riesz_range/` (Python re-checks of every piece, the Lean build) see `riesz_range/README.md`.
 
 ## Generators (not needed for verification)
 
@@ -233,6 +263,7 @@ Cells: `POLYD=12 python3 sdp_cell.py slab:-0.93:-0.9 mu 3e-5`, then `python3 rou
 
 Apache License 2.0 (`LICENSE`), for the code, certificates and text of this repository. Not covered:
 - the upstream code from [huwngtran/thomson-n7-lean](https://github.com/huwngtran/thomson-n7-lean), which has no
-  licence. Under `lean/`, `riesz2/lean/` and `coulomb/lean/` it is regenerated by `regen.sh` and not stored here;
+  licence. Under `lean/`, `riesz2/lean/`, `coulomb/lean/` and `riesz_range/lean/` it is regenerated by `regen.sh` and
+  not stored here;
 - the upstream material in the adapted declarations, each of which names the upstream declaration it adapts
   (`lean/README.md`, Upstream code). The licence covers only this repository's changes to them.

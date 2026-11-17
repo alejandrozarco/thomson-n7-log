@@ -1,0 +1,23 @@
+	Command being timed: "<tools>/lean4export/.lake/build/bin/lean4export RieszN7.Release.FullSolution -- ThomsonN7Riesz.riesz_seven_range ThomsonN7Riesz.riesz_seven_unique_range"
+	User time (seconds): 17131.14
+	System time (seconds): 211.63
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:54:48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9985180
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 133649
+	Minor (reclaiming a frame) page faults: 2591366
+	Voluntary context switches: 176416
+	Involuntary context switches: 110159
+	Swaps: 0
+	File system inputs: 17296391
+	File system outputs: 3944352
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,21 @@
+2026-11-13T18:37:04+00:00 start pid 559428 (wait for pid 558935)
+2026-11-13T18:37:04+00:00 346 modules to rebuild; never deployed, skipped: RieszN7.Check.Phase1Axioms RieszN7.Test.BridgeAlg; release: Core12Challenge Core12NegAxiom Core12NegStatement Core12Solution FullChallenge FullNegAxiom FullNegStatement FullSolution
+2026-11-13T18:37:21+00:00 aside copies done
+2026-11-13T20:47:08+00:00 build_range.sh rc=0
+2026-11-13T20:47:08+00:00 lean.lock acquired
+2026-11-13T20:47:28+00:00 step basicfix_build_Core12Challenge rc=0 rc=0 wall=20s min_MemAvailable=17607428kB peak_session_rss_kB=2937380 min_MemAvailable_kB=17989748 2026-11-13T20:47:14+00:00 max_rss_kB=6686608
+2026-11-13T20:47:48+00:00 step basicfix_build_Core12NegAxiom rc=0 rc=0 wall=20s min_MemAvailable=17595104kB peak_session_rss_kB=3574880 min_MemAvailable_kB=17960736 2026-11-13T20:47:34+00:00 max_rss_kB=6686024
+2026-11-13T20:48:08+00:00 step basicfix_build_Core12NegStatement rc=0 rc=0 wall=20s min_MemAvailable=18029208kB peak_session_rss_kB=3736792 min_MemAvailable_kB=17968300 2026-11-13T20:47:54+00:00 max_rss_kB=6686204
+2026-11-13T20:48:28+00:00 step basicfix_build_Core12Solution rc=0 rc=0 wall=20s min_MemAvailable=17537380kB peak_session_rss_kB=7555476 min_MemAvailable_kB=17583360 2026-11-13T20:48:19+00:00 max_rss_kB=7585548
+2026-11-13T20:48:49+00:00 step basicfix_build_FullChallenge rc=0 rc=0 wall=20s min_MemAvailable=17597784kB peak_session_rss_kB=3460428 min_MemAvailable_kB=17997640 2026-11-13T20:48:35+00:00 max_rss_kB=6686588
+2026-11-13T20:49:09+00:00 step basicfix_build_FullNegAxiom rc=0 rc=0 wall=20s min_MemAvailable=17593224kB peak_session_rss_kB=3141196 min_MemAvailable_kB=17971872 2026-11-13T20:48:55+00:00 max_rss_kB=6686076
+2026-11-13T20:49:29+00:00 step basicfix_build_FullNegStatement rc=0 rc=0 wall=20s min_MemAvailable=17597000kB peak_session_rss_kB=2882152 min_MemAvailable_kB=17984428 2026-11-13T20:49:15+00:00 max_rss_kB=6686860
+2026-11-13T20:49:49+00:00 step basicfix_build_FullSolution rc=0 rc=0 wall=20s min_MemAvailable=17551932kB peak_session_rss_kB=7960216 min_MemAvailable_kB=17548968 2026-11-13T20:49:40+00:00 max_rss_kB=8005368
+2026-11-13T20:49:49+00:00 Basic olean differs from the S1 committed-recipe rebuild
+2026-11-13T20:49:49+00:00 AxiomsCore: 2 of 2 theorems with exactly [propext, Classical.choice, Quot.sound]
+2026-11-13T20:49:49+00:00 AxiomsFull: 2 of 2 theorems with exactly [propext, Classical.choice, Quot.sound]
+2026-11-14T01:44:41+00:00 step basicfix_export_full rc=0 rc=0 wall=17692s min_MemAvailable=15655528kB peak_session_rss_kB=9991316 min_MemAvailable_kB=15715376 2026-11-14T01:44:34+00:00 max_rss_kB=9985180
+2026-11-14T01:45:14+00:00 export full: 2004582689 bytes, sha256 e994407ff4fd90b0b57c28edc3ac1d2c66e8c28bb00a7a4d4bcdf4fe2fc3ba5a = certified (identical)
+2026-11-14T05:21:42+00:00 step basicfix_export_core rc=0 rc=0 wall=12984s min_MemAvailable=16000996kB peak_session_rss_kB=9013568 min_MemAvailable_kB=16001776 2026-11-14T05:21:37+00:00 max_rss_kB=9005844
+2026-11-14T05:22:16+00:00 export core: 1465454494 bytes, sha256 878884835761bf88f0523516938e0095b88ba9c506d9bc931b0b44cf34cf1883 = certified (identical)
+2026-11-14T05:22:16+00:00 BASICFIX RESULT: FAIL basic

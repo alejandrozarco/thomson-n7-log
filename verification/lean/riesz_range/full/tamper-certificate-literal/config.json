@@ -1,0 +1,4 @@
+{ "export_file_path": "<m2>/tampered.ndjson", "use_stdin": false, "num_threads": 1,
+  "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"], "unpermitted_axiom_hard_error": true,
+  "nat_extension": true, "string_extension": true,
+  "pp_declars": [], "pp_to_stdout": true, "print_axioms": false, "print_success_message": true }

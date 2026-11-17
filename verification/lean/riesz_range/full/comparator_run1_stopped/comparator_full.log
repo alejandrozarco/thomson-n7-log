@@ -1,0 +1,15 @@
+Building RieszN7.Release.FullChallenge
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build RieszN7.Release.FullChallenge
+lake shim: lean -o <build>/.lake/build/lib/lean/RieszN7/Release/FullChallenge.olean RieszN7/Release/FullChallenge.lean (LEAN_PATH as build_range.sh)
+RieszN7/Release/FullChallenge.lean:28:8: warning: declaration uses `sorry`
+RieszN7/Release/FullChallenge.lean:32:8: warning: declaration uses `sorry`
+lake shim: RieszN7.Release.FullChallenge rc=0 wall=279s
+Build completed successfully.
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec <tools>/lean4export/.lake/build/bin/lean4export RieszN7.Release.FullChallenge -- Quot Quot.mk Quot.lift Quot.ind ThomsonN7Riesz.riesz_seven_range ThomsonN7Riesz.riesz_seven_unique_range propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ThomsonN7Riesz.riesz_seven_range, ThomsonN7Riesz.riesz_seven_unique_range, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from RieszN7.Release.FullChallenge
+Building RieszN7.Release.FullSolution
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build RieszN7.Release.FullSolution
+lake shim: lean -o <build>/.lake/build/lib/lean/RieszN7/Release/FullSolution.olean RieszN7/Release/FullSolution.lean (LEAN_PATH as build_range.sh)
+lake shim: RieszN7.Release.FullSolution rc=0 wall=84s
+Build completed successfully.
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec <tools>/lean4export/.lake/build/bin/lean4export RieszN7.Release.FullSolution -- Quot Quot.mk Quot.lift Quot.ind ThomsonN7Riesz.riesz_seven_range ThomsonN7Riesz.riesz_seven_unique_range propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam

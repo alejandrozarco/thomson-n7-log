@@ -1,0 +1,32 @@
+# Lake configuration for this directory (written for the public copy; the recorded build did not use Lake for the
+# RieszN7 modules, see ../README.md, section "Reproduce", paragraph "Lean", and
+# ../../verification/riesz_range/RC_EXACTNESS.txt). It has not been tested.
+# The package name is that of lake-manifest.json, which is the manifest of the workspace that provided Mathlib and the
+# ThomsonGen / LogLean modules to the recorded build.
+name = "CoulombN7"
+defaultTargets = ["RieszN7"]
+
+# Mathlib is the only dependency (same revision as the Coulomb formalisation).
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "d13f23b723b8a846827a245b89c10fc7d3f11612"
+
+# N = 7 Riesz s-energy on the interval 1/3 <= s <= 7/4: the import closure of RieszN7.Release.*, RieszN7.Check.Axioms*
+# and RieszN7.Main* (5 080 modules, listed in build_order.txt).
+[[lean_lib]]
+name = "RieszN7"
+globs = ["RieszN7.+"]
+
+# The polynomial/Moebius calculus of the log formalisation (LogLean/MinorCore.lean only).
+[[lean_lib]]
+name = "LogLean"
+globs = ["LogLean.+"]
+
+# Support library: stored generic modules plus modules regenerated from the upstream Coulomb formalisation by ./regen.sh.
+# regen.sh writes the whole upstream development; the RieszN7 closure uses 18 of the regenerated modules
+# (upstream_regenerated.sha256). Building this library as a target (`lake build ThomsonGen`) would compile all of them.
+[[lean_lib]]
+name = "ThomsonGen"
+globs = ["ThomsonGen.+"]

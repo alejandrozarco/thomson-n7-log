@@ -1,0 +1,152 @@
+N = 7 Riesz s-energy on the interval 1/3 <= s <= 7/4, Lean development riesz_range/lean/: build, axioms, second
+kernel, Comparator (runs 2026-11-07 to 2026-11-15; record written 2026-11-17)
+=====================================================================================================================
+
+AI-produced, not peer-reviewed. Paths in the logs of this directory are scrubbed: <build> is the build directory (the
+deployed copy of riesz_range/lean/ RieszN7 sources plus its .lake/build output), <deps> the workspace that provided
+Mathlib and the ThomsonGen / LogLean oleans, <tools> the pinned checkers, <logs>, <work> and similar are other working
+directories of the same machine. The rules are listed in ../../riesz_range/RC_EXACTNESS.txt. Tool pins: tools.txt.
+The scripts in scripts_as_run/ are records of what ran, not runnable outside the recorded machine: they use the
+placeholders above and helpers that are not included (tp/*.py, hb.sh, env.sh, ext/comparator_after_full.sh, among
+others). In their comments, pub_range = <build>, pub_n7c = <deps>, and pub_local1 is another working directory of the
+same machine (its scripts/second-kernel.sh and scripts/tools.sh are not included).
+
+Statements (riesz_range/lean/RieszN7/Release/FullChallenge.lean; Solution: FullSolution.lean)
+  ThomsonN7Riesz.riesz_seven_range, ThomsonN7Riesz.riesz_seven_unique_range, for real s with 1/3 <= s <= 7/4.
+  The [1/2, 3/2] versions ThomsonN7Riesz.riesz_seven_core / riesz_seven_unique_core (Core12Challenge/Solution.lean)
+  were checked earlier; see "Core12" below for what was and was not run on them.
+
+Sources
+  * The 5 080 RieszN7 modules in riesz_range/lean/ are byte-identical (sha256) to the deployed sources that were built
+    and checked (compared 2026-11-17; ../../riesz_range/RC_EXACTNESS.txt). 23 of them (leaf modules: Range/Cover,
+    Range/Cells/*, Range/CellsFull/*, Range/Cap, Range/CapFull, MainCore, MainFull and the four Release
+    Challenge/Solution files) had docstring-only edits installed on 2026-11-13 18:28 UTC, after the nanoda runs and
+    before the rebuild and re-export below, which shows that the exported kernel content did not change.
+  * ThomsonGen / LogLean: the 4 stored modules and LogLean/MinorCore.lean are identical to the deployed ones; the 18
+    regenerated upstream modules of the closure are reproduced by riesz_range/lean/regen.sh with the sha256 of
+    riesz_range/lean/upstream_regenerated.sha256 (= deployed; regen.sh run 2026-11-17, "regen OK", 20/20).
+
+Build (build/; scripts_as_run/build_range.sh, guarded.sh)
+  Each RieszN7 module compiled separately: `lean -j1 -DElab.async=false -o M.olean -i M.ilean M.lean`, LEAN_NUM_THREADS=1,
+  nice 19, LEAN_PATH = build output, then the <deps> oleans (ThomsonGen, LogLean, Mathlib and its dependencies), in
+  dependency order; the RieszN7 modules were never built with Lake. One line per module build in build/build.tsv (module,
+  exit code, wall s, peak RSS kB, user s, date). 5 072 of the 5 080 closure modules have a latest build.tsv line with
+  exit code 0; the remaining 8 are the Release modules, built by the release scripts (full/full_release.log,
+  core12/core_release.log, rebuild-reexport/basicfix.log). Largest peak RSS of a single module build among those
+  latest lines: 8 018 900 kB (RieszN7.MainFull). 1 789 module builds (1 787 distinct modules) ran on two other
+  machines and their oleans were copied in (build/build_remote.tsv, with the olean / ilean sha256 of each); the
+  export below was made from the oleans as deployed and re-checked by the Lean kernel (Comparator) and by nanoda on
+  the workstation.
+  build/final_full.log: assembly of RieszN7.Range.CapFull, RieszN7.MainFull, RieszN7.Check.AxiomsFull, 2026-11-11
+  06:12-06:13 UTC, rc 0.
+
+Axioms (axioms/; RieszN7/Check/AxiomsFull.lean, AxiomsCore.lean; logs of the 2026-11-13 rebuild, exit 0)
+  'RieszN7.Full.riesz_seven_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'RieszN7.Full.riesz_seven_unique_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'RieszN7.Core12.riesz_seven_core' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'RieszN7.Core12.riesz_seven_unique_core' depends on axioms: [propext, Classical.choice, Quot.sound]
+  AxiomsFull: 12.2 s, 7 969 392 kB; AxiomsCore: 11.5 s, 7 553 512 kB (wall, max RSS).
+  Source text (grep of riesz_range/lean/RieszN7, 2026-11-17): the word `sorry` occurs only in the Release Challenge
+  files (the two statement placeholders; Comparator warns about them, full/comparator_full.log) and in the negative
+  control files; `axiom` as a declaration keyword occurs only in the two NegAxiom control files.
+
+Export (full/full_release.log, full/second-kernel/export.time)
+  lean4export RieszN7.Release.FullSolution -- ThomsonN7Riesz.riesz_seven_range ThomsonN7Riesz.riesz_seven_unique_range
+  2026-11-11, 2 004 582 689 bytes, 28 390 428 lines,
+  sha256 e994407ff4fd90b0b57c28edc3ac1d2c66e8c28bb00a7a4d4bcdf4fe2fc3ba5a (not stored here: size);
+  wall 4:41:35, max RSS 10 496 156 kB.
+
+Second kernel, nanoda (full/second-kernel/; config.json: permitted axioms propext, Classical.choice, Quot.sound,
+unpermitted_axiom_hard_error true, 3 threads)
+  2026-11-11 11:26-18:11 UTC: "Checked 159413 declarations with no errors"; axioms printed: propext, Quot.sound,
+  Classical.choice; the two theorem statements are printed in nanoda-accept.out. Wall 24 279 s, max RSS 8 553 764 kB.
+  Negative control 1 (same run, script scripts_as_run/full_release.sh): the earliest natural-number literal with at least
+  15 digits that occurs once in the export, 997120304160296103051264000 -> 997120304160296103051264001 (1 byte), in a
+  copy: rejected, exit 101, "panicked at src/tc.rs:955:71: assertion failed: self.def_eq(u, v)" (type checker, not
+  parser); 1 thread, 451 s. This literal is in shared upstream material (the same literal was picked for Core12).
+  Negative control 2 (full/tamper-certificate-literal/; scripts_as_run/m2_tamper.sh, m2_pick.py): a 16-digit literal of
+  this development's certificate data, 6271646771347961 -> 6271646771347962 at export line 28 389 245, owning
+  declaration RieszN7.Cells.S99_98.P5o3_7o4.Spec.spec (1 byte; the export's sha256 was checked beforehand): rejected,
+  exit 101, same type-checker assertion; 1 thread, 2026-11-13 00:04-18:27 UTC (18.4 h).
+
+Comparator (full/; config riesz_range/lean/comparator_full.json: challenge RieszN7.Release.FullChallenge, solution
+RieszN7.Release.FullSolution, theorems ThomsonN7Riesz.riesz_seven_range / riesz_seven_unique_range, permitted axioms
+propext, Quot.sound, Classical.choice)
+  Negative controls, 2026-11-11 (comparator_full_neg_*.json; statement and axiom changed in
+  RieszN7/Release/FullNegStatement.lean, FullNegAxiom.lean):
+    neg_statement: rejected, exit 1, "theorem statement do not match: 'ThomsonN7Riesz.riesz_seven_range'" (100 s)
+    neg_axiom:     rejected, exit 1, "Illegal axiom detected: 'ThomsonN7Riesz.full_cheat'" (80 s)
+    (100 s and 80 s are the step walls of the wrapper in full/full_release.log; /usr/bin/time gives 1:36.85 and
+    1:12.37, full/comparator_full_neg_*.time)
+  Main run 1, 2026-11-11 18:20 - 2026-11-12 23:54 UTC: stopped by the job's own memory watchdog (MemAvailable below
+  3 GB because of an unrelated build on the same machine; exit 143). Not a check result; not counted
+  (full/comparator_run1_stopped/).
+  Main run 2, 2026-11-14 05:38:05 - 2026-11-15 23:45:47 UTC (started after the rebuild and re-export below, and after
+  10 min with no other heavy build and MemAvailable > 12 GB; full/comparator_run2_gate.log):
+    "Lean default kernel accepts the solution" / "Your solution is okay!", exit status 0
+    (full/comparator_full.log, full/full_release.log); /usr/bin/time -v (full/comparator_full.time): wall 42:07:33,
+    user 148 793 s, max RSS 10 441 756 kB (peak RSS of the whole process session 12 515 988 kB).
+  How Comparator ran (tools.txt): no sandbox (fake-landrun shim); `lake` was a stand-in that compiles only the
+  RieszN7.Release.* module and takes every import as a prebuilt .olean. Comparator's statement comparison and its kernel
+  replay therefore see the definitions as they are in the oleans of RieszN7.Basic, RieszN7.Core.Rpow,
+  ThomsonGen.Base and ThomsonGen.Preamble, not as recompiled from source. "Trusted definitions" below records the
+  checks that tie those oleans to the sources.
+  Kernel version: Comparator was built with Lean v4.35.0-rc3, so its kernel replay is by that kernel, on an export
+  written by lean4export built with v4.34.1; the v4.34.1 kernel checked every module at build time.
+
+Trusted definitions (trusted-definitions/; scripts_as_run/s1_check_v2.sh, s1_recipe.sh, s1_basic_variants.sh)
+  * sources: ThomsonGen/Preamble.lean, ThomsonGen/Base.lean, RieszN7/Core/Rpow.lean, RieszN7/Basic.lean as deployed
+    have the sha256 of the sources here (s1.log).
+  * PrintDefs.lean (#print of RieszN7.rieszEnergy, ThomsonN7.SphereConfig, ThomsonN7.pentBipyramid, ThomsonN7.R3,
+    RieszN7.phiS) against the deployed oleans and against oleans rebuilt from source: identical output
+    (print_DEPLOY.txt = print_FRESH.txt). PrintDefs does not print ThomsonN7.cyl, which pentBipyramid unfolds to;
+    cyl is covered by the olean reproduction of ThomsonGen/Preamble (next item). PrintDefs uses the default
+    pretty-printer options (pp.all false), so the outputs do not show the instances (HPow, Div) that the definitions
+    use; the kernel content is fixed by the olean reproduction. A future run would use pp.explicit true.
+  * olean reproduction by the recipes that built them (s1.log, "[recipe]" lines): ThomsonGen/Preamble and
+    ThomsonGen/Base (Lake recipe), RieszN7/Core/Rpow (build_range recipe): byte-identical. RieszN7/Basic: its olean
+    was not reproduced out of tree (s1.log, "[recipe]" and "[variants]": the four flag variants, all in one scratch
+    directory, give other bytes; cause not established, presumably the build path, since Rpow, built by the same
+    out-of-tree recipe, was reproduced). The in-place rebuild by the committed recipe is byte-identical to the olean it
+    replaced: comparator_rerun_v4.sh compared the two with cmp before relaunching Comparator
+    (scripts_as_run/comparator_rerun_v4.sh, logged in full/comparator_run2_gate.log, 2026-11-14T05:27:56, "Basic
+    rebuilt by committed recipe = deployed bytes"); on 2026-11-17 the sha256 of the deployed olean and of the copy
+    basicfix.sh set aside before rebuilding were both be84f5679638d35b7a119e4e4330a7aed2bb6dc9337c592670bcb5e14ff804e7
+    (this comparison has no log file).
+    Later on 2026-11-17, a build from a fresh clone by the committed recipe (build_range.sh's command, run in the root
+    of the fresh workspace with the relative source path) reproduced the deployed RieszN7/Basic olean byte for byte, and
+    also those of RieszN7/Core/Rpow and the two Challenge modules; Lake reproduced ThomsonGen/Preamble and
+    ThomsonGen/Base (route_check_2026-11-17.md). The earlier out-of-tree mismatch came from a scratch directory with
+    --root and absolute source paths; its cause was not investigated further.
+  * The other FAIL lines of s1.log: the first attempt (2026-11-12 23:54) did not compile (build_exit=[1]; lean was
+    called without --root, "input file must be contained in root directory"), so it reports every module and
+    PrintDefs as failed; the second attempt (v2, 2026-11-13 00:00) rebuilt all four modules with the build_range
+    recipe, also the two that Lake had built (Preamble, Base), whose oleans therefore differ, and Basic then differs
+    through its imports (scripts_as_run/s1_recipe.sh, header); only Rpow matched ("S1 RESULT: FAIL
+    ThomsonGen/Preamble ThomsonGen/Base RieszN7/Basic"; PrintDefs identical); the "[recipe]" run, with the recipe
+    that built each module, is the run that counts; its remaining item RieszN7/Basic ("S1 RECIPE RESULT: FAIL
+    RieszN7/Basic", "S1 BASIC VARIANTS: no variant reproduces the deployed bytes") is resolved as in the previous
+    item.
+
+Rebuild and identical re-export (rebuild-reexport/; scripts_as_run/basicfix.sh), 2026-11-13/14
+  Before basicfix.sh, a docstring-fix rebuild (docfix.sh, not included) was started and stopped after it had installed
+  the docstring edits; basicfix.sh superseded its rebuild and export phases (scripts_as_run/basicfix.sh, header).
+  346 modules rebuilt in place with build_range.sh, rc 0 (mods.txt: RieszN7.Basic, the modules that import it, and the
+  docstring-edited leaves; 2 listed modules that were never deployed were skipped); the 8 Release modules rebuilt;
+  axioms 2 of 2 clean for Full and for Core12; fresh exports:
+    full: 2 004 582 689 bytes, sha256 e994407f... = the export checked by nanoda and Comparator (identical)
+    core: 1 465 454 494 bytes, sha256 87888483... = the Core12 export checked by nanoda (identical)
+  basicfix.log ends with "BASICFIX RESULT: FAIL basic". The failing test compared the rebuilt Basic olean with the
+  out-of-tree rebuild of "Trusted definitions", which has other bytes (cause not established, presumably the build
+  path); the in-place rebuild equals the olean it replaced ("Trusted definitions"). The exports, the axiom checks and
+  the rebuild itself passed. The Comparator run 2 gate accepted this state explicitly (full/comparator_run2_gate.log).
+
+Core12 (s in [1/2, 3/2]; core12/)
+  export 2026-11-10, 1 465 454 494 bytes, 21 247 312 lines, sha256
+  878884835761bf88f0523516938e0095b88ba9c506d9bc931b0b44cf34cf1883; nanoda "Checked 122193 declarations with no
+  errors" (16 216 s, 3 threads); tampered copy (literal 997120304160296103051264000 -> ...001) rejected, exit 101,
+  type checker (420 s). Comparator negative controls: neg_statement rejected ("theorem statement do not match:
+  'ThomsonN7Riesz.riesz_seven_core'"), neg_axiom rejected ("Illegal axiom detected: 'ThomsonN7Riesz.core12_cheat'").
+  The main Comparator run for Core12 was started on 2026-11-11 06:14 UTC and stopped at 06:37 UTC, unfinished, when the
+  Full statement (which contains [1/2, 3/2]) became available; it never completed (core12/chain.log,
+  core12/comparator_core12_main_run_stopped.log). There is no Comparator acceptance of the Core12 theorems.

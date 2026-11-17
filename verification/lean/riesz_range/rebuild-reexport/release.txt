@@ -1,0 +1,8 @@
+RieszN7.Release.Core12Challenge
+RieszN7.Release.Core12NegAxiom
+RieszN7.Release.Core12NegStatement
+RieszN7.Release.Core12Solution
+RieszN7.Release.FullChallenge
+RieszN7.Release.FullNegAxiom
+RieszN7.Release.FullNegStatement
+RieszN7.Release.FullSolution

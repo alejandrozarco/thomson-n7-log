@@ -1,0 +1,29 @@
+Building RieszN7.Release.FullChallenge
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build RieszN7.Release.FullChallenge
+lake shim: lean -o <build>/.lake/build/lib/lean/RieszN7/Release/FullChallenge.olean RieszN7/Release/FullChallenge.lean (LEAN_PATH as build_range.sh)
+RieszN7/Release/FullChallenge.lean:28:8: warning: declaration uses `sorry`
+RieszN7/Release/FullChallenge.lean:32:8: warning: declaration uses `sorry`
+lake shim: RieszN7.Release.FullChallenge rc=0 wall=12s
+Build completed successfully.
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec <tools>/lean4export/.lake/build/bin/lean4export RieszN7.Release.FullChallenge -- Quot Quot.mk Quot.lift Quot.ind ThomsonN7Riesz.riesz_seven_range ThomsonN7Riesz.riesz_seven_unique_range propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ThomsonN7Riesz.riesz_seven_range, ThomsonN7Riesz.riesz_seven_unique_range, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from RieszN7.Release.FullChallenge
+Building RieszN7.Release.FullNegAxiom
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build RieszN7.Release.FullNegAxiom
+lake shim: lean -o <build>/.lake/build/lib/lean/RieszN7/Release/FullNegAxiom.olean RieszN7/Release/FullNegAxiom.lean (LEAN_PATH as build_range.sh)
+RieszN7/Release/FullNegAxiom.lean:19:35: warning: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+RieszN7/Release/FullNegAxiom.lean:23:42: warning: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+lake shim: RieszN7.Release.FullNegAxiom rc=0 wall=12s
+Build completed successfully.
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec <tools>/lean4export/.lake/build/bin/lean4export RieszN7.Release.FullNegAxiom -- Quot Quot.mk Quot.lift Quot.ind ThomsonN7Riesz.riesz_seven_range ThomsonN7Riesz.riesz_seven_unique_range propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ThomsonN7Riesz.riesz_seven_range, ThomsonN7Riesz.riesz_seven_unique_range, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from RieszN7.Release.FullNegAxiom
+uncaught exception: Illegal axiom detected: 'ThomsonN7Riesz.full_cheat'

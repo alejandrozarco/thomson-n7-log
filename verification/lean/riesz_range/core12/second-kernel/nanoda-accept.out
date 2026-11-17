@@ -1,0 +1,29 @@
+theorem ThomsonN7Riesz.riesz_seven_core (s : Real)
+  (hs :
+    And (LE.le (HDiv.hDiv (OfNat.ofNat 1) (OfNat.ofNat 2)) s) (LE.le s (HDiv.hDiv (OfNat.ofNat 3) (OfNat.ofNat 2)))) :
+  forall (x : Fin (OfNat.ofNat 7) → ThomsonN7.R3),
+  Membership.mem (ThomsonN7.SphereConfig (OfNat.ofNat 7)) x → LE.le (RieszN7.rieszEnergy s ThomsonN7.pentBipyramid)
+    (RieszN7.rieszEnergy s x) :=
+  _
+
+theorem ThomsonN7Riesz.riesz_seven_unique_core (s : Real)
+  (hs :
+    And (LE.le (HDiv.hDiv (OfNat.ofNat 1) (OfNat.ofNat 2)) s) (LE.le s (HDiv.hDiv (OfNat.ofNat 3) (OfNat.ofNat 2)))) :
+  forall (x : Fin (OfNat.ofNat 7) → ThomsonN7.R3),
+  Membership.mem (ThomsonN7.SphereConfig (OfNat.ofNat 7)) x → Eq (RieszN7.rieszEnergy s x)
+      (RieszN7.rieszEnergy s ThomsonN7.pentBipyramid) →
+  Exists
+    (fun (g : LinearIsometryEquiv (RingHom.id Real) ThomsonN7.R3 ThomsonN7.R3) =>
+    Exists
+      (fun (σ : Equiv.Perm (Fin (OfNat.ofNat 7))) =>
+      forall (i : Fin (OfNat.ofNat 7)),
+      Eq (x i) (DFunLike.coe g (ThomsonN7.pentBipyramid (DFunLike.coe σ i))))) :=
+  _
+
+axiom propext {a b : Prop} : Iff a b → Eq a b
+
+axiom Quot.sound.{u} {α : Sort u} {r : α → α → Prop} {a b : α} : r a b → Eq (Quot.mk r a) (Quot.mk r b)
+
+axiom Classical.choice.{u} {α : Sort u} : Nonempty α → α
+
+Checked 122193 declarations with no errors

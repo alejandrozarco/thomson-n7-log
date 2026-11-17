@@ -1,0 +1,83 @@
+2026-11-10T14:27:37+00:00 core_release start pid 1569387 phases: build export
+pin ok: lean4export 076e8e57707e813375e8f9da8bf989799ace9680
+pin ok: nanoda_lib 3a2407216ee84a75f9e1aead6803d0578be06ae7
+pin ok: comparator fd5d5bcf14177b187f66d4502071268d877887c3
+lean4export toolchain: leanprover/lean4:v4.34.1; comparator toolchain: leanprover/lean4:v4.35.0-rc3
+8c5d64ba68f4d3a68b3bcb7e1c5f188e35ae573b29470b8d4530a62324c9ddd1  <tools>/lean4export/.lake/build/bin/lean4export
+07e708bde41c8b2b6fcec6c6f71bf538028a2b0e7ec987cb91111c42e7004a46  <tools>/nanoda_lib/target/release/nanoda_bin
+9c52a28d59016a453d9d5da3c1fe09240f6fc4946863bc60849c9b361310c499  <tools>/comparator/.lake/build/bin/comparator
+e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550  <elan>/toolchains/leanprover--lean4---v4.34.1/bin/lean
+2026-11-10T14:31:59+00:00 killed pid 1569387 (poll lost the lock for 5 min); relaunching with blocking flock
+2026-11-10T14:31:59+00:00 core_release start pid 1578309 phases: build export
+pin ok: lean4export 076e8e57707e813375e8f9da8bf989799ace9680
+pin ok: nanoda_lib 3a2407216ee84a75f9e1aead6803d0578be06ae7
+pin ok: comparator fd5d5bcf14177b187f66d4502071268d877887c3
+lean4export toolchain: leanprover/lean4:v4.34.1; comparator toolchain: leanprover/lean4:v4.35.0-rc3
+8c5d64ba68f4d3a68b3bcb7e1c5f188e35ae573b29470b8d4530a62324c9ddd1  <tools>/lean4export/.lake/build/bin/lean4export
+07e708bde41c8b2b6fcec6c6f71bf538028a2b0e7ec987cb91111c42e7004a46  <tools>/nanoda_lib/target/release/nanoda_bin
+9c52a28d59016a453d9d5da3c1fe09240f6fc4946863bc60849c9b361310c499  <tools>/comparator/.lake/build/bin/comparator
+e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550  <elan>/toolchains/leanprover--lean4---v4.34.1/bin/lean
+2026-11-10T14:33:53+00:00 lean.lock acquired after 112 s
+2026-11-10T14:34:13+00:00 step core12_build_Core12Challenge rc=0 rc=0 wall=20s min_MemAvailable=15933620kB peak_session_rss_kB=6622152 min_MemAvailable_kB=15810284 2026-11-10T14:34:05+00:00 max_rss_kB=6667200
+2026-11-10T14:35:14+00:00 step core12_build_Core12Solution rc=0 rc=0 wall=60s min_MemAvailable=15942012kB peak_session_rss_kB=7478024 min_MemAvailable_kB=15831180 2026-11-10T14:35:05+00:00 max_rss_kB=7545392
+2026-11-10T14:35:34+00:00 step core12_build_Core12NegStatement rc=0 rc=0 wall=20s min_MemAvailable=16235816kB peak_session_rss_kB=6676364 min_MemAvailable_kB=16188544 2026-11-10T14:35:25+00:00 max_rss_kB=6681108
+2026-11-10T14:35:54+00:00 step core12_build_Core12NegAxiom rc=0 rc=0 wall=20s min_MemAvailable=16081456kB peak_session_rss_kB=6538064 min_MemAvailable_kB=15940668 2026-11-10T14:35:45+00:00 max_rss_kB=6659448
+2026-11-10T18:05:09+00:00 step core12_export rc=0 rc=0 wall=12551s min_MemAvailable=13727276kB peak_session_rss_kB=8601656 min_MemAvailable_kB=13702084 2026-11-10T18:05:04+00:00 max_rss_kB=8605192
+-rwxr-xr-x 1 <user> <user> 1465454494 Nov 10 18:05 <build>/release_core/sk/riesz_seven_core.ndjson
+878884835761bf88f0523516938e0095b88ba9c506d9bc931b0b44cf34cf1883  <build>/release_core/sk/riesz_seven_core.ndjson
+  21247312 1465454494 <build>/release_core/sk/riesz_seven_core.ndjson
+2026-11-10T18:05:30+00:00 core_release end rc=0 (lean.lock released)
+2026-11-10T18:05:30+00:00 core_release start pid 1813812 phases: neg
+pin ok: lean4export 076e8e57707e813375e8f9da8bf989799ace9680
+pin ok: nanoda_lib 3a2407216ee84a75f9e1aead6803d0578be06ae7
+pin ok: comparator fd5d5bcf14177b187f66d4502071268d877887c3
+lean4export toolchain: leanprover/lean4:v4.34.1; comparator toolchain: leanprover/lean4:v4.35.0-rc3
+8c5d64ba68f4d3a68b3bcb7e1c5f188e35ae573b29470b8d4530a62324c9ddd1  <tools>/lean4export/.lake/build/bin/lean4export
+07e708bde41c8b2b6fcec6c6f71bf538028a2b0e7ec987cb91111c42e7004a46  <tools>/nanoda_lib/target/release/nanoda_bin
+9c52a28d59016a453d9d5da3c1fe09240f6fc4946863bc60849c9b361310c499  <tools>/comparator/.lake/build/bin/comparator
+e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550  <elan>/toolchains/leanprover--lean4---v4.34.1/bin/lean
+2026-11-10T18:06:30+00:00 lean.lock acquired after 51 s
+2026-11-10T18:07:50+00:00 step core12_comparator_neg_statement rc=1 rc=1 wall=80s min_MemAvailable=16686716kB peak_session_rss_kB=6871980 min_MemAvailable_kB=16612720 2026-11-10T18:07:42+00:00 max_rss_kB=6721964
+2026-11-10T18:07:50+00:00 COMPARATOR NEG neg_statement REJECTED as expected (exit 1): theorem statement do not match: 'ThomsonN7Riesz.riesz_seven_core'
+2026-11-10T18:09:10+00:00 step core12_comparator_neg_axiom rc=1 rc=1 wall=80s min_MemAvailable=16617796kB peak_session_rss_kB=6706488 min_MemAvailable_kB=16689668 2026-11-10T18:09:02+00:00 max_rss_kB=6725944
+2026-11-10T18:09:10+00:00 COMPARATOR NEG neg_axiom REJECTED as expected (exit 1): Illegal axiom detected: 'ThomsonN7Riesz.core12_cheat'
+2026-11-10T18:09:10+00:00 core_release end rc=0 (lean.lock released)
+2026-11-10T18:09:11+00:00 core_release start pid 1817334 phases: nanoda
+pin ok: lean4export 076e8e57707e813375e8f9da8bf989799ace9680
+pin ok: nanoda_lib 3a2407216ee84a75f9e1aead6803d0578be06ae7
+pin ok: comparator fd5d5bcf14177b187f66d4502071268d877887c3
+lean4export toolchain: leanprover/lean4:v4.34.1; comparator toolchain: leanprover/lean4:v4.35.0-rc3
+8c5d64ba68f4d3a68b3bcb7e1c5f188e35ae573b29470b8d4530a62324c9ddd1  <tools>/lean4export/.lake/build/bin/lean4export
+07e708bde41c8b2b6fcec6c6f71bf538028a2b0e7ec987cb91111c42e7004a46  <tools>/nanoda_lib/target/release/nanoda_bin
+9c52a28d59016a453d9d5da3c1fe09240f6fc4946863bc60849c9b361310c499  <tools>/comparator/.lake/build/bin/comparator
+e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550  <elan>/toolchains/leanprover--lean4---v4.34.1/bin/lean
+2026-11-10T18:10:31+00:00 lean.lock acquired after 78 s
+2026-11-10T22:40:47+00:00 step core12_nanoda rc=0 rc=0 wall=16216s min_MemAvailable=10045380kB peak_session_rss_kB=8077540 min_MemAvailable_kB=9783168 2026-11-10T22:40:35+00:00 max_rss_kB=8178668
+2026-11-10T22:40:47+00:00 NANODA ACCEPT: Checked 122193 declarations with no errors
+2026-11-10T22:41:59+00:00 negative control: literal 997120304160296103051264000 -> 997120304160296103051264001
+changed bytes: 1
+2026-11-10T22:57:23+00:00 step core12_nanoda_tampered rc=101 rc=101 wall=420s min_MemAvailable=14454840kB peak_session_rss_kB=3247252 min_MemAvailable_kB=14466548 2026-11-10T22:57:17+00:00 max_rss_kB=3437028
+2026-11-10T22:57:23+00:00 NANODA TAMPERED REJECTED (rc 101): thread 'main' (2006686) panicked at src/tc.rs:955:71: / assertion failed: self.def_eq(u, v)
+2026-11-10T22:57:23+00:00 core_release end rc=0 (lean.lock released)
+2026-11-10T22:57:23+00:00 core_release start pid 2011259 phases: comparator
+pin ok: lean4export 076e8e57707e813375e8f9da8bf989799ace9680
+pin ok: nanoda_lib 3a2407216ee84a75f9e1aead6803d0578be06ae7
+pin ok: comparator fd5d5bcf14177b187f66d4502071268d877887c3
+lean4export toolchain: leanprover/lean4:v4.34.1; comparator toolchain: leanprover/lean4:v4.35.0-rc3
+8c5d64ba68f4d3a68b3bcb7e1c5f188e35ae573b29470b8d4530a62324c9ddd1  <tools>/lean4export/.lake/build/bin/lean4export
+07e708bde41c8b2b6fcec6c6f71bf538028a2b0e7ec987cb91111c42e7004a46  <tools>/nanoda_lib/target/release/nanoda_bin
+9c52a28d59016a453d9d5da3c1fe09240f6fc4946863bc60849c9b361310c499  <tools>/comparator/.lake/build/bin/comparator
+e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550  <elan>/toolchains/leanprover--lean4---v4.34.1/bin/lean
+2026-11-10T22:57:32+00:00 comparator deferred: waiting for <hb>/ext_cells.exit and ext_cap.exit
+2026-11-11T06:13:52+00:00 core_release start pid 2386163 phases: comparator
+pin ok: lean4export 076e8e57707e813375e8f9da8bf989799ace9680
+pin ok: nanoda_lib 3a2407216ee84a75f9e1aead6803d0578be06ae7
+pin ok: comparator fd5d5bcf14177b187f66d4502071268d877887c3
+lean4export toolchain: leanprover/lean4:v4.34.1; comparator toolchain: leanprover/lean4:v4.35.0-rc3
+8c5d64ba68f4d3a68b3bcb7e1c5f188e35ae573b29470b8d4530a62324c9ddd1  <tools>/lean4export/.lake/build/bin/lean4export
+07e708bde41c8b2b6fcec6c6f71bf538028a2b0e7ec987cb91111c42e7004a46  <tools>/nanoda_lib/target/release/nanoda_bin
+9c52a28d59016a453d9d5da3c1fe09240f6fc4946863bc60849c9b361310c499  <tools>/comparator/.lake/build/bin/comparator
+e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550  <elan>/toolchains/leanprover--lean4---v4.34.1/bin/lean
+2026-11-11T06:14:00+00:00 comparator deferred: waiting for <hb>/ext_cells.exit and ext_cap.exit
+2026-11-11T06:14:00+00:00 ext queues exited: cells rc 0 2026-11-11T06:08:02+00:00; cap rc 0 2026-11-11T05:58:49+00:00
+2026-11-11T06:14:00+00:00 lean.lock acquired after 0 s

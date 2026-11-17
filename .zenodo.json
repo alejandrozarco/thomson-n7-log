@@ -6,7 +6,7 @@
       "name": "alejandrozarco"
     }
   ],
-  "description": "<p>A Lean 4 formalisation states and checks that, among all configurations of seven distinct points on the unit sphere S^2, the regular pentagonal bipyramid uniquely minimises the logarithmic energy, up to orthogonal transformations and relabelling (Conjecture 1 of Armentano et al., J. Symbolic Comput. 137 (2026)); Comparator and the independent checker nanoda accept it. The same is stated and checked for the Riesz s = 2 energy, and, as a second check of H. Tran's Lean theorem with this repository's own certificates, for the Coulomb energy (coulomb/; not independent of Tran's development: it uses his local lemma and machinery). AI-produced, not peer reviewed.</p><p>A public, timestamped, AI-produced warrant: a machine-checked argument that no human has yet digested. We do not regard the question as settled by it; independent verification and human-readable expositions are welcome. The repository also contains the exact three-point certificates, as JSON, with independent exact checkers in Python.</p>",
+  "description": "<p>A Lean 4 formalisation states and checks that, among all configurations of seven distinct points on the unit sphere S^2, the regular pentagonal bipyramid uniquely minimises the logarithmic energy, up to orthogonal transformations and relabelling (Conjecture 1 of Armentano et al., J. Symbolic Comput. 137 (2026)); Comparator and the independent checker nanoda accept it. The same is stated and checked for the Riesz s = 2 energy, and, as a second check of H. Tran's Lean theorem with this repository's own certificates, for the Coulomb energy (coulomb/; not independent of Tran's development: it uses his local lemma and machinery). For the Riesz s-energy, the same is stated for every real s with 1/3 &lt;= s &lt;= 7/4 at once (riesz_range/): exact certificates and checkers cover the interval piece by piece in s (the certificate files and reports are in a separate data archive, see riesz_range/README.md), and the Lean kernel checks the statement (Comparator, run without a sandbox and with prebuilt imports, and nanoda accept it). Nothing outside that interval is treated. AI-produced, not peer reviewed.</p><p>A public, timestamped, AI-produced warrant: a machine-checked argument that no human has yet digested. We do not regard the question as settled by it; independent verification and human-readable expositions are welcome. The repository also contains the exact three-point certificates, as JSON, with independent exact checkers in Python.</p>",
   "keywords": [
     "Thomson problem",
     "logarithmic energy",
@@ -15,11 +15,11 @@
     "Coulomb energy",
     "pentagonal bipyramid",
     "semidefinite programming",
-    "computer-assisted proof",
+    "computer-assisted mathematics",
     "Lean 4",
     "formal verification"
   ],
-  "notes": "Not peer reviewed. Produced by AI models (Claude Opus 5.5; reviews by Claude Opus 5.5, Claude Fable 5.1 and gpt-6-astra) under the direction of the repository owner; see AI_DISCLOSURE.md. The supporting Lean library uses declarations of huwngtran/thomson-n7-lean (commit 25f2fa5); unchanged declarations are regenerated from that repository by lean/regen.sh (and coulomb/lean/regen.sh, riesz2/lean/regen.sh) and are not stored here.",
+  "notes": "Not peer reviewed. Produced by AI models (Claude Opus 5.5, and Claude Fable 5.1 for riesz_range/; reviews by Claude Opus 5.5, Claude Fable 5.1, Claude Fable 5.2 and gpt-6-astra) under the direction of the repository owner; see AI_DISCLOSURE.md. The supporting Lean library uses declarations of huwngtran/thomson-n7-lean (commit 25f2fa5); unchanged declarations are regenerated from that repository by lean/regen.sh (and coulomb/lean/regen.sh, riesz2/lean/regen.sh, riesz_range/lean/regen.sh) and are not stored here. The method, including certificates on intervals of s, is that of Kryvonos, Liehr and Taylor (arXiv:2609.22077) for N = 8 (for eight points their treatment of all s >= 0 is computer-assisted and in their companion repository; their Lean-verified Riesz result is for all sufficiently large s).",
   "related_identifiers": [
     {
       "identifier": "https://github.com/huwngtran/thomson-n7-lean",

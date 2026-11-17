@@ -4,7 +4,7 @@
 version: "v0.4"
 
 project:
-  name: "thomson-n7-log: the pentagonal bipyramid as the unique logarithmic-energy (and Riesz s = 2, Coulomb s = 1) minimiser for seven points on the sphere (an unreviewed Lean 4 warrant)"
+  name: "thomson-n7-log: the pentagonal bipyramid as the unique logarithmic-energy (and Riesz s = 2, Coulomb s = 1, and Riesz s on 1/3 <= s <= 7/4) minimiser for seven points on the sphere (an unreviewed Lean 4 warrant)"
   description: >-
     An AI-produced warrant, meaning a machine-checked Lean development that no human has digested. It concerns the
     statement that the regular pentagonal bipyramid minimises the logarithmic energy sum_{i<j} -log|x_i - x_j| of
@@ -12,7 +12,7 @@ project:
     (Conjecture 1 of Armentano et al.). The same is stated and checked for the Riesz s = 2 energy
     sum_{i<j} |x_i - x_j|^{-2}.
     The argument follows the Lean formalisation of the Coulomb case (huwngtran/thomson-n7-lean):
-    - a case split by the most nearly antipodal pair (Case 1, five slabs, a cap);
+    - a case split by the most nearly antipodal pair (Case 1, five slabs (six in riesz_range/), a cap);
     - exact three-point (Bachoc-Vallentin type) semidefinite certificates, checked by `decide +kernel`;
     - polynomial minorants of the kernel;
     - on the cap: coercivity, ring rigidity and, for the logarithmic energy, a quartic local lemma. The local lemma
@@ -21,9 +21,14 @@ project:
     For the Coulomb energy (s = 1), whose Lean formalisation is H. Tran's (huwngtran/thomson-n7-lean), coulomb/ is a
     second check with this repository's own certificates; its Lean development (coulomb/lean/) uses Tran's local
     lemma and machinery, so it is not independent of his.
+    For the Riesz s-energy sum_{i<j} |x_i - x_j|^{-s}, riesz_range/ states the same for every real s with
+    1/3 <= s <= 7/4 at once: the case split is covered piece by piece in s (certificates on intervals of s, as in
+    Kryvonos-Liehr-Taylor for N = 8), and the Lean development (riesz_range/lean/) follows the exact-sharpness route
+    on the cap, without a local lemma. Nothing outside that interval is treated.
   authors:
     - "alejandrozarco (repository owner; directed the work)"
     - "Claude Opus 5.5 (Anthropic), AI model that produced the mathematics, certificates and Lean code"
+    - "Claude Fable 5.1 (Anthropic), AI model that took part in the riesz_range/ work"
   responsible_maintainers:
     - "alejandrozarco"
   license: "Apache-2.0 (LICENSE); not covering the regenerated upstream code or the upstream material in adapted declarations (README, Licence)"
@@ -39,12 +44,12 @@ sources:
     relationship: "other"
     note: "Source of the conjecture that the main theorem states. Its proof is not taken from this paper."
     author_endorsement: "not-contacted"
-  - title: "Case split, certificates and quartic local lemma for N = 7 (log and Riesz s = 2)"
+  - title: "Case split, certificates and quartic local lemma for N = 7 (log and Riesz s = 2), and the case split covered piece by piece in s for the Riesz s-energy on 1/3 <= s <= 7/4"
     type: "original-proof"
     relationship: "formalizes"
     note: >-
-      The argument was presented in this repository (METHOD.md, local/LOCAL_LEMMA.md, lean/OVERVIEW.md). It is
-      AI-produced and has not been refereed.
+      The argument was presented in this repository (METHOD.md, local/LOCAL_LEMMA.md, lean/OVERVIEW.md; for the
+      interval of s: riesz_range/README.md). It is AI-produced and has not been refereed.
     author_endorsement: "n/a"
   - title: "Energy minimization for eight points on the sphere"
     authors: ["Liudmyla Kryvonos", "Lukas Liehr", "Mitchell A. Taylor"]
@@ -53,7 +58,9 @@ sources:
     relationship: "adapts"
     note: >-
       Source of the method (three-point bounds, case split, certificates), via the N = 7 Coulomb formalisation
-      huwngtran/thomson-n7-lean. Also treats the logarithmic and all Riesz s >= 0 energies for eight points.
+      huwngtran/thomson-n7-lean. Also treats the logarithmic and all Riesz s >= 0 energies for eight points (all
+      s >= 0 in the companion repository, computer-assisted, with finitely many closed intervals of s for
+      0 <= s <= 124; Lean-verified in the article for all sufficiently large s).
     author_endorsement: "not-contacted"
   - title: "New upper bounds for kissing numbers from semidefinite programming"
     authors: ["C. Bachoc", "F. Vallentin"]
@@ -68,8 +75,8 @@ related_formalizations:
     revision: "25f2fa53119273458cfbb3c4230904bffdd61e53"
     relationship: "builds-on"
     note: >-
-      Coulomb (s = 1) case for N = 7. Unchanged declarations are regenerated from it by lean/regen.sh and are not
-      stored here. Adapted declarations are stored with per-declaration attribution (lean/README.md, Upstream code).
+      Coulomb (s = 1) case for N = 7. Unchanged declarations are regenerated from it by lean/regen.sh (and by
+      riesz2/lean/regen.sh, coulomb/lean/regen.sh and riesz_range/lean/regen.sh) and are not stored here. Adapted declarations are stored with per-declaration attribution (lean/README.md, Upstream code).
       coulomb/lean/ restates its main theorems (thomson_seven, thomson_seven_unique, renamed) and checks them again
       with this repository's certificates, using its local lemma Reg.pent_local_min_sup.
   - id: "https://github.com/jstoobysmith/Thomson-N-8-Warrant"
@@ -84,8 +91,9 @@ classification:
 
 status:
   scope: >-
-    Logarithmic energy for N = 7 (lean/), Riesz s = 2 energy for N = 7 (riesz2/lean/) and Coulomb energy for N = 7
-    (coulomb/lean/, a second check of H. Tran's theorem): minimality and uniqueness up to O(3) and relabelling.
+    Logarithmic energy for N = 7 (lean/), Riesz s = 2 energy for N = 7 (riesz2/lean/), Coulomb energy for N = 7
+    (coulomb/lean/, a second check of H. Tran's theorem) and the Riesz s-energy for N = 7 for every real s with
+    1/3 <= s <= 7/4 (riesz_range/lean/): minimality and uniqueness up to O(3) and relabelling.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Classical.choice", "Quot.sound"]
@@ -126,6 +134,18 @@ status:
       axioms: ["propext", "Classical.choice", "Quot.sound"]
       comparator_config: "coulomb/lean/comparator_coul.json"
       literature_dependencies: []
+    - declaration: "ThomsonN7Riesz.riesz_seven_range"
+      file: "riesz_range/lean/RieszN7/Release/FullSolution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "riesz_range/lean/comparator_full.json"
+      literature_dependencies: []
+    - declaration: "ThomsonN7Riesz.riesz_seven_unique_range"
+      file: "riesz_range/lean/RieszN7/Release/FullSolution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "riesz_range/lean/comparator_full.json"
+      literature_dependencies: []
   notes: >-
     Axioms as reported by `#print axioms` in a clean build (verification/lean/; riesz2/lean/README.md). No
     `native_decide`. For lean/ at the time of writing:
@@ -140,6 +160,16 @@ status:
     For coulomb/lean/ (2026-10-08): clean build of 130 modules; Comparator (coulomb/lean/comparator_coul.json)
     reported "Your solution is okay!", without the landrun sandbox; nanoda accepted an export of both theorems
     (54624 declarations) and rejected a tampered copy (verification/lean/coulomb/record_2026-10-08.txt).
+    For riesz_range/lean/ (runs 2026-11-07 to 2026-11-15; record verification/lean/riesz_range/record_2026-11-17.txt):
+    5 080 RieszN7 modules built one at a time; `#print axioms` as above for the theorems they apply
+    (RieszN7.Full.riesz_seven_range, RieszN7.Full.riesz_seven_unique_range), and Comparator and nanoda enforce the
+    same three axioms on the ThomsonN7Riesz theorems; nanoda accepted an export
+    of both theorems (159413 declarations) and rejected two tampered copies (one changed literal each, one of them in
+    this development's certificate data); Comparator (riesz_range/lean/comparator_full.json) reported "Your solution
+    is okay!", without the landrun sandbox and with a lake stand-in that takes the imports as prebuilt oleans (the
+    oleans of the trusted definitions are tied to their sources by separate checks recorded there); both negative
+    controls were rejected. The [1/2, 3/2] statements of riesz_range/lean/RieszN7/Release/Core12Solution.lean have no
+    completed Comparator run.
 
 automation:
   methods:
@@ -158,7 +188,22 @@ automation:
         The owner set goals and decided on scope, publication, wording and the handling of upstream code. The agents
         planned and executed. Plans and results are recorded in a development journal (not public).
     - method: "agent"
-      models: ["claude-opus-5-5", "claude-fable-5-1", "gpt-6-astra"]
+      models: ["claude-opus-5-5", "claude-fable-5-1"]
+      framework: "Claude Code"
+      tool_setup: >-
+        riesz_range/ (the Riesz s-energy on 1/3 <= s <= 7/4): coordinated Claude Opus 5.5 and Claude Fable 5.1
+        sessions with terminal access. Python (python-flint) for the certificates, piece checkers and range_check.py;
+        Lean 4 v4.34.1 + Mathlib, every RieszN7 module built one at a time (nice 19) on a Linux workstation, some
+        module oleans on two other machines (recorded with their hashes); lean4export, nanoda and Comparator on the
+        workstation.
+      cost:
+        wall_time: "2026-11-06 to 2026-11-17"
+        spend_usd: "subscription-based usage"
+        hardware: "Apple-silicon laptop; Linux workstation (6 cores, 19 GB RAM) and two other machines for some Lean module builds"
+      prompting_notes: >-
+        As above: the owner set goals and decided on scope and publication; the agents planned and executed.
+    - method: "agent"
+      models: ["claude-opus-5-5", "claude-fable-5-1", "claude-fable-5-2", "gpt-6-astra"]
       framework: "Claude Code; OpenAI Codex CLI (gpt-6-astra)"
       tool_setup: "Separate read-only reviewer instances, one review per stage."
       prompting_notes: >-
@@ -175,19 +220,28 @@ fidelity:
     - The cap uses a re-rounded certificate (certificates/cert_cap_log_D12_short.json) with the same bound.
     - In the statement, SphereConfig requires injectivity (distinct points), because Lean has log 0 = 0. The
       statement definitions are upstream's, imported from the regenerated ThomsonGen/Preamble.lean.
+    - riesz_range/: rieszEnergy uses Real.rpow, with 0 ^ (-s) = 0 for s /= 0; coincident points are excluded by the
+      same injectivity. The Lean development uses the exact-sharpness route on the cap (no local lemma); the Python
+      coverage check was run for that route and for the route with the local lemma.
 
 review:
   status: "agent-reviewed"
   reviewers:
     - "Claude Opus 5.5 (read-only reviewer instances)"
     - "Claude Fable 5.1"
+    - "Claude Fable 5.2"
     - "gpt-6-astra (OpenAI)"
   notes: >-
-    No human expert has checked the proof. The conjecture is not regarded as settled by this warrant (README).
+    No human expert has checked the argument. The conjecture is not regarded as settled by this warrant (README).
     Comments and checks are welcome via GitHub issues.
 
 alignment:
   namespace: "ThomsonN7Log"
+  note: >-
+    This block covers lean/ (the log case) only. The theorems of riesz2/lean/, coulomb/lean/ and riesz_range/lean/
+    are listed under status.main_results; their statements are in the Challenge files named by their Comparator
+    configurations (for riesz_range/: ThomsonN7Riesz.riesz_seven_range and riesz_seven_unique_range,
+    riesz_range/lean/RieszN7/Release/FullChallenge.lean, solution FullSolution.lean).
   statements:
     - source: "Armentano et al., Conjecture 1 (log energy, N = 7): minimality"
       lean: "ThomsonN7Log.thomson_seven_log"

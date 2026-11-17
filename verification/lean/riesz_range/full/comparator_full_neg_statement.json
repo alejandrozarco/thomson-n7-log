@@ -1,0 +1,13 @@
+{
+  "challenge_module": "RieszN7.Release.FullChallenge",
+  "solution_module": "RieszN7.Release.FullNegStatement",
+  "theorem_names": [
+    "ThomsonN7Riesz.riesz_seven_range",
+    "ThomsonN7Riesz.riesz_seven_unique_range"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

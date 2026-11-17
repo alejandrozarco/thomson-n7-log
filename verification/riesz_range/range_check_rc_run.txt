@@ -1,0 +1,85 @@
+Note (added later on 2026-11-17): this run concerns the piece reports of 2026-11-07. The 41 report files of the
+used pieces and ext/range_check_ext.json were afterwards replaced by those of a --recheck run
+(range_recheck_2026-11-17.txt, RC_EXACTNESS.txt section 11); statements below about ext/range_check_ext.json and the
+report hashes refer to the replaced files. Runs on the current reports: range_check_after_recheck.txt.
+
+range_check.py run from this release candidate (2026-11-17 01:58:21-01:58:25 local time, UTC+01:00, i.e.
+00:58:21-00:58:25 UTC; macOS arm64, Python 3.9.6, python-flint 0.6.0). The file modification times quoted in the
+NOT_OK lines below are in the same local time.
+==================================================================================================================
+
+Directory: riesz_range/n7_interval/ of the release-candidate working tree (files copied from the development tree with
+their modification times; not a fresh git clone. Runs from a fresh clone: range_check_fresh_clone.txt).
+Command (one run, nice 19 and background QoS; the JSON output went to a scratch file outside the tree, so range_check.json in the tree
+was neither read as a new baseline nor overwritten):
+
+  nice -n 19 taskpolicy -b /usr/bin/time -l python3 range_check.py --range 1/3 7/4 --json-out <scratch>/rc_range_check.json
+
+Exit status 0. The scratch JSON is not included: its piece records carry the absolute paths that the piece reports
+record in their provenance (see RC_EXACTNESS.txt). Its inventory (285 records; for each record the used flag and the
+report_sha256) is identical to that of ext/range_check_ext.json.
+
+The output below is identical to the final section of RANGE_RECHECK_OUTPUT_full.txt (the recorded --recheck run of
+2026-11-07) except for (a) the estimated "run start" times of three unused records, which are derived from file
+modification times and differ by one second, (b) the date of the previous run, and (c) the "NOTE recheck:" line, which
+only a --recheck run prints.
+
+--- stdout ---
+range_check: s in [1/3, 7/4], route=local, local=cover2q (exact), freshness=on
+
+component                    used dropped  certified (within range)      gaps
+case1 (cut -9/10)              22       0  [1/3, 7/4]                    -
+slab [-99/100, -49/50]         21       0  [1/3, 7/4]                    -
+slab [-49/50, -24/25]          21       0  [1/3, 7/4]                    -
+slab [-24/25, -47/50]          23       0  [1/3, 7/4]                    -
+slab [-47/50, -93/100]         23       0  [1/3, 7/4]                    -
+slab [-93/100, -183/200]       23       0  [1/3, 7/4]                    -
+slab [-183/200, -9/10]         21       0  [1/3, 7/4]                    -
+cap [-1, -99/100]              36       9  [1/3, 7/4]                    -
+local lemma                    77       0  [1/3, 7/4]                    -
+
+NOT_OK  cap [11/12, 1] capR/pieces/check_capR_11_12__1_1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-06 23:42:10
+NOT_OK  cap [1, 13/12] capR/pieces/check_capR_1_1__13_12.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-06 23:46:12
+NOT_OK  cap [2/3, 3/4] capR/pieces/check_capR_2_3__3_4.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 05:16:29
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 01:01:17
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8_os.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:24:06
+NOT_OK  cap [11/12, 1] capR/pieces_nsub/check_capR_11_12__1_1_nsub1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 00:42:31
+NOT_OK  cap [1, 13/12] capR/pieces_nsub/check_capR_1_1__13_12_nsub1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 00:44:33
+NOT_OK  cap [2/3, 3/4] capR/pieces_nsub/check_capR_2_3__3_4_nsub4_os.txt: stale: input capS/cert_cap_s2_3_D12.json.gz modified 11-07 03:44:39 >= run start ~11-07 03:30:12; stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:30:12
+NOT_OK  cap [3/4, 1] capR/pieces_nsub/check_capR_negctrl_3_4__1_nsub4_os.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:26:07
+WARN cellsS/results.jsonl: 9 piece record(s) without `certs` ignored (cell labels are not trusted)
+NOTE authentication of the 267 used pieces: 267 by sha256 (checker + inputs), 0 by the mtime fallback (reports without hashes)
+CHECK ok   cap cell [-1, -99/100] hard-coded in check_capR.py (fmpq(-99, 100), Fr(-99, 100) assert)
+CHECK ok   check_localS.check_piece uses r = sqrt7 (11/2) tau, tau exact (qarb)
+CHECK ok   check_localS.qarb: Fraction -> arb(num) / arb(den)
+CHECK ok   check_localS cover2q reads a, b, tau as Fractions
+CHECK ok   cell boundaries -1 < -99/100 < -9/10
+NOTE local tau from file name '1e-6' read as exact: 1/1000000
+NOTE local files: localS/cover2q_1o20_48o25_tau1e-6.jsonl, localS/cover2q_1o2_3o2_tau1e-6.jsonl  (float cover2 files only with --local-legacy)
+NOTE range_check.py sha256 28de4aa25fc0f4e93d8a27c0f53d114538e97f8f2feea2df2f2813054924a438 (this run: python 3.9.6, python-flint 0.6.0)
+NOTE versions recorded by the used reports: python 3.9.6, python-flint 0.6.0 (267)
+NOTE recheck status: 267 of the 267 used pieces are recorded as re-run by a --recheck with the current report (what --recheck-new may skip)
+NOTE all 7 checker scripts unchanged (sha256) since the previous run (2026-11-07 21:11:34)
+NOTE range_check.py sha256 and versions unchanged since the previous run (2026-11-07 21:11:34)
+
+RANGE_OK [1/3, 7/4] route=local
+
+--- /usr/bin/time -l (stderr) ---
+        5.55 real         2.96 user         1.30 sys
+           938033152  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              299372  page reclaims
+                 305  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 169  voluntary context switches
+               10509  involuntary context switches
+         21472424386  instructions retired
+          9996438749  cycles elapsed
+           998737000  peak memory footprint

@@ -1,0 +1,10 @@
+2026-11-12T23:57:40+00:00 start pid 4023959
+2026-11-13T18:37:04+00:00 start pid 559426 (v2: gate on basicfix)
+2026-11-13T22:16:47+00:00 start pid 719885 (v3: gate on basicfix exports/axioms)
+2026-11-14T05:26:48+00:00 basicfix: 2026-11-14T05:22:16+00:00 BASICFIX RESULT: FAIL basic
+2026-11-14T05:26:48+00:00 basicfix log lacks 'export full: .*= certified (identical)': Comparator NOT relaunched
+2026-11-14T05:27:56+00:00 start pid 1026163 (v4: v3 with the ERE parentheses escaped)
+2026-11-14T05:27:56+00:00 basicfix: 2026-11-14T05:22:16+00:00 BASICFIX RESULT: FAIL basic
+2026-11-14T05:27:56+00:00 basicfix accepted: exports identical, axioms clean, Basic rebuilt by committed recipe = deployed bytes
+2026-11-14T05:37:56+00:00 gate passed (10 min without <other-build> processes, MemAvailable > 12 GB; now 18524148 kB): starting
+2026-11-15T23:45:47+00:00 full_release.sh comparator rc=0; 2026-11-15T23:45:47+00:00 COMPARATOR EXIT: 0; Lean default kernel accepts the solution Your solution is okay! 

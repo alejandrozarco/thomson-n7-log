@@ -1,0 +1,146 @@
+Fresh clone with the bulk archive (2026-11-17; macOS arm64, Python 3.9.6, python-flint 0.6.0, nice 19)
+=========================================================================================================
+
+What was tested: the restructured release candidate, in which the certificate files and per-piece reports of
+riesz_range/ are no longer in git but in the bulk archive riesz_range_bulk_v2.8.tar (riesz_range/README.md, Bulk data).
+Steps (script below, output unedited): `git clone` of the release branch into a scratch directory;
+`sh riesz_range/fetch_bulk.sh <local copy of the archive>` (no download; the archive is the file to be uploaded);
+the two plain range_check.py runs of riesz_range/README.md; `shasum -a 256 -c` of MANIFEST.sha256,
+riesz_range/lean/SHA256SUMS and riesz_range/BULK_SHA256SUMS; `git status` before and after.
+
+The clone was of a commit that differs from the release only in text files written afterwards: this file, section 12
+of RC_EXACTNESS.txt, MANIFEST.sha256, and the separate v2.7 fix commit (coulomb/lean/ThomsonGen/scripts/depdump.tsv,
+CHANGELOG.md). No .py, .lean, sha256 list, fetch_bulk.sh or archive file changed after the test.
+
+Results:
+* fetch_bulk.sh: archive sha256 OK; "BULK OK: 286 files verified against riesz_range/BULK_SHA256SUMS"; exit 0;
+  `git status` empty afterwards (the unpacked paths are in riesz_range/.gitignore).
+* route local: exit 0, "RANGE_OK [1/3, 7/4] route=local", 267 used pieces, 267 authenticated by sha256, 0 by the mtime
+  fallback; cap: 36 used, 0 dropped.
+* route exact: exit 0, "RANGE_OK [1/3, 7/4] route=exact", 190 used pieces, 190 by sha256.
+* No "NOT_OK ... stale" lines: the nine unused cap records that earlier runs dropped as stale are not in this release
+  (RC_EXACTNESS.txt, sections 5 and 12). Used pieces and verdicts are the same as in range_check_after_recheck.txt.
+* MANIFEST.sha256: 5 843 OK; riesz_range/lean/SHA256SUMS: 5 085 OK; riesz_range/BULK_SHA256SUMS: 286 OK; no other lines.
+* With --no-json no previous inventory is read, so "recheck status" reports 0 of the used pieces as re-run (as in the
+  earlier records).
+
+The fetch_bulk.sh option --exports was tested separately on the Linux workstation that holds the compressed exports
+(dash as /bin/sh, a local directory as source): both .xz files copied and their sha256 OK ("EXPORTS OK"); without a
+source and with the Zenodo record still unset the script stops with "BULK FAIL: no Zenodo record set ...", exit 1.
+Before the archive was built, the same plain runs were made on a copy of n7_interval/ and hp/ of the previous release
+candidate with only the nine unused cap records removed: the same RANGE_OK results, 267 and 190 used pieces, all by
+sha256.
+
+=== script (the clone directory and the archive path are scratch paths of the test machine) ===
+#!/bin/sh
+# end-to-end test: fresh clone, fetch_bulk.sh with the local archive, plain range_check runs, checksums
+E=<clone>
+T=<archive>
+echo "=== git clone (branch rc-riesz-range-v2) ==="
+git clone -q --branch rc-riesz-range-v2 <release candidate> $E || exit 1
+cd $E && git log --oneline -1 && echo "files in git: $(git ls-files | wc -l | tr -d ' ')"
+echo; echo "=== sh riesz_range/fetch_bulk.sh <local copy of riesz_range_bulk_v2.8.tar> ==="
+sh riesz_range/fetch_bulk.sh "$T"; echo "[exit status $?]"
+echo; echo "=== git status --short after fetch (expected: empty) ==="
+git status --short --untracked-files=all | head; echo "[lines: $(git status --short --untracked-files=all | wc -l | tr -d ' ')]"
+cd riesz_range/n7_interval
+echo; echo "=== python3 range_check.py --range 1/3 7/4 --no-json ==="
+/usr/bin/time -p python3 range_check.py --range 1/3 7/4 --no-json; echo "[exit status $?]"
+echo; echo "=== python3 range_check.py --range 1/3 7/4 --route exact --no-json ==="
+/usr/bin/time -p python3 range_check.py --range 1/3 7/4 --route exact --no-json; echo "[exit status $?]"
+cd $E
+echo; echo "=== shasum -a 256 -c MANIFEST.sha256 ==="
+shasum -a 256 -c MANIFEST.sha256 > <tmp>/e2e_m.$$ 2>&1; r=$?; echo "[exit status $r] $(grep -c ': OK$' <tmp>/e2e_m.$$) OK, $(grep -vc ': OK$' <tmp>/e2e_m.$$) other lines"; grep -v ': OK$' <tmp>/e2e_m.$$ | head; rm -f <tmp>/e2e_m.$$
+echo; echo "=== (cd riesz_range/lean && shasum -a 256 -c SHA256SUMS) ==="
+(cd riesz_range/lean && shasum -a 256 -c SHA256SUMS > <tmp>/e2e_l.$$ 2>&1; r=$?; echo "[exit status $r] $(grep -c ': OK$' <tmp>/e2e_l.$$) OK, $(grep -vc ': OK$' <tmp>/e2e_l.$$) other lines"; rm -f <tmp>/e2e_l.$$)
+echo; echo "=== shasum -a 256 -c riesz_range/BULK_SHA256SUMS (again, independently of the script) ==="
+shasum -a 256 -c riesz_range/BULK_SHA256SUMS > <tmp>/e2e_b.$$ 2>&1; r=$?; echo "[exit status $r] $(grep -c ': OK$' <tmp>/e2e_b.$$) OK, $(grep -vc ': OK$' <tmp>/e2e_b.$$) other lines"; rm -f <tmp>/e2e_b.$$
+echo; echo "=== git status --short at the end (expected: empty) ==="
+echo "[lines: $(git status --short --untracked-files=all | wc -l | tr -d ' ')]"
+
+=== output (start and end times UTC on the first and last line) ===
+2026-11-17T10:52:19Z
+=== git clone (branch rc-riesz-range-v2) ===
+38cdc38 Riesz s on the interval 1/3 <= s <= 7/4: checkers, a Lean 4 development and records (riesz_range/); bulk data in a separate archive
+files in git: 5844
+
+=== sh riesz_range/fetch_bulk.sh <local copy of riesz_range_bulk_v2.8.tar> ===
+archive OK: riesz_range_bulk_v2.8.tar (sha256 e7fedde5e7b0a683f20334bb104ec763bdfde01cd604b9576d7882f3cecc9b1c)
+BULK OK: 286 files verified against riesz_range/BULK_SHA256SUMS
+[exit status 0]
+
+=== git status --short after fetch (expected: empty) ===
+[lines: 0]
+
+=== python3 range_check.py --range 1/3 7/4 --no-json ===
+range_check: s in [1/3, 7/4], route=local, local=cover2q (exact), freshness=on
+
+component                    used dropped  certified (within range)      gaps
+case1 (cut -9/10)              22       0  [1/3, 7/4]                    -
+slab [-99/100, -49/50]         21       0  [1/3, 7/4]                    -
+slab [-49/50, -24/25]          21       0  [1/3, 7/4]                    -
+slab [-24/25, -47/50]          23       0  [1/3, 7/4]                    -
+slab [-47/50, -93/100]         23       0  [1/3, 7/4]                    -
+slab [-93/100, -183/200]       23       0  [1/3, 7/4]                    -
+slab [-183/200, -9/10]         21       0  [1/3, 7/4]                    -
+cap [-1, -99/100]              36       0  [1/3, 7/4]                    -
+local lemma                    77       0  [1/3, 7/4]                    -
+
+WARN cellsS/results.jsonl: 9 piece record(s) without `certs` ignored (cell labels are not trusted)
+NOTE authentication of the 267 used pieces: 267 by sha256 (checker + inputs), 0 by the mtime fallback (reports without hashes)
+CHECK ok   cap cell [-1, -99/100] hard-coded in check_capR.py (fmpq(-99, 100), Fr(-99, 100) assert)
+CHECK ok   check_localS.check_piece uses r = sqrt7 (11/2) tau, tau exact (qarb)
+CHECK ok   check_localS.qarb: Fraction -> arb(num) / arb(den)
+CHECK ok   check_localS cover2q reads a, b, tau as Fractions
+CHECK ok   cell boundaries -1 < -99/100 < -9/10
+NOTE local tau from file name '1e-6' read as exact: 1/1000000
+NOTE local files: localS/cover2q_1o20_48o25_tau1e-6.jsonl, localS/cover2q_1o2_3o2_tau1e-6.jsonl  (float cover2 files only with --local-legacy)
+NOTE range_check.py sha256 28de4aa25fc0f4e93d8a27c0f53d114538e97f8f2feea2df2f2813054924a438 (this run: python 3.9.6, python-flint 0.6.0)
+NOTE versions recorded by the used reports: python 3.12.3, python-flint 0.6.0 (267)
+NOTE recheck status: 0 of the 267 used pieces are recorded as re-run by a --recheck with the current report (what --recheck-new may skip)
+
+RANGE_OK [1/3, 7/4] route=local
+real 7.55
+user 3.65
+sys 0.59
+[exit status 0]
+
+=== python3 range_check.py --range 1/3 7/4 --route exact --no-json ===
+range_check: s in [1/3, 7/4], route=exact, local=cover2q (exact), freshness=on
+
+component                    used dropped  certified (within range)      gaps
+case1 (cut -9/10)              22       0  [1/3, 7/4]                    -
+slab [-99/100, -49/50]         21       0  [1/3, 7/4]                    -
+slab [-49/50, -24/25]          21       0  [1/3, 7/4]                    -
+slab [-24/25, -47/50]          23       0  [1/3, 7/4]                    -
+slab [-47/50, -93/100]         23       0  [1/3, 7/4]                    -
+slab [-93/100, -183/200]       23       0  [1/3, 7/4]                    -
+slab [-183/200, -9/10]         21       0  [1/3, 7/4]                    -
+cap [-1, -99/100]              36       0  [1/3, 7/4]                    -
+
+WARN cellsS/results.jsonl: 9 piece record(s) without `certs` ignored (cell labels are not trusted)
+NOTE authentication of the 190 used pieces: 190 by sha256 (checker + inputs), 0 by the mtime fallback (reports without hashes)
+CHECK ok   cap cell [-1, -99/100] hard-coded in check_capR.py (fmpq(-99, 100), Fr(-99, 100) assert)
+CHECK ok   cell boundaries -1 < -99/100 < -9/10
+NOTE range_check.py sha256 28de4aa25fc0f4e93d8a27c0f53d114538e97f8f2feea2df2f2813054924a438 (this run: python 3.9.6, python-flint 0.6.0)
+NOTE versions recorded by the used reports: python 3.12.3, python-flint 0.6.0 (190)
+NOTE recheck status: 0 of the 190 used pieces are recorded as re-run by a --recheck with the current report (what --recheck-new may skip)
+
+RANGE_OK [1/3, 7/4] route=exact
+real 15.08
+user 3.62
+sys 1.08
+[exit status 0]
+
+=== shasum -a 256 -c MANIFEST.sha256 ===
+[exit status 0] 5843 OK, 0 other lines
+
+=== (cd riesz_range/lean && shasum -a 256 -c SHA256SUMS) ===
+[exit status 0] 5085 OK, 0 other lines
+
+=== shasum -a 256 -c riesz_range/BULK_SHA256SUMS (again, independently of the script) ===
+[exit status 0] 286 OK, 0 other lines
+
+=== git status --short at the end (expected: empty) ===
+[lines: 0]
+2026-11-17T10:53:39Z

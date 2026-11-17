@@ -1,0 +1,50 @@
+Tools and environment of the recorded Lean checks of riesz_range/lean/ (2026-11-07 to 2026-11-15)
+=====================================================================================================
+
+Machine: Linux 6.8.0 x86_64, 6 cores, 19 GB RAM, CPU model not recorded (one workstation; called <work> in the
+scrubbed logs). Some module oleans were built on two other machines and copied in (build/build_remote.tsv, hosts relabelled remote1 / remote2;
+every such line records the olean and ilean sha256). The export, nanoda and Comparator ran on the workstation only.
+
+Lean
+  toolchain        leanprover/lean4:v4.34.1 (riesz_range/lean/lean-toolchain)
+  lean --version   Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+  lean binary      sha256 e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550
+  Mathlib          d13f23b723b8a846827a245b89c10fc7d3f11612 (riesz_range/lean/lake-manifest.json)
+
+Pinned external checkers (git checkouts; `pin ok` lines and binary sha256 at the top of every phase of
+full/full_release.log and core12/core_release.log)
+  lean4export   https://github.com/leanprover/lean4export   076e8e57707e813375e8f9da8bf989799ace9680
+                built with toolchain leanprover/lean4:v4.34.1 (one-line change of its lean-toolchain file in the checkout,
+                from v4.34.0, so that it reads the .olean files of this Lean version; no other change); binary
+                .lake/build/bin/lean4export (scripts_as_run/env_core.sh)
+                binary sha256 8c5d64ba68f4d3a68b3bcb7e1c5f188e35ae573b29470b8d4530a62324c9ddd1
+  nanoda_lib    https://github.com/ammkrn/nanoda_lib.git    3a2407216ee84a75f9e1aead6803d0578be06ae7 (0.4.19)
+                built with cargo build --release (rustc 1.98.1, cargo 1.98.1); binary target/release/nanoda_bin
+                binary nanoda_bin sha256 07e708bde41c8b2b6fcec6c6f71bf538028a2b0e7ec987cb91111c42e7004a46
+  comparator    https://github.com/leanprover/comparator    fd5d5bcf14177b187f66d4502071268d877887c3
+                built with its own toolchain leanprover/lean4:v4.35.0-rc3; binary .lake/build/bin/comparator. Its
+                kernel replay is therefore that of Lean v4.35.0-rc3 (the modules were compiled, and the export
+                written, with v4.34.1)
+                binary sha256 9c52a28d59016a453d9d5da3c1fe09240f6fc4946863bc60849c9b361310c499
+                sandbox: none. COMPARATOR_LANDRUN was Comparator's own non-sandboxing shim scripts/fake-landrun.sh
+                (sha256 167507c89d8b3c7667ad78b50df7b19f89883751a01efd1457404fa34a994e8b); every Comparator log
+                prints "WARNING: THIS IS NOT REAL LANDRUN!".
+                `lake`: a stand-in script placed ahead of any other lake on PATH (scripts_as_run/shim/lake). The build directory is not a Lake
+                workspace for RieszN7; the stand-in compiles only RieszN7.Release.* with the lean binary above,
+                `-j1 -DElab.async=false`, LEAN_NUM_THREADS=1 and the LEAN_PATH of build_range.sh, and takes every
+                import as a prebuilt .olean. See record_2026-11-17.txt, "Comparator".
+                Invocation (scripts_as_run/full_release.sh, phase comparator; working directory <build>, the lake
+                stand-in first on PATH; release_full/comparator_full.json is identical to
+                riesz_range/lean/comparator_full.json):
+                COMPARATOR_LEAN4EXPORT=<tools>/lean4export/.lake/build/bin/lean4export \
+                COMPARATOR_LANDRUN=<tools>/comparator/scripts/fake-landrun.sh \
+                  <tools>/comparator/.lake/build/bin/comparator <build>/release_full/comparator_full.json
+
+Build steps for the three tools from these pins: ../../../riesz_range/README.md, "Reproduce" (not repeated for the
+release). The scripts in scripts_as_run/ are records, not runnable outside the recorded machine (record_2026-11-17.txt,
+header).
+
+Python (riesz_range/n7_interval, checked separately): the piece reports in the release were written by a --recheck
+run on Linux x86-64 with Python 3.12.3 and python-flint 0.6.0 (recorded in every used piece report;
+verification/riesz_range/range_recheck_2026-11-17.txt); the earlier runs and the plain range_check.py runs used
+Python 3.9.6 and python-flint 0.6.0 on macOS arm64.

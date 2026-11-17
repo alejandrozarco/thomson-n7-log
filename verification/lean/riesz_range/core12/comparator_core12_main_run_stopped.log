@@ -1,0 +1,14 @@
+Building RieszN7.Release.Core12Challenge
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build RieszN7.Release.Core12Challenge
+lake shim: lean -o <build>/.lake/build/lib/lean/RieszN7/Release/Core12Challenge.olean RieszN7/Release/Core12Challenge.lean (LEAN_PATH as build_range.sh)
+RieszN7/Release/Core12Challenge.lean:28:8: warning: declaration uses `sorry`
+RieszN7/Release/Core12Challenge.lean:32:8: warning: declaration uses `sorry`
+lake shim: RieszN7.Release.Core12Challenge rc=0 wall=10s
+Build completed successfully.
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec <tools>/lean4export/.lake/build/bin/lean4export RieszN7.Release.Core12Challenge -- Quot Quot.mk Quot.lift Quot.ind ThomsonN7Riesz.riesz_seven_core ThomsonN7Riesz.riesz_seven_unique_core propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce Nat String String.mk Char optParam autoParam semiOutParam outParam
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ThomsonN7Riesz.riesz_seven_core, ThomsonN7Riesz.riesz_seven_unique_core, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from RieszN7.Release.Core12Challenge
+Building RieszN7.Release.Core12Solution
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build RieszN7.Release.Core12Solution
+lake shim: lean -o <build>/.lake/build/lib/lean/RieszN7/Release/Core12Solution.olean RieszN7/Release/Core12Solution.lean (LEAN_PATH as build_range.sh)
+lake shim: RieszN7.Release.Core12Solution rc=0 wall=12s
+Build completed successfully.

@@ -1,0 +1,299 @@
+Exactness of the riesz_range/ material against the checked originals (release candidate, 2026-11-17)
+=====================================================================================================
+
+What was compared: the files under riesz_range/ and verification/{,lean/}riesz_range/ against (a) the deployed Lean
+tree on which the build, the axiom checks, nanoda and Comparator ran (read-only access, sha256 only), and (b) the
+development tree of the Python warrant. All comparisons are by sha256. No Lean build, Lake run or checker re-run other
+than the range_check.py runs of section 3 and the range_check.py --recheck of section 11 was made for this release
+candidate.
+
+1. Lean sources (riesz_range/lean/)
+-----------------------------------
+RieszN7/: 5 080 .lean files = the import closure of the 12 roots RieszN7.Release.{Full,Core12}{Challenge,Solution,
+  NegStatement,NegAxiom}, RieszN7.Check.AxiomsFull, RieszN7.Check.AxiomsCore, RieszN7.MainFull, RieszN7.MainCore
+  (closure lists: verification/lean/riesz_range/full/closure_full.txt, core12/closure_core12.txt).
+  Against the deployed tree (5 194 .lean + 14 .json files under RieszN7/): 5 080 identical, 0 different, 0 missing.
+  Not included (deployed only; none of them is imported by a root above), 128 files:
+    33  RieszN7/CapF0/**            an earlier cap formulation, superseded
+    30  RieszN7/Test/**, RieszN7/Cap/Test/**   tests and probes
+    49  per-piece and per-phase `#print axioms` modules (RieszN7/Cap/P*/{Closed,Min}Axioms.lean, Cap/Axioms.lean,
+        Cap/P5o6_11o12/Axioms.lean, Cells/S915_90/P1o2_9o16/Axioms.lean, Check/BaseAxioms.lean,
+        Check/Phase1Axioms.lean) and the diagnostic modules Cap/Neg/ChkA.lean, Cap/Neg/ChkASplit.lean
+    14  RieszN7/Cells/Case1/N*/case1_cert3_summary.json (generator summaries)
+     2  RieszN7/Cap/StepP/P5o6_11o12/W.lean, RieszN7/Tables/EPTable.lean
+  The 23 files with docstring-only edits of 2026-11-13 18:28 UTC (MainCore, MainFull, Range/Cap, Range/CapFull,
+  Range/Cover, Range/Cells/{Case1,S915_90,S93_915,S94_93,S96_94,S98_96,S99_98}, the same seven in Range/CellsFull/, and
+  Release/{Core12,Full}{Challenge,Solution}) are included in their edited, deployed form; no deployed .lean file is
+  newer. See verification/lean/riesz_range/record_2026-11-17.txt, "Sources" and "Rebuild and identical re-export".
+ThomsonGen/, LogLean/ (stored part, 13 files: ThomsonGen/Cert/{NBlk,Split}.lean, ThomsonGen/Generic/{Energy,Glue}.lean,
+  LogLean/MinorCore.lean, ThomsonGen/scripts/{split.py, depdump.tsv, generated.sha256, gen_roots.txt, scan_upstream.py,
+  verbatim/*}): 13 of 13 identical to the dependency workspace of the recorded build.
+Regenerated upstream part: regen.sh (identical to coulomb/lean/regen.sh) was run on 2026-11-17 in a scratch copy of
+  riesz_range/lean/ (fetches huwngtran/thomson-n7-lean @ 25f2fa5): "regen OK", 20 of 20 generated files with the
+  sha256 of ThomsonGen/scripts/generated.sha256. The 18 regenerated modules in the closure (upstream_regenerated.sha256)
+  are identical to those of the recorded build. Note: split.py needs ThomsonGen/scripts/depdump.tsv; this file is
+  stored here (identical to lean/ThomsonGen/scripts/depdump.tsv). coulomb/lean/ThomsonGen/scripts/ does not contain it,
+  so coulomb/lean/regen.sh as published cannot run as is (fixed in this release by adding the file; CHANGELOG.md).
+Other files: lean-toolchain, lake-manifest.json and the six comparator_*.json are identical to the deployed copies
+  (also stored, with the deployed lakefile.toml, in verification/lean/riesz_range/build/ and full/, core12/).
+  lakefile.toml is new (the recorded build did not use Lake for RieszN7; the deployed lakefile.toml, which describes
+  only the dependency workspace, is verification/lean/riesz_range/build/lakefile.toml.deployed). It was not tested.
+  SHA256SUMS (5 085 lines: the 5 080 RieszN7 modules, the 4 stored ThomsonGen modules, LogLean/MinorCore.lean) and
+  `shasum -a 256 -c SHA256SUMS`: 5 085 OK. build_order.txt: a dependency order of the 5 103 modules (5 080 RieszN7,
+  22 ThomsonGen, LogLean.MinorCore), computed from the imports.
+
+2. Python warrant (riesz_range/n7_interval/, riesz_range/hp/)
+-------------------------------------------------------------
+285 files: every checker and driver script of cellsS/, capR/, capS/, localS/ and range_check.py, every certificate
+and report that range_check.py reads or that a used report names as input, the outputs RANGE_CHECK_OUTPUT*.txt,
+RANGE_RECHECK_OUTPUT*.txt, range_check.json, ext/, and the documents RANGE_ASSEMBLY.md, cellsS/{NOTES.md,
+RANGE_TABLE*.md}, localS/NOTES.md, capR/{DESIGN.md,REMAINDER.md}. hp/check_cert.py is the development copy that the
+checkers import as ../hp/check_cert.py (it differs from checkers/check_cert.py of the log case; the reports record
+its sha256).
+281 of 285 identical to the development tree. 4 documents differ by the text replacements listed in section 4:
+RANGE_ASSEMBLY.md, capR/DESIGN.md, capR/REMAINDER.md, cellsS/NOTES.md. No .py, certificate, report, .jsonl or
+.json file was changed. (Afterwards, section 11: the 41 report files of the 267 used pieces and ext/range_check_ext.json
+were replaced by the files a --recheck run wrote; they now differ from the development tree. The other 243 files are
+not affected by section 11.)
+
+3. range_check.py from this tree
+--------------------------------
+One run, 2026-11-17, in riesz_range/n7_interval/ (verification/riesz_range/range_check_rc_run.txt):
+`python3 range_check.py --range 1/3 7/4 --json-out <scratch>` -> exit 0, "RANGE_OK [1/3, 7/4] route=local"; 267 used
+pieces, all authenticated by sha256 (checker sources and inputs), 0 by the mtime fallback; 285 records, 9 unused
+records without hashes dropped as stale (as in the recorded runs); 5.55 s wall, 0.94 GB peak RSS. The record
+inventory (used flags and report sha256) is identical to ext/range_check_ext.json.
+Two further runs, 2026-11-17, from a fresh `git clone` of commit 60691ae into a scratch directory
+(verification/riesz_range/range_check_fresh_clone.txt): `--range 1/3 7/4 --no-json` -> exit 0, "RANGE_OK [1/3, 7/4]
+route=local", 267 used pieces, 267 by sha256, 0 by the mtime fallback; `--range 1/3 7/4 --route exact --no-json` ->
+exit 0, "RANGE_OK [1/3, 7/4] route=exact", 190 used pieces, 190 by sha256. The clone stayed unmodified. The checker
+sources, certificates and reports are unchanged since 60691ae. (These runs concern the reports before section 11; the
+same runs on the regenerated reports: range_check_after_recheck.txt.)
+
+4. Text replacements in copied logs and documents
+-------------------------------------------------
+Logs and scripts under verification/lean/riesz_range/ (49 of 90 files changed, list in section 6), in this order:
+  the directory of the pinned checkers -> <tools>; the build directory -> <build>; the dependency workspace -> <deps>;
+  the log, heartbeat, temp, basicfix, m2, s1check, ext and docfix directories -> <logs>, <hb>, <tp>, <basicfix>,
+  <m2>, <s1check>, <ext>, <docfix>; the remaining work root -> <work>; the elan directory -> <elan>; the home
+  directory -> <home>; the user name -> <user>; the name of an unrelated build on the machine -> "an unrelated C++
+  build on the machine" / <other-build>; the names of the two other build machines -> "two other machines", and in
+  build/build_remote.tsv -> remote1, remote2; the workstation's host name -> "workstation" (with "on the
+  workstation", "workstation slot 1", "second workstation slot", "expected workstation peak").
+  After the pre-release reviews (2026-11-17), in scripts_as_run/basicfix.sh and scripts_as_run/comparator_rerun_v4.sh:
+  "orchestrator condition" -> "condition" (comments only). Left as they are: the internal workspace names pub_range
+  (= <build>), pub_n7c (= <deps>) and pub_local1 (another working directory) in comments of nine scripts of
+  scripts_as_run/ (mapping also in record_2026-11-17.txt, header).
+Documents under riesz_range/n7_interval/:
+  capR/DESIGN.md, capR/REMAINDER.md: the workstation's host name -> "the workstation"; the names of two scripts of
+  that machine -> "jobR.sh, pipeR.sh (not included)"; its work directory -> <build>; "Mac" -> "laptop".
+  cellsS/NOTES.md: "Mac" -> "laptop".
+  RANGE_ASSEMBLY.md (one line, G9): the name of an external review model and its usage rule -> "external AI review
+  ... per the review budget".
+Absolute paths in the scrubbed logs therefore start with a placeholder; nothing else in them was changed.
+
+5. Sources with private strings or wording that does not follow the README's terms (NOT edited; they are
+   hash-identical to what was checked)
+----------------------------------------------------------------------------------------------------------
+Lean (riesz_range/lean/RieszN7/):
+  * the workstation's host name in comments/docstrings of 45 files: RieszN7/Cap/P*/Closed.lean (21),
+    RieszN7/Cap/P*/StepP.lean (21), RieszN7/Cap/StepPLink.lean, RieszN7/Cells/C1Split.lean, RieszN7/Cap/Lit/Base.lean;
+  * "Mac" in comments of RieszN7/Basic.lean, RieszN7/Cap/LitLink.lean, RieszN7/Cap/Lit/Base.lean;
+  * references to internal planning or review files that are not in this repository: LEAN_PLAN_range.md (476 files),
+    plan_range/REVIEW_fable_range.md (23 files);
+  * header words: "Private" (4 240 files, e.g. "Private, AI-written", "Private prototype"), "not reviewed"
+    (1 235 files), "closed" (56), "proof"/"proved"/"proves" (11), "first" (56, mostly ordinal);
+    RieszN7/Basic.lean's header describes an earlier phase ("Private prototype (Phase 1)").
+Python side (riesz_range/n7_interval/):
+  * Superseded by section 11: 50 report files recorded absolute paths of the development machine in their
+    provenance. The 41 of them that hold the 267 used pieces were regenerated by the --recheck of section 11 and now
+    record only the neutral path of that run (/mnt/ssd/thomson/rel/thomson-n7-log/riesz_range/...), the interpreter
+    /usr/bin/python3 and the working directory; no user name.
+    The other 9 are unused cap records without hashes, which range_check.py drops as stale and --recheck does not
+    re-run: capR/pieces/check_capR_11_12__1_1.txt, check_capR_1_1__13_12.txt, check_capR_2_3__3_4.txt;
+    capR/pieces_nsub/check_capR_11_12__13_12_nsub8.txt, check_capR_11_12__13_12_nsub8_os.txt,
+    check_capR_11_12__1_1_nsub1.txt, check_capR_1_1__13_12_nsub1.txt, check_capR_2_3__3_4_nsub4_os.txt,
+    check_capR_negctrl_3_4__1_nsub4_os.txt. Each still names a directory of the development machine (user name and
+    worktree path) in its "dirs" field. They are left unedited; range_check.py does not use the recorded paths.
+  * "Mac", "coordinator" or machine-slot wording in comments of heavy_lock.py, cellsS/range_driver_ext.py,
+    capR/affine_cap.py, capR/round_dirs.py, capS/sdp_capS.py.
+  * RANGE_ASSEMBLY.md is the internal assembly document of 2026-11-07, reproduced with the one replacement above: it
+    refers to files that are not included (PROOF_LEDGER.md, PLAN_range.md, STATUS_range.md, STATUS_s1.md,
+    LITERATURE_range.md, EXTENSION_sizing.md, capR/RESULTS.md, the review files), uses "proof" and "closed" in the
+    internal sense, and its row G9 ("nothing of the range is formalised") predates the Lean development.
+verification/lean/riesz_range/scripts_as_run/: three scripts name the review that motivated them ("Fable review M2",
+  "Fable review S1"); core12/chain.log mentions a "coordinator request". Left as they are.
+
+6. Copied logs: verbatim or scrubbed
+------------------------------------
+Scrubbed (section 4): full/{full_release.log, comparator_full.log, comparator_full.time,
+comparator_full_neg_axiom.{log,time}, comparator_full_neg_statement.{log,time}, comparator_run2_gate.log,
+comparator_run1_stopped/comparator_full.log, second-kernel/{config.json, config.tampered.json, export.sha256,
+export.time}, tamper-certificate-literal/{m2.log, config.json}}; core12/{chain.log, comparator_core12_main_run_stopped.log,
+comparator_core12_neg_axiom.{log,time}, comparator_core12_neg_statement.{log,time}, core_release.log,
+second-kernel/{config.json, config.tampered.json, export.sha256, export.time}}; axioms/{AxiomsFull,AxiomsCore}.time;
+rebuild-reexport/export_{full,core}.time; trusted-definitions/s1.log; build/build_remote.tsv; all of scripts_as_run/
+except closure.py and m2_pick.py.
+Verbatim: everything else in verification/lean/riesz_range/ (nanoda outputs, Comparator JSON configs, closure lists,
+axiom logs, basicfix.log, mods.txt, release.txt, PrintDefs.lean and its outputs, build/build.tsv, the deployed
+lakefile/manifest/toolchain, build/final_{full,core}.log, closure.py, m2_pick.py). tools.txt and
+record_2026-11-17.txt were written for this release.
+
+7. The line "BASICFIX RESULT: FAIL basic" (verification/lean/riesz_range/rebuild-reexport/basicfix.log)
+--------------------------------------------------------------------------------------------------------
+basicfix.sh compared the rebuilt RieszN7/Basic.olean with an olean built from the same source in a different
+directory (s1.log, "[recipe]"). The olean of this module was not reproduced out of tree (s1.log, "[variants]": four
+flag variants in one scratch directory, none reproduces the deployed bytes); the cause is not established, presumably
+the build path. The in-place rebuild by the committed recipe is byte-identical to the olean it replaced: cmp in
+verification/lean/riesz_range/scripts_as_run/comparator_rerun_v4.sh, logged in full/comparator_run2_gate.log
+(2026-11-14T05:27:56). On 2026-11-17 the sha256 of the deployed RieszN7/Basic.olean (after the in-place rebuild) and of
+the copy basicfix.sh set aside before rebuilding were compared: both be84f5679638d35b7a119e4e4330a7aed2bb6dc9337c592670bcb5e14ff804e7
+(no log file of this comparison).
+The rebuild (rc 0), the axiom checks and the two byte-identical re-exports in the same log passed.
+
+8. Certificate files named in the Lean modules
+----------------------------------------------
+Generated Lean modules name, in their header, the certificate files whose data they contain, with a sha256 prefix.
+All 181 distinct (file, sha256 prefix) pairs were looked up on 2026-11-17:
+* 152 (Case 1 and slab node certificates) are files of riesz_range/n7_interval/ with that sha256 prefix;
+* 29 are re-rounded cap certificates, cert_cap_s*_D12_rr.json (22) and cert_dir{0..6}_D12_rr.json (7), from which the
+  Lean cap modules were generated. They are NOT in this release (with their Python re-check, about 140 MB in the
+  development tree; that re-check is a range_check run over the re-rounded cap, RANGE_OK [1/3, 7/4] route=exact,
+  2026-11-07; its output is not in this release). In Lean the cap data are checked as embedded in the modules; the
+  files are not needed for that. The Python cap pieces of riesz_range/n7_interval/ use the certificates before
+  re-rounding, so on the cap the Python and the Lean checks are of different data. Names and sha256 prefixes of the 29
+  files, as recorded in the headers of the Lean modules:
+    cert_cap_s11_12_D12_rr.json     fc81e4d79a064ee4   cert_cap_s11_24_D12_rr.json     31ff3f2d1e242c42
+    cert_cap_s13_12_D12_rr.json     e2a760ff70898500   cert_cap_s13_24_D12_rr.json     c1b2b6234525eab1
+    cert_cap_s17_12_D12_rr.json     df6cca0bcb890e40   cert_cap_s17_24_D12_rr.json     3ad9c5b887b3e8b4
+    cert_cap_s19_12_D12_rr.json     ec447b3bc097414b   cert_cap_s1_1_D12_rr.json       aa4d0cff0036f80c
+    cert_cap_s1_2_node_D12_rr.json  702c68304285ab48   cert_cap_s1_3_D12_rr.json       5c132526b533000b
+    cert_cap_s2_3_D12_rr.json       041b5953b7917932   cert_cap_s3_2_D12_rr.json       4580e04dbd2a5a7b
+    cert_cap_s3_4_node_D12_rr.json  3f894072b2213210   cert_cap_s3_8_D12_rr.json       778de0a64d43f2dc
+    cert_cap_s4_3_D12_rr.json       0f4b3947628f4965   cert_cap_s5_12_D12_rr.json      9ee3a4cd42b623ac
+    cert_cap_s5_3_D12_rr.json       544db7e9af886031   cert_cap_s5_4_D12_rr.json       5973019ec515d490
+    cert_cap_s5_6_D12_rr.json       7e5755f1005e27b0   cert_cap_s7_12_D12_rr.json      f3514cea2b13a2a8
+    cert_cap_s7_4_D12_rr.json       4d96b0182c8cde10   cert_cap_s7_6_D12_rr.json       b715322d050f4bdd
+    cert_dir0_D12_rr.json           3dddf23e33f8ec31   cert_dir1_D12_rr.json           66944de704347150
+    cert_dir2_D12_rr.json           d90f6a8351ead78b   cert_dir3_D12_rr.json           f9d82f474df71e46
+    cert_dir4_D12_rr.json           325c16bb0a4cc5e0   cert_dir5_D12_rr.json           06d59f09c264aac1
+    cert_dir6_D12_rr.json           9273783c5323ed53
+
+9. Not verified
+---------------
+* No Lean build, `lake build` or Comparator run from this tree; the new lakefile.toml is untested. The Lean results
+  are those of the recorded runs on the deployed tree, whose sources are byte-identical (section 1).
+* The Core12 theorems (s in [1/2, 3/2]) have no completed main Comparator run (only nanoda and the negative controls).
+* (Resolved after the pre-release reviews.) The run of section 3 from this working tree kept the modification times
+  of the development tree; the two runs from a fresh git clone (section 3, range_check_fresh_clone.txt) give RANGE_OK
+  with all used pieces authenticated by sha256 and the same 9 unused records dropped as stale.
+* regen.sh was run in a scratch copy, not in this tree (which therefore contains no regenerated modules).
+* The olean files, the 2.0 GB export and the oleans built on the two other machines are not included; their sha256 are
+  recorded in the logs, and the oleans were checked by the Lean kernel (Comparator) and nanoda as deployed.
+
+10. Text corrections after the pre-release reviews (2026-11-17)
+---------------------------------------------------------------
+Four read-only AI reviews of the release candidate (statement fidelity and trusted base, reproducibility, wording
+and consistency; reports not public) asked for text corrections. Only free text was changed: README.md,
+riesz_range/README.md, METHOD.md, AI_DISCLOSURE.md, CITATION.cff, .zenodo.json, formalization.yaml, the comments of
+riesz_range/lean/lakefile.toml, this file, range_check_rc_run.txt, the new range_check_fresh_clone.txt,
+verification/lean/riesz_range/{record_2026-11-17.txt, tools.txt}, and two comments in scripts_as_run/ (section 4). No
+.lean, .py, certificate, report or JSONL file was changed; riesz_range/lean/SHA256SUMS verifies as before, and
+MANIFEST.sha256 was regenerated. (The reports were replaced later, section 11.)
+
+11. Reports regenerated by range_check.py --recheck on a Linux workstation (2026-11-17)
+-----------------------------------------------------------------------------------------
+So that the reports in the release record no user name or development-tree path, range_check.py --recheck was run
+once more, from a copy of riesz_range/n7_interval/ and riesz_range/hp/ of commit a0b8ddc (285 files, sha256-identical)
+in a directory with a neutral path, on a Linux workstation (Linux 6.8, x86-64, Python 3.12.3, python-flint 0.6.0),
+with `--range 1/3 7/4 --recheck --json-out ext/range_check_ext.json`, nice 19, one piece at a time. No .py file was
+edited; heavy_lock.py's call of the macOS command taskpolicy went to a stand-in on PATH that drops its options and
+runs the command (text in the record). Record: verification/riesz_range/range_recheck_2026-11-17.txt (setup and the
+full output).
+Result: exit 0, "RANGE_OK [1/3, 7/4] route=local"; 267 of 267 used pieces re-run, 267 OK, 0 FAILED, 0 verdict
+changes; afterwards 267 of 267 authenticated by sha256, all recorded as re-run in ext/range_check_ext.json. 5 274 s
+wall (the run of 2026-11-07 on the Mac: 22 613 s); peak memory 1.05 GiB summed over range_check.py and the running
+checker (sampled every 5 s), 0.78 GiB for the largest single process (/usr/bin/time -v).
+Report differences (range_check.py's per-piece comparison): none for the 231 Case 1, slab and local pieces; the 36 cap
+pieces differ in floating-point diagnostic fields only (m_sub, mu, mu_min, tau, slack, slackS, slackW, P_min_slack;
+relative difference at most 1.2e-6, in cap [7/12, 2/3], otherwise at most 3.2e-9; no sign change). No exact,
+rational or boolean field changed.
+Copied into this tree unchanged (sha256 checked against the run directory), 42 files: capR/pieces/*.txt (23 used),
+capR/pieces_nsub/*.txt (13 used), cellsS/range_pieces.jsonl, cellsS/logs/check_piece_case1.txt,
+cellsS/logs/check_bern_case1.txt, localS/cover2q_1o20_48o25_tau1e-6.jsonl, localS/cover2q_1o2_3o2_tau1e-6.jsonl,
+ext/range_check_ext.json. Not copied: pre_recheck/ (the old reports; not in this release) and the lock file
+.mac_heavy.lock. Not changed: range_check.json (the inventory of the plain run of 2026-11-07 14:32, which already
+predated the recheck of 2026-11-07), RANGE_RECHECK_OUTPUT*.txt (outputs of the 2026-11-07 runs, on the replaced
+reports), range_check_rc_run.txt and range_check_fresh_clone.txt (section 3; runs on the replaced reports; only a note added at
+the top).
+Afterwards range_check.py was run on the regenerated reports in this tree and in a fresh clone of a0b8ddc with the 42
+files copied in: RANGE_OK for routes local (267 used, all by sha256) and exact (190 used, all by sha256)
+(verification/riesz_range/range_check_after_recheck.txt). Text updated for this section: riesz_range/README.md, this
+file, notes at the top of range_check_rc_run.txt and range_check_fresh_clone.txt, and the Python line of
+verification/lean/riesz_range/tools.txt. No .lean or .py file changed; riesz_range/lean/SHA256SUMS
+verifies as before, and MANIFEST.sha256 was regenerated.
+
+12. Bulk data moved to a separate archive; Lean route check (2026-11-17)
+-------------------------------------------------------------------------
+Decision of the repository owner: git keeps the Lean sources, the checkers, small documents, records, inventories and
+hash lists; the large certificates and reports, the re-rounded cap certificates and the Lean kernel exports go only
+into a Zenodo archive (DOI in riesz_range/README.md, Bulk data; to be filled at release). The release history was
+rebuilt from the published v2.7 so that no bulk file is reachable from it; the commits of the release candidate named
+in sections 1 to 11 and in the records (60691ae, a0b8ddc and others) are not part of it. Their riesz_range/lean/
+trees, checkers and the files listed below are byte-identical to the ones here or in the archive.
+Split, by role (sizes are the sums of the file sizes):
+  git, riesz_range/n7_interval/ and hp/: 49 files, 1.28 MB: every .py file (31), the documents (.md), the recorded
+    outputs RANGE_*OUTPUT*.txt, the inventories range_check.json and ext/*.json, ext/cells_cover_ext.txt,
+    ext/fix_M1_vbound_out.txt;
+  git, riesz_range/: lean/ unchanged (5 107 files, about 443 MiB), README.md, fetch_bulk.sh, BULK_SHA256SUMS,
+    .gitignore;
+  archive riesz_range_bulk_v2.8.tar (452 655 616 bytes, sha256
+    e7fedde5e7b0a683f20334bb104ec763bdfde01cd604b9576d7882f3cecc9b1c), 286 files, all listed with their sha256 in
+    riesz_range/BULK_SHA256SUMS:
+    - 227 files of riesz_range/n7_interval/, 281 694 974 bytes, byte-identical to the files of the release candidate
+      (sha256 compared with its MANIFEST.sha256): 185 certificate files (cellsS/certs_{lin,pt,bern,range}/,
+      capS/*.json.gz, capS/cert_cap_s3_4_D12.json, capR/cert_dirs_D12.json, cap1/cert_cap_coulomb_D12.json) and 42
+      report files that range_check.py reads (capR/pieces/ 23, capR/pieces_nsub/ 13, cellsS/results.jsonl,
+      cellsS/range_pieces.jsonl, cellsS/logs/check_{piece,bern}_case1.txt, localS/cover2q_*.jsonl);
+    - riesz_range/cap_rr/, 59 files: the re-rounded cap certificates of section 8 and their Python checks of
+      2026-11-07, copied from the development tree: nodes/ (24 node certificates: the 22 of section 8 and
+      cert_cap_s{23_24,25_24}_D12_rr.json, which only the Python re-check used), dirs/cert_dirs_D12_rr.json (the 7
+      directions in one file; sha256 f296160b532fcfb6...), capS/check_capS_*_rr.txt (24 exact node checks),
+      range_check_rr.txt and range_check_rr.json (the range_check.py run over the re-rounded cap: RANGE_OK [1/3, 7/4]
+      route=exact, 179 used pieces, all by sha256) and RR_SHA256SUMS.txt (the hash list written with them; all its
+      lines verify). The piece reports of that run and its logs are not included (they record development paths).
+    - dirs/cert_dir{0..6}_D12_rr.json, the seven per-direction files that the Lean modules name, were not kept in the
+      development tree (they were written to a scratch directory). They were regenerated from
+      dirs/cert_dirs_D12_rr.json by the split that emit_capR.py applies to it, in Python:
+        D = json.load(open("cert_dirs_D12_rr.json"))
+        for i, d in enumerate(D["dirs"]):
+            open(f"cert_dir{i}_D12_rr.json", "w").write(
+                json.dumps(dict(d, cell=D["cell"], D=D["D"], sizes=D["sizes"], dA=D["dA"])))
+      All 29 files named by Lean modules (22 nodes, 7 directions) have the sha256 prefixes of section 8, which are
+      also those in the module headers (grep of riesz_range/lean/RieszN7/Cap, 29 of 29).
+  separate archive files (lean4export exports, xz -6, compressed and round-trip checked on the Linux workstation):
+    riesz_seven_range.ndjson.xz  337 318 704 bytes, sha256 2817d61623cb9e18f5664ebab11d78f8294f9d9cf2016472e56d22a05730bab0
+      (decompressed: 2 004 582 689 bytes, sha256 e994407ff4fd90b0b57c28edc3ac1d2c66e8c28bb00a7a4d4bcdf4fe2fc3ba5a,
+      the Full export of record_2026-11-17.txt);
+    riesz_seven_core.ndjson.xz   239 993 632 bytes, sha256 e92f21cf94cd969144cfbff6041ff435e48f89f94d03e300571234c11cfa8715
+      (decompressed: 1 465 454 494 bytes, sha256 878884835761bf88f0523516938e0095b88ba9c506d9bc931b0b44cf34cf1883,
+      the Core12 export).
+Not in git and not in the archive: the nine unused cap records of section 5 (capR/pieces/check_capR_11_12__1_1.txt,
+  check_capR_1_1__13_12.txt, check_capR_2_3__3_4.txt; capR/pieces_nsub/check_capR_11_12__13_12_nsub8.txt,
+  check_capR_11_12__13_12_nsub8_os.txt, check_capR_11_12__1_1_nsub1.txt, check_capR_1_1__13_12_nsub1.txt,
+  check_capR_2_3__3_4_nsub4_os.txt, check_capR_negctrl_3_4__1_nsub4_os.txt). They are records of superseded runs,
+  without hashes, which range_check.py dropped as stale and does not use. Test before omitting them: the two plain
+  runs on a copy of n7_interval/ and hp/ without these nine files gave the same results as with them (RANGE_OK, routes
+  local and exact, 267 and 190 used pieces, all by sha256, cap 36 used), without the nine NOT_OK lines. The
+  inventories range_check.json and ext/range_check_ext*.json still list them as unused records (unchanged files).
+End-to-end test: verification/riesz_range/fresh_clone_with_bulk.txt (fresh clone, fetch_bulk.sh with a local copy of
+  the archive, both plain runs RANGE_OK with all used pieces authenticated by sha256, MANIFEST.sha256,
+  riesz_range/lean/SHA256SUMS and riesz_range/BULK_SHA256SUMS verify, git status clean).
+No .lean or .py file changed (git diff against the release candidate: none); riesz_range/lean/SHA256SUMS verifies
+  (5 085 OK); MANIFEST.sha256 was regenerated by the same recipe (git ls-files without MANIFEST.sha256, sorted, ./
+  prefix, shasum -a 256) and covers only the files in git.
+Lean route check: verification/lean/riesz_range/route_check_2026-11-17.md (a fresh clone of riesz_range/lean/ on the
+  Linux workstation, the README route for the trusted closure only; one sentence of its setup made neutral). The six
+  corrections it lists were applied to riesz_range/README.md (Reproduce, Lean) and record_2026-11-17.txt (Trusted
+  definitions). It qualifies sections 7 and 9: the olean of RieszN7/Basic was reproduced from a fresh clone by the
+  committed recipe, and a route from a fresh clone to the trusted closure has been tested (not the full library).

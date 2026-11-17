@@ -1,0 +1,5 @@
+# Upstream declarations used unchanged by ThomsonGen/Generic/Glue.lean.
+# split.py copies each one verbatim into ThomsonGen/Verbatim/Generic.lean.
+import Mathlib
+namespace ThomsonGen
+ThomsonN7.Glue.exists_perm_of_ne

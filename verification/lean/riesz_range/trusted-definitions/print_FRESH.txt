@@ -1,0 +1,13 @@
+def RieszN7.rieszEnergy : ℝ → {n : ℕ} → (Fin n → ThomsonN7.R3) → ℝ :=
+fun s {n} x => ∑ i, ∑ j > i, ‖x i - x j‖ ^ (-s)
+def ThomsonN7.SphereConfig : (n : ℕ) → Set (Fin n → ThomsonN7.R3) :=
+fun n => {x | (∀ (i : Fin n), ‖x i‖ = 1) ∧ Function.Injective x}
+def ThomsonN7.pentBipyramid : Fin 7 → ThomsonN7.R3 :=
+fun i =>
+  if ↑i < 5 then ThomsonN7.cyl 1 (2 * Real.pi * ↑↑i / 5) 0
+  else if ↑i = 5 then ThomsonN7.cyl 0 0 1 else ThomsonN7.cyl 0 0 (-1)
+@[reducible] def ThomsonN7.R3 : Type :=
+EuclideanSpace ℝ (Fin 3)
+def RieszN7.phiS : ℝ → ℝ → ℝ :=
+fun s t => (2 - 2 * t) ^ (-(s / 2))
+'RieszN7.rieszEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]

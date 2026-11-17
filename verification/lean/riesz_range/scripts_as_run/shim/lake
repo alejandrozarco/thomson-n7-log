@@ -1,0 +1,24 @@
+#!/bin/bash
+# `lake` shim for Comparator in pub_range (installed first on PATH by env_core.sh). Comparator runs
+# `lake build <module>` (in a sandbox) for the challenge and the solution; pub_range is not a Lake workspace, so this
+# shim compiles <module> itself with the same lean binary, flags and LEAN_PATH as build_range.sh (all imports are
+# already built; it refuses anything outside RieszN7.Release.*). `lake env CMD...` runs CMD with that LEAN_PATH.
+# Paths are fixed here because a real landrun passes only PATH/HOME to `lake build`.
+D=<build>; N=<deps>
+LP=$D/.lake/build/lib/lean:$N/.lake/build/lib/lean
+for p in $N/.lake/packages/*; do LP=$LP:$p/.lake/build/lib/lean; done
+LEAN=$HOME/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lean
+case "${1:-}" in
+  build)
+    M=${2:-}
+    case "$M" in RieszN7.Release.*) ;; *) echo "lake shim: refusing to build '$M' (only RieszN7.Release.*)" >&2; exit 1 ;; esac
+    F=${M//.//}; O=$D/.lake/build/lib/lean/$F; mkdir -p "$(dirname "$O")"
+    echo "lake shim: lean -o $O.olean $F.lean (LEAN_PATH as build_range.sh)"
+    T0=$(date +%s)
+    (cd $D && LEAN_PATH=$LP LEAN_NUM_THREADS=1 $LEAN -j1 -DElab.async=false -o $O.olean -i $O.ilean $F.lean); rc=$?
+    echo "lake shim: $M rc=$rc wall=$(( $(date +%s) - T0 ))s"
+    [ $rc = 0 ] && echo "Build completed successfully."
+    exit $rc ;;
+  env) shift; LEAN_PATH=$LP exec "$@" ;;
+  *) echo "lake shim: unsupported: $*" >&2; exit 1 ;;
+esac

@@ -1,0 +1,170 @@
+range_check.py on the regenerated reports (2026-11-17, after range_recheck_2026-11-17.txt; macOS arm64, Python 3.9.6,
+python-flint 0.6.0)
+=====================================================================================================================
+
+The 42 files rewritten by the Linux --recheck run (range_recheck_2026-11-17.txt) were copied into the release
+candidate unchanged (sha256 checked against the run directory). Then the plain commands of riesz_range/README.md were
+run, each under nice 19, in riesz_range/n7_interval/:
+
+  python3 range_check.py --range 1/3 7/4 --no-json
+  python3 range_check.py --range 1/3 7/4 --route exact --no-json
+
+A. In the release-candidate working tree (04:07:37-04:07:42 UTC): both exit 0. Route local: "RANGE_OK [1/3, 7/4]",
+   267 used pieces, 267 authenticated by sha256, 0 by the mtime fallback; 2.6 s, 0.94 GiB peak RSS. Route exact:
+   "RANGE_OK [1/3, 7/4] route=exact", 190 used pieces, 190 by sha256; 2.4 s, 0.94 GiB.
+   A third run, `python3 range_check.py --range 1/3 7/4 --json-out <scratch copy of ext/range_check_ext.json>`:
+   exit 0, RANGE_OK, "recheck status: 267 of the 267 used pieces are recorded as re-run by a --recheck"; its record
+   inventory (285 records: source, record, a, b, used flag, report_sha256) is identical to ext/range_check_ext.json.
+   It warns that the Python version differs from the --recheck run (3.12.3 -> 3.9.6).
+B. In a fresh `git clone` of commit a0b8ddc into a scratch directory, with the same 42 files copied in
+   (04:08:05-04:08:10 UTC): both exit 0 with the same output as in A except the nine NOT_OK lines, which name the
+   checkout time as the modification time (unused cap records without hashes; no effect on RANGE_OK). `git status` in
+   the clone afterwards: exactly the 42 copied files modified, nothing else.
+
+In all runs the used reports record "python 3.12.3, python-flint 0.6.0 (267)" (190 for route exact). With --no-json no
+previous inventory is read, so "recheck status" reports 0 of the used pieces as re-run (see A, third run, for the
+recorded status).
+
+=== A, route local: --range 1/3 7/4 --no-json ===
+range_check: s in [1/3, 7/4], route=local, local=cover2q (exact), freshness=on
+
+component                    used dropped  certified (within range)      gaps
+case1 (cut -9/10)              22       0  [1/3, 7/4]                    -
+slab [-99/100, -49/50]         21       0  [1/3, 7/4]                    -
+slab [-49/50, -24/25]          21       0  [1/3, 7/4]                    -
+slab [-24/25, -47/50]          23       0  [1/3, 7/4]                    -
+slab [-47/50, -93/100]         23       0  [1/3, 7/4]                    -
+slab [-93/100, -183/200]       23       0  [1/3, 7/4]                    -
+slab [-183/200, -9/10]         21       0  [1/3, 7/4]                    -
+cap [-1, -99/100]              36       9  [1/3, 7/4]                    -
+local lemma                    77       0  [1/3, 7/4]                    -
+
+NOT_OK  cap [11/12, 1] capR/pieces/check_capR_11_12__1_1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-06 23:42:10
+NOT_OK  cap [1, 13/12] capR/pieces/check_capR_1_1__13_12.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-06 23:46:12
+NOT_OK  cap [2/3, 3/4] capR/pieces/check_capR_2_3__3_4.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 05:16:29
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 01:01:17
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8_os.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:24:06
+NOT_OK  cap [11/12, 1] capR/pieces_nsub/check_capR_11_12__1_1_nsub1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 00:42:31
+NOT_OK  cap [1, 13/12] capR/pieces_nsub/check_capR_1_1__13_12_nsub1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 00:44:33
+NOT_OK  cap [2/3, 3/4] capR/pieces_nsub/check_capR_2_3__3_4_nsub4_os.txt: stale: input capS/cert_cap_s2_3_D12.json.gz modified 11-07 03:44:39 >= run start ~11-07 03:30:12; stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:30:12
+NOT_OK  cap [3/4, 1] capR/pieces_nsub/check_capR_negctrl_3_4__1_nsub4_os.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:26:07
+WARN cellsS/results.jsonl: 9 piece record(s) without `certs` ignored (cell labels are not trusted)
+NOTE authentication of the 267 used pieces: 267 by sha256 (checker + inputs), 0 by the mtime fallback (reports without hashes)
+CHECK ok   cap cell [-1, -99/100] hard-coded in check_capR.py (fmpq(-99, 100), Fr(-99, 100) assert)
+CHECK ok   check_localS.check_piece uses r = sqrt7 (11/2) tau, tau exact (qarb)
+CHECK ok   check_localS.qarb: Fraction -> arb(num) / arb(den)
+CHECK ok   check_localS cover2q reads a, b, tau as Fractions
+CHECK ok   cell boundaries -1 < -99/100 < -9/10
+NOTE local tau from file name '1e-6' read as exact: 1/1000000
+NOTE local files: localS/cover2q_1o20_48o25_tau1e-6.jsonl, localS/cover2q_1o2_3o2_tau1e-6.jsonl  (float cover2 files only with --local-legacy)
+NOTE range_check.py sha256 28de4aa25fc0f4e93d8a27c0f53d114538e97f8f2feea2df2f2813054924a438 (this run: python 3.9.6, python-flint 0.6.0)
+NOTE versions recorded by the used reports: python 3.12.3, python-flint 0.6.0 (267)
+NOTE recheck status: 0 of the 267 used pieces are recorded as re-run by a --recheck with the current report (what --recheck-new may skip)
+
+RANGE_OK [1/3, 7/4] route=local
+[exit status 0]
+
+=== A, route exact: --range 1/3 7/4 --route exact --no-json ===
+range_check: s in [1/3, 7/4], route=exact, local=cover2q (exact), freshness=on
+
+component                    used dropped  certified (within range)      gaps
+case1 (cut -9/10)              22       0  [1/3, 7/4]                    -
+slab [-99/100, -49/50]         21       0  [1/3, 7/4]                    -
+slab [-49/50, -24/25]          21       0  [1/3, 7/4]                    -
+slab [-24/25, -47/50]          23       0  [1/3, 7/4]                    -
+slab [-47/50, -93/100]         23       0  [1/3, 7/4]                    -
+slab [-93/100, -183/200]       23       0  [1/3, 7/4]                    -
+slab [-183/200, -9/10]         21       0  [1/3, 7/4]                    -
+cap [-1, -99/100]              36       9  [1/3, 7/4]                    -
+
+NOT_OK  cap [11/12, 1] capR/pieces/check_capR_11_12__1_1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-06 23:42:10
+NOT_OK  cap [1, 13/12] capR/pieces/check_capR_1_1__13_12.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-06 23:46:12
+NOT_OK  cap [2/3, 3/4] capR/pieces/check_capR_2_3__3_4.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 05:16:29
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 01:01:17
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8_os.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:24:06
+NOT_OK  cap [11/12, 1] capR/pieces_nsub/check_capR_11_12__1_1_nsub1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 00:42:31
+NOT_OK  cap [1, 13/12] capR/pieces_nsub/check_capR_1_1__13_12_nsub1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 00:44:33
+NOT_OK  cap [2/3, 3/4] capR/pieces_nsub/check_capR_2_3__3_4_nsub4_os.txt: stale: input capS/cert_cap_s2_3_D12.json.gz modified 11-07 03:44:39 >= run start ~11-07 03:30:12; stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:30:12
+NOT_OK  cap [3/4, 1] capR/pieces_nsub/check_capR_negctrl_3_4__1_nsub4_os.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:26:07
+WARN cellsS/results.jsonl: 9 piece record(s) without `certs` ignored (cell labels are not trusted)
+NOTE authentication of the 190 used pieces: 190 by sha256 (checker + inputs), 0 by the mtime fallback (reports without hashes)
+CHECK ok   cap cell [-1, -99/100] hard-coded in check_capR.py (fmpq(-99, 100), Fr(-99, 100) assert)
+CHECK ok   cell boundaries -1 < -99/100 < -9/10
+NOTE range_check.py sha256 28de4aa25fc0f4e93d8a27c0f53d114538e97f8f2feea2df2f2813054924a438 (this run: python 3.9.6, python-flint 0.6.0)
+NOTE versions recorded by the used reports: python 3.12.3, python-flint 0.6.0 (190)
+NOTE recheck status: 0 of the 190 used pieces are recorded as re-run by a --recheck with the current report (what --recheck-new may skip)
+
+RANGE_OK [1/3, 7/4] route=exact
+[exit status 0]
+
+=== B, route local (fresh clone + the 42 files) ===
+range_check: s in [1/3, 7/4], route=local, local=cover2q (exact), freshness=on
+
+component                    used dropped  certified (within range)      gaps
+case1 (cut -9/10)              22       0  [1/3, 7/4]                    -
+slab [-99/100, -49/50]         21       0  [1/3, 7/4]                    -
+slab [-49/50, -24/25]          21       0  [1/3, 7/4]                    -
+slab [-24/25, -47/50]          23       0  [1/3, 7/4]                    -
+slab [-47/50, -93/100]         23       0  [1/3, 7/4]                    -
+slab [-93/100, -183/200]       23       0  [1/3, 7/4]                    -
+slab [-183/200, -9/10]         21       0  [1/3, 7/4]                    -
+cap [-1, -99/100]              36       9  [1/3, 7/4]                    -
+local lemma                    77       0  [1/3, 7/4]                    -
+
+NOT_OK  cap [11/12, 1] capR/pieces/check_capR_11_12__1_1.txt: stale: input capS/cert_cap_s11_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:43; stale: input capS/cert_cap_s1_1_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:43; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:06:43
+NOT_OK  cap [1, 13/12] capR/pieces/check_capR_1_1__13_12.txt: stale: input capS/cert_cap_s1_1_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:25; stale: input capS/cert_cap_s13_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:25; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:06:25
+NOT_OK  cap [2/3, 3/4] capR/pieces/check_capR_2_3__3_4.txt: stale: input capS/cert_cap_s2_3_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: input capS/cert_cap_s3_4_node_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:08:02
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8.txt: stale: input capS/cert_cap_s11_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: input capS/cert_cap_s13_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:08:02
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8_os.txt: stale: input capS/cert_cap_s11_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: input capS/cert_cap_s13_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:08:02
+NOT_OK  cap [11/12, 1] capR/pieces_nsub/check_capR_11_12__1_1_nsub1.txt: stale: input capS/cert_cap_s11_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:51; stale: input capS/cert_cap_s1_1_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:51; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:06:51
+NOT_OK  cap [1, 13/12] capR/pieces_nsub/check_capR_1_1__13_12_nsub1.txt: stale: input capS/cert_cap_s1_1_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:42; stale: input capS/cert_cap_s13_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:42; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:06:42
+NOT_OK  cap [2/3, 3/4] capR/pieces_nsub/check_capR_2_3__3_4_nsub4_os.txt: stale: input capS/cert_cap_s2_3_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: input capS/cert_cap_s3_4_node_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:08:02
+NOT_OK  cap [3/4, 1] capR/pieces_nsub/check_capR_negctrl_3_4__1_nsub4_os.txt: stale: input capS/cert_cap_s3_4_D12.json modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: input cap1/cert_cap_coulomb_D12.json modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:08:02
+WARN cellsS/results.jsonl: 9 piece record(s) without `certs` ignored (cell labels are not trusted)
+NOTE authentication of the 267 used pieces: 267 by sha256 (checker + inputs), 0 by the mtime fallback (reports without hashes)
+CHECK ok   cap cell [-1, -99/100] hard-coded in check_capR.py (fmpq(-99, 100), Fr(-99, 100) assert)
+CHECK ok   check_localS.check_piece uses r = sqrt7 (11/2) tau, tau exact (qarb)
+CHECK ok   check_localS.qarb: Fraction -> arb(num) / arb(den)
+CHECK ok   check_localS cover2q reads a, b, tau as Fractions
+CHECK ok   cell boundaries -1 < -99/100 < -9/10
+NOTE local tau from file name '1e-6' read as exact: 1/1000000
+NOTE local files: localS/cover2q_1o20_48o25_tau1e-6.jsonl, localS/cover2q_1o2_3o2_tau1e-6.jsonl  (float cover2 files only with --local-legacy)
+NOTE range_check.py sha256 28de4aa25fc0f4e93d8a27c0f53d114538e97f8f2feea2df2f2813054924a438 (this run: python 3.9.6, python-flint 0.6.0)
+NOTE versions recorded by the used reports: python 3.12.3, python-flint 0.6.0 (267)
+NOTE recheck status: 0 of the 267 used pieces are recorded as re-run by a --recheck with the current report (what --recheck-new may skip)
+
+RANGE_OK [1/3, 7/4] route=local
+[exit status 0]
+
+=== B, route exact (fresh clone + the 42 files) ===
+range_check: s in [1/3, 7/4], route=exact, local=cover2q (exact), freshness=on
+
+component                    used dropped  certified (within range)      gaps
+case1 (cut -9/10)              22       0  [1/3, 7/4]                    -
+slab [-99/100, -49/50]         21       0  [1/3, 7/4]                    -
+slab [-49/50, -24/25]          21       0  [1/3, 7/4]                    -
+slab [-24/25, -47/50]          23       0  [1/3, 7/4]                    -
+slab [-47/50, -93/100]         23       0  [1/3, 7/4]                    -
+slab [-93/100, -183/200]       23       0  [1/3, 7/4]                    -
+slab [-183/200, -9/10]         21       0  [1/3, 7/4]                    -
+cap [-1, -99/100]              36       9  [1/3, 7/4]                    -
+
+NOT_OK  cap [11/12, 1] capR/pieces/check_capR_11_12__1_1.txt: stale: input capS/cert_cap_s11_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:43; stale: input capS/cert_cap_s1_1_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:43; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:06:43
+NOT_OK  cap [1, 13/12] capR/pieces/check_capR_1_1__13_12.txt: stale: input capS/cert_cap_s1_1_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:25; stale: input capS/cert_cap_s13_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:25; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:06:25
+NOT_OK  cap [2/3, 3/4] capR/pieces/check_capR_2_3__3_4.txt: stale: input capS/cert_cap_s2_3_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: input capS/cert_cap_s3_4_node_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:08:02
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8.txt: stale: input capS/cert_cap_s11_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: input capS/cert_cap_s13_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:08:02
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8_os.txt: stale: input capS/cert_cap_s11_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: input capS/cert_cap_s13_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:08:02
+NOT_OK  cap [11/12, 1] capR/pieces_nsub/check_capR_11_12__1_1_nsub1.txt: stale: input capS/cert_cap_s11_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:51; stale: input capS/cert_cap_s1_1_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:51; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:06:51
+NOT_OK  cap [1, 13/12] capR/pieces_nsub/check_capR_1_1__13_12_nsub1.txt: stale: input capS/cert_cap_s1_1_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:42; stale: input capS/cert_cap_s13_12_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:06:42; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:06:42
+NOT_OK  cap [2/3, 3/4] capR/pieces_nsub/check_capR_2_3__3_4_nsub4_os.txt: stale: input capS/cert_cap_s2_3_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: input capS/cert_cap_s3_4_node_D12.json.gz modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:08:02
+NOT_OK  cap [3/4, 1] capR/pieces_nsub/check_capR_negctrl_3_4__1_nsub4_os.txt: stale: input capS/cert_cap_s3_4_D12.json modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: input cap1/cert_cap_coulomb_D12.json modified 11-17 05:08:04 >= run start ~11-17 05:08:02; stale: checker capR/check_capR.py modified 11-17 05:08:04 >= run start ~11-17 05:08:02
+WARN cellsS/results.jsonl: 9 piece record(s) without `certs` ignored (cell labels are not trusted)
+NOTE authentication of the 190 used pieces: 190 by sha256 (checker + inputs), 0 by the mtime fallback (reports without hashes)
+CHECK ok   cap cell [-1, -99/100] hard-coded in check_capR.py (fmpq(-99, 100), Fr(-99, 100) assert)
+CHECK ok   cell boundaries -1 < -99/100 < -9/10
+NOTE range_check.py sha256 28de4aa25fc0f4e93d8a27c0f53d114538e97f8f2feea2df2f2813054924a438 (this run: python 3.9.6, python-flint 0.6.0)
+NOTE versions recorded by the used reports: python 3.12.3, python-flint 0.6.0 (190)
+NOTE recheck status: 0 of the 190 used pieces are recorded as re-run by a --recheck with the current report (what --recheck-new may skip)
+
+RANGE_OK [1/3, 7/4] route=exact
+[exit status 0]

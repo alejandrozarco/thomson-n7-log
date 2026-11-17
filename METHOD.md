@@ -173,3 +173,18 @@ The same case split, with the Coulomb kernel φ₁(t) = (2−2t)^(−1/2), as a 
 s = 1), quadratic contact of H_B at 0, dyadic contact slopes with a certified mismatch, coercivity windows τ ≤ 10⁻⁶,
 and a second-order local lemma (`coulomb/check_local1.py`; in Lean, Hung Tran's `Reg.pent_local_min_sup` is used
 instead). Details and records: `coulomb/README.md`.
+
+## Riesz s on the interval 1/3 ≤ s ≤ 7/4 (`riesz_range/`)
+
+The same case split with φ_s(t) = (2−2t)^(−s/2), for every real s with 1/3 ≤ s ≤ 7/4 at once, and six slabs (an
+extra breakpoint −183/200). Each component (Case 1, each slab, the cap, and the local lemma for the Python route that
+uses it) is covered by pieces [a, b] of the s-axis; a piece is certified for every real s in [a, b] from exact node
+certificates at its ends, with chord or Bernstein bounds for the s-dependence. On the cap the certificate family is
+affine in s and attains e(s) = E_s(P) exactly, which allows a route without a local lemma; the Lean development
+(`riesz_range/lean/`) uses that route. `riesz_range/n7_interval/range_check.py` decides the coverage in exact
+arithmetic; it accepts a piece report only if the sha256 values it records for its checker sources and inputs match
+the current files. The method of certificates on intervals of s is that of [KLT] for N = 8; for eight points [KLT]
+treat all s ≥ 0, by a Lean-verified argument for all sufficiently large s in the article and by a computer-assisted
+argument in their companion repository that covers 0 ≤ s ≤ 124 with finitely many closed intervals of s and
+certificates valid uniformly in s (their Remark 7.2). Details, the trusted base and the records:
+`riesz_range/README.md`.

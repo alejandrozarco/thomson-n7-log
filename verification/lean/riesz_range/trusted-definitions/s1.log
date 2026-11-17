@@ -1,0 +1,39 @@
+2026-11-12T00:50:40+00:00 start pid 3101562
+2026-11-12T23:54:42+00:00 comparator_full exited: rc 1 2026-11-12T23:54:34+00:00
+7608d29214228b7c584064bfa4991b3daa096c59c3ff48f7126a93849f8b28ff  <s1check>/src/ThomsonGen/Base.lean
+7f77441e4c8a5e9e2130409bb2d2d39b050290469f7cce4d482e17931af93b66  <s1check>/src/ThomsonGen/Preamble.lean
+9d965b9ca52a071f3b30adc8efd883d0962491bc6c70ae0d9903237e77ab5b09  <s1check>/src/RieszN7/Basic.lean
+20eb442b3b0e33294d84cb2d9678d4c9e219a605fb5fe622bb3af0c05667e27d  <s1check>/src/RieszN7/Core/Rpow.lean
+2026-11-12T23:54:42+00:00 lean.lock acquired
+2026-11-12T23:54:52+00:00 ThomsonGen/Preamble build_exit=[1] fresh= deployed=2511e4e7d2decdad olean DIFFERENT
+2026-11-12T23:55:02+00:00 ThomsonGen/Base build_exit=[1] fresh= deployed=2a6813c8847dd866 olean DIFFERENT
+2026-11-12T23:55:13+00:00 RieszN7/Core/Rpow build_exit=[1] fresh= deployed=2e308655a75a8e8f olean DIFFERENT
+2026-11-12T23:55:23+00:00 RieszN7/Basic build_exit=[1] fresh= deployed=be84f5679638d35b olean DIFFERENT
+2026-11-12T23:57:40+00:00 start pid 4023960 (v2: lean --root, fix 2026-11-13 for 'input file must be contained in root directory')
+2026-11-12T23:57:40+00:00 comparator_full exited: rc 1 2026-11-12T23:54:34+00:00
+7608d29214228b7c584064bfa4991b3daa096c59c3ff48f7126a93849f8b28ff  <s1check>/src/ThomsonGen/Base.lean
+7f77441e4c8a5e9e2130409bb2d2d39b050290469f7cce4d482e17931af93b66  <s1check>/src/ThomsonGen/Preamble.lean
+9d965b9ca52a071f3b30adc8efd883d0962491bc6c70ae0d9903237e77ab5b09  <s1check>/src/RieszN7/Basic.lean
+20eb442b3b0e33294d84cb2d9678d4c9e219a605fb5fe622bb3af0c05667e27d  <s1check>/src/RieszN7/Core/Rpow.lean
+2026-11-13T00:00:33+00:00 PrintDefs outputs differ or empty
+2026-11-13T00:00:33+00:00 S1 RESULT: FAIL ThomsonGen/Preamble ThomsonGen/Base RieszN7/Core/Rpow RieszN7/Basic PrintDefs
+2026-11-13T00:00:33+00:00 lean.lock acquired
+2026-11-13T00:01:03+00:00 ThomsonGen/Preamble build_exit=[0] fresh=5d1860e00075625b deployed=2511e4e7d2decdad olean DIFFERENT
+2026-11-13T00:01:24+00:00 ThomsonGen/Base build_exit=[0] fresh=92426ded4dde9383 deployed=2a6813c8847dd866 olean DIFFERENT
+2026-11-13T00:01:34+00:00 RieszN7/Core/Rpow build_exit=[0] fresh=2e308655a75a8e8f deployed=2e308655a75a8e8f olean identical
+2026-11-13T00:01:54+00:00 RieszN7/Basic build_exit=[0] fresh=999bf8d0a7e9e431 deployed=be84f5679638d35b olean DIFFERENT
+2026-11-13T00:02:14+00:00 PrintDefs outputs identical (13 lines)
+2026-11-13T00:02:14+00:00 S1 RESULT: FAIL ThomsonGen/Preamble ThomsonGen/Base RieszN7/Basic
+2026-11-13T00:02:47+00:00 [recipe] start pid 4029182
+2026-11-13T18:27:55+00:00 [recipe] lean.lock acquired
+2026-11-13T18:32:25+00:00 [recipe] ThomsonGen/Preamble (Lake recipe) exit=0 fresh=2511e4e7d2decdad deployed=2511e4e7d2decdad olean identical
+2026-11-13T18:32:46+00:00 [recipe] ThomsonGen/Base (Lake recipe) exit=0 fresh=2a6813c8847dd866 deployed=2a6813c8847dd866 olean identical
+2026-11-13T18:32:56+00:00 [recipe] RieszN7/Core/Rpow (build_range recipe) exit=0 fresh=2e308655a75a8e8f deployed=2e308655a75a8e8f olean identical
+2026-11-13T18:33:16+00:00 [recipe] RieszN7/Basic (build_range recipe) exit=0 fresh=999bf8d0a7e9e431 deployed=be84f5679638d35b olean DIFFERENT
+2026-11-13T18:33:16+00:00 [recipe] S1 RECIPE RESULT: FAIL RieszN7/Basic
+2026-11-13T18:34:19+00:00 [variants] start pid 556555, lean.lock acquired; deployed be84f5679638d35b
+2026-11-13T18:34:39+00:00 [variants] variant A (flags '' LEAN_NUM_THREADS=1) exit=0 fresh=65c7cfbe9b788773 olean DIFFERENT
+2026-11-13T18:34:59+00:00 [variants] variant B (flags '-j1' LEAN_NUM_THREADS=1) exit=0 fresh=65c7cfbe9b788773 olean DIFFERENT
+2026-11-13T18:35:19+00:00 [variants] variant C (flags '-DElab.async=false' LEAN_NUM_THREADS=1) exit=0 fresh=999bf8d0a7e9e431 olean DIFFERENT
+2026-11-13T18:35:39+00:00 [variants] variant D (flags '' ) exit=0 fresh=65c7cfbe9b788773 olean DIFFERENT
+2026-11-13T18:35:39+00:00 [variants] S1 BASIC VARIANTS: no variant reproduces the deployed bytes

@@ -1,0 +1,198 @@
+# range_check.py after the REVIEW_ext_fable.md M1-M4 fixes (2026-11-07 14:31:06 CET); previous output in ext/pre_fix/
+
+$ python3 range_check.py --selftest
+ok   cover: adjacent closed pieces cover [1/2, 3/2]
+ok   cover: gap (3/4, 4/5) is open
+ok   cover: gaps [1/2, 11/12) and (13/12, 3/2]
+ok   cover: end point 3/2 uncovered
+ok   cover: tiny gap detected
+ok   tiling: six-slab
+ok   tiling: five-slab
+ok   tiling: missing middle slab fails
+ok   tiling: overlap harmless
+ok   tiling: must start at -99/100
+ok   tiling: must reach -9/10
+ok   C7: decimal endpoint
+ok   C7: binary endpoint differs from decimal
+ok   tau: float(1e-06) < 1/10^6 exactly
+ok   cover2q: tau token '1e-6' -> exactly 1/10^6
+ok   cover2q: tau token '1o250000' -> 1/250000
+ok   cover2q: endpoint tokens must be p/q
+ok   engine: five-slab then six-slab tiles; tau_compat fails exactly on [1, 3/2]
+ok   engine: all OK with local tau 4e-6
+ok   engine: route exact ignores local
+ok   engine: slab_tiling gap (1, 3/2] but point s = 1 covered by the five-slab pieces
+ok   S0 case1 D10: identity LHS == 0 for tags ['S']
+ok   S0 slab [-99/100, -49/50] D10: lambda_A/B/Gamma LHS == 0 for tags ['A', 'B', 'G'], c_gamma = 1, (6) holds
+ok   S0 slab [-93/100, -9/10] D10: lambda_A/B/Gamma LHS == 0 for tags ['A', 'B', 'G'], c_gamma = 1, (6) holds
+ok   S0 negative control case1 D10 (e = 22): LHS != 0
+ok   S0 negative control slab D10 (c_alpha = 1/4): lambda_A != 0
+ok   S0 case1 D12: identity LHS == 0 for tags ['S']
+ok   S0 slab [-99/100, -49/50] D12: lambda_A/B/Gamma LHS == 0 for tags ['A', 'B', 'G'], c_gamma = 1, (6) holds
+ok   S0 slab [-93/100, -9/10] D12: lambda_A/B/Gamma LHS == 0 for tags ['A', 'B', 'G'], c_gamma = 1, (6) holds
+ok   S0 negative control case1 D12 (e = 22): LHS != 0
+ok   S0 negative control slab D12 (c_alpha = 1/4): lambda_A != 0
+ok   auth: matching sha256 -> fresh
+ok   auth: changed checker -> stale
+ok   auth: changed input -> stale
+ok   auth: unrecorded input -> stale
+ok   auth: no provenance -> undecided (mtime fallback)
+ok   auth: fallback is flagged
+ok   acceptance (exact tau): cap gaps ['[1/2, 11/12)', '(13/12, 3/2]'] == ['[1/2, 11/12)', '(13/12, 3/2]']
+ok   acceptance (exact tau): case1 and local covered
+ok   acceptance (exact tau): tau_compat gaps [] == []
+ok   acceptance (exact tau): slabs gaps [] == present inventory []
+ok   acceptance (exact tau): slab_tiling gaps [] == present inventory []
+ok   acceptance (exact tau): not RANGE_OK
+ok   acceptance (decimal tau): cap gaps ['[1/2, 11/12)', '(13/12, 3/2]'] == ['[1/2, 11/12)', '(13/12, 3/2]']
+ok   acceptance (decimal tau): case1 and local covered
+ok   acceptance (decimal tau): tau_compat gaps [] == []
+ok   acceptance (decimal tau): slabs gaps [] == present inventory []
+ok   acceptance (decimal tau): slab_tiling gaps [] == present inventory []
+ok   acceptance (decimal tau): not RANGE_OK
+ok   acceptance (binary tau): cap gaps ['[1/2, 11/12)', '(13/12, 3/2]'] == ['[1/2, 11/12)', '(13/12, 3/2]']
+ok   acceptance (binary tau): case1 and local covered
+ok   acceptance (binary tau): tau_compat gaps ['[11/12, 13/12]'] == ['[11/12, 13/12]']
+ok   acceptance (binary tau): slabs gaps [] == present inventory []
+ok   acceptance (binary tau): slab_tiling gaps [] == present inventory []
+ok   acceptance (binary tau): not RANGE_OK
+ok   M2 local: call matches record and file-name tau -> used
+ok   M2 local (negative control): tau file renamed 1e-6 -> 1e-5 -> provenance mismatch, dropped
+ok   M2 local (negative control): call.exact false -> mismatch, dropped
+ok   M2 local (negative control): call.s1 != record endpoint -> mismatch, dropped
+ok   M2 local: record without provenance.call -> dropped (no mismatch claimed)
+ok   M2 run: real cover2q files -> RANGE_OK
+ok   M2 run (negative control): + renamed tau file -> PROVENANCE_MISMATCH and RANGE_FAIL although covered
+ok   M2 cap: argv matches a, b, TAU_DEN -> used
+ok   M2 cap (negative control): argv b = 2/5 vs report b = 3/8 -> mismatch, dropped
+ok   M2 cap (negative control): argv TAU_DEN 250000 vs tau 1/1000000 -> mismatch, dropped
+ok   M3: self_info sha256 == sha256(range_check.py), python version recorded
+ok   M3: JSON records range_check sha256 / python / flint and report versions
+ok   M3: NOTE line with the full sha256 printed
+ok   M3: unchanged since previous JSON -> NOTE, no WARN
+ok   M3 (negative control): changed range_check sha256 / flint / report versions -> three WARN lines, run still RANGE_OK
+ok   M4: used + rechecked + identical report in the baseline -> skipped
+ok   M4 (negative control): baseline lists the piece but did not recheck it -> re-run
+ok   M4 (negative control): rechecked in the baseline but report changed since -> re-run
+ok   M4 (negative control): listed but not used in the baseline -> re-run
+ok   M4: not listed -> re-run
+ok   M4 (negative control): legacy baseline without per-piece recheck status -> nothing skipped
+ok   M4: recheck status carried forward only for the identical, rechecked report
+SELFTEST_OK (77 tests, 1.6 s)
+[exit status 0]
+
+$ python3 range_check.py 
+range_check: s in [1/2, 3/2], route=local, local=cover2q (exact), freshness=on
+
+component                    used dropped  certified (within range)      gaps
+case1 (cut -9/10)              22       0  [1/2, 3/2]                    -
+slab [-99/100, -49/50]         21       0  [1/2, 3/2]                    -
+slab [-49/50, -24/25]          21       0  [1/2, 3/2]                    -
+slab [-24/25, -47/50]          23       0  [1/2, 3/2]                    -
+slab [-47/50, -93/100]         23       0  [1/2, 3/2]                    -
+slab [-93/100, -183/200]       23       0  [1/2, 3/2]                    -
+slab [-183/200, -9/10]         21       0  [1/2, 3/2]                    -
+cap [-1, -99/100]              36       9  [1/2, 3/2]                    -
+local lemma                    77       0  [1/2, 3/2]                    -
+
+NOT_OK  cap [11/12, 1] capR/pieces/check_capR_11_12__1_1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-06 23:42:11
+NOT_OK  cap [1, 13/12] capR/pieces/check_capR_1_1__13_12.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-06 23:46:12
+NOT_OK  cap [2/3, 3/4] capR/pieces/check_capR_2_3__3_4.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 05:16:29
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 01:01:17
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8_os.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:24:06
+NOT_OK  cap [11/12, 1] capR/pieces_nsub/check_capR_11_12__1_1_nsub1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 00:42:32
+NOT_OK  cap [1, 13/12] capR/pieces_nsub/check_capR_1_1__13_12_nsub1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 00:44:34
+NOT_OK  cap [2/3, 3/4] capR/pieces_nsub/check_capR_2_3__3_4_nsub4_os.txt: stale: input capS/cert_cap_s2_3_D12.json.gz modified 11-07 03:44:39 >= run start ~11-07 03:30:12; stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:30:12
+NOT_OK  cap [3/4, 1] capR/pieces_nsub/check_capR_negctrl_3_4__1_nsub4_os.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:26:07
+WARN cellsS/results.jsonl: 9 piece record(s) without `certs` ignored (cell labels are not trusted)
+NOTE authentication of the 267 used pieces: 267 by sha256 (checker + inputs), 0 by the mtime fallback (reports without hashes)
+CHECK ok   cap cell [-1, -99/100] hard-coded in check_capR.py (fmpq(-99, 100), Fr(-99, 100) assert)
+CHECK ok   check_localS.check_piece uses r = sqrt7 (11/2) tau, tau exact (qarb)
+CHECK ok   check_localS.qarb: Fraction -> arb(num) / arb(den)
+CHECK ok   check_localS cover2q reads a, b, tau as Fractions
+CHECK ok   cell boundaries -1 < -99/100 < -9/10
+NOTE local tau from file name '1e-6' read as exact: 1/1000000
+NOTE local files: localS/cover2q_1o20_48o25_tau1e-6.jsonl, localS/cover2q_1o2_3o2_tau1e-6.jsonl  (float cover2 files only with --local-legacy)
+NOTE range_check.py sha256 28de4aa25fc0f4e93d8a27c0f53d114538e97f8f2feea2df2f2813054924a438 (this run: python 3.9.6, python-flint 0.6.0)
+NOTE versions recorded by the used reports: python 3.9.6, python-flint 0.6.0 (267)
+NOTE recheck status: 0 of the 267 used pieces are recorded as re-run by a --recheck with the current report (what --recheck-new may skip)
+NOTE all 7 checker scripts unchanged (sha256) since the previous run (2026-11-07 13:29:43)
+NOTE previous range_check.json (2026-11-07 13:29:43) records no range_check.py sha256 / versions; recorded now
+
+RANGE_OK [1/2, 3/2] route=local
+[exit status 0]
+
+$ python3 range_check.py --range 1/3 7/4 --json-out ext/range_check_ext.json
+range_check: s in [1/3, 7/4], route=local, local=cover2q (exact), freshness=on
+
+component                    used dropped  certified (within range)      gaps
+case1 (cut -9/10)              22       0  [1/3, 7/4]                    -
+slab [-99/100, -49/50]         21       0  [1/3, 7/4]                    -
+slab [-49/50, -24/25]          21       0  [1/3, 7/4]                    -
+slab [-24/25, -47/50]          23       0  [1/3, 7/4]                    -
+slab [-47/50, -93/100]         23       0  [1/3, 7/4]                    -
+slab [-93/100, -183/200]       23       0  [1/3, 7/4]                    -
+slab [-183/200, -9/10]         21       0  [1/3, 7/4]                    -
+cap [-1, -99/100]              36       9  [1/3, 7/4]                    -
+local lemma                    77       0  [1/3, 7/4]                    -
+
+NOT_OK  cap [11/12, 1] capR/pieces/check_capR_11_12__1_1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-06 23:42:11
+NOT_OK  cap [1, 13/12] capR/pieces/check_capR_1_1__13_12.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-06 23:46:12
+NOT_OK  cap [2/3, 3/4] capR/pieces/check_capR_2_3__3_4.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 05:16:29
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 01:01:17
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8_os.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:24:06
+NOT_OK  cap [11/12, 1] capR/pieces_nsub/check_capR_11_12__1_1_nsub1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 00:42:32
+NOT_OK  cap [1, 13/12] capR/pieces_nsub/check_capR_1_1__13_12_nsub1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 00:44:34
+NOT_OK  cap [2/3, 3/4] capR/pieces_nsub/check_capR_2_3__3_4_nsub4_os.txt: stale: input capS/cert_cap_s2_3_D12.json.gz modified 11-07 03:44:39 >= run start ~11-07 03:30:12; stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:30:12
+NOT_OK  cap [3/4, 1] capR/pieces_nsub/check_capR_negctrl_3_4__1_nsub4_os.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:26:07
+WARN cellsS/results.jsonl: 9 piece record(s) without `certs` ignored (cell labels are not trusted)
+NOTE authentication of the 267 used pieces: 267 by sha256 (checker + inputs), 0 by the mtime fallback (reports without hashes)
+CHECK ok   cap cell [-1, -99/100] hard-coded in check_capR.py (fmpq(-99, 100), Fr(-99, 100) assert)
+CHECK ok   check_localS.check_piece uses r = sqrt7 (11/2) tau, tau exact (qarb)
+CHECK ok   check_localS.qarb: Fraction -> arb(num) / arb(den)
+CHECK ok   check_localS cover2q reads a, b, tau as Fractions
+CHECK ok   cell boundaries -1 < -99/100 < -9/10
+NOTE local tau from file name '1e-6' read as exact: 1/1000000
+NOTE local files: localS/cover2q_1o20_48o25_tau1e-6.jsonl, localS/cover2q_1o2_3o2_tau1e-6.jsonl  (float cover2 files only with --local-legacy)
+NOTE range_check.py sha256 28de4aa25fc0f4e93d8a27c0f53d114538e97f8f2feea2df2f2813054924a438 (this run: python 3.9.6, python-flint 0.6.0)
+NOTE versions recorded by the used reports: python 3.9.6, python-flint 0.6.0 (267)
+NOTE recheck status: 0 of the 267 used pieces are recorded as re-run by a --recheck with the current report (what --recheck-new may skip)
+NOTE all 7 checker scripts unchanged (sha256) since the previous run (2026-11-07 13:29:07)
+NOTE previous ext/range_check_ext.json (2026-11-07 13:29:07) records no range_check.py sha256 / versions; recorded now
+
+RANGE_OK [1/3, 7/4] route=local
+[exit status 0]
+
+$ python3 range_check.py --range 1/3 7/4 --route exact --json-out ext/range_check_ext_exact.json
+range_check: s in [1/3, 7/4], route=exact, local=cover2q (exact), freshness=on
+
+component                    used dropped  certified (within range)      gaps
+case1 (cut -9/10)              22       0  [1/3, 7/4]                    -
+slab [-99/100, -49/50]         21       0  [1/3, 7/4]                    -
+slab [-49/50, -24/25]          21       0  [1/3, 7/4]                    -
+slab [-24/25, -47/50]          23       0  [1/3, 7/4]                    -
+slab [-47/50, -93/100]         23       0  [1/3, 7/4]                    -
+slab [-93/100, -183/200]       23       0  [1/3, 7/4]                    -
+slab [-183/200, -9/10]         21       0  [1/3, 7/4]                    -
+cap [-1, -99/100]              36       9  [1/3, 7/4]                    -
+
+NOT_OK  cap [11/12, 1] capR/pieces/check_capR_11_12__1_1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-06 23:42:11
+NOT_OK  cap [1, 13/12] capR/pieces/check_capR_1_1__13_12.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-06 23:46:12
+NOT_OK  cap [2/3, 3/4] capR/pieces/check_capR_2_3__3_4.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 05:16:29
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 01:01:17
+NOT_OK  cap [11/12, 13/12] capR/pieces_nsub/check_capR_11_12__13_12_nsub8_os.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:24:06
+NOT_OK  cap [11/12, 1] capR/pieces_nsub/check_capR_11_12__1_1_nsub1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 00:42:32
+NOT_OK  cap [1, 13/12] capR/pieces_nsub/check_capR_1_1__13_12_nsub1.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 00:44:34
+NOT_OK  cap [2/3, 3/4] capR/pieces_nsub/check_capR_2_3__3_4_nsub4_os.txt: stale: input capS/cert_cap_s2_3_D12.json.gz modified 11-07 03:44:39 >= run start ~11-07 03:30:12; stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:30:12
+NOT_OK  cap [3/4, 1] capR/pieces_nsub/check_capR_negctrl_3_4__1_nsub4_os.txt: stale: checker capR/check_capR.py modified 11-07 06:52:15 >= run start ~11-07 03:26:07
+WARN cellsS/results.jsonl: 9 piece record(s) without `certs` ignored (cell labels are not trusted)
+NOTE authentication of the 190 used pieces: 190 by sha256 (checker + inputs), 0 by the mtime fallback (reports without hashes)
+CHECK ok   cap cell [-1, -99/100] hard-coded in check_capR.py (fmpq(-99, 100), Fr(-99, 100) assert)
+CHECK ok   cell boundaries -1 < -99/100 < -9/10
+NOTE range_check.py sha256 28de4aa25fc0f4e93d8a27c0f53d114538e97f8f2feea2df2f2813054924a438 (this run: python 3.9.6, python-flint 0.6.0)
+NOTE versions recorded by the used reports: python 3.9.6, python-flint 0.6.0 (190)
+NOTE recheck status: 0 of the 190 used pieces are recorded as re-run by a --recheck with the current report (what --recheck-new may skip)
+NOTE no previous ext/range_check_ext_exact.json: checker hashes recorded for the first time
+
+RANGE_OK [1/3, 7/4] route=exact
+[exit status 0]

@@ -68,7 +68,7 @@ to the development tree):
 - second kernel: `lean4export` + nanoda checked 54624 declarations with no errors and rejected a copy with one
   certificate literal changed (type-checker failure, not a parse error);
 - after these runs, comments in two files were edited (`CoulN7/Bridge.lean`, `CoulN7/Case1/Data.lean`); no statement,
-  definition, proof term or certificate datum changed, and both files and their 20 dependents were recompiled on the Mac.
+  definition, proof term or certificate datum changed, and both files and their 20 dependents were recompiled on a laptop.
 
 `lean/SHA256SUMS` lists the 98 `CoulN7` modules and the 6 stored dependencies. The certificate-derived modules were
 written by the generators in `lean/gen/`, which were run in the development tree (paths there assume its layout); they
@@ -96,8 +96,8 @@ python3 check_local1.py                                                # second-
 The pentagonal bipyramid is believed to be the minimiser of the Riesz $`s`$-energy of seven points exactly for
 $`0 \le s \le 2`$ (numerical studies: Melnyk, Knop and Smith 1977; Nerattini, Brauchart and Kiessling,
 [arXiv:1307.2834](https://arxiv.org/abs/1307.2834), who describe bifurcations at $`s = 0`$ and $`s = 2`$). This
-repository now has warrants for $`s = 0`$ (log), $`s = 1`$ (this directory) and $`s = 2`$ (`../riesz2/`). Nothing here
-covers a range of exponents.
+repository now has warrants for $`s = 0`$ (log), $`s = 1`$ (this directory) and $`s = 2`$ (`../riesz2/`). This
+directory treats $`s = 1`$ only; the interval $`1/3 \le s \le 7/4`$ is treated in `../riesz_range/` (added 2026-11-17).
 
 ## Reviews
 

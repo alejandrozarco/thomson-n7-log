@@ -1,0 +1,8 @@
+2026-11-10T14:51:49+00:00 chain start pid 1602491
+2026-11-10T18:05:30+00:00 run 1 exit: rc 0 2026-11-10T18:05:30+00:00
+2026-11-10T18:09:10+00:00 comparator_core (neg): rc 0 2026-11-10T18:09:10+00:00
+2026-11-10T22:57:23+00:00 nanoda_core (nanoda): rc 0 2026-11-10T22:57:23+00:00
+2026-11-11T05:57:52+00:00 parent: stopped chain.sh 1602491 + its waiting comparator step (2011253/59/61); comparator now via ext/comparator_after_full.sh
+2026-11-11T05:57:52+00:00 comparator_after_full pid 2374015: waiting for <hb>/final_full.exit
+2026-11-11T06:13:52+00:00 final_full exited: rc 0 2026-11-11T06:13:33+00:00; starting main comparator
+2026-11-11T06:37:26+00:00 main Core12 Comparator superseded by Full; Core12 nanoda + negative controls stand. Stopped (release agent, coordinator request) process groups 2386297 (guarded core12_comparator: comparator + lean4export, started 06:14:00) and 2374015 (comparator_after_full.sh pid 2374015 -> hb comparator_core -> core_release.sh comparator); touched hb/comparator_core.exit.seen

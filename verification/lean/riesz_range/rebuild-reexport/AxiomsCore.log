@@ -1,0 +1,10 @@
+RieszN7.Core12.riesz_seven_core : ∀ (s : ℝ),
+  1 / 2 ≤ s ∧ s ≤ 3 / 2 →
+    ∀ x ∈ ThomsonN7.SphereConfig 7, RieszN7.rieszEnergy s ThomsonN7.pentBipyramid ≤ RieszN7.rieszEnergy s x
+RieszN7.Core12.riesz_seven_unique_core : ∀ (s : ℝ),
+  1 / 2 ≤ s ∧ s ≤ 3 / 2 →
+    ∀ x ∈ ThomsonN7.SphereConfig 7,
+      RieszN7.rieszEnergy s x = RieszN7.rieszEnergy s ThomsonN7.pentBipyramid →
+        ∃ g σ, ∀ (i : Fin 7), x i = g (ThomsonN7.pentBipyramid (σ i))
+'RieszN7.Core12.riesz_seven_core' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RieszN7.Core12.riesz_seven_unique_core' depends on axioms: [propext, Classical.choice, Quot.sound]

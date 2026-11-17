@@ -1,0 +1,7 @@
+2026-11-12T00:58:50+00:00 start pid 3108070
+2026-11-13T00:00:52+00:00 s1_check exited: rc 1 2026-11-13T00:00:33+00:00
+2026-11-13T00:02:14+00:00 lean.lock acquired
+<build>/release_full/sk/riesz_seven_range.ndjson: OK
+2026-11-13T00:04:11+00:00 literal (16 digits, export line 28389245, owning declaration RieszN7.Cells.S99_98.P5o3_7o4.Spec.spec): 6271646771347961... -> +1
+2026-11-13T00:04:28+00:00 changed bytes: 1
+2026-11-13T18:27:55+00:00 M2 RESULT: REJECTED as required (rc 101): thread 'main' (4030656) panicked at src/tc.rs:955:71: / assertion failed: self.def_eq(u, v)

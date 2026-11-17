@@ -1,0 +1,6 @@
+2026-11-11T05:57:01 start pid 2373155
+2026-11-11T05:57:01 waiting: 8 missing: RieszN7.Range.CellsFull.Case1 RieszN7.Range.CellsFull.S99_98 RieszN7.Range.CellsFull.S98_96 RieszN7.Range.CellsFull.S96_94 RieszN7.Range.CellsFull.S94_93 RieszN7.Range.CellsFull.S93_915 RieszN7.Range.CellsFull.S915_90 RieszN7.Cap.P5o3_7o4.Closed
+2026-11-11T06:02:02 waiting: 7 missing: RieszN7.Range.CellsFull.Case1 RieszN7.Range.CellsFull.S99_98 RieszN7.Range.CellsFull.S98_96 RieszN7.Range.CellsFull.S96_94 RieszN7.Range.CellsFull.S94_93 RieszN7.Range.CellsFull.S93_915 RieszN7.Range.CellsFull.S915_90
+2026-11-11T06:07:02 waiting: 3 missing: RieszN7.Range.CellsFull.S99_98 RieszN7.Range.CellsFull.S98_96 RieszN7.Range.CellsFull.S96_94
+2026-11-11T06:12:02 assembling
+2026-11-11T06:13:33 done rc=0
