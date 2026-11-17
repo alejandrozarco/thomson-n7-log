@@ -1,7 +1,7 @@
 3c14864439684366c2fc540f4d0c6efc323735799f3679f2b3151513153a5b50  ./.gitignore
 a11a1b88c75eb615b60629e9d6e74d7bbb07deadd7d4cbfeaa4ecbcfd57ab8aa  ./.zenodo.json
 b086675656ce692b0cd088d01d96b609fcbc5528bc001579802b7ba0169d35f6  ./AI_DISCLOSURE.md
-1ff3e3f7cbea262a366b95f6bf9a1c3797a7d4ae2659ca94af3bc9f1b206166c  ./CHANGELOG.md
+1785d3da53fa346b1a5976aff35e62a77bf25292b47922b2292b8e72b389901d  ./CHANGELOG.md
 499d32ed5e0f9e1960d1acd64f914e89d4f9ccd8e2673a25b48e49058b520d87  ./CITATION.cff
 43c04df1fb4faafd51aad99693360b31d96e0a8b559f64e1f80f9aa27499ca92  ./COVERAGE.md
 192457fbc2a1504f60719f0f9581c2409aace42d9960a8fb6f94e4541267fade  ./LICENSE
@@ -149,6 +149,7 @@ a4bf9d451283d90bbc41f82543bcc990e0a6c547e510e23f7dd200405ac0cde7  ./coulomb/lean
 3998e50653b55468a63e649a3a85b92dc9e3ea7da1c486567f9947a1903791c8  ./coulomb/lean/ThomsonGen/Cert/Split.lean
 ef017a07cd36291456ad73427e42f1a4dc2a35998efad52f66dc7536c18ebfbb  ./coulomb/lean/ThomsonGen/Generic/Energy.lean
 0ebf56d4189ad49d5619faecf5a46e01e27ea669e563a823a193da3a86608536  ./coulomb/lean/ThomsonGen/Generic/Glue.lean
+563300eeb2d07679245f57214e251ba1707047167c7dd0d6cc816753f9ff9ca8  ./coulomb/lean/ThomsonGen/scripts/depdump.tsv
 4d257f8bdcc1a97909d52e6bb8296bc4ae77bce0c19d2dff1722da26d387495d  ./coulomb/lean/ThomsonGen/scripts/gen_roots.txt
 b4bcd650738785cd21190f65d63b7a0fcfa1856d07549b26b1f43ad09029d306  ./coulomb/lean/ThomsonGen/scripts/generated.sha256
 1bbf63c40fdee323e5ee324b42e9c1ec64786eab92ed24d8109e4ef1eacf3b92  ./coulomb/lean/ThomsonGen/scripts/scan_upstream.py
