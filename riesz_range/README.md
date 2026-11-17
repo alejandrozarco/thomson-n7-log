@@ -227,6 +227,8 @@ Summary of the recorded runs (details, dates and exit codes in
   argument for all sufficiently large $`s`$, and in their companion repository by a computer-assisted argument that
   covers $`0 \le s \le 124`$ with finitely many closed intervals of $`s`$ and certificates valid uniformly in $`s`$
   (their Remark 7.2). The interval-in-$`s`$ treatment here follows that method.
+- L. Shen ([arXiv:2611.09925](https://arxiv.org/abs/2611.09925)) gives an argument directed at the uniqueness
+  statement for $`s = 1`$ alone, with exact rational certificates and not formalised; it was not checked here.
 - The Lean development uses H. Tran's definitions and the generic machinery of this repository adapted from his code
   (ring rigidity, gauge, certificate soundness), so it is not independent of his work.
 
@@ -430,4 +432,5 @@ corrections from them are in this version. No human has checked this directory.
 - J. Tooby-Smith, A. Zughaid, [Thomson-N-8-Warrant](https://github.com/jstoobysmith/Thomson-N-8-Warrant).
 - T. W. Melnyk, O. Knop, W. R. Smith, *Extremal arrangements of points and unit charges on a sphere: equilibrium configurations revisited*, Can. J. Chem. 55 (1977), doi:10.1139/v77-246.
 - R. Nerattini, J. S. Brauchart, M. K.-H. Kiessling, *"Magic" numbers in Smale's 7th problem*, [arXiv:1307.2834](https://arxiv.org/abs/1307.2834).
+- L. Shen, *On the seven-particle clusters of Lennard-Jones and Thomson*, [arXiv:2611.09925](https://arxiv.org/abs/2611.09925).
 - D. Armentano et al., J. Symbolic Comput. 137 (2026), 102570 (the log case, `../README.md`).

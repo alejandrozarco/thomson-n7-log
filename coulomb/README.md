@@ -99,6 +99,9 @@ $`0 \le s \le 2`$ (numerical studies: Melnyk, Knop and Smith 1977; Nerattini, Br
 repository now has warrants for $`s = 0`$ (log), $`s = 1`$ (this directory) and $`s = 2`$ (`../riesz2/`). This
 directory treats $`s = 1`$ only; the interval $`1/3 \le s \le 7/4`$ is treated in `../riesz_range/` (added 2026-11-17).
 
+L. Shen ([arXiv:2611.09925](https://arxiv.org/abs/2611.09925)) gives an argument directed at the same uniqueness
+statement for $`s = 1`$, with exact rational certificates and not formalised; it was not checked here.
+
 ## Reviews
 
 Two read-only reviews by gpt-6-astra (OpenAI): of the Python chain (no mathematical obstruction; three checker and
@@ -112,3 +115,4 @@ reproducibility and wording fixes, applied). No human has checked this directory
 - Tooby-Smith and Zughaid, [Thomson-N-8-Warrant](https://github.com/jstoobysmith/Thomson-N-8-Warrant).
 - C. Bachoc, F. Vallentin, *New upper bounds for kissing numbers from semidefinite programming*, J. Amer. Math. Soc. 21 (2008), 909–924.
 - R. Nerattini, J. S. Brauchart, M. K.-H. Kiessling, *"Magic" numbers in Smale's 7th problem*, [arXiv:1307.2834](https://arxiv.org/abs/1307.2834).
+- L. Shen, *On the seven-particle clusters of Lennard-Jones and Thomson*, [arXiv:2611.09925](https://arxiv.org/abs/2611.09925).
