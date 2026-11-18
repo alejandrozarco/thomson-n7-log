@@ -32,8 +32,8 @@ quantified over the whole interval (real $`s`$, not a finite set of values). It 
 ## Bulk data (separate archive)
 
 The certificate files and per-piece reports are not stored in git. They are in a separate Zenodo archive,
-**DOI: 10.5281/zenodo.REPLACE_AT_RELEASE** (to be filled at release; the record number also goes into `ZENODO_RECORD`
-in `fetch_bulk.sh`). Git holds the Lean sources, the checkers and `range_check.py`, the documents, the recorded
+**DOI: [10.5281/zenodo.24355941](https://doi.org/10.5281/zenodo.24355941)** (record 24355941, also set as
+`ZENODO_RECORD` in `fetch_bulk.sh`). Git holds the Lean sources, the checkers and `range_check.py`, the documents, the recorded
 outputs and inventories, the hash lists and the script that fetches and verifies the archive. A fresh clone
 therefore needs one download step before `range_check.py` can run:
 

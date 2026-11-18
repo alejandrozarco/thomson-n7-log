@@ -20,7 +20,7 @@
 set -u
 
 # Zenodo record of the bulk archive: set at release (record number, e.g. 12345678).
-ZENODO_RECORD=REPLACE_AT_RELEASE
+ZENODO_RECORD=24355941
 
 ARCHIVE=riesz_range_bulk_v2.8.tar
 ARCHIVE_SHA256=e7fedde5e7b0a683f20334bb104ec763bdfde01cd604b9576d7882f3cecc9b1c
