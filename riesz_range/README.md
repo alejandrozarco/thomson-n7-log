@@ -57,6 +57,12 @@ The two exports are needed only to repeat the second-kernel and tamper checks; `
 --exports` fetches them into `riesz_range/exports/` and checks their sha256 (decompress with `xz -d`, then compare
 with the sha256 above).
 
+Licence of the exports: an export is a dump of the whole Lean environment the two theorems depend on, so besides
+this development it contains, in kernel form, declarations of Lean core and Mathlib (under their own licences) and of
+[huwngtran/thomson-n7-lean](https://github.com/huwngtran/thomson-n7-lean) @ `25f2fa5`, which has no licence. The
+Apache 2.0 licence of this repository and of the Zenodo record does not cover those upstream declarations
+(`../README.md`, Licence).
+
 What the archive holds, by role:
 - in `n7_interval/`: every certificate file (`cellsS/certs_*/`, `capS/*.json.gz`, `capS/cert_cap_s3_4_D12.json`,
   `capR/cert_dirs_D12.json`, `cap1/cert_cap_coulomb_D12.json`; 185 files) and every per-piece report that

@@ -267,3 +267,6 @@ Apache License 2.0 (`LICENSE`), for the code, certificates and text of this repo
   not stored here;
 - the upstream material in the adapted declarations, each of which names the upstream declaration it adapts
   (`lean/README.md`, Upstream code). The licence covers only this repository's changes to them.
+- the upstream declarations contained, in kernel form, in the two Lean kernel exports of the `riesz_range/` bulk
+  data on Zenodo (`riesz_range/README.md`, Bulk data). These exports are dumps of the whole Lean environment and so
+  include the declarations of huwngtran/thomson-n7-lean that the theorems depend on.
