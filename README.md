@@ -4,7 +4,7 @@
 
 Status: **computational certificates and a Lean 4 formalisation, not peer reviewed.** Prepared 2026-09-29; Lean
 formalisation added 2026-10-01; Coulomb case (`coulomb/`) added 2026-10-08; Riesz $`s`$-energy on the interval
-$`1/3 \le s \le 7/4`$ (`riesz_range/`) added 2026-11-17. **Produced by AI models** under the direction of the repository owner; see
+$`1/3 \le s \le 7/4`$ (`riesz_range/`) added 2026-11-19 (v2.8). **Produced by AI models** under the direction of the repository owner; see
 [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md).
 
 > [!IMPORTANT]

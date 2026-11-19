@@ -2,7 +2,7 @@
 
 Earlier versions are listed on the Zenodo record and the GitHub releases page.
 
-## Next release (candidate, 2026-11-17)
+## v2.8 (2026-11-19)
 
 - `riesz_range/`: checkers, a coverage checker and a Lean 4 development for the Riesz $`s`$-energy of seven points on
   the interval $`1/3 \le s \le 7/4`$ (see [`riesz_range/README.md`](riesz_range/README.md)).

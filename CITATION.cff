@@ -4,7 +4,7 @@ title: "The pentagonal bipyramid as the unique logarithmic-energy minimiser for 
 type: software
 doi: "10.5281/zenodo.23086382"
 version: "v2.8"
-date-released: "2026-11-17"
+date-released: "2026-11-19"
 authors:
   - name: alejandrozarco
 repository-code: "https://github.com/alejandrozarco/thomson-n7-log"
