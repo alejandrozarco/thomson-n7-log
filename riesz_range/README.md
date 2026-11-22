@@ -199,7 +199,7 @@ In the record column, the entries of the Lean rows (from `build/` on) are relati
 | statement of the solution = statement of the challenge; permitted axioms; replay in the Lean kernel (v4.35.0-rc3, see below) | Comparator (`lean/comparator_full.json`) | `full/` |
 | a second kernel on an export of both theorems | lean4export + nanoda | `full/second-kernel/` |
 | controls that must fail | Comparator with a changed statement and with an added axiom; nanoda on exports with one changed literal (an upstream literal, and a literal of this development's certificate data) | `full/`, `full/tamper-certificate-literal/` |
-| the oleans of the trusted definitions correspond to the sources | `#print` comparison, olean reproduction, rebuild and byte-identical re-export; reproduction of the six oleans of the trusted closure from a fresh clone (2026-11-17) | `trusted-definitions/`, `rebuild-reexport/`, `route_check_2026-11-17.md` |
+| the oleans of the trusted definitions correspond to the sources | `#print` comparison, olean reproduction, rebuild and byte-identical re-export; reproduction of the six oleans of the trusted closure from a fresh clone (2026-11-17); full rebuild from a fresh clone of `v2.8`, byte comparison of all oleans (2026-11-21) | `trusted-definitions/`, `rebuild-reexport/`, `route_check_2026-11-17.md`, `full_rebuild_2026-11-21.md` |
 
 Summary of the recorded runs (details, dates and exit codes in
 [`../verification/lean/riesz_range/record_2026-11-17.txt`](../verification/lean/riesz_range/record_2026-11-17.txt)):
@@ -292,7 +292,11 @@ lean4export, nanoda and Comparator builds: [`../verification/lean/riesz_range/to
 The route below was tested from a fresh clone on 2026-11-17 for the trusted closure only (ThomsonGen.Preamble,
 ThomsonGen.Base, RieszN7.Core.Rpow, RieszN7.Basic and the two Challenge files;
 [`../verification/lean/riesz_range/route_check_2026-11-17.md`](../verification/lean/riesz_range/route_check_2026-11-17.md)).
-The full library build was not repeated. What follows are the steps and the commands as they apply to a Lake
+A full rebuild of the library from a fresh clone of the tag `v2.8` was run on 2026-11-20/21 on the machine of the
+recorded build (Lake for the 23 ThomsonGen and LogLean modules, then the recipe below for all 5 080 RieszN7 modules;
+[`../verification/lean/riesz_range/full_rebuild_2026-11-21.md`](../verification/lean/riesz_range/full_rebuild_2026-11-21.md)):
+every RieszN7 olean and every ilean is byte-identical to the checked build, and three Lake-built ThomsonGen oleans
+differ only in the absolute source path they embed. What follows are the steps and the commands as they apply to a Lake
 workspace, and what the recorded runs did.
 
 ```sh

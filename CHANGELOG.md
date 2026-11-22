@@ -2,6 +2,13 @@
 
 Earlier versions are listed on the Zenodo record and the GitHub releases page.
 
+## Since v2.8
+
+- `verification/lean/riesz_range/full_rebuild_2026-11-21.md`: full rebuild of `riesz_range/lean` from a fresh clone of
+  `v2.8`; all 5 080 RieszN7 oleans and all ileans byte-identical to the checked build (three Lake-built ThomsonGen
+  oleans differ only in the embedded source path). `riesz_range/README.md` updated accordingly. No source or data
+  file changed.
+
 ## v2.8 (2026-11-19)
 
 - `riesz_range/`: checkers, a coverage checker and a Lean 4 development for the Riesz $`s`$-energy of seven points on

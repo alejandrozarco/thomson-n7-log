@@ -1,0 +1,155 @@
+2026-11-20T00:32:02Z start pid 1799859
+2026-11-20T00:33:10Z clone: 49cda64 Release v2.8: dates in CHANGELOG, CITATION.cff and README tag v2.8
+uname: Linux 6.8.0-147-generic x86_64
+lean-toolchain: leanprover/lean4:v4.34.1
+Lake version 5.0.0-src+5045d00 (Lean version 4.34.1)
+Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+lean binary sha256: e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550
+Python 3.12.3
+6
+               total        used        free      shared  buff/cache   available
+Mem:              19           5           0           0          14          14
+2026-11-20T00:33:12Z step regen start (lock=0): ./regen.sh
+2026-11-20T00:33:29Z step regen rc=0 wall=0:16.92 maxrss_kB=107800
+2026-11-20T00:33:29Z step sums start (lock=0): sha256sum -c SHA256SUMS upstream_regenerated.sha256
+2026-11-20T00:33:31Z step sums rc=0 wall=0:01.96 maxrss_kB=3712
+2026-11-20T00:33:31Z sha256sum -c: 5103 OK, 0 other lines (rc 0)
+2026-11-20T00:33:31Z step cacheget start (lock=1): lake exe cache get
+2026-11-20T00:52:03Z step cacheget rc=0 wall=18:32.15 maxrss_kB=963700
+[progress line of `lake exe cache get` shortened in this copy; its last update: Downloaded: 8908 file(s) [attempted 8908/8908 = 100%, 29 KB/s], Decompressed: 2014]
+Decompressed 8908 file(s)
+Already decompressed 8908 file(s)
+2026-11-20T00:52:03Z step lake_ThomsonGen.Preamble start (lock=1): lake build ThomsonGen.Preamble
+2026-11-20T00:56:35Z step lake_ThomsonGen.Preamble rc=0 wall=4:32.29 maxrss_kB=6677972
+2026-11-20T00:56:35Z step lake_ThomsonGen.Base start (lock=1): lake build ThomsonGen.Base
+2026-11-20T00:57:17Z step lake_ThomsonGen.Base rc=0 wall=0:41.75 maxrss_kB=6717992
+2026-11-20T00:57:17Z step lake_ThomsonGen.GV start (lock=1): lake build ThomsonGen.GV
+2026-11-20T00:58:28Z step lake_ThomsonGen.GV rc=0 wall=1:10.60 maxrss_kB=6837188
+2026-11-20T00:58:28Z step lake_ThomsonGen.Kron start (lock=1): lake build ThomsonGen.Kron
+2026-11-20T00:59:01Z step lake_ThomsonGen.Kron rc=0 wall=0:33.34 maxrss_kB=6744340
+2026-11-20T00:59:01Z step lake_ThomsonGen.M2 start (lock=1): lake build ThomsonGen.M2
+2026-11-20T01:00:22Z step lake_ThomsonGen.M2 rc=0 wall=1:20.47 maxrss_kB=8996244
+2026-11-20T01:00:22Z step lake_ThomsonGen.M3 start (lock=1): lake build ThomsonGen.M3
+2026-11-20T01:00:56Z step lake_ThomsonGen.M3 rc=0 wall=0:34.66 maxrss_kB=6767828
+2026-11-20T01:00:56Z step lake_ThomsonGen.RegB start (lock=1): lake build ThomsonGen.RegB
+2026-11-20T01:01:23Z step lake_ThomsonGen.RegB rc=0 wall=0:26.22 maxrss_kB=6665340
+2026-11-20T01:01:23Z step lake_ThomsonGen.ThreePoint start (lock=1): lake build ThomsonGen.ThreePoint
+2026-11-20T01:02:00Z step lake_ThomsonGen.ThreePoint rc=0 wall=0:37.41 maxrss_kB=6802060
+2026-11-20T01:02:00Z step lake_ThomsonGen.Cert1 start (lock=1): lake build ThomsonGen.Cert1
+2026-11-20T01:02:30Z step lake_ThomsonGen.Cert1 rc=0 wall=0:30.06 maxrss_kB=6728636
+2026-11-20T01:02:30Z step lake_ThomsonGen.Cert3 start (lock=1): lake build ThomsonGen.Cert3
+2026-11-20T01:03:04Z step lake_ThomsonGen.Cert3 rc=0 wall=0:33.81 maxrss_kB=6774336
+2026-11-20T01:03:04Z step lake_ThomsonGen.Case1Stat start (lock=1): lake build ThomsonGen.Case1Stat
+2026-11-20T01:03:31Z step lake_ThomsonGen.Case1Stat rc=0 wall=0:26.59 maxrss_kB=6695580
+2026-11-20T01:03:31Z step lake_ThomsonGen.CertF start (lock=1): lake build ThomsonGen.CertF
+2026-11-20T01:04:00Z step lake_ThomsonGen.CertF rc=0 wall=0:29.42 maxrss_kB=6727520
+2026-11-20T01:04:00Z step lake_ThomsonGen.T4 start (lock=1): lake build ThomsonGen.T4
+2026-11-20T01:06:03Z step lake_ThomsonGen.T4 rc=0 wall=2:03.08 maxrss_kB=8848588
+2026-11-20T01:06:03Z step lake_ThomsonGen.TwoRegime start (lock=1): lake build ThomsonGen.TwoRegime
+2026-11-20T01:06:43Z step lake_ThomsonGen.TwoRegime rc=0 wall=0:39.92 maxrss_kB=6761292
+2026-11-20T01:06:43Z step lake_ThomsonGen.Generic.Energy start (lock=1): lake build ThomsonGen.Generic.Energy
+2026-11-20T01:07:12Z step lake_ThomsonGen.Generic.Energy rc=0 wall=0:28.48 maxrss_kB=6718656
+2026-11-20T01:07:12Z step lake_ThomsonGen.Typed start (lock=1): lake build ThomsonGen.Typed
+2026-11-20T01:08:15Z step lake_ThomsonGen.Typed rc=0 wall=1:02.68 maxrss_kB=6888696
+2026-11-20T01:08:15Z step lake_ThomsonGen.CertT start (lock=1): lake build ThomsonGen.CertT
+2026-11-20T01:08:54Z step lake_ThomsonGen.CertT rc=0 wall=0:39.22 maxrss_kB=6818544
+2026-11-20T01:08:54Z step lake_ThomsonGen.Cert.NBlk start (lock=1): lake build ThomsonGen.Cert.NBlk
+2026-11-20T01:09:28Z step lake_ThomsonGen.Cert.NBlk rc=0 wall=0:33.97 maxrss_kB=6780844
+2026-11-20T01:09:28Z step lake_ThomsonGen.Cert.Split start (lock=1): lake build ThomsonGen.Cert.Split
+2026-11-20T01:09:54Z step lake_ThomsonGen.Cert.Split rc=0 wall=0:26.56 maxrss_kB=6700804
+2026-11-20T01:09:54Z step lake_ThomsonGen.Verbatim.Generic start (lock=1): lake build ThomsonGen.Verbatim.Generic
+2026-11-20T01:10:21Z step lake_ThomsonGen.Verbatim.Generic rc=0 wall=0:26.63 maxrss_kB=6683504
+2026-11-20T01:10:21Z step lake_ThomsonGen.Generic.Glue start (lock=1): lake build ThomsonGen.Generic.Glue
+2026-11-20T01:10:52Z step lake_ThomsonGen.Generic.Glue rc=0 wall=0:31.17 maxrss_kB=6757076
+2026-11-20T01:10:52Z step lake_ThomsonGen.Verbatim.LogMinor start (lock=1): lake build ThomsonGen.Verbatim.LogMinor
+2026-11-20T01:11:02Z step lake_ThomsonGen.Verbatim.LogMinor rc=0 wall=0:09.49 maxrss_kB=2669868
+2026-11-20T01:11:02Z step lake_LogLean.MinorCore start (lock=1): lake build LogLean.MinorCore
+2026-11-20T01:11:27Z step lake_LogLean.MinorCore rc=0 wall=0:24.96 maxrss_kB=2781196
+2026-11-20T01:11:27Z phase B start
+2026-11-20T01:11:46Z sched 5080 modules, 0 already built, 1462 expected > 5 GiB
+2026-11-20T02:47:50Z sched 100/5080 built
+2026-11-20T03:19:44Z sched 200/5080 built
+2026-11-20T04:01:29Z sched 300/5080 built
+2026-11-20T04:38:08Z sched 400/5080 built
+2026-11-20T05:22:42Z sched 500/5080 built
+2026-11-20T05:54:06Z sched 600/5080 built
+2026-11-20T06:34:00Z sched 700/5080 built
+2026-11-20T07:06:18Z sched 800/5080 built
+2026-11-20T07:39:44Z sched 900/5080 built
+2026-11-20T08:17:55Z sched 1000/5080 built
+2026-11-20T08:56:22Z sched 1100/5080 built
+2026-11-20T09:31:22Z sched 1200/5080 built
+2026-11-20T10:03:41Z sched 1300/5080 built
+2026-11-20T10:49:26Z sched 1400/5080 built
+2026-11-20T11:30:44Z sched 1500/5080 built
+2026-11-20T12:09:37Z sched 1600/5080 built
+2026-11-20T12:49:39Z sched 1700/5080 built
+2026-11-20T13:18:43Z sched 1800/5080 built
+2026-11-20T13:27:49Z sched 1900/5080 built
+2026-11-20T13:36:38Z sched 2000/5080 built
+2026-11-20T13:46:10Z sched 2100/5080 built
+2026-11-20T14:19:08Z sched 2200/5080 built
+2026-11-20T14:29:14Z sched 2300/5080 built
+2026-11-20T14:37:58Z sched 2400/5080 built
+2026-11-20T14:47:11Z sched 2500/5080 built
+2026-11-20T15:25:51Z sched 2600/5080 built
+2026-11-20T15:49:41Z sched 2700/5080 built
+2026-11-20T16:41:19Z sched 2800/5080 built
+2026-11-20T17:40:02Z sched 2900/5080 built
+2026-11-20T18:25:19Z sched 3000/5080 built
+2026-11-20T18:46:21Z sched 3100/5080 built
+2026-11-20T22:24:41Z sched 3200/5080 built
+2026-11-20T23:48:20Z sched 3300/5080 built
+2026-11-21T01:05:20Z sched 3400/5080 built
+2026-11-21T02:54:58Z sched 3500/5080 built
+2026-11-21T05:08:53Z sched 3600/5080 built
+2026-11-21T07:10:23Z sched 3700/5080 built
+2026-11-21T08:40:18Z sched 3800/5080 built
+2026-11-21T11:21:11Z sched 3900/5080 built
+2026-11-21T12:52:00Z sched 4000/5080 built
+2026-11-21T13:19:53Z sched 4100/5080 built
+2026-11-21T13:40:31Z sched 4200/5080 built
+2026-11-21T13:58:44Z sched 4300/5080 built
+2026-11-21T14:15:41Z sched 4400/5080 built
+2026-11-21T14:31:33Z sched 4500/5080 built
+2026-11-21T14:47:07Z sched 4600/5080 built
+2026-11-21T15:13:25Z sched 4700/5080 built
+2026-11-21T15:35:28Z sched 4800/5080 built
+2026-11-21T15:56:53Z sched 4900/5080 built
+2026-11-21T16:14:10Z sched 5000/5080 built
+2026-11-21T16:36:55Z sched end: built 5080/5080, failed=None
+2026-11-21T16:36:55Z phase B rc=0
+2026-11-21T16:36:55Z phase C: olean/ilean comparison
+2026-11-21T16:43:25Z comparison: DIFFERENT olean=3; identical ilean=5103; identical olean=5100; 
+2026-11-21T16:43:25Z RieszN7 oleans identical: 5080 of 5080
+2026-11-21T16:43:25Z axiom output AxiomsFull:
+RieszN7.Full.riesz_seven_range : ∀ (s : ℝ),
+  1 / 3 ≤ s ∧ s ≤ 7 / 4 →
+    ∀ x ∈ ThomsonN7.SphereConfig 7, RieszN7.rieszEnergy s ThomsonN7.pentBipyramid ≤ RieszN7.rieszEnergy s x
+RieszN7.Full.riesz_seven_unique_range : ∀ (s : ℝ),
+  1 / 3 ≤ s ∧ s ≤ 7 / 4 →
+    ∀ x ∈ ThomsonN7.SphereConfig 7,
+      RieszN7.rieszEnergy s x = RieszN7.rieszEnergy s ThomsonN7.pentBipyramid →
+        ∃ g σ, ∀ (i : Fin 7), x i = g (ThomsonN7.pentBipyramid (σ i))
+'RieszN7.Full.riesz_seven_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RieszN7.Full.riesz_seven_unique_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-11-21T16:43:25Z axiom output AxiomsCore:
+RieszN7.Core12.riesz_seven_core : ∀ (s : ℝ),
+  1 / 2 ≤ s ∧ s ≤ 3 / 2 →
+    ∀ x ∈ ThomsonN7.SphereConfig 7, RieszN7.rieszEnergy s ThomsonN7.pentBipyramid ≤ RieszN7.rieszEnergy s x
+RieszN7.Core12.riesz_seven_unique_core : ∀ (s : ℝ),
+  1 / 2 ≤ s ∧ s ≤ 3 / 2 →
+    ∀ x ∈ ThomsonN7.SphereConfig 7,
+      RieszN7.rieszEnergy s x = RieszN7.rieszEnergy s ThomsonN7.pentBipyramid →
+        ∃ g σ, ∀ (i : Fin 7), x i = g (ThomsonN7.pentBipyramid (σ i))
+'RieszN7.Core12.riesz_seven_core' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RieszN7.Core12.riesz_seven_unique_core' depends on axioms: [propext, Classical.choice, Quot.sound]
+      1 RieszN7/Release/Core12Challenge.lean:29:8: warning: declaration uses `sorry`
+      1 RieszN7/Release/Core12Challenge.lean:33:8: warning: declaration uses `sorry`
+      1 RieszN7/Release/Core12NegStatement.lean:17:8: warning: declaration uses `sorry`
+      1 RieszN7/Release/Core12NegStatement.lean:21:8: warning: declaration uses `sorry`
+      1 RieszN7/Release/FullChallenge.lean:29:8: warning: declaration uses `sorry`
+      1 RieszN7/Release/FullChallenge.lean:33:8: warning: declaration uses `sorry`
+      1 RieszN7/Release/FullNegStatement.lean:17:8: warning: declaration uses `sorry`
+      1 RieszN7/Release/FullNegStatement.lean:21:8: warning: declaration uses `sorry`
+2026-11-21T16:43:57Z DONE
