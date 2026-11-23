@@ -45,6 +45,13 @@ Coulomb case. The Python checkers do not cover them. `lean/` contains a Lean 4 f
 deductions and of the certificate checks (see [Lean formalisation](#lean-formalisation)). `METHOD.md` lists which
 steps are checked by which tool. None of this has been refereed.
 
+Related work: IRSI, Inc. state on their records page ([irsi.ai/records.html#n7](https://irsi.ai/records.html#n7)) an
+argument directed at the same statement for the logarithmic energy, dated 1 October 2026: a three-point semidefinite
+certificate for configurations whose smallest inner product is at least $-97/100$, interval arithmetic on 65.8 million
+boxes in 378 charts for the rest, and a quartic local analysis near $P$. The page states that only the logic of the
+case split is checked in Lean 4, with the three pieces as hypotheses, and that it is not peer reviewed; its preprint
+and certificate were not posted as of 2026-11-23, and it was not checked here.
+
 ## Cells and margins
 
 From `COVERAGE.md` (written by `checkers/make_coverage.py` during the verification run). $D$ is the degree of the

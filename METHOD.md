@@ -165,6 +165,8 @@ refereed.
   commit 25f2fa5), with `paper/PAPER.md`.
 * [TZ] J. Tooby-Smith, A. Zughaid, Thomson-N-8-Warrant, https://github.com/jstoobysmith/Thomson-N-8-Warrant (Lean 4
   development whose approach [C] follows).
+* [IRSI] IRSI, Inc., The pentagonal bipyramid minimizes logarithmic energy for 7 points, record dated 1 October 2026,
+  https://irsi.ai/records.html#n7 (preprint and certificate not posted as of 2026-11-23; not checked here).
 
 ## Coulomb s = 1 (`coulomb/`)
 
